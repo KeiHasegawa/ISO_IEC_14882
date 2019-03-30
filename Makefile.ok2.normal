@@ -1,0 +1,46 @@
+SRCS = $(wildcard *.c)
+ASMS = $(SRCS:.c=.s)
+
+all:test.lof
+
+CPP = hcpp.exe
+CPP_FLAG = $(EXTRA_CPP_FLAG) \
+-D__declspec\(a\)= -D__cdecl= -D__inline__=inline -D__extension__= \
+-D__attribute__\(a\)= -D__builtin_va_list='char*' \
+-D__builtin_stdarg_start=__builtin_va_start -D__asm__=asm -W 0 -H
+
+CC1 = hcc1.exe
+CC1_FLAG = --generator-option \( --debug \)
+LINK = gcc -g
+RUN =
+DIFF = diff
+TOUCH = touch
+DOS2UNIX = dos2unix.csh
+DOGV = wdog.exe -v
+
+%.i : %.c
+	$(DOGV) $(CPP) -o $@ $< $(CPP_FLAG)
+
+%.s : %.i
+	$(DOGV) $(CC1) -o $@ $< $(CC1_FLAG)
+
+%.log : %.exe
+	$(DOGV) $(RUN) ./$< > $@
+	$(DOS2UNIX) $@
+
+%.lof : %.log
+	$(DOGV) $(DIFF) $< $@
+	$(TOUCH) $@
+
+test.exe:$(ASMS)
+	$(DOGV) $(LINK) -o $@ $(ASMS)
+
+clean:
+	$(RM) *.log *.exe *.s *.i *.stackdump core.* *~
+
+test.lof:test.log
+a.s:a.i
+b.s:b.i
+c.s:c.i
+
+

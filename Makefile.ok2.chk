@@ -1,0 +1,31 @@
+SRCS = $(wildcard *.c)
+ASMS = $(SRCS:.c=.s)
+
+all:$(ASMS)
+
+CPP = hcpp.exe
+CPP_FLAG = $(EXTRA_CPP_FLAG) \
+-D__declspec\(a\)= -D__cdecl= -D__inline__=inline -D__extension__= \
+-D__attribute__\(a\)= -D__builtin_va_list='char*' \
+-D__builtin_stdarg_start=__builtin_va_start -D__asm__=asm -W 0 -H
+
+CC1 = hcc1.exe
+CC1_FLAG = --generator-option \( --debug \)
+TOUCH = touch
+DOGV = wdog.exe -v
+
+%.i : %.c
+	$(DOGV) $(CPP) -o $@ $< $(CPP_FLAG)
+
+%.s : %.i
+	$(DOGV) $(CC1) $< $(CC1_FLAG)
+	$(TOUCH) $@
+
+clean:
+	$(RM) *.log *.exe *.s *.i *.stackdump core.* *~
+
+a.s:a.i
+b.s:b.i
+c.s:c.i
+
+

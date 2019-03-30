@@ -1,5 +1,0 @@
-/*
- * `wchar_t' is keyword in C++
- */
-
-typedef unsigned short wchar_t;

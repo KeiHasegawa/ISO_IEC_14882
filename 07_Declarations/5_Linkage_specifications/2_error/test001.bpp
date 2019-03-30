@@ -1,0 +1,6 @@
+/*
+ * Except for functions with internal linkage, a function first declared in a
+ * linkage-specification behaves as a function with external linkage.
+ */
+extern "C" double f();
+static double f(); // error

@@ -1,0 +1,61 @@
+/*
+ * During overload resolution, all functions from the transitive search are
+ * considered for argument matching. The set of declarations found by the
+ * transitive search is unordered.
+ */
+#include <stdio.h>
+
+namespace D {
+  int d1;
+  void f(char);
+}
+
+using namespace D;
+
+int d1; // OK: no conflict with D::d1
+
+namespace E {
+  int e;
+  void f(int);
+}
+
+namespace D { // namespace extension
+  int d2;
+  using namespace E;
+  void f(int);
+}
+
+void f()
+{
+  printf("::d1 = %d, D::d1 = %d, D::d2 = %d, E::e = %d\n",
+	 ::d1, D::d1, D::d2, E::e);
+  ::d1++;   // OK
+  printf("::d1 = %d, D::d1 = %d, D::d2 = %d, E::e = %d\n",
+	 ::d1, D::d1, D::d2, E::e);
+  D::d1++;  // OK
+  printf("::d1 = %d, D::d1 = %d, D::d2 = %d, E::e = %d\n",
+	 ::d1, D::d1, D::d2, E::e);
+  d2++;     // OK: D::d2
+  printf("::d1 = %d, D::d1 = %d, D::d2 = %d, E::e = %d\n",
+	 ::d1, D::d1, D::d2, E::e);
+  e++;      // OK: E::e
+  printf("::d1 = %d, D::d1 = %d, D::d2 = %d, E::e = %d\n",
+	 ::d1, D::d1, D::d2, E::e);
+  f('a');   // OK: D::f(char)
+}
+
+int main()
+{
+  f();
+  return 0;
+}
+
+void D::f(char a)
+{
+  printf("`D::f(char)' called with '%c'\n", a);
+}
+
+void D::f(int a)
+{
+  printf("`D::f(int)' called with %d\n", a);
+}

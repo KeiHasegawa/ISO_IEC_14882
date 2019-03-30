@@ -1,0 +1,2 @@
+f(T*, int=1) called
+g(T*, ...) called

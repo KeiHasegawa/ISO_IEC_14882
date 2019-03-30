@@ -1,0 +1,16 @@
+/*
+ * initializer for no member of structure
+ */
+#include <stdio.h>
+
+struct S { };
+struct A {
+  S s;
+  int i;
+} a = { { } , 3 };
+
+int main()
+{
+  printf("a.i = %d\n", a.i);
+  return 0;
+}

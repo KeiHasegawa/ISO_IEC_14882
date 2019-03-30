@@ -1,0 +1,22 @@
+/*
+ * An explicit specialization of a function template is inline only if it is
+ * explicitly declared to be, and independently of whether its function
+ * template is.
+*/
+#include <stdio.h>
+
+template<class T> void f(T) { printf("f(T) called\n"); }
+template<class T> inline T g(T) { printf("g(T) called\n"); }
+template<> inline void f<>(int) { printf("f<>(int) called\n"); } // OK: inline
+template<> int g<>(int) { printf("g<>(int) called\n"); } // OK: not inline
+
+int main()
+{
+  double d = 1.5;
+  f(d);
+  g(d);
+  int i = 1;
+  f(i);
+  g(i);
+return 0;
+}

@@ -1,0 +1,45 @@
+/*
+ * Two template-ids refer to the same class or function if their template names
+ * are identical, they refer to the same template, their type
+ * template-arguments are the same type, their non-type template-arguments of
+ * integral or enumeration type have identical values, their non-type
+ * template-arguments of pointer or reference type refer to the same external
+ * object or function, and their template template-arguments refer to the same
+ * template. [Example:
+ */
+template<class E, int size> class buffer { /* ... */ };
+buffer<char,2*512> x;
+buffer<char,1024> y;
+
+void f()
+{
+  buffer<char,256*4>* p = &x;  /* ok */
+  buffer<char,256*4>* q = &y;  /* ok */
+  buffer<char,256*2>* r = &x;  /* error */
+}
+
+/*
+ * declares x and y to be of the same type, and
+ */
+
+template<class T, void(*err_fct)()> class list { /* ... */ };
+
+void error_handler1();
+list<int,&error_handler1> x1;
+void error_handler2();
+list<int,&error_handler2> x2;
+list<int,&error_handler2> x3;
+list<char,&error_handler2> x4;
+
+/*
+ * declares x2 and x3 to be of the same type. Their type differs from the
+ * types of x1 and x4. ]
+ */
+
+void g()
+{
+  list<int,&error_handler2>* p = &x2; /* ok */
+  list<int,&error_handler2>* q = &x3; /* ok */
+  list<int,&error_handler2>* r = &x1; /* error */
+  list<int,&error_handler2>* s = &x4; /* error */
+}

@@ -1,0 +1,38 @@
+/*
+ * A virtual function call (10.3) uses the default arguments in the declaration
+ * of the virtual function determined by the static type of the pointer or
+ * reference denoting the object. An overriding function in a derived class
+ * does not acquire default arguments from the function it overrides.
+ */
+#include <stdio.h>
+
+struct A {
+  virtual void f(int a = 7);
+};
+
+struct B : public A {
+  void f(int a);
+};
+
+void m()
+{
+  B* pb = new B;
+  A* pa = pb;
+  pa->f(); //OK, calls pa->B::f(7)
+}
+
+int main()
+{
+  m();
+  return 0;
+}
+
+void A::f(int a)
+{
+  printf("`A::f' called with %d\n", a);
+}
+
+void B::f(int a)
+{
+  printf("`B::f' called with %d\n", a);
+}

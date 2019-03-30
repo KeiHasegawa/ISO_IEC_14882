@@ -1,0 +1,10 @@
+// File 3
+#include "a.h"
+#include "b.h"
+extern A a;
+extern B b;
+int main() {
+  printf("`main' called\n");
+  a.Use();
+  b.Use();
+}

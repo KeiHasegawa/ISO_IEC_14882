@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void f(int)
+{
+  printf("f(int) called\n");
+}
+
+void f(int ...)
+{
+  printf("f(int ...) called\n");
+}
+
+void f(int, char* ...)
+{
+  printf("f(int, char* ...) called\n");
+}
+
+int main()
+{
+  f(1,2);
+  f(1,"asdf");
+  f(1,"asdf",2);
+  return 0;
+}

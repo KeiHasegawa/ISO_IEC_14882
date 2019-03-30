@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+class X {
+public:
+  X operator+(int i)
+  {
+    printf("X::operator+(int) called with %d\n", i);
+    return *this;
+  }
+};
+
+X operator+(X x, double d)
+{
+  printf("::operator+(X,double d) called with d = %f\n", d);
+  return x;
+}
+
+void g(X b)
+{
+  X a;
+  a = b+1;
+  a = b+1.0;
+}
+
+int main()
+{
+  X x;
+  g(x);
+  return 0;
+}

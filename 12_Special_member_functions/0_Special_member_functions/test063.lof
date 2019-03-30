@@ -1,0 +1,3 @@
+before assignment x = y
+X::operator=(X&) called
+after assignment x = y

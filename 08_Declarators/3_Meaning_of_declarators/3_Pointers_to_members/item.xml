@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>メンバ函数内での .* 演算子</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>メンバ函数以外での .* 演算子</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>メンバ函数内での ->* 演算子</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>メンバ函数以外での ->* 演算子</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>メンバ函数でデータメンバを qualifier 付きで参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.cpp</source>
+    <abstract>メンバ函数でメンバポインタを介した函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test006.cpp</source>
+    <abstract>メンバ函数以外でメンバポインタを介した函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test007.cpp</source>
+    <abstract>多重継承におけるメンバポインタを介した函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test008.cpp</source>
+    <abstract>メンバポインタを介した仮想基底メンバ函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test009.cpp</source>
+    <abstract>メンバポインタを介した const メンバ函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test010.cpp</source>
+    <abstract>多重継承におけるメンバポインタを介した函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test011.cpp</source>
+    <abstract>メンバポインタを介した仮想函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test012.cpp</source>
+    <abstract>メンバポインタの宣言</abstract>
+</item>
+
+</test_item>

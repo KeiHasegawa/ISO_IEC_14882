@@ -1,0 +1,5 @@
+A<int>::f(int) called
+A<int>::g1(int, X1) called
+A<T>::g1(T, X1) called
+A<int>::g1(int, char) called
+A<int>::h(int) called

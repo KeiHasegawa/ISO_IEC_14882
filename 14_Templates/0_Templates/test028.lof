@@ -1,0 +1,5 @@
+zip->a[0] = 0
+zip->a[1] = 1
+zip->a[2] = 2
+zip->p->mem = -5
+*yy.mem = 9

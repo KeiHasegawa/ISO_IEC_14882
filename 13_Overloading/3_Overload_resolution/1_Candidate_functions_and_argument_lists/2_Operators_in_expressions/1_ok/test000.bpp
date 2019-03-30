@@ -1,0 +1,62 @@
+/*
+ * If no operand of an operator in an expression has a type that is a class or
+ * an enumeration, the operator is assumed to be a built-in operator and
+ * interpreted according to clause 5. [Note: because ., .*, and :: cannot be
+ * overloaded, these operators are always built-in operators interpreted
+ * according to clause 5. ?: cannot be overloaded, but the rules in this
+ * subclause are used to determine the conversions to be applied to the second
+ * and third operands when they have class or enumeration type (5.16).
+ */
+#include <stdio.h>
+#include <string.h>
+
+class String {
+  char a[10];
+  friend String operator + (const String&, const String&);
+public:
+  String (const String&);
+  String (char*);
+  operator char* ();
+};
+
+String operator + (const String&, const String&);
+
+void f(void)
+{
+  String one = "one";
+  char* p = one + " two";
+  printf("p = \"%s\"\n", p);
+  int I = 1 + 1; // Always evaluates to 2 even if
+                 // user defined types exist which
+                 // would perform the operation.
+  printf("I = %d\n", I);
+}
+
+int main()
+{
+  f();
+  return 0;
+}
+
+String::String(const String& s)
+{
+  memcpy(a,s.a,sizeof a);
+}
+
+String::String(char* p)
+{
+  strcpy(a,p);
+}
+
+String::operator char*()
+{
+  return a;
+}
+
+String operator+(const String& x, const String& y)
+{
+  String r((char*)x.a);
+  strcat(r.a,y.a);
+  return r;
+}
+

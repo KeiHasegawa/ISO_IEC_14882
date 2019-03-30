@@ -1,0 +1,16 @@
+/*
+ * Except as described above, the use of an invalid value shall not cause type
+ * deduction to fail. [Example: In the following example 1000 is converted to
+ * signed char and results in an implementation-defined value as specified in
+ * (4.7). In other words, both templates are considered even though 1000, when
+ * converted to signed char, results in an implementation-defined value.
+ */
+
+template <int> int f(int);
+template <signed char> int f(int);
+void g()
+{
+  int i1 = f<1>(0); // ambiguous
+  int i2 = f<1000>(0); // ambiguous
+}
+

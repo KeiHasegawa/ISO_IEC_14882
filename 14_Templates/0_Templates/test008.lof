@@ -1,0 +1,2 @@
+general version sort(vector<T>&) called
+special version sort(vector<char*>&) called

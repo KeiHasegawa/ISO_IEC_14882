@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+class X {
+  int value;
+public:
+  X(int v = 0) : value(v) {}
+  X operator+(X x){ return X(value + x.value); }
+  X operator-(X x){ return X(value - x.value); }
+  void print()
+  {
+    printf("value = %d\n", value);
+  }
+};
+
+int main()
+{
+  X a, b(21), c(3), d(4);
+  a.print();
+  a = b + c - d;
+  a.print();
+  return 0;
+}

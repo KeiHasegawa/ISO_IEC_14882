@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+struct S { int mem; S(long); operator int(); };
+
+void f(long), f(char*);
+void g(S), g(char*);
+void h(const S&), h(char*);
+
+void k(S& a)
+{
+  f(a);
+  g(1);
+  h(2);
+}
+
+int main()
+{
+  S a(3);
+  k(a);
+  return 0;
+}
+
+S::S(long l) : mem(l)
+{
+  printf("S::S(long) called with %d\n", l);
+}
+
+S::operator int()
+{
+  printf("S::operator int() called\n");
+  return mem;
+}
+
+void f(long l)
+{
+  printf("f(long) called with %d\n", l);
+}
+
+void f(char* p)
+{
+  printf("f(char*) called with \"%s\"\n", p);
+}
+
+void g(S)
+{
+  printf("g(S) called\n");
+}
+
+void g(char* p)
+{
+  printf("g(char*) called with \"%s\"\n", p);
+}
+
+void h(const S&)
+{
+  printf("h(const S&) called\n");
+}
+
+void h(char* p)
+{
+  printf("y(char*) called with \"%s\"\n", p);
+}
+

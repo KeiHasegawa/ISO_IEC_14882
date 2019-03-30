@@ -1,0 +1,17 @@
+/*
+ * It is possible to overload function templates so that two different
+ * function template specializations have the same type.
+ */
+#include <stdio.h>
+
+// file1.c
+template<class T>
+void f(T*)
+{
+  printf("f(T*) called\n");
+}
+
+void g(int* p) {
+  f(p); // call
+        // f<int>(int*)
+}

@@ -1,0 +1,4 @@
+Yptr::operator->(), p is valid
+i = 246
+Yptr::operator->(), p is not valid
+i = 456

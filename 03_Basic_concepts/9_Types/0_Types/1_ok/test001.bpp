@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <memory>
+
+struct T { int a ; char b; };
+
+void f()
+{
+  T* t1p;
+  T* t2p;
+  // provided that t2p points to an initialized object ...
+  T t1;
+  t1p = &t1;
+  T t2 = { 1, 'a' };
+  t2p = &t2;
+  memcpy(t1p, t2p, sizeof(T));
+  // at this point, every subobject of POD type in *t1p contains
+  // the same value as the corresponding subobject in *t2p
+  if ( t1p->a == 1 )
+    printf("ok\n");
+  else
+    printf("error\n");
+  if ( t1p->b == 'a' )
+    printf("ok\n");
+  else
+    printf("error\n");
+}
+
+int main()
+{
+  f();
+  return 0;
+}

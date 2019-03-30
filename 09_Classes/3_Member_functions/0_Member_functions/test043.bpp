@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+class X {
+public:
+  X(char);
+  X(short int);
+  X(int);
+  X(float);
+  X(double);
+  X(long long);
+};
+
+X::X(char c)
+{
+  printf("`X::X(char)' called with '%c'\n", c);
+}
+
+X::X(short int si)
+{
+  printf("`X::X(short int)' called with %d\n", si);
+}
+
+X::X(int i)
+{
+  printf("`X::X(int)' called with %d\n", i);
+}
+
+X::X(float f)
+{
+  printf("`X::X(float)' called with %f\n", f);
+}
+
+X::X(double d)
+{
+  printf("`X::X(double)' called with %f\n", d);
+}
+
+X::X(long long ll)
+{
+  printf("`X::X(long long)' called with %lli\n", ll);
+}
+
+int main()
+{
+  X x1('x');
+  X x2(short(1234));
+  X x3(5678);
+  X x4(123.25F);
+  X x5(567.89);
+  X x6(10LL);
+
+  return 0;
+}

@@ -1,0 +1,29 @@
+/*
+ * Implicit conversions (clause 4) will be performed on a function argument to
+ * convert it to the type of the corresponding function parameter if the
+ * parameter type contains no template-parameters that participate in template
+ * argument deduction.
+ */
+#include <stdio.h>
+
+template<class T> void f(T)
+{
+  printf("f(T) called\n");
+}
+
+class Complex {
+  // ...
+public:
+  Complex(double){}
+};
+
+void g()
+{
+  f<Complex>(1); // OK, means f<Complex>(Complex(1))
+}
+
+int main()
+{
+  g();
+  return 0;
+}

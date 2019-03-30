@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+class Real {
+public:
+  Real(double){}
+};
+
+void f(int ...)
+{
+  printf("f(int ...) called\n");
+}
+
+void f(int, Real)
+{
+  printf("f(int, Real) called\n");
+}
+
+int main()
+{
+  f(1,1);
+  f(1,"Annemarie");
+  return 0;
+}

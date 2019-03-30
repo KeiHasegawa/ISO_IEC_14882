@@ -1,0 +1,19 @@
+/*
+ * The name of a template-argument shall be accessible at the point where it is
+ * used as a template-argument. [Note: if the name of the template-argument is
+ * accessible at the point where it is used as a templateargument, there is no
+ * further access restriction in the resulting instantiation where the
+ * corresponding template-parameter name is used. ]
+ */
+
+template<class T> class X {
+  static T t;
+};
+class Y {
+private:
+  struct S { /* ... */ };
+  X<S> x; // OK: S is accessible
+          // X<Y::S> has a static member of type Y::S
+          // OK: even though Y::S is private
+};
+X<Y::S> y; // error: S not accessible

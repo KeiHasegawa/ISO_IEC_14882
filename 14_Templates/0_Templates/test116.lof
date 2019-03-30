@@ -1,0 +1,3 @@
+S<C>::operator[](int) called
+S<C>::operator+(int) called
+S<C>::operator*() called

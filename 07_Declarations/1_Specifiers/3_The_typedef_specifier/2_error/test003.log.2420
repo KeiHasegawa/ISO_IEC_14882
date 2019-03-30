@@ -1,0 +1,6 @@
+C:\home\khasegawa\lang\bin\hcxx1.exe: `--generator_option' は無効なオプションです.
+C:\home\khasegawa\lang\bin\hcxx1.exe: 複数の入力ファイルが指定されています. `(' は無視されます.
+C:\home\khasegawa\lang\bin\hcxx1.exe: `--debug' は無効なオプションです.
+C:\home\khasegawa\lang\bin\hcxx1.exe: 複数の入力ファイルが指定されています. `)' は無視されます.
+test003.cpp:2: エラー: `S' は宣言されていません.
+dog : /home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/1_Specifiers/3_The_typedef_specifier/2_error:hcxx1.exe test003.i --generator_option ( --debug ) was killed by dog

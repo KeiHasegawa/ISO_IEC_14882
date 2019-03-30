@@ -1,0 +1,14 @@
+// file #2
+#include <vector>
+class B { };
+// Explicit specialization of vector for vector<B>
+namespace std {
+  template<> class vector<B> { /* ... */ };
+}
+template<class T> void f(T);
+void g(B b) {
+  f(b); //ill-formed:
+        // f<B> should refer to vector<B>, but the
+        // specialization was not declared with the
+        // definition of f in file #1
+}

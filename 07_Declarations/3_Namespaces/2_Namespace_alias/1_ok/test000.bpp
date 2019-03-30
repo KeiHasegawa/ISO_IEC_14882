@@ -1,0 +1,29 @@
+/*
+ * Check namespace alias works well.
+ */
+#include <stdio.h>
+
+namespace Company_with_very_long_name {
+  int i;
+  void f();
+}
+
+namespace CWVLN = Company_with_very_long_name;
+namespace CWVLN = Company_with_very_long_name; // OK: duplicate
+namespace CWVLN = CWVLN;
+
+int main()
+{
+  printf("CWVLN::i = %d\n", CWVLN::i);
+  ++CWVLN::i;
+  printf("CWVLN::i = %d\n", CWVLN::i);
+  ++Company_with_very_long_name::i;
+  printf("CWVLN::i = %d\n", CWVLN::i);
+  CWVLN::f();
+  return 0;
+}
+
+void Company_with_very_long_name::f()
+{
+  printf("`Company_with_very_long_name::f' called\n");
+}

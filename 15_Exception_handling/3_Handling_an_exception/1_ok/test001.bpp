@@ -1,0 +1,67 @@
+/*
+ * A handler is a match for an exception object of type E if
+ * - The handler is of type cv T or cv T& and E and T are the same type
+ *   (ignoring the top-level cvqualifiers), or
+ * - the handler is of type cv T or cv T& and T is an unambiguous public base
+ *   class of E, or
+ * - the handler is of type cv1 T* cv2 and E is a pointer type that can be
+ *   converted to the type of the handler by either or both of
+ *    - a standard pointer conversion (4.10) not involving conversions to
+ *      pointers to private or protected or ambiguous classes
+ *    - a qualification conversion
+ */
+#include <stdio.h>
+
+class Matherr { /* ... */ public: virtual void vf(); };
+class Overflow: public Matherr { /* ... */ };
+class Underflow: public Matherr { /* ... */ };
+class Zerodivide: public Matherr { /* ... */ public: void vf(); };
+
+void g();
+
+void f()
+{
+  try {
+    g();
+  }
+  catch (Overflow oo) {
+    // ...
+    printf("Overflow caught\n");
+  }
+  catch (Matherr& mm) {
+    // ...
+    printf("Matherr caught\n");
+    mm.vf();
+  }
+}
+
+bool flag;
+
+int main()
+{
+  flag = false;
+  f();
+  flag = true;
+  f();
+  return 0;
+}
+
+void g()
+{
+  if ( flag ){
+    throw Zerodivide();
+  }
+  else {
+    throw Overflow();
+  }
+}
+
+void Matherr::vf()
+{
+  printf("Matherr::vf() called\n");
+}
+
+void Zerodivide::vf()
+{
+  printf("Zerodivide::vf() called\n");
+}

@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+class X {
+  int x;
+public:
+  char* foo(int);
+};
+
+class Y {
+  int y;
+  friend char* X::foo(int);
+};
+
+char* X::foo(int n)
+{
+  printf("`X::foo' called\n");
+  Y y;
+  y.y = x = n;
+  printf("y.y = %d, x = %d\n", y.y, x);
+  return 0;
+}
+
+int main()
+{
+  X x;
+  x.foo(5);
+  return 0;
+}

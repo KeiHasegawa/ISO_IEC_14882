@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+class buffer {
+private:
+  char* p;
+  int size;
+
+protected:
+  buffer(int s, char* store)
+  {
+    printf("buffer::buffer(int, char*) called\n");
+    size = s; p = store;
+  }
+
+public:
+  buffer(int s)
+  {
+    printf("buffer::buffer(int) called with %d\n", s);
+    p = new char[size = s];
+  }
+};
+
+class D : public buffer {
+public:
+  D() : buffer(4, new char[4])
+  {
+    printf("D::D called\n");
+  }
+};
+
+int main()
+{
+  buffer b(3);
+  D d;
+  return 0;
+}

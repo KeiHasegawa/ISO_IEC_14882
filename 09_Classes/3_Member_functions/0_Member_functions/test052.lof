@@ -1,0 +1,29 @@
+`test000' called
+X::X(int) called 0
+X::X(int) called 1
+X::~X() called 1
+X::X(int) called 1
+X::~X() called 1
+X::~X() called 0
+`test001' called
+X::X(int) called 2
+X::X(int) called 3
+X::X(int) called 4
+X::~X() called 4
+X::~X() called 3
+X::~X() called 2
+X::X(int) called 2
+X::X(int) called 3
+X::~X() called 3
+X::~X() called 2
+`test002' called
+X::X(int) called 5
+X::X(int) called 6
+X::X(int) called 7
+X::~X() called 7
+X::~X() called 6
+X::~X() called 5
+X::X(int) called 5
+X::X(int) called 6
+X::~X() called 6
+X::~X() called 5

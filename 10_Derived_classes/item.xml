@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Derived_classes/item.xml">
+    <title>10 Derived classes</title>
+</section>
+
+<section url="1_Multiple_base_classes/item.xml">
+    <title>10.1 Multiple base classes</title>
+</section>
+
+<section url="2_Member_name_lookup/item.xml">
+    <title>10.2 Member name lookup</title>
+</section>
+
+<section url="3_Virtual_functions/item.xml">
+    <title>10.3 Virtual functions</title>
+</section>
+
+<section url="4_Abstract_classes/item.xml">
+    <title>10.4 Abstract classes</title>
+</section>
+
+</test_item>

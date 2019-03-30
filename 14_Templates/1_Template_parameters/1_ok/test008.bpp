@@ -1,0 +1,23 @@
+/*
+ * When parsing a default template-argument for a non-type template-parameter,
+ * the first non-nested > is taken as the end of the template-parameter-list
+ * rather than a greater-than operator.
+ */
+#include <stdio.h>
+
+template<int i = (3 > 4) > // OK
+class Y {
+public:
+  void f()
+  {
+    printf("`Y::f()' called\n");
+    printf("i = %d\n", i);
+  }
+};
+
+int main()
+{
+  Y<> y;
+  y.f();
+  return 0;
+}

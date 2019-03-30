@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>宣言と定義を正しく処理できるか</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>デフォルトコンストラクタ, コピーコンストラクタ, 代入演算子, デストラクタが暗黙に生成されるか</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>デフォルトコンストラクタ, コピーコンストラクタ, 代入演算子, デストラクタを明示的に記述する</abstract>
+</item>
+
+</test_item>

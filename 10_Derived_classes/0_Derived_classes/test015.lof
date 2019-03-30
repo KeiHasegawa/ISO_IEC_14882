@@ -1,0 +1,9 @@
+d.V::x = 2 d.x = 1
+B::f called
+d.V::x = 2 d.x = 0
+B::f called
+d.V::x = 2 d.x = -1
+B::f called
+d.V::x = 2 d.x = -1 d.f() return value : -1
+V::f called
+d.V::x = 2 d.x = -1 d.V::f() return value : 2

@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+void f(char* s)
+{
+  printf("f(char*) called with \"%s\"\n", s);
+}
+
+void f(const char* s)
+{
+  printf("f(const char*) called with \"%s\"\n", s);
+}
+
+void f2(char* s)
+{
+  printf("f2(char*) called with \"%s\"\n", s);
+}
+
+void f3(const char* s)
+{
+  printf("f3(const char*) called with \"%s\"\n", s);
+}
+
+void g(char* pc, const char* pcc)
+{
+  f(pc);
+  f(pcc);
+
+  f2(pc);
+
+  f3(pc);
+  f3(pcc);
+}
+
+int main()
+{
+  char a[] = "Kei Hasegawa";
+  g(&a[0],"compiler developer");
+
+  return 0;
+}
+

@@ -1,0 +1,24 @@
+/*
+ * If a template, a member template or the member of a class template is
+ * explicitly specialized then that specialization shall be declared before
+ * the first use of that specialization that would cause an implicit
+ * instantiation to take place, in every translation unit in which such a use
+ * occurs; no diagnostic is required. If the program does not provide a
+ * definition for an explicit specialization and either the specialization is
+ * used in a way that would cause an implicit instantiation to take place or
+ * the member is a virtual member function, the program is ill-formed, no
+ * diagnostic required. An implicit instantiation is never generated for an
+ * explicit specialization that is declared but not defined.
+ */
+
+template<class T> class Array { /* ... */ };
+template<class T> void sort(Array<T>& v) { /* ... */ }
+class String;
+void f(Array<String>& v)
+{
+  sort(v); //use primary template
+           // sort(Array<T>&), T is String
+}
+template<> void sort<String>(Array<String>& v); // error: specialization
+                                               // after use of primary template
+template<> void sort<>(Array<char*>& v); // OK: sort<char*> not yet used

@@ -1,0 +1,2 @@
+test011.c:9: error: invalid access declaration for `f'.
+test011.c:8: error: member `f' is declared here.

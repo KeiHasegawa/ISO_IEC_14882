@@ -1,0 +1,23 @@
+/*
+ * The mutable specifier can be applied only to names of class data members and
+ * cannot be applied to names declared const or static, and cannot be applied
+ * to reference members.
+ */
+
+class X {
+  mutable const int* p; // OK
+  mutable int* const q; // ill-formed
+};
+
+struct S1 {
+  mutable void f();  // error
+};
+
+struct S2 {
+  mutable static int n; // error
+};
+
+struct S3 {
+  mutable int& r;  // error
+  S3(int n) : r(n) {}
+};

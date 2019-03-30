@@ -1,0 +1,8 @@
+operator S::T() called
+a = 1
+operator S::T() called
+a = 2
+operator S::T() called
+a = 3
+operator S::T() called
+a = 4

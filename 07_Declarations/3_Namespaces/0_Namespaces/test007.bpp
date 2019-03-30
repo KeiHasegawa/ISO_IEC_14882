@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+struct X {
+  struct Y {
+    int member;
+    Y() : member(-1) {}
+  };
+};
+
+X::Y f()
+{
+  return X::Y();
+}
+
+int main()
+{
+  X::Y y = f();
+  printf("y.member = %d\n", y.member);
+  return 0;
+}

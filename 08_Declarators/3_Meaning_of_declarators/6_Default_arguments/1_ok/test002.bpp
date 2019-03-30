@@ -1,0 +1,40 @@
+/*
+ * A default argument expression is implicitly converted (clause 4) to the
+ * parameter type. The default argument expression has the same semantic
+ * constraints as the initializer expression in a declaration of a variable
+ * of the parameter type, using the copy-initialization semantics (8.5). The
+ * names in the expression are bound, and the semantic constraints are checked,
+ * at the point where the default argument expression appears. Name lookup and
+ * checking of semantic constraints for default arguments in function templates
+ * and in member functions of class templates are performed as described in
+ * 14.7.1.
+ */
+#include <stdio.h>
+
+int a = 1;
+int f(int);
+int g(int x = f(a)); // default argument: f(::a)
+
+void h() {
+  a = 2;
+  {
+    int a = 3;
+    g(); // g(f(::a))
+  }
+}
+
+int main()
+{
+  h();
+  return 0;
+}
+
+int f(int a)
+{
+  printf("`f' called with %d\n", a);
+}
+
+int g(int a)
+{
+  printf("`g' called with %d\n", a);
+}

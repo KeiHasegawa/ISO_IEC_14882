@@ -1,0 +1,5 @@
+/*
+ * A linkage-specification directly containing a single declaration shall not
+ * specify a storage class.
+ */
+extern "C" static void f(); // error

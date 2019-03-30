@@ -1,0 +1,32 @@
+/*
+ * A member function of a class template may be defined outside of the class
+ * template definition in which it is declared.
+ */
+#include <stdio.h>
+
+template<class T> class Array {
+  T* v;
+  int sz;
+public:
+  explicit Array(int n) : sz(n) { v = new T[sz]; }
+  T& operator[](int);
+  T& elem(int i) { return v[i]; }
+};
+
+void error(const char* s)
+{
+  printf("%s\n", s);
+}
+
+template<class T> T& Array<T>::operator[](int i)
+{
+  if (i<0 || sz<=i) error("Array: range error");
+  return v[i];
+}
+
+int main()
+{
+  Array<int> ai(3);
+  int* p = &ai[3];
+  return 0;
+}

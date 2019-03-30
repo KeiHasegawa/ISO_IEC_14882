@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+typedef char* T;
+
+class X {
+  typedef int T;
+  friend T f(T a){ return a + 1; }
+};
+
+int main()
+{
+  printf("f(3) return value : %d\n", f(3));
+  return 0;
+}

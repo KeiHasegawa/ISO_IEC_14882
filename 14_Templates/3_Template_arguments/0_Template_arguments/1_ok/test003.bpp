@@ -1,0 +1,22 @@
+/*
+ * When default template-arguments are used, a template-argument list can be
+ * empty. In that case the empty <> brackets shall still be used as the
+ * template-argument-list.
+ */
+#include <stdio.h>
+template<class T = char> class String;
+String<>* p; // OK: String<char>
+
+template<class T> class String {
+public:
+  T* m;
+};
+
+int main()
+{
+  String<> x;
+  p = &x;
+  printf("p->m = \"%s\"\n", p->m = "default template-arguments");
+  return 0;
+}
+

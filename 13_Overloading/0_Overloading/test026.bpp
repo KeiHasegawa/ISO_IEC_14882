@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+class Y {
+public:
+  operator int()
+  {
+    printf("Y::operator int() called\n");
+    return 1;
+  }
+  operator double()
+  {
+    printf("Y::operator double() called\n");
+    return 1.5;
+  }
+};
+
+void f(Y y)
+{
+  int i = y;
+  printf("i = %d\n", i);
+  double d;
+  d = y;
+  printf("d = %f\n", d);
+}
+
+int main()
+{
+  Y y;
+  f(y);
+  return 0;
+}

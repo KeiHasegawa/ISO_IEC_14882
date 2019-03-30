@@ -1,0 +1,16 @@
+/*
+ * Type names obey exactly the same scope rules as other names. In particular,
+ * type names defined within a class definition cannot be used outside their
+ * class without qualification.
+ */
+class X {
+public:
+  typedef int I;
+  class Y { /* ... */ };
+  I a;
+};
+
+I b; // error
+Y c; // error
+X::Y d; // OK
+X::I e; // OK

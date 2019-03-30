@@ -1,0 +1,24 @@
+/*
+ * Members of a class defined with the keyword class are private by default.
+ * Members of a class defined with the keywords struct or union are public by
+ * default.
+ */
+class X {
+  int a; // X::a is private by default
+};
+
+struct S {
+  int a; // S::a is public by default
+};
+
+void f(void)
+{
+  X x;
+  x.a = 1; // error
+}
+
+void g(void)
+{
+  S s;
+  s.a = 2; // ok
+}

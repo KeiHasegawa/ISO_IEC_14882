@@ -1,0 +1,2 @@
+`template<const int& CRI> B<CRI>::f()' called
+CRI = 1

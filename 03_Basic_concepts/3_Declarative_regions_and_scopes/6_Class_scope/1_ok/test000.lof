@@ -1,0 +1,7 @@
+`test000' called
+c = 1
+i = 1
+x.f() return value : 1
+X::i = 2
+"hello world"
+y.b = 12

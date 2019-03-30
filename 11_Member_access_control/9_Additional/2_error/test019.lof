@@ -1,0 +1,2 @@
+test019.c:In function `C::f'
+test019.c:13: error: `a' is private in this context.

@@ -1,0 +1,2 @@
+test007.c:12: error: invalid access declaration for `public b'.
+test007.c:5: error: `b' is declared as private.

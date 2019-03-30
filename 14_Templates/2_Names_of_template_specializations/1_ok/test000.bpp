@@ -1,0 +1,28 @@
+/*
+ * After name lookup (3.4) finds that a name is a template-name, if this name
+ * is followed by a <, the < is always taken as the beginning of a
+ * template-argument-list and never as a name followed by the less-than
+ * operator. When parsing a template-id, the first non-nested > is taken as
+ * the end of the templateargument-list rather than a greater-than operator.
+ */
+#include <stdio.h>
+
+template<int i> class X {
+public:
+  static const int s = i;
+};
+X<(1>2)> x2; // OK
+template<class T> class Y {
+public:
+  T m;
+};
+Y< X<1> > x3; // OK
+Y<X<6>> 1> > x4; // OK: Y< X< (6>>1) > >
+
+int main()
+{
+  printf("x2.s = %d\n", x2.s);
+  printf("x3.m.s = %d\n", x3.m.s);
+  printf("x4.m.s = %d\n", x4.m.s);
+  return 0;
+}

@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+class String {
+  char* ptr;
+public:
+  String(const char* str)
+  {
+    ptr = (char*)malloc(strlen(str)+1);
+    strcpy(ptr,str);
+  }
+  char& operator[](int n)
+  {
+    return ptr[n];
+  }
+  void print()
+  {
+    printf("%s\n", ptr);
+  }
+};
+
+void f()
+{
+  String ss = "asdf";
+  ss.print();
+  ss[1] = ss[3];
+  ss.print();
+}
+
+void g(String& ss)
+{
+  ss.operator[](1) = ss.operator[](3);
+}
+
+int main()
+{
+  f();
+  String s("hasegawa");
+  s.print();
+  g(s);
+  s.print();
+  return 0;
+}

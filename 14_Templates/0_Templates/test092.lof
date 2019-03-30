@@ -1,0 +1,4 @@
+::f called
+c = 1
+N::f called
+c = 1.500000

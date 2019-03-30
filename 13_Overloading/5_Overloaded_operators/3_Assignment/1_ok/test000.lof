@@ -1,0 +1,5 @@
+`D::operator=(int)' called
+`D::operator=(int)' called
+`D::operator=(const B&)' called
+`D::operator=(const B&)' called
+

@@ -1,0 +1,4 @@
+f(double) called with 1.500000
+pfd() return value : 3
+f(int) called with 2
+pfi() return value : 4

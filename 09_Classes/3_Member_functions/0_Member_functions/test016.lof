@@ -1,0 +1,5 @@
+X::X() called
+X::X(int) called
+i = 1
+X::X(int) called
+i = 2, j = 3

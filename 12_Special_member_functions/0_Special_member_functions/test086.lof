@@ -1,0 +1,4 @@
+D::operator new called
+D::~D called
+B::~B called
+D::operator delete called

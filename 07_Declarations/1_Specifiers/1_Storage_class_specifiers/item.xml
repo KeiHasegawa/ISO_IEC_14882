@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>mutable が正しく処理されているか</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>static const メンバが正しく処理されているか</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>リンケージが正しく処理されているか</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>リンケージが正しく処理されているか</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>extern 付きの不完全型変数の宣言. 不完全型を返す函数の宣言. 不完全型をパラメータとする函数の宣言.</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>不完全型を返す函数の呼び出し. 不完全型をパラメータとする函数の呼び出し.</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>mutable 付きの const int へのポインタメンバ</abstract>
+</item>
+
+
+<item>
+    <source>2_error/test002.cpp</source>
+    <abstract>mutable の誤用</abstract>
+</item>
+
+</test_item>

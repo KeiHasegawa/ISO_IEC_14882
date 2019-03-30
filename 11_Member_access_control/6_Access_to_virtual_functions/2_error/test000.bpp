@@ -1,0 +1,25 @@
+/*
+ * The access rules (clause 11) for a virtual function are determined by its
+ * declaration and are not affected by the rules for a function that later
+ * overrides it.
+ */
+
+class B {
+public:
+  virtual int f();
+};
+
+class D : public B {
+private:
+  int f();
+};
+
+void f()
+{
+  D d;
+  B* pb = &d;
+  D* pd = &d;
+  pb->f(); // OK: B::f() is public,
+           // D::f() is invoked
+  pd->f(); // error: D::f() is private
+}

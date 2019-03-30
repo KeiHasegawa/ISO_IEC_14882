@@ -1,0 +1,41 @@
+/*
+ * When the name of a member template specialization appears after . or -> in a
+ * postfix-expression, or after nested-name-specifier in a qualified-id, and
+ * the postfix-expression or qualified-id explicitly depends on a
+ * template-parameter (14.6.2), the member template name must be prefixed by
+ * the keyword template. Otherwise the name is assumed to name a non-template.
+ */
+#include <stdio.h>
+
+typedef unsigned int size_t;
+class X {
+public:
+  template<size_t> X* alloc();
+  template<size_t> static X* adjust();
+};
+template<class T> void f(T* p)
+{
+  T* p2 = p->template alloc<200>();
+               // OK: < starts template argument list
+  T::template adjust<100>();
+               // OK: < starts template argument list
+}
+
+template<size_t> X* X::alloc()
+{
+  printf("`X::alloc()' called\n");
+  return 0;
+}
+
+template<size_t> X* X::adjust()
+{
+  printf("`X::adjust()' called\n");
+  return 0;
+}
+
+int main()
+{
+  X x;
+  f(&x);
+  return 0;
+}

@@ -1,0 +1,34 @@
+/*
+ * Certain function declarations cannot be overloaded:
+ * ...
+ * - Two parameter declarations that differ only in their default arguments
+ *   are equivalent.
+ */
+#include <stdio.h>
+
+void f(int i, int j);
+void f(int i, int j = 99); // OK: redeclaration of f(int, int)
+void f(int i = 88, int j); // OK: redeclaration of f(int, int)
+void f(); // OK: overloaded declaration of f
+void prog ()
+{
+  f(1, 2); // OK: call f(int, int)
+  f(1); // OK: call f(int, int)
+}
+
+int main()
+{
+  prog();
+  return 0;
+}
+
+void f(int i, int j)
+{
+  printf("`f(int,int)' called with (%d,%d)\n", i, j);
+}
+
+void f()
+{
+  printf("`f()' called\n");
+}
+

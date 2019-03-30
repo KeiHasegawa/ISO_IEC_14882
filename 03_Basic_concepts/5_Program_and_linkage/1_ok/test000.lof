@@ -1,0 +1,7 @@
+`test000' called
+`f' called
+i = 0
+`g' called
+i = 5
+`f' called
+i = 4

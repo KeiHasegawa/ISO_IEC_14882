@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>テンプレートの引数が型, 式, テンプレート</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>テンプレートの引数が type-id とも式とも解釈できる場合
+    </abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>テンプレート引数とアクセス制御</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>テンプレート引数とアクセス制御</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>デフォルト引数を使用するテンプレート</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>デフォルト引数を使用するテンプレート</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>テンプレートクラスの明示的なデストラクタ呼び出し</abstract>
+</item>
+
+</test_item>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Labeled_statement/item.xml">
+    <title>6.1 Labeled statement</title>
+</section>
+
+<section url="2_Expression_statement/item.xml">
+    <title>6.2 Expression statement</title>
+</section>
+
+<section url="3_Compound_statement_or_block/item.xml">
+    <title>6.3 Compound statement or block</title>
+</section>
+
+<section url="4_Selection_statement/item.xml">
+    <title>6.4 Selection statement</title>
+</section>
+
+<section url="5_Iteration_statements/item.xml">
+    <title>6.5 Iteration statements</title>
+</section>
+
+<section url="6_Jump_statements/item.xml">
+    <title>6.6 Jump statements</title>
+</section>
+
+<section url="7_Declaration_statement/item.xml">
+    <title>6.7 Declaration statement</title>
+</section>
+
+<section url="8_Ambiguity_resolution/item.xml">
+    <title>6.8 Ambiguity resolution</title>
+</section>
+
+</test_item>

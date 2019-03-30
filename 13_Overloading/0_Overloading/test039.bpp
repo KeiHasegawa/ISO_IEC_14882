@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+class Y {
+  friend Y operator++(Y& y)
+  {
+    printf("operator++(Y&) called\n");
+    return y;
+  }
+  friend Y operator++(Y& y, int i)
+  {
+    printf("operator++(Y&, int i) called ");
+    printf("i = %d\n", i);
+    return y;
+  }
+};
+
+void g(Y a)
+{
+  ++a;
+  a++;
+
+  operator++(a);
+  operator++(a,3);
+}
+
+int main()
+{
+  Y y;
+  g(y);
+  return 0;
+}

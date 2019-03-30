@@ -1,0 +1,27 @@
+/*
+ * If the definition of a member function is lexically outside its class
+ * definition, the member function name shall be qualified by its class name
+ * using the :: operator.
+ */
+#include <stdio.h>
+
+struct X {
+  typedef int T;
+  static T count;
+  void f(T);
+};
+
+void X::f(T t = count)
+{
+  printf("`X::f' called with %d\n", t);
+}
+
+int main()
+{
+  X x;
+  x.f();
+  x.f(3);
+  return 0;
+}
+
+int X::count = 2;

@@ -1,0 +1,19 @@
+class X {
+  int m_val;
+public:
+  X(int n) : m_val(n) {}
+};
+
+void f()
+{
+  // ...
+  goto lx; // ill-formed: jump into scope of a
+  // ...
+ ly:
+  X a = 1;
+  // ...
+ lx:
+  goto ly; // OK, jump implies destructor
+           // call for a followed by construction
+           // again immediately following label ly
+}

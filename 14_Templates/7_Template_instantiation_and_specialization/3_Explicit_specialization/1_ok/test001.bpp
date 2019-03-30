@@ -1,0 +1,38 @@
+/*
+ * A member of an explicitly specialized class is not implicitly instantiated
+ * from the member declaration of the class template; instead, the member of
+ * the class template specialization shall itself be explicitly defined. In
+ * this case, the definition of the class template explicit specialization
+ * shall be in scope at the point of declaration of the explicit specialization
+ * of the member. The definition of an explicitly specialized class is
+ * unrelated to the definition of a generated specialization. That is, its
+ * members need not have the same names, types, etc. as the members of the a
+ * generated specialization. Definitions of members of an explicitly
+ * specialized class are defined in the same manner as members of normal
+ * classes, and not using the explicit specialization syntax.
+ */
+#include <stdio.h>
+
+template<class T> struct A {
+  void f(T) { printf("f(T) called\n"); }
+};
+
+template<> struct A<int> {
+  void f(int);
+};
+
+void h()
+{
+  A<int> a;
+  a.f(16); // A<int>::f must be defined somewhere
+}
+
+// explicit specialization syntax not used for a member of
+// explicitly specialized class template specialization
+void A<int>::f(int) { printf("A::f(int) called\n"); }
+
+int main()
+{
+  h();
+  return 0;
+}

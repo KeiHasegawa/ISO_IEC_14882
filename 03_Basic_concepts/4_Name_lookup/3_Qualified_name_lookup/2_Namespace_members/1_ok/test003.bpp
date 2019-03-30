@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+namespace A {
+  struct x { };
+  int x;
+  int y;
+}
+namespace B {
+  struct y {};
+}
+namespace C {
+  using namespace A;
+  using namespace B;
+  int i = C::x; // OK, A::x (of type int)
+}
+
+int main()
+{
+  printf("A::x = %d\n", A::x);
+  printf("A::y = %d\n", A::y);
+  printf("C::i = %d\n", C::i);
+  return 0;
+}

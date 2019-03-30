@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Types/item.xml">
+    <title>3.9 Types</title>
+</section>
+
+<section url="1_Fundamental_types/item.xml">
+    <title>3.9.1 Fundamental types</title>
+</section>
+
+<section url="2_Compound_types/item.xml">
+    <title>3.9.2 Compound types</title>
+</section>
+
+<section url="3_CV_qualifiers/item.xml">
+    <title>3.9.3 CV-qualifiers</title>
+</section>
+
+</test_item>

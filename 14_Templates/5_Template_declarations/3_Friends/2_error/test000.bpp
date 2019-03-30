@@ -1,0 +1,21 @@
+/*
+ * A friend function declaration that is not a template declaration and in
+ * which the name of the friend is an unqualified template-id shall refer to
+ * a specialization of a function template declared in the nearest enclosing
+ * namespace scope.
+ */
+namespace N {
+  template <class T> void f(T);
+  void g(int);
+  namespace M {
+    template <class T> void h(T);
+    template <class T> void i(T);
+    struct A {
+      friend void f<>(int); // ill-formed - N::f
+      friend void h<>(int); // OK - M::h
+      friend void g(int); // OK - new decl of M::g
+      template <class T> void i(T);
+      friend void i<>(int); // ill-formed - A::i
+    };
+  }
+}

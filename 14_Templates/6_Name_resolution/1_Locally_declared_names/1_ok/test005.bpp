@@ -1,0 +1,48 @@
+/*
+ * The scope of a template-parameter extends from its point of declaration
+ * until the end of its template. A template-parameter hides any entity with
+ * the same name in the enclosing scope. [Note: this implies that a
+ * template-parameter can be used in the declaration of subsequent
+ * template-parameters and their default arguments but cannot be used in
+ * preceding template-parameters or their default arguments. For example,
+
+template<class T, T* p, class U = T> class X { };
+template<class T> void f(T* p = new T);
+
+ * This also implies that a template-parameter can be used in the
+ * specification of base classes. For example,
+ */
+
+#include <stdio.h>
+
+template<class T> class Array {
+public:
+  T* p;
+  int sz;
+};
+
+template<class T> class X : public Array<T> { public: int x; };
+template<class T> class Y : public T { public: double y; };
+
+/*
+ * The use of a template-parameter as a base class implies that a class used
+ * as a template-argument must be defined and not just declared when the class
+ * template is instantiated. ]
+ */
+
+struct S {
+  char* m;
+};
+
+int main()
+{
+  X<char> x;
+  printf("%d\n", x.x = 123);
+  printf("%s\n", x.p = "hello");
+  printf("%d\n", x.sz = 456);
+
+  Y<S> y;
+  printf("%s\n", y.m = "howdy");
+  printf("%f\n", y.y = 0.5);
+  return 0;
+}

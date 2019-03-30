@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>test000.cpp</source>
+    <abstract>メンバ函数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test001.cpp</source>
+    <abstract>メンバ函数の呼び出し. メンバ函数の中でデータメンバの参照.</abstract>
+</item>
+
+<item>
+    <source>test002.cpp</source>
+    <abstract>メンバ函数の呼び出し. メンバ函数の中で this ポインタを介したデータメンバの参照.
+    </abstract>
+</item>
+
+<item>
+    <source>test003.cpp</source>
+    <abstract>函数の定義がクラス宣言の外にあるメンバ函数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test004.cpp</source>
+    <abstract>コンストラクタとデストラクタの呼び出し</abstract>
+</item>
+
+<item>
+    <source>test005.cpp</source>
+    <abstract>メンバ函数の呼び出し. -> で参照</abstract>
+</item>
+
+<item>
+    <source>test006.cpp</source>
+    <abstract>static メンバ函数の呼び出し.</abstract>
+</item>
+
+<item>
+    <source>test007.cpp</source>
+    <abstract>基底クラスのメンバ函数の呼び出し.</abstract>
+</item>
+
+<item>
+    <source>test008.cpp</source>
+    <abstract>コンストラクタのボディでの変数の参照</abstract>
+</item>
+
+<item>
+    <source>test009.cpp</source>
+    <abstract>コンストラクタのメンバ initializer</abstract>
+</item>
+
+<item>
+    <source>test010.cpp</source>
+    <abstract>operator *, operator +</abstract>
+</item>
+
+<item>
+    <source>test011.cpp</source>
+    <abstract>operator []</abstract>
+</item>
+
+<item>
+    <source>test012.cpp</source>
+    <abstract>operator ()</abstract>
+</item>
+
+<item>
+    <source>test013.cpp</source>
+    <abstract>operator -></abstract>
+</item>
+
+<item>
+    <source>test014.cpp</source>
+    <abstract>operator ++ (後置)</abstract>
+</item>
+
+<item>
+    <source>test015.cpp</source>
+    <abstract>operator -- (後置)</abstract>
+</item>
+
+<item>
+    <source>test016.cpp</source>
+    <abstract>overload されたコンストラクタ</abstract>
+</item>
+
+<item>
+    <source>test017.cpp</source>
+    <abstract>operator ++ (前置)</abstract>
+</item>
+
+<item>
+    <source>test018.cpp</source>
+    <abstract>operator -- (前置)</abstract>
+</item>
+
+<item>
+    <source>test019.cpp</source>
+    <abstract>operator * (単項)</abstract>
+</item>
+
+<item>
+    <source>test020.cpp</source>
+    <abstract>operator &amp; (単項)</abstract>
+</item>
+
+<item>
+    <source>test021.cpp</source>
+    <abstract>operator + (単項)</abstract>
+</item>
+
+<item>
+    <source>test022.cpp</source>
+    <abstract>operator - (単項)</abstract>
+</item>
+
+<item>
+    <source>test023.cpp</source>
+    <abstract>operator !</abstract>
+</item>
+
+<item>
+    <source>test024.cpp</source>
+    <abstract>operator ~</abstract>
+</item>
+
+<item>
+    <source>test025.cpp</source>
+    <abstract>operator new, operator delete</abstract>
+</item>
+
+<item>
+    <source>test026.cpp</source>
+    <abstract>operator new[], operator delete[]</abstract>
+</item>
+
+<item>
+    <source>test027.cpp</source>
+    <abstract>メンバ函数での private メンバの参照</abstract>
+</item>
+
+<item>
+    <source>test028.cpp</source>
+    <abstract>メンバ函数での qualifier 付きでのメンバの参照</abstract>
+</item>
+
+<item>
+    <source>test029.cpp</source>
+    <abstract>operator /, operator %</abstract>
+</item>
+
+<item>
+    <source>test030.cpp</source>
+    <abstract>operator +, operator - (二項)</abstract>
+</item>
+
+<item>
+    <source>test031.cpp</source>
+    <abstract>operator &amp;&amp;, operator >></abstract>
+</item>
+
+<item>
+    <source>test032.cpp</source>
+    <abstract>operator &amp;, operator >, operator &amp;=, operator >= </abstract>
+</item>
+
+<item>
+    <source>test033.cpp</source>
+    <abstract>operator ==, operator !=</abstract>
+</item>
+
+<item>
+    <source>test034.cpp</source>
+    <abstract>operator &amp;, operator ^, operator |</abstract>
+</item>
+
+<item>
+    <source>test035.cpp</source>
+    <abstract>operator &amp;&amp;, operator ||</abstract>
+</item>
+
+<item>
+    <source>test036.cpp</source>
+    <abstract>operator ->*</abstract>
+</item>
+
+<item>
+    <source>test037.cpp</source>
+    <abstract>operator =, +=, -=, *=, /=, %=, ^=, &amp;=, |=, >>=, &lt;&lt;=</abstract>
+</item>
+
+<item>
+    <source>test038.cpp</source>
+    <abstract>operator =, +=, -=, *=, /=, %=, ^=, &amp;=, |=, >>=, &lt;&lt;=</abstract>
+</item>
+
+<item>
+    <source>test039.cpp</source>
+    <abstract>operator ,</abstract>
+</item>
+
+<item>
+    <source>test040.cpp</source>
+    <abstract>メンバ函数のデフォルト引数で static メンバの参照</abstract>
+</item>
+
+<item>
+    <source>test041.cpp</source>
+    <abstract>仮想関数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test042.cpp</source>
+    <abstract>メンバポインタによる仮想関数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test043.cpp</source>
+    <abstract>overload されたコンストラクタ</abstract>
+</item>
+
+<item>
+    <source>test044.cpp</source>
+    <abstract>多重継承におけるメンバ函数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test046.c</source>
+    <abstract>構造体内で共用体, メンバ函数を宣言</abstract>
+</item>
+
+<item>
+    <source>test047.c</source>
+    <abstract>函数ポインタを引数とし函数ポインタを返す函数の宣言</abstract>
+</item>
+
+<item>
+    <source>test048.c</source>
+    <abstract>クラス 名を typedef した名前でスコープ解決演算子を適用</abstract>
+</item>
+
+<item>
+    <source>test049.c</source>
+    <abstract>メンバ函数の定義を :: を使用してクラス宣言とは別に記述</abstract>
+</item>
+
+<item>
+    <source>test050.c</source>
+    <abstract>メンバ函数の宣言, メンバポインタの宣言に typedef された函数名を使用</abstract>
+</item>
+
+</test_item>

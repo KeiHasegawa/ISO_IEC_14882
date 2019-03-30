@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+struct T {
+  int a;
+  int b;
+  int c;
+} t = { 1, 2, 3 };
+
+int a = t.a;
+int b = t.b;
+int c = t.c;
+
+int main(void)
+{
+  printf("a = %d\n", a);
+  printf("b = %d\n", b);
+  printf("c = %d\n", c);
+  return 0;
+}

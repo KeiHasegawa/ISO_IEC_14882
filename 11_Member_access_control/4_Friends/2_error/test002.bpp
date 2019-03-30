@@ -1,0 +1,26 @@
+/* Friendship is neither inherited nor transitive. */
+
+class A {
+  friend class B;
+  int a;
+};
+
+class B {
+  friend class C;
+};
+
+class C {
+  void f(A* p)
+  {
+    p->a++; // error: C is not a friend of A
+            // despite being a friend of a friend
+  }
+};
+
+class D : public B {
+  void f(A* p)
+  {
+    p->a++; // error: D is not a friend of A
+            // despite being derived from a friend
+  }
+};

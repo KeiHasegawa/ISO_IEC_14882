@@ -1,0 +1,6 @@
+`A::A(int)' called with 5
+`C::C(int)' called with 5
+`B::g()' called
+j = 5
+`D::h()' called
+i = 5

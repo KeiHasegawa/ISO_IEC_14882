@@ -1,0 +1,3 @@
+A::f called
+B::f called
+bptr->f() return value : 5678

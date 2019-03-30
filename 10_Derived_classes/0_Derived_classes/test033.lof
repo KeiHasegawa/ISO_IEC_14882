@@ -1,0 +1,3 @@
+Y1::f called
+Y::g called
+p->g() return value : 1234

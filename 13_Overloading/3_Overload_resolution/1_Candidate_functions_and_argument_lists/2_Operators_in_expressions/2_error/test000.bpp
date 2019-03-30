@@ -1,0 +1,26 @@
+/*
+ * If no operand of an operator in an expression has a type that is a class or
+ * an enumeration, the operator is assumed to be a built-in operator and
+ * interpreted according to clause 5. [Note: because ., .*, and :: cannot be
+ * overloaded, these operators are always built-in operators interpreted
+ * according to clause 5. ?: cannot be overloaded, but the rules in this
+ * subclause are used to determine the conversions to be applied to the second
+ * and third operands when they have class or enumeration type (5.16).
+ */
+class String {
+public:
+  String (const String&);
+  String (char*);
+  operator char* ();
+};
+
+String operator + (const String&, const String&);
+
+void f(void)
+{
+  char* p= "one" + "two"; // ill-formed because neither
+                          // operand has user defined type
+  int I = 1 + 1; // Always evaluates to 2 even if
+                 // user defined types exist which
+                 // would perform the operation.
+}

@@ -1,0 +1,19 @@
+/*
+ * A template-argument can be deduced from a pointer to function or pointer to
+ * member function argument if the set of overloaded functions does not contain
+ * function templates and at most one of a set of overloaded functions provides
+ * a unique match.
+ */
+
+template<class T> void f(void(*)(T,int));
+template<class T> void foo(T,int);
+void g(int,int);
+void g(char,int);
+void h(int,int,int);
+void h(char,int);
+int m()
+{
+  f(&g); //error: ambiguous
+  f(&h); //OK: void h(char,int) is a unique match
+  f(&foo); //error: type deduction fails because foo is a template
+}

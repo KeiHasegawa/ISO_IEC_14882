@@ -1,0 +1,25 @@
+/*
+ * A trailing template-argument can be left unspecified in the template-id
+ * naming an explicit function template specialization provided it can be
+ * deduced from the function argument type.
+ */
+#include <stdio.h>
+
+template<class T> class Array { /* ... */ };
+template<class T> void sort(Array<T>& v);
+
+// explicit specialization for sort(Array<int>&)
+// with deduces template-argument of type int
+template<> void sort(Array<int>&);
+
+int main()
+{
+  Array<int> ai;
+  sort(ai);
+  return 0;
+}
+
+template<> void sort(Array<int>&)
+{
+  printf("sort(Array<int>&) called\n");
+}

@@ -1,0 +1,47 @@
+/*
+ * The entity declared by a using-declaration shall be known in the context
+ * using it according to its definition at the point of the using-declaration.
+ * Definitions added to the namespace after the using-declaration are not
+ * considered when a use of the name is made.
+ */
+#include <stdio.h>
+
+namespace A {
+  void f(int);
+}
+
+using A::f; // f is a synonym for A::f;
+            // that is, for A::f(int).
+
+namespace A {
+  void f(char);
+}
+
+void foo()
+{
+  f('a'); // calls f(int),
+}         // even though f(char) exists.
+
+void bar()
+{
+  using A::f; // f is a synonym for A::f;
+              // that is, for A::f(int) and A::f(char).
+  f('a');     // calls f(char)
+}
+
+int main()
+{
+  foo();
+  bar();
+  return 0;
+}
+
+void A::f(int a)
+{
+  printf("`A::f(int)' called with %d\n", a);
+}
+
+void A::f(char a)
+{
+  printf("`A::f(char)' called with '%c'\n", a);
+}

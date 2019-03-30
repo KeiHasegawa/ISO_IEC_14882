@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>unique final overrider と using-declaration</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>仮想函数を上書きするのに基底クラスの仮想函数が visible でなくてもよいことを示す例</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>戻り値は異なるが基底クラスの仮想函数を上書きする</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>戻り値が異なるため基底クラスの仮想函数を上書きできない例</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>多重継承における仮想函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>多重継承における仮想函数呼び出しが曖昧な例</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>菱形継承における仮想函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>2_error/test002.cpp</source>
+    <abstract>仮想函数が同型であるため菱形継承できない例</abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.cpp</source>
+    <abstract>上書きした仮想函数において基底クラスの上書きした仮想函数を呼び出す</abstract>
+</item>
+
+</test_item>

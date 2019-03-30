@@ -1,0 +1,27 @@
+/*
+ * The template-argument corresponding to a template template-parameter is
+ * deduced from the type of the template-argument of a class template
+ * specialization used in the argument list of a function call.
+ */
+#include <stdio.h>
+
+template <template <class T> class X> struct A { };
+
+template <template <class T> class X> void f(A<X>)
+{
+  printf("f(A<X>) called\n");
+}
+
+template<class T> struct B { };
+
+void g()
+{
+  A<B> ab;
+  f(ab); //calls f(A<B>)
+}
+
+int main()
+{
+  g();
+  return 0;
+}

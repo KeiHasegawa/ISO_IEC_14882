@@ -1,0 +1,6 @@
+test004.c:In function `DD::h'
+test004.c:15: error: `f' is private in this context.
+test004.c:16: error: `f' is private in this context.
+test004.c:17: error: `B' is private in this context.
+test004.c:18: error: `f' is private in this context.
+test004.c:19: error: `g' is private in this context.

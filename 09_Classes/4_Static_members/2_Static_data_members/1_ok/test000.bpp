@@ -1,0 +1,44 @@
+/*
+ * The declaration of a static data member in its class definition is not a
+ * definition and may be of an incomplete type other than cv-qualified void.
+ * The definition for a static data member shall appear in a namespace scope
+ * enclosing the member’s class definition. In the definition at namespace
+ * scope, the name of the static data member shall be qualified by its class
+ * name using the :: operator. The initializer expression in the definition of
+ * a static data member is in the scope of its class (3.3.6).
+ */
+#include <stdio.h>
+
+class process {
+  static process* run_chain;
+  static process* running;
+public:
+  static void check();
+};
+
+extern process* get_main();
+
+process* process::running = get_main();
+process* process::run_chain = running;
+
+int main()
+{
+  process::check();
+  return 0;
+}
+
+process* get_main()
+{
+  printf("`get_main' called\n");
+  static process ret;
+  return &ret;
+}
+
+void process::check()
+{
+  printf("`process::check' called\n");
+  if ( running == run_chain )
+    printf("ok\n");
+  else
+    printf("error\n");
+}

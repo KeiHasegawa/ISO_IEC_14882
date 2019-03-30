@@ -1,0 +1,69 @@
+#include <stdio.h>
+
+class B {
+  int a;
+public:
+  int b, c;
+  int bf();
+};
+
+class D : private B {
+  int d;
+public:
+  B::c;
+  int e;
+  int df();
+};
+
+int ef(D& r)
+{
+  printf("`ef' called\n");
+  r.c = 1;
+  printf("r.c = %d\n", r.c);
+  r.e = 2;
+  printf("r.e = %d\n", r.e);
+  return r.df();
+}
+
+int D::df()
+{
+  printf("`D::df' called\n");
+  static bool called = false;
+  if ( called )
+    return 0;
+  called = true;
+  b = 1;
+  printf("b = %d\n", b);
+  c = 2;
+  printf("c = %d\n", c);
+  int n = bf();
+  printf("n = %d\n", n);
+  d = 3;
+  printf("d = %d\n", d);
+  e = 4;
+  printf("e = %d\n", e);
+  return df();
+}
+
+int B::bf()
+{
+  printf("`B::bf' called\n");
+  static bool called = false;
+  if ( called )
+    return 0;
+  called = true;
+  a = 1;
+  printf("a = %d\n", a);
+  b = 2;
+  printf("b = %d\n", b);
+  c = 3;
+  printf("c = %d\n", c);
+  return bf();
+}
+
+int main()
+{
+  D d;
+  ef(d);
+  return 0;
+}

@@ -1,0 +1,16 @@
+/*
+ * Check Pointer declarations work well.
+ */
+const int ci = 10, *pc = &ci, *const cpc = pc, **ppc;
+int i, *p, *const cp = &i;
+
+void f()
+{
+  ci = 1; // error
+  ci++; //error
+  *pc = 2; // error
+  cp = &ci; // error
+  cpc++; //error
+  p = pc; // error
+  ppc = &p; // error
+}

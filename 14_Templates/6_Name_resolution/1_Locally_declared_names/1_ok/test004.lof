@@ -1,0 +1,2 @@
+f(T* p = new T) called
+p->m = 123

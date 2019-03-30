@@ -1,0 +1,17 @@
+/*
+ * When a member function, a member class, a static data member or a member
+ * template of a class template is defined outside of the class template
+ * definition, the member definition is defined as a template definition in
+ * which the template-parameters are those of the class template. The names of
+ * the template parameters used in the definition of the member may be
+ * different from the template parameter names used in the class template
+ * definition. The template argument list following the class template name in
+ * the member definition shall name the parameters in the same order as the one
+ * used in the template parameter list of the member.
+ */
+template<class T1, class T2> struct A {
+  void f1();
+  void f2();
+};
+template<class T2, class T1> void A<T2,T1>::f1() { } // OK
+template<class T2, class T1> void A<T1,T2>::f2() { } // error

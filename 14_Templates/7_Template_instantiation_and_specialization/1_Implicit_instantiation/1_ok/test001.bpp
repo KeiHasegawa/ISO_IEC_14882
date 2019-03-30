@@ -1,0 +1,38 @@
+/*
+ * A class template specialization is implicitly instantiated if the class type
+ * is used in a context that requires a completely-defined object type or if
+ * the completeness of the class type affects the semantics of the program;
+ * in particular, if an expression whose type is a class template
+ * specialization is involved in overload resolution, pointer conversion,
+ * pointer to member conversion, the class template specialization is
+ * implicitly instantiated (3.2); in addition, a class template specialization
+ * is implicitly instantiated if the operand of a delete expression is of class
+ * type or is of pointer to class type and the class type is a template
+ * specialization.
+ */
+#include <stdio.h>
+
+template<class T> class B { /* ... */ };
+template<class T> class D : public B<T> { /* ... */ };
+void f(void*);
+void f(B<int>*);
+void g(D<int>* p, D<char>* pp, D<double>* ppp)
+{
+  f(p); //instantiation of D<int> required: call f(B<int>*)
+  B<char>* q = pp; // instantiation of D<char> required:
+                   // convert D<char>* to B<char>*
+  delete ppp; // instantiation of D<double> required
+}
+
+int main()
+{
+  D<int> di;
+  D<char> dc;
+  g(&di,&dc,new D<double>());
+  return 0;
+}
+
+void f(B<int>*)
+{
+  printf("f(B<int>*) called\n");
+}

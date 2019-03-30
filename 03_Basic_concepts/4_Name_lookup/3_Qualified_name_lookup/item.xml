@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Qualified_name_lookup/item.xml">
+    <title>3.4.3 Qualified name lookup</title>
+</section>
+
+<section url="1_Class_members/item.xml">
+    <title>3.4.3.1 Class members</title>
+</section>
+
+<section url="2_Namespace_members/item.xml">
+    <title>3.4.3.2 Namespace members</title>
+</section>
+
+</test_item>

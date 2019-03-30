@@ -1,0 +1,19 @@
+/*
+ * In the definition of a class template or in the definition of a member of
+ * such a template that appears outside of the template definition, for each
+ * base class which does not depend on a template-parameter (14.6.2), if the
+ * name of the base class or the name of a member of the base class is the
+ * same as the name of a templateparameter, the base class name or member name
+ * hides the template-parameter name (3.3.7).
+ */
+
+struct A {
+  struct B { /* ... */ };
+  int a;
+  int Y;
+};
+
+template<class B, class a> struct X : A {
+  B b; // A's B
+  a b; // error: A's a isn't a type name
+};

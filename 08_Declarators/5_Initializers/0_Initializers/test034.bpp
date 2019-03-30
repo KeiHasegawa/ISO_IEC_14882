@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int a;
+
+int b = +1;
+
+int c = -1;
+
+int d = a ? b : c;
+
+int main()
+{
+  printf("%d ? %d : %d = %d\n", a, b, c, d);
+  return 0;
+}

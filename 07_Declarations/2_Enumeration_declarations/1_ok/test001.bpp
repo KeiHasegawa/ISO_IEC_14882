@@ -1,0 +1,20 @@
+/*
+ * Check point of declaration works well in enumerator definition.
+ */
+#include <stdio.h>
+
+void f()
+{
+  const int x = 12;
+  {
+    enum { x = x };
+    printf("x = %d\n", x);
+  }
+  printf("x = %d\n", x);
+}
+
+int main()
+{
+  f();
+  return 0;
+}

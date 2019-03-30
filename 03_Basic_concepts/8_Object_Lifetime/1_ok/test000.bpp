@@ -1,0 +1,36 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+struct B {
+  virtual void f(){ printf("`B::f' called\n"); }
+  void mutate();
+  virtual ~B(){ printf("`B::~B' called\n"); }
+};
+struct D1 : B { void f(){ printf("`D1::f' called\n"); } };
+struct D2 : B { void f(){ printf("`D2::f' called\n"); } };
+void B::mutate() {
+  new (this) D2; // reuses storage - ends the lifetime of *this
+  f(); //undefined behavior
+  B* p = this; // OK, this points to valid memory
+}
+
+void g() {
+  void* p = malloc(sizeof(D1) + sizeof(D2));
+  B* pb = new (p) D1;
+  pb->mutate();
+  &pb; //OK: pb points to valid memory
+  void* q = pb; // OK: pb points to valid memory
+  pb->f(); //undefined behavior, lifetime of *pb has ended
+}
+
+void test000()
+{
+  printf("`test000' called\n");
+  g();
+}
+
+int main()
+{
+  test000();
+  return 0;
+}

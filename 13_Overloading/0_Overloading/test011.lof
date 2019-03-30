@@ -1,0 +1,4 @@
+f(char) called with 'c'
+f(unsigned) called with 1
+f(int) called with 1
+f(long) called with 1

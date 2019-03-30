@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Throwing_an_exception/item.xml">
+    <title>15.1 Throwing an exception</title>
+</section>
+
+<section url="2_Constructors_and_destructors/item.xml">
+    <title>15.2 Constructors and destructors</title>
+</section>
+
+<section url="3_Handling_an_exception/item.xml">
+    <title>15.3 Handling an exception</title>
+</section>
+
+<section url="4_Exception_specifications/item.xml">
+    <title>15.4 Exception specifications</title>
+</section>
+
+<section url="5_Special_functions/item.xml">
+    <title>15.5 Special functions</title>
+</section>
+
+<section url="6_Exceptions_and_access/item.xml">
+    <title>15.6 Exceptions and access</title>
+</section>
+
+</test_item>

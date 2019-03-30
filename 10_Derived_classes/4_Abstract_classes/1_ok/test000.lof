@@ -1,0 +1,12 @@
+`f' called
+`line::draw' called
+`line::rotate' called with 5
+`line::draw' called
+`f' called
+`triangle::draw' called
+`triangle::rotate' called with 5
+`triangle::draw' called
+`f' called
+`rectangle::draw' called
+`rectangle::rotate' called with 5
+`rectangle::draw' called

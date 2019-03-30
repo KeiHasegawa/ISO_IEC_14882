@@ -1,0 +1,37 @@
+/*
+ * Non-dependent names used in a template definition are found using the usual
+ * name lookup and bound at the point they are used.
+ */
+#include <stdio.h>
+
+void g(double);
+void h();
+
+template<class T> class Z {
+public:
+  void f() {
+    g(1); // calls g(double)
+  }
+};
+
+void g(int); // not in scope at the point of the template
+             // definition, not considered for the call g(1)
+
+struct S {};
+
+int main()
+{
+  Z<S> zs;
+  zs.f();
+  return 0;
+}
+
+void g(double)
+{
+  printf("g(double) called\n");
+}
+
+void g(int)
+{
+  printf("g(int) called\n");
+}

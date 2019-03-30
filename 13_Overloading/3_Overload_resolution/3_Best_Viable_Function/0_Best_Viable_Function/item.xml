@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>ユーザ定義の変換が 2 通りある場合</abstract>
+</item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>ユーザ定義の変換が 2 通りある場合</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>曖昧な多重定義函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>多重定義函数のどちらも呼び出せる場合の曖昧性なしの呼び出
+    し</abstract>
+</item>
+
+<item>
+    <source>2_error/test002.cpp</source>
+    <abstract>多重定義函数の呼び出しによってデフォルト引数が
+    2 回定義される</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>デフォルト引数をもつ多重定義函数をデフォルト引数を
+    使用しないで呼び出す</abstract>
+</item>
+
+</test_item>

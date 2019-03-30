@@ -1,0 +1,2 @@
+enclose::inner::x = 1
+`enclose::inner::f' called with 3

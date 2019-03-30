@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+struct X {
+  int mem;
+};
+
+struct Y {
+  X mem;
+  Y(X x) : mem(x) {}
+};
+
+Y operator+(Y a, Y b)
+{
+  printf("operator+(Y,Y) called\n");
+  X ret;
+  ret.mem = a.mem.mem + b.mem.mem;
+  return Y(ret);
+}
+
+
+void f(X a, X b)
+{
+  Y y = a + b;
+  printf("y.mem.mem = %d\n", y.mem.mem);
+}
+
+int main()
+{
+  X a, b;
+  a.mem = 1;
+  b.mem = 2;
+  f(a,b);
+  return 0;
+}

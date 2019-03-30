@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+struct B {
+  int operator!()
+  {
+    printf("B::operator!() called\n");
+    return 123;
+  }
+  int g1();
+};
+
+struct D : B { int g2(); };
+
+int operator!(D&)
+{
+  printf("::operator!(D&) called\n");
+  return 456;
+}
+
+
+int f(D& d)
+{
+  return !d;
+}
+
+int main()
+{
+  D d;
+  printf("f(d) return value : %d\n", f(d));
+  return 0;
+}

@@ -1,0 +1,27 @@
+/*
+ * A class member of a class template may be defined outside the class
+ * template definition in which it is declared. [Note: the class member must
+ * be defined before its first use that requires an instantiation (14.7.1).
+ */
+#include <stdio.h>
+
+template<class T> struct A {
+  class B;
+};
+
+A<int>::B* b1; // OK: requires A to be defined but not A::B
+template<class T> class A<T>::B { public : int m; };
+A<int>::B b2; // OK: requires A::B to be defined
+
+void f(void)
+{
+  b1 = &b2;
+  printf("b1->m = %d\n", b1->m);
+}
+
+int main()
+{
+  b2.m = 3;
+  f();
+  return 0;
+}

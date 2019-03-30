@@ -1,0 +1,31 @@
+/*
+ * In the definition of a member of a class template that appears outside of
+ * the namespace containing the class template definition, the name of a
+ * template-parameter hides the name of a member of this namespace.
+ */
+#include <stdio.h>
+
+namespace N {
+  class C { public: int c; };
+  template<class T> class B {
+  public:
+    void f(T);
+  };
+}
+template<class C> void N::B<C>::f(C) {
+  C b; // C is the template parameter, not N::C
+  printf("%d\n", b.s = 123);
+}
+
+struct S {
+  int s;
+};
+
+int main()
+{
+  N::B<S> nbs;
+  S s;
+  nbs.f(s);
+  return 0;
+}
+

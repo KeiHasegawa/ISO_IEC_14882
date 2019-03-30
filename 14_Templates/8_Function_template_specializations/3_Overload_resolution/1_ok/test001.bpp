@@ -1,0 +1,40 @@
+/*
+ * Here is an example involving conversions on a function argument not
+ * involved in template-parameter deduction:
+ */
+#include <stdio.h>
+
+template<class T> void f(T*,int); // #1
+
+template<> void f(int*, int)
+{
+  printf("f(int*, int) called\n");
+}
+
+
+template<class T> void f(T,char); // #2
+
+template<> void f(int*, char)
+{
+  printf("f(int*, char) called\n");
+}
+
+template<> void f(int, char)
+{
+  printf("f(int, char) called\n");
+}
+
+void h(int* pi, int i, char c)
+{
+  f(pi,i); //#1: f<int>(pi,i)
+  f(pi,c); //#2: f<int*>(pi,c)
+  f(i,c); //#2: f<int>(i,c);
+  f(i,i); //#2: f<int>(i,char(i))
+}
+
+int main()
+{
+  int n;
+  h(&n,3,'c');
+  return 0;
+}

@@ -1,0 +1,22 @@
+/*
+ * A member or a member template may be nested within many enclosing class
+ * templates. If the declaration of an explicit specialization for such a
+ * member appears in namespace scope, the member declaration shall be preceded
+ * by a template<> for each enclosing class template that is explicitly
+ * specialized.
+ */
+#include <stdio.h>
+
+template<class T1> class A {
+  template<class T2> class B {
+    void mf();
+  };
+};
+template<> template<> class A<int>::B<double>;
+template<> template<> void A<char>::B<char>::mf();
+
+int main()
+{
+  printf("just ok compile test\n");
+  return 0;
+}

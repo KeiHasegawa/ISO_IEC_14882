@@ -1,0 +1,13 @@
+class B {
+public:
+  int a;
+private:
+  int b;
+protected:
+  int c;
+};
+
+class D : private B {
+protected:
+  B::a;
+};

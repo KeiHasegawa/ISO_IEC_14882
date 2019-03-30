@@ -1,0 +1,4 @@
+D::~D called
+B::bf called
+D::df called
+B::~B called

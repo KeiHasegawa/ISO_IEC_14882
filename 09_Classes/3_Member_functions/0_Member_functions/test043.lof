@@ -1,0 +1,6 @@
+`X::X(char)' called with 'x'
+`X::X(short int)' called with 1234
+`X::X(int)' called with 5678
+`X::X(float)' called with 123.250000
+`X::X(double)' called with 567.890000
+`X::X(long long)' called with 10

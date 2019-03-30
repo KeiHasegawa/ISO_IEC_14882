@@ -1,0 +1,42 @@
+/*
+ * Any number of access specifiers is allowed and no particular order is
+ * required.
+ */
+struct S {
+  int a; // S::a is public by default: struct used
+protected:
+  int b; // S::b is protected
+private:
+  int c; // S::c is private
+public:
+  int d; // S::d is public
+};
+
+void f()
+{
+  S s;
+  s.a;
+  s.b;  // error
+  s.c;  // error
+  s.d;
+}
+
+struct T {
+  void g()
+  {
+    a;
+    b; // error
+    c; // error
+    d;
+  }
+};
+
+struct T2 : S {
+  void g()
+  {
+    a;
+    b;
+    c; // error
+    d;
+  }
+};

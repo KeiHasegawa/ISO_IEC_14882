@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+class Substring;
+class String {
+public:
+  String(const char*){}
+  String& operator=(const String&);
+  String& operator=(const Substring&);
+  Substring& operator()(int position, int length);
+};
+
+class Substring {
+public:
+  operator String();
+  String& operator=(const String&)
+  {
+    printf("Substring::operator=(const String&) called\n");
+    return *new String("hase");
+  }
+  String& operator=(const Substring&);
+};
+
+int main()
+{
+  String month = "June";
+  month(2,3) = "ly";
+  return 0;
+}
+
+Substring& String::operator()(int position, int length)
+{
+  printf("String::operator()(int,int) called ");
+  printf("position = %d, length = %d\n", position, length);
+  return *new Substring();
+}

@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+struct T {
+  int i;
+};
+
+void f(T* ptr)
+{
+  int T::* pm;
+  pm = &T::i;
+  ptr->*pm = 1;
+  printf("ptr->*pm = %d\n",ptr->*pm);
+}
+
+int main()
+{
+  T t;
+  f(&t);
+  return 0;
+}

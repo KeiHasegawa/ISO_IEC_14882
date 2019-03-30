@@ -1,0 +1,22 @@
+namespace N {
+  int i;
+  int g(int a) { return a; }
+  int j();
+  void q();
+}
+namespace { int l=1; }
+// the potential scope of l is from its point of declaration
+// to the end of the translation unit
+namespace N {
+  int g(char a) // overloads N::g(int)
+  {
+    return l+a; // l is from unnamed namespace
+  }
+  int i; // error: duplicate definition
+  int j(); // OK: duplicate function declaration
+  int j() // OK: definition of N::j()
+  {
+    return g(i); // calls N::g(int)
+  }
+  int q(); // error: different return type
+}

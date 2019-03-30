@@ -1,0 +1,65 @@
+/*
+ * The typeid operator (5.2.8) can be used during construction or destruction
+ * (12.6.2). When typeid is used in a constructor (including from the
+ * mem-initializer for a data member) or in a destructor, or used in a function
+ * called (directly or indirectly) from a constructor or destructor, if the
+ * operand of typeid refers to the object under construction or destruction,
+ * typeid yields the type_info representing the constructor or destructor's
+ * class. If the operand of typeid refers to the object under construction or
+ * destruction and the static type of the operand is neither the constructor
+ * or destructor's class nor one of its bases, the result of typeid is
+ * undefined.
+ *
+ * Dynamic_casts (5.2.7) can be used during construction or destruction
+ * (12.6.2). When a dynamic_cast is used in a constructor (including from the
+ * mem-initializer for a data member) or in a destructor, or used in a function
+ * called (directly or indirectly) from a constructor or destructor, if the
+ * operand of the dynamic_cast refers to the object under construction or
+ * destruction, this object is considered to be a most derived object that has
+ * the type of the constructor or destructor's class. If the operand of the
+ * dynamic_cast refers to the object under construction or destruction and the
+ * static type of the operand is not a pointer to or object of the constructor
+ * or destructor's own class or one of its bases, the dynamic_cast results in
+ * undefined behavior.
+ */
+#include <stdio.h>
+#include <typeinfo>
+
+class V {
+public:
+  virtual void f();
+};
+class A : public virtual V { };
+class B : public virtual V {
+public:
+  B(V*, A*);
+};
+class D : public A, B {
+public:
+  D() : B((A*)this, this) { }
+};
+B::B(V* v, A* a) {
+  if ( typeid(B) == typeid(*this) )  // type_info for B
+    printf("ok\n");
+  else
+    printf("error\n");
+  if ( typeid(B) == typeid(*v) ) // well-defined: *v has type V, a base of B
+    printf("ok\n");              // yields type_info for B
+  else
+    printf("error\n");
+  if ( dynamic_cast<B*>(v) ) // well-defined: v of type V*, V base of B
+    printf("ok\n");          // results in B*
+  else
+    printf("error\n");
+}
+
+int main()
+{
+  D d;
+  return 0;
+}
+
+void V::f()
+{
+  printf("`V::f' called\n");
+}

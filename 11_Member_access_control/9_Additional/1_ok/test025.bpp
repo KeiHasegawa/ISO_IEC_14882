@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+class C {
+  struct S {
+    S();
+    ~S();
+  };
+public:
+  void f()
+  {
+    S s;
+  }
+};
+
+int main()
+{
+  C c;
+  c.f();
+  return 0;
+}
+
+C::S::S()
+{
+  printf("`C::S::S' called\n");
+}
+
+C::S::~S()
+{
+  printf("`C::S::~S' called\n");
+}

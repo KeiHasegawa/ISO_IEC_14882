@@ -1,0 +1,19 @@
+/*
+ * A locally declared function is not in the same scope as a function in a
+ * containing scope.
+ */
+int f(char*);
+void g()
+{
+  extern f(int);
+  f("asdf"); // error: f(int) hides f(char*)
+             // so there is no f(char*) in this scope
+}
+void caller ()
+{
+  extern void callee(int, int);
+  {
+    extern void callee(int); // hides callee(int, int)
+    callee(88, 99); // error: only callee(int) in scope
+  }
+}

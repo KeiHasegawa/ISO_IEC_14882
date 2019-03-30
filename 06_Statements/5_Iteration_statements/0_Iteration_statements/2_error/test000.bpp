@@ -1,0 +1,6 @@
+int f(int x)
+{
+  while (--x >= 0)
+    int i;
+  i; // undeclared
+}

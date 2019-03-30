@@ -1,0 +1,31 @@
+/*
+ * In the definition of a member of a nested class that appears outside of its
+ * class definition, the name of the member may be qualified by the names of
+ * enclosing classes of the member’s class even if these names are private
+ * members of their enclosing classes.
+ */
+#include <stdio.h>
+
+void f(void);
+
+class D {
+  friend void f(void);
+  class E {
+    friend void f(void);
+    static int m;
+  };
+};
+
+int D::E::m = 1; // OK, no access error on private E
+
+void f(void)
+{
+  printf("`f' called\n");
+  printf("D::E::m = %d\n", D::E::m);
+}
+
+int main()
+{
+  f();
+  return 0;
+}

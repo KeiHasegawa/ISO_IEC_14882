@@ -1,0 +1,31 @@
+/*
+ * Similarly, a nonstatic member shall not be used in a default argument
+ * expression, even if it is not evaluated, unless it appears as the
+ * id-expression of a class member access expression (5.2.5) or unless it is
+ * used to form a pointer to member (5.3.1).
+ */
+#include <stdio.h>
+
+int b;
+class X {
+public:
+  int a;
+  int mem2(int i = b); // OK; use X::b
+  static int b;
+};
+
+int main()
+{
+  X x;
+  b = 1;
+  X::b = 2;
+  x.mem2();
+  return 0;
+}
+
+int X::mem2(int i)
+{
+  printf("`X::mem2' called with %d\n", i);
+}
+
+int X::b;

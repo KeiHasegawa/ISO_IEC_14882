@@ -1,0 +1,7 @@
+a.x = 1, a.y = 2.000000
+b.x = 3.000000, b.y = 4.000000
+operator!=(const C<XL, Y>&, const C<XR, Y>&) called
+ok
+c.x = -5, c.y = 8.000000
+operator!=(const C<X, Y>&, const C<X, Y>&) called
+ok

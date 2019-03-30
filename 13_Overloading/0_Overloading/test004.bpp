@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+enum E { a };
+
+void f(int i)
+{
+  printf("f(int) called with %d\n", i);
+}
+
+void f(E i)
+{
+  printf("f(E) called with %d\n", i);
+}
+
+int main()
+{
+  f(a);
+  f(1);
+  return 0;
+}
+

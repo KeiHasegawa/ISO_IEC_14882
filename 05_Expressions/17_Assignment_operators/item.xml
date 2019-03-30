@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>代入演算子の結果を左辺値として使用</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>基底クラスのオブジェクトに派生クラスのオブジェクトを代入
+    </abstract>
+</item>
+
+</test_item>

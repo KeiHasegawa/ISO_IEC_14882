@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Templates/item.xml">
+    <title>14 Templates</title>
+</section>
+
+<section url="1_Template_parameters/item.xml">
+    <title>14.1 Template parameters</title>
+</section>
+
+<section url="2_Names_of_template_specializations/item.xml">
+    <title>14.2 Names of template specializations</title>
+</section>
+
+<section url="3_Template_arguments/item.xml">
+    <title>14.3 Template arguments</title>
+</section>
+
+<section url="4_Type_equivalence/item.xml">
+    <title>14.4 Type equivalence</title>
+</section>
+
+<section url="5_Template_declarations/item.xml">
+    <title>14.5 Template declarations</title>
+</section>
+
+<section url="6_Name_resolution/item.xml">
+    <title>14.6 Name resolution</title>
+</section>
+
+<section url="7_Template_instantiation_and_specialization/item.xml">
+    <title>14.7 Template instantiation and specialization</title>
+</section>
+
+<section url="8_Function_template_specializations/item.xml">
+    <title>14.8 Function template specializations</title>
+</section>
+
+</test_item>

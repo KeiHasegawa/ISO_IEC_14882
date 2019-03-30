@@ -1,0 +1,14 @@
+/*
+ * When the normal name of the template (i.e., the name from the enclosing
+ * scope, not the injected-classname) is used without a template-argument-list,
+ * it refers to the class template itself and not a specialization of the
+ * template.
+ */
+
+template <class T> class X {
+  X* p; // meaning X<T>
+  X<T>* p2;
+  X<int>* p3;
+  ::X* p4; // error: missing template argument list
+           // ::X does not refer to the injected-class-name
+};

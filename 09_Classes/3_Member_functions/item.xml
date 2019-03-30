@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Member_functions/item.xml">
+    <title>9.3 Member functions</title>
+</section>
+
+<section url="1_Nonstatic_member_functions/item.xml">
+    <title>9.3.1 Nonstatic member functions</title>
+</section>
+
+<section url="2_The_this_pointer/item.xml">
+    <title>9.3.2 The this pointer</title>
+</section>
+
+</test_item>

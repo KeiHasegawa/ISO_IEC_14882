@@ -1,0 +1,12 @@
+/*
+ * Note: there are no standard conversions (clause 4) of one
+ * pointer-to-function type into another. In particular, even if B is a public
+ * base of D, we have
+ */
+class B {};
+class D : public B {};
+
+D* f();
+B* (*p1)() = &f; // error
+void g(D*);
+void (*p2)(B*) = &g; // error

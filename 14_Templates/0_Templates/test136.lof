@@ -1,0 +1,2 @@
+S::f() called
+S<A,B,C>::f(D) called

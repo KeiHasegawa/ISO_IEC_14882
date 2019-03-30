@@ -1,0 +1,2 @@
+X<int>::s = 123
+X<char*>::s = hello

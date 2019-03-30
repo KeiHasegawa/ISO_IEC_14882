@@ -1,0 +1,7 @@
+S::S(long) called with 3
+S::operator int() called
+f(long) called with 3
+S::S(long) called with 1
+g(S) called
+S::S(long) called with 2
+h(const S&) called

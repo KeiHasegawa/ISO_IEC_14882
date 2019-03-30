@@ -1,0 +1,9 @@
+class B {
+public:
+  int a;
+};
+
+class D : public B {
+private:
+  B::a;
+};

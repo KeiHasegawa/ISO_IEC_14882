@@ -1,0 +1,57 @@
+/*
+ * Throwing an exception transfers control to a handler. An object is passed
+ * and the type of that object determines which handlers can catch it.
+ */
+
+#include <stdio.h>
+
+void f(){ throw "Help!"; }
+
+void g()
+{
+  try {
+    f();
+  }
+  catch(const char* p) {
+    // handle character string exceptions here
+    printf("%s\n", p);
+  }
+}
+
+class Overflow {
+  char op;
+  double x;
+  double y;
+public:
+  Overflow(char o, double xx, double yy) : op(o), x(xx), y(yy) {}
+  void print()
+  {
+    printf("%f %c \n", x, op);
+  }
+};
+
+void f2(double x)
+{
+  // ...
+  throw Overflow('+',x,3.45e107);
+}
+
+void h()
+{
+  try {
+    // ...
+    f2(1.2);
+    // ...
+  }
+  catch(Overflow& oo) {
+    // handle exceptions of type Overflow here
+    oo.print();
+  }
+}
+
+int main()
+{
+  g();
+  h();
+  return 0;
+}

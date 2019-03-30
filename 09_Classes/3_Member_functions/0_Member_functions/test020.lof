@@ -1,0 +1,4 @@
+operator & called
+i = 1234
+operator & called
+*&x = 1234

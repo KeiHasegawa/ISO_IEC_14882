@@ -1,0 +1,5 @@
+/* Friend declarations shall not declare partial specializations. */
+template<class T> class A { };
+class X {
+  template<class T> friend class A<T*>; // error
+};

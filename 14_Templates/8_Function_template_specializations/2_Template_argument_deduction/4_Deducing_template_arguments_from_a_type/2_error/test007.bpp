@@ -1,0 +1,12 @@
+/*
+ * A template type-parameter cannot be deduced from the type of a function
+ * default argument.
+ */
+
+template <class T> void f(T = 5, T = 7);
+void g()
+{
+  f(1); //OK: call f<int>(1,7)
+  f(); //error: cannot deduce T
+  f<int>(); //OK: call f<int>(5,7)
+}

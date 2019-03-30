@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+char g(int);
+int (*pfe)(...) = (int (*)(...))&g;
+
+int main()
+{
+  printf("pfe() return value %d\n", pfe(3));
+  return 0;
+}
+
+char g(int i)
+{
+  printf("g(int) called with %d\n", i);
+  return 'c';
+}
+

@@ -1,0 +1,6 @@
+`g' called
+`DD::f' called
+b.mi = 3
+b.si = 3
+::B::si = 3
+bp2->mi = 3

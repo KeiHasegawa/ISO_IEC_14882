@@ -1,0 +1,25 @@
+/*
+ * A default argument is not part of the type of a function.
+ */
+#include <stdio.h>
+
+int f(int = 0);
+void h()
+{
+  int j = f(1);
+  int k = f(); // OK, means f(0)
+}
+int (*p1)(int) = &f;
+
+int main()
+{
+  h();
+  (*p1)(2);
+  return 0;
+}
+
+int f(int a)
+{
+  printf("`f' called with %d\n", a);
+  return a + 2;
+}

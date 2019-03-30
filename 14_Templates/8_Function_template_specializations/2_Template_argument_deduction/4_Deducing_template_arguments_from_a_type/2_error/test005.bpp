@@ -1,0 +1,22 @@
+/*
+ * If, in the declaration of a function template with a non-type
+ * template-parameter, the non-type templateparameter is used in an expression
+ * in the function parameter-list and, if the corresponding templateargument
+ * is deduced, the template-argument type shall match the type of the
+ * template-parameter exactly, except that a template-argument deduced from an
+ * array bound may be of any integral type.
+ */
+
+template<int i> class A { /* ... */ };
+template<short s> void f(A<s>);
+void k1() {
+  A<1> a;
+  f(a); //error: deduction fails for conversion from int to short
+  f<1>(a); //OK
+}
+template<const short cs> class B { };
+template<short s> void h(B<s>);
+void k2() {
+  B<1> b;
+  h(b); //OK: cv-qualifiers are ignored on template parameter types
+}

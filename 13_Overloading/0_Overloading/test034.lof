@@ -1,0 +1,2 @@
+X::operator+(int) called with 1
+::operator+(X,double d) called with d = 1.000000

@@ -1,0 +1,14 @@
+/*
+ * Certain function declarations cannot be overloaded:
+ * ...
+ * - Parameter declarations that differ only in the presence or absence of
+ *   const and/or volatile are equivalent. That is, the const and volatile
+ *   type-specifiers for each parameter type are ignored when determining
+ *   which function is being declared, defined, or called.
+ * ...
+ */
+typedef const int cInt;
+int f (int);
+int f (const int); // redeclaration of f(int)
+int f (int) { ... } // definition of f(int)
+int f (cInt) { ... } // error: redefinition of f(int)

@@ -1,0 +1,7 @@
+struct S {
+  S();
+  ~S();
+};
+typedef struct S T;
+S a = T(); // OK
+struct T * p; // error

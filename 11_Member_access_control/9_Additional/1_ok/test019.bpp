@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+class B {
+public:
+  virtual void f();
+};
+
+class D : public B {
+private:
+  void f();
+};
+
+void f()
+{
+  D d;
+  B* pb = &d;
+  pb->f();
+}
+
+int main()
+{
+  f();
+  return 0;
+}
+
+void B::f()
+{
+  printf("`B::f' called\n");
+}
+
+void D::f()
+{
+  printf("`D::f' called\n");
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Class_templates/item.xml">
+    <title>14.5.1 Class templates</title>
+</section>
+
+<section url="1_Member_functions_of_class_templates/item.xml">
+    <title>14.5.1.1 Member functions of class templates</title>
+</section>
+
+<section url="2_Member_classes_of_class_templates/item.xml">
+    <title>14.5.1.2 Member classes of class templates</title>
+</section>
+
+<section url="3_Static_data_members_of_class_templates/item.xml">
+    <title>14.5.1.3 Static data members of class templates</title>
+</section>
+
+</test_item>

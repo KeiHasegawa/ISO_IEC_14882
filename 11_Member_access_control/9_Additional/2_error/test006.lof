@@ -1,0 +1,1 @@
+test006.c:8: error: cannot declare member `B::c' within `D'.

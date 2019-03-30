@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>test000.cpp</source>
+    <abstract>base クラスのメンバ参照</abstract>
+</item>
+
+<item>
+    <source>test001.cpp</source>
+    <abstract>base クラスのメンバ函数参照</abstract>
+</item>
+
+<item>
+    <source>test002.cpp</source>
+    <abstract>単純な多重継承</abstract>
+</item>
+
+<item>
+    <source>test003.cpp</source>
+    <abstract>ネストした多重継承</abstract>
+</item>
+
+<item>
+    <source>test004.cpp</source>
+    <abstract>ネストした多重継承におけるメンバ参照</abstract>
+</item>
+
+<item>
+    <source>test005.cpp</source>
+    <abstract>ネストした多重継承におけるポインタの変換</abstract>
+</item>
+
+<item>
+    <source>test006.cpp</source>
+    <abstract>ネストした多重継承におけるポインタの変換(函数引数)</abstract>
+</item>
+
+<item>
+    <source>test007.cpp</source>
+    <abstract>ネストした多重継承におけるポインタの変換(函数引数)</abstract>
+</item>
+
+<item>
+    <source>test008.cpp</source>
+    <abstract>菱形継承</abstract>
+</item>
+
+<item>
+    <source>test009.cpp</source>
+    <abstract>菱形継承</abstract>
+</item>
+
+<item>
+    <source>test010.cpp</source>
+    <abstract>菱形継承</abstract>
+</item>
+
+<item>
+    <source>test011.cpp</source>
+    <abstract>多重継承における基底クラスの曖昧性のないメンバ参照</abstract>
+</item>
+
+<item>
+    <source>test012.cpp</source>
+    <abstract>多重継承における基底クラスの static メンバ, enumerator
+    literal 参照</abstract>
+</item>
+
+<item>
+    <source>test013.cpp</source>
+    <abstract>多重継承における基底クラスの qualifier 付きのメンバ参照</abstract>
+</item>
+
+<item>
+    <source>test014.cpp</source>
+    <abstract>菱形継承における基底クラスの曖昧性のないメンバ参照
+    </abstract>
+</item>
+
+<item>
+    <source>test015.cpp</source>
+    <abstract>菱形継承における基底クラスの曖昧性のないメンバ参照
+    </abstract>
+</item>
+
+<item>
+    <source>test016.cpp</source>
+    <abstract>菱形継承における基底クラスの曖昧性のないメンバ参照
+    </abstract>
+</item>
+
+<item>
+    <source>test017.cpp</source>
+    <abstract>菱形継承におけるポインタの変換(初期化)</abstract>
+</item>
+
+<item>
+    <source>test018.cpp</source>
+    <abstract>多重継承における qualifier 付きの曖昧でない基底クラス
+    のメンバ参照</abstract>
+</item>
+
+<item>
+    <source>test019.cpp</source>
+    <abstract>多重継承における qualifier 付きの曖昧でない基底クラス
+    のメンバ参照</abstract>
+</item>
+
+<item>
+    <source>test020.cpp</source>
+    <abstract>多重継承における qualifier なしでの曖昧でない基底クラス
+    のメンバ参照</abstract>
+</item>
+
+<item>
+    <source>test021.cpp</source>
+    <abstract>多重継承における qualifier 付き, qualifier なしでの曖昧でない基底クラス
+    のメンバ参照</abstract>
+</item>
+
+<item>
+    <source>test022.cpp</source>
+    <abstract>仮想函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>test023.cpp</source>
+    <abstract>override した仮想函数呼び出しで基底クラスの仮想函数を呼
+    び出す</abstract>
+</item>
+
+<item>
+    <source>test024.cpp</source>
+    <abstract>override した仮想函数呼び出しで自分自身を呼
+    び出す</abstract>
+</item>
+
+<item>
+    <source>test025.cpp</source>
+    <abstract>仮想函数が override されている状況で qualifier 付きで
+    基底クラスのメンバを呼び出す</abstract>
+</item>
+
+<item>
+    <source>test026.cpp</source>
+    <abstract>仮想函数を override せずに隠す</abstract>
+</item>
+
+<item>
+    <source>test027.cpp</source>
+    <abstract>仮想函数を override せずに隠す</abstract>
+</item>
+
+<item>
+    <source>test028.cpp</source>
+    <abstract>仮想函数の戻り型は異なるが合法</abstract>
+</item>
+
+<item>
+    <source>test030.cpp</source>
+    <abstract>実行時ズバリの型情報のエミュレート</abstract>
+</item>
+
+<item>
+    <source>test031.cpp</source>
+    <abstract>抽象クラス</abstract>
+</item>
+
+<item>
+    <source>test032.cpp</source>
+    <abstract>抽象クラスヘのポインタ, リファレンスの宣言, 函数戻り型に
+    指定, 引数に指定</abstract>
+</item>
+
+<item>
+    <source>test033.cpp</source>
+    <abstract>純粋仮想関数を一部のみ override 定義</abstract>
+</item>
+
+<item>
+    <source>test034.cpp</source>
+    <abstract>純粋仮想関数の一部のみ override 定義, 宣言</abstract>
+</item>
+
+<item>
+    <source>test036.cpp</source>
+    <abstract>抽象クラスの純粋仮想関数を定義</abstract>
+</item>
+
+<item>
+    <source>test037.cpp</source>
+    <abstract>派生クラスのメンバ函数で基底クラスの public メンバを参照</abstract>
+</item>
+
+<item>
+    <source>test037.cpp</source>
+    <abstract>派生クラスのメンバ函数で基底クラスの public メンバを参照</abstract>
+</item>
+
+<item>
+    <source>test038.cpp</source>
+    <abstract>多重継承での基底クラスのメンバ呼び出し</abstract>
+</item>
+
+<item>
+    <source>test039.cpp</source>
+    <abstract>仮想基底クラスをもつ派生クラス</abstract>
+</item>
+
+<item>
+    <source>test040.cpp</source>
+    <abstract>仮想基底クラスのメンバ函数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test041.cpp</source>
+    <abstract>菱形継承におけるポインタの変換(代入)</abstract>
+</item>
+
+<item>
+    <source>test042.cpp</source>
+    <abstract>仮想基底クラスを複数もつ派生クラス</abstract>
+</item>
+
+<item>
+    <source>test043.cpp</source>
+    <abstract>重なった菱形継承</abstract>
+</item>
+
+<item>
+    <source>test044.cpp</source>
+    <abstract>重なった菱形継承</abstract>
+</item>
+
+<item>
+    <source>test045.cpp</source>
+    <abstract>仮想函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>test046.cpp</source>
+    <abstract>基底クラスが仮想函数を宣言している派生クラス</abstract>
+</item>
+
+<item>
+    <source>test047.cpp</source>
+    <abstract>基底クラスの仮想函数を派生クラスで override</abstract>
+</item>
+
+<item>
+    <source>test048.cpp</source>
+    <abstract>派生クラスの型のポインタを基底クラスの型のポインタにキャスト</abstract>
+</item>
+
+<item>
+    <source>test049.cpp</source>
+    <abstract>基底クラスの型のポインタを引数に取る函数を
+    派生クラスの型のポインタを引数として呼び出す</abstract>
+</item>
+
+<item>
+    <source>test050.cpp</source>
+    <abstract>仮想函数を参照するが函数呼び出し演算子を適用しない</abstract>
+</item>
+
+<item>
+    <source>test051.cpp</source>
+    <abstract>菱形継承における基底クラスの曖昧性のないメンバ参照
+    </abstract>
+</item>
+
+<item>
+    <source>test052.cpp</source>
+    <abstract>菱形継承における基底クラスの曖昧性のないメンバ参照
+    </abstract>
+</item>
+
+<item>
+    <source>test053.cpp</source>
+    <abstract>菱形継承における基底クラスの曖昧性のないメンバ参照
+    </abstract>
+</item>
+
+<item>
+    <source>test054.cpp</source>
+    <abstract>test016 で A4 の基底を変更
+    </abstract>
+</item>
+
+<item>
+    <source>test055.cpp</source>
+    <abstract>仮想基底クラスに仮想函数が宣言されている菱形継承
+    </abstract>
+</item>
+
+<item>
+    <source>test056.cpp</source>
+    <abstract>仮想基底クラスに仮想函数が宣言されている菱形継承
+    </abstract>
+</item>
+
+<item>
+    <source>test057.cpp</source>
+    <abstract>仮想基底クラスのメンバをポインタ経由で参照
+    </abstract>
+</item>
+
+<item>
+    <source>test058.cpp</source>
+    <abstract>菱形継承における基底クラスの曖昧性のないメンバ参照. qualifier 付き.
+    </abstract>
+</item>
+
+<item>
+    <source>test059.cpp</source>
+    <abstract>仮想基底クラスへの派生クラスの代入
+    </abstract>
+</item>
+
+<item>
+    <source>test060.cpp</source>
+    <abstract>菱形継承における基底クラスへの派生クラスの代入
+    </abstract>
+</item>
+
+<item>
+    <source>test061.cpp</source>
+    <abstract>菱形継承でない多重継承における基底クラスへの派生クラスの代入
+    </abstract>
+</item>
+
+<item>
+    <source>test062.cpp</source>
+    <abstract>多重継承における基底クラスのメンバ函数の呼び出し
+    </abstract>
+</item>
+
+<item>
+    <source>test063.cpp</source>
+    <abstract>菱形継承における基底クラスのメンバポインタの適用
+    </abstract>
+</item>
+
+<item>
+    <source>test064.cpp</source>
+    <abstract>菱形継承でない多重継承における基底クラスのメンバポインタの適用
+    </abstract>
+</item>
+
+<item>
+    <source>test065.cpp</source>
+    <abstract>多重継承における基底クラスのメンバ参照
+    </abstract>
+</item>
+
+<item>
+    <source>test066.cpp</source>
+    <abstract>菱形継承における基底クラスのメンバポインタの適用
+    </abstract>
+</item>
+
+<item>
+    <source>test067.c</source>
+    <abstract>仮想基底クラスのメンバを qualifier 付きで参照
+    </abstract>
+</item>
+
+<item>
+    <source>test068.c</source>
+    <abstract>メンバポインタ経由での仮想函数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test069.c</source>
+    <abstract>不完全型構造体 B へのポインタ pb を宣言し, 完全型 B の宣言をし,
+    B の派生 D のポインタを pb に代入    
+    </abstract>
+</item>
+
+<item>
+    <source>test070.c</source>
+    <abstract>入れ子のクラスを基底とするクラスの宣言</abstract>
+</item>
+
+<item>
+    <source>test071.c</source>
+    <abstract>基底クラスで宣言された typedef 名を参照</abstract>
+</item>
+
+<item>
+    <source>test072.c</source>
+    <abstract>入れ子のクラスを基底とするクラスの宣言</abstract>
+</item>
+
+<item>
+    <source>test073.c</source>
+    <abstract>上書きした仮想函数をさらに上書き</abstract>
+</item>
+
+<item>
+    <source>test074.c</source>
+    <abstract>基底クラスのメンバを修飾子付きで参照</abstract>
+</item>
+
+</test_item>

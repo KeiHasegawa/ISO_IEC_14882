@@ -1,0 +1,27 @@
+/*
+ * Note: Addresses of array elements and names or addresses of non-static class
+ * members are not acceptable template-arguments.
+ */
+#include <stdio.h>
+
+template<int* p> class X {
+public:
+  void f();
+};
+struct S { int m; static int s; } s;
+X<&S::s> x6; // OK: address of static member
+
+int main()
+{
+  S::s = 5;
+  x6.f();
+  return 0;
+}
+
+int S::s;
+
+template<int* p> void X<p>::f()
+{
+  printf("`X::f()' called\n");
+  printf("*p = %d\n", *p);
+}

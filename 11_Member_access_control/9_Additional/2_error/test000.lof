@@ -1,0 +1,2 @@
+test000.c:In function `Y::f'
+test000.c:9: error: `i' is private in this context.

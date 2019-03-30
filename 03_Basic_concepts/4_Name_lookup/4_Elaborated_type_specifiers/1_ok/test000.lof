@@ -1,0 +1,16 @@
+`test000' called
+`g' called
+ok
+`g' called
+ok
+`test001' called
+`h' called
+ok
+`i' called
+p->i = 2
+`i' called
+p->i = 2
+`Data::f' called
+b.i = 4
+`Base::Data::f' called
+b.i = 5

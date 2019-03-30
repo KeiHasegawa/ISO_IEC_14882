@@ -1,0 +1,2 @@
+test010.c:10: error: invalid access declaration for `public f'.
+test010.c:3: error: `f' is declared as private.

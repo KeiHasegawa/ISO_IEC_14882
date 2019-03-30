@@ -1,0 +1,10 @@
+`f' called
+s.a = 1
+s.b = 2
+s.c = 3
+s.d = 4
+`S::g' called
+a = 1
+b = 2
+c = 3
+d = 4

@@ -1,0 +1,2 @@
+test024.c:In function `f'
+test024.c:15: error: `f' is private in this context.

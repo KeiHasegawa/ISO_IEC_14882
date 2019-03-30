@@ -1,0 +1,2 @@
+foo::operator char() called
+ostream::operator <<(char) called with 'a'

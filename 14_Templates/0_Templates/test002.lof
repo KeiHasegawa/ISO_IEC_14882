@@ -1,0 +1,7 @@
+(*current_window)[0].id = 7
+(*current_window)[1].id = 5
+(*current_window)[2].id = 3
+Point::print called
+Line::print called
+Triangle::print called
+Polygon::print called

@@ -1,0 +1,7 @@
+`f' called
+pb->b = 1
+px->b = 2, px->x = 3
+py->b = 4, py->y = 5
+pz->b = 6, pz->z = 7
+paa->X::b = 8, paa->x = 9, paa->y = 10
+paa->z = 11, paa->Z::b = 12

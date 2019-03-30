@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void f(int i)
+{
+  printf("f(int) called with %d\n", i);
+}
+
+void f(double d)
+{
+  printf("f(double) called with %f\n", d);
+}
+
+int main()
+{
+  short aa = 1;
+  float ff = 1.0;
+
+  f(aa);
+  f(ff);
+
+  return 0;
+}

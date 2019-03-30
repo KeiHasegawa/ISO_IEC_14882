@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+class X {
+public:
+  X operator~()
+  {
+    printf("operator ~ called\n");
+    return *this;
+  }
+};
+
+int main()
+{
+  X x;
+  ~x;
+  return 0;
+}

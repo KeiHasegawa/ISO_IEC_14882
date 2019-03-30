@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Namespaces/item.xml">
+    <title>7.3 Namespaces</title>
+</section>
+
+<section url="1_Namespace_definition/item.xml">
+    <title>7.3.1 Namespace definition</title>
+</section>
+
+<section url="2_Namespace_alias/item.xml">
+    <title>7.3.2 Namespace alias</title>
+</section>
+
+<section url="3_The_using_declaration/item.xml">
+    <title>7.3.3 The using declaration</title>
+</section>
+
+<section url="4_Using_directive/item.xml">
+    <title>7.3.4 Using directive</title>
+</section>
+
+</test_item>

@@ -1,0 +1,28 @@
+/*
+ * If a name does not depend on a template-parameter (as defined in 14.6.2), a
+ * declaration (or set of declarations) for that name shall be in scope at the
+ * point where the name appears in the template definition; the name is bound
+ * to the declaration (or declarations) found at that point and this binding
+ * is not affected by declarations that are visible at the point of
+ * instantiation.
+ */
+
+void f(char);
+
+template<class T> void g(T t)
+{
+  f(1); // f(char)
+  f(T(1)); //dependent
+  f(t); //dependent
+  dd++; //not dependent
+        // error: declaration for dd not found
+}
+
+void f(int);
+double dd;
+void h()
+{
+  g(2); //will cause one call of f(char) followed
+        // by two calls of f(int)
+  g('a'); //will cause three calls of f(char)
+}

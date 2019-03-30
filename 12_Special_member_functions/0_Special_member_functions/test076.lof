@@ -1,0 +1,2 @@
+p->mem = 1, q->mem = 2, r->mem = 3
+a.mem = 1, b.mem = 1, c.mem = 1

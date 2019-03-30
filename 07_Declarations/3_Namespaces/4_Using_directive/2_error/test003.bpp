@@ -1,0 +1,27 @@
+/*
+ * If name lookup finds a declaration for a name in two different namespaces,
+ * and the declarations do not declare the same entity and do not declare
+ * functions, the use of the name is ill-formed. [Note: in particular, the
+ * name of an object, function or enumerator does not hide the name of a class
+ * or enumeration declared in a different namespace.
+ */
+namespace A {
+  class X { };
+  extern "C" int g();
+  extern "C++" int h();
+}
+
+namespace B {
+  void X(int);
+  extern "C" int g();
+  extern "C++" int h();
+}
+
+using namespace A;
+using namespace B;
+
+void f() {
+  X(1); // error: name X found in two namespaces
+  g();  // okay: name g refers to the same entity
+  h();  // error: name h found in two namespaces
+}

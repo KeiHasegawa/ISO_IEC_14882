@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+struct B {
+  int i;
+  void verbose()
+  {
+    printf("B::verbose called\n");
+    printf("i = %d\n", i);
+  }
+};
+
+void f(B* bp)
+{
+  bp->verbose();
+}
+
+struct D : public B {
+  int j;
+};
+
+int main()
+{
+  D d;
+  d.i = 3;
+  d.j = 4;
+  printf("d.i = %d, d.j = %d\n", d.i, d.j);
+  f(&d);
+  return 0;
+}

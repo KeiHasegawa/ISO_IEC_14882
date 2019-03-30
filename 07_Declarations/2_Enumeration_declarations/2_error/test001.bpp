@@ -1,0 +1,15 @@
+class X {
+public:
+  enum direction { left='l', right='r' };
+  int f(int i)
+  { return i==left ? 0 : i==right ? 1 : 2; }
+};
+void g(X* p)
+{
+  direction d; // error: direction not in scope
+  int i;
+  i = p->f(left); // error: left not in scope
+  i = p->f(X::right); // OK
+  i = p->f(p->left); // OK
+  // ...
+}

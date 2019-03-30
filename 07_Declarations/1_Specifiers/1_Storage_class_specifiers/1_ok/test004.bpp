@@ -1,0 +1,27 @@
+/*
+ * Declaration of data member whose type is pointer to const int is OK
+ * even if with mutable.
+ */
+#include <stdio.h>
+
+struct S {
+  mutable const int* p;
+};
+
+void f(const S* ps)
+{
+  printf("`f' called\n");
+  static int n = 2;
+  ps->p = &n;
+}
+
+int main()
+{
+  int n = 5;
+  S s;
+  s.p = &n;
+  printf("*s.p = %d\n", *s.p);
+  f(&s);
+  printf("*s.p = %d\n", *s.p);
+  return 0;
+}

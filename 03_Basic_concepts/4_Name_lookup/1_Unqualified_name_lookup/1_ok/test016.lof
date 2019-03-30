@@ -1,0 +1,9 @@
+`test000' called
+x = 1
+A::f1 called
+x = 3
+b.i = 5
+A::f2 called
+x = 4.000000
+b.i = 6
+y = 7.000000

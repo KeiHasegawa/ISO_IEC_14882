@@ -1,0 +1,28 @@
+/*
+ * A using-declaration is a declaration and can therefore be used repeatedly
+ * where (and only where) multiple declarations are allowed.
+ */
+namespace A {
+  int i;
+}
+
+namespace A1 {
+  using A::i;
+  using A::i; // OK: double declaration
+}
+
+void f()
+{
+  using A::i;
+  using A::i; // error: double declaration
+}
+
+class B {
+public:
+  int i;
+};
+
+class X : public B {
+  using B::i;
+  using B::i; // error: double member declaration
+};

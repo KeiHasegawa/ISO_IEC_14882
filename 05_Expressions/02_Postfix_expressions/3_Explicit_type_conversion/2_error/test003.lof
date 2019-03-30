@@ -1,0 +1,2 @@
+test003.cpp: ”Ÿ” `f' :
+test003.cpp:3: error: syntax error before `+' token.

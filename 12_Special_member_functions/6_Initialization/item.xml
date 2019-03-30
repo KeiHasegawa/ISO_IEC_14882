@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Explicit_initialization/item.xml">
+    <title>12.6.1 Explicit initialization</title>
+</section>
+
+<section url="2_Initializing_bases_and_members/item.xml">
+    <title>12.6.2 Initializing bases and members</title>
+</section>
+
+</test_item>

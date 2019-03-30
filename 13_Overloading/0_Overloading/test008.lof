@@ -1,0 +1,3 @@
+buffer::buffer(int) called with 3
+buffer::buffer(int, char*) called
+D::D called

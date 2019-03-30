@@ -1,0 +1,16 @@
+`f' called
+`local::h' called
+loc.h() return value 0
+`local::k' called
+loc.k() return value 0
+`local::l' called
+`g' called
+loc.l() return value -5
+`f' called
+`local::h' called
+loc.h() return value 1
+`local::k' called
+loc.k() return value -1
+`local::l' called
+`g' called
+loc.l() return value -5

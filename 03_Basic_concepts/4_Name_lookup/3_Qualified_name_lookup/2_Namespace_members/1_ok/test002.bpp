@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+namespace B {
+  int b;
+}
+namespace A {
+  using namespace B;
+  int a;
+}
+namespace B {
+  using namespace A;
+}
+void f()
+{
+  printf("A::a = %d, B::b = %d\n", A::a, B::b);
+  A::a++; //OK: a declared directly in A, S is { A::a }
+  printf("A::a = %d, B::b = %d\n", A::a, B::b);
+  B::a++; //OK: both A and B searched (once), S is { A::a }
+  printf("A::a = %d, B::b = %d\n", A::a, B::b);
+  A::b++; //OK: both A and B searched (once), S is { B::b }
+  printf("A::a = %d, B::b = %d\n", A::a, B::b);
+  B::b++; //OK: b declared directly in B, S is { B::b }
+  printf("A::a = %d, B::b = %d\n", A::a, B::b);
+}
+
+int main()
+{
+  f();
+  return 0;
+}
+

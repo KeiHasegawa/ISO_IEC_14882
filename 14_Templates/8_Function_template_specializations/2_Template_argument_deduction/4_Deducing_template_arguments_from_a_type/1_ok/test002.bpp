@@ -1,0 +1,44 @@
+/*
+ * template parameters do not participate in template argument deduction if
+ * they are used only in nondeduced contexts.
+ */
+#include <stdio.h>
+
+template<class C> struct A {
+  struct X {};
+  X xm;
+};
+
+template<int I> struct B {
+  struct Y {};
+  Y ym;
+};
+
+template<int i, typename T>
+T deduce(typename A<T>::X x, // T is not deduced here
+	 T t, // but T is deduced here
+	 typename B<i>::Y y); // i is not deduced here
+
+template<>
+int deduce<77,int>(A<int>::X x, int t, B<77>::Y y)
+{
+  printf("int deduce(A<int>::X x, int t, B<77>::Y y) called\n");
+}
+
+void g()
+{
+  A<int> a;
+  B<77> b;
+  int x = deduce<77>(a.xm, 62, b.ym);
+  // T is deduced to be int, a.xm must be convertible to
+  // A<int>::X
+  // i is explicitly specified to be 77, y.ym must be convertible
+  // to B<77>::Y
+}
+
+int main()
+{
+  g();
+  return 0;
+}
+

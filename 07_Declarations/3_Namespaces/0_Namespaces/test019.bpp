@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+class X;
+
+struct X {
+ int x;
+};
+
+int main()
+{
+  X x;
+  printf("x.x = %d\n", x.x = 1);
+  return 0;
+}

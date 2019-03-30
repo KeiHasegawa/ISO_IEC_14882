@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>カンマ演算子の結果を左辺値として使用</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>函数の引数にカンマ演算子を指定</abstract>
+</item>
+
+</test_item>

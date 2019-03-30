@@ -1,0 +1,6 @@
+f(char) called with 'a'
+f(unsigned char) called with 'b'
+f(signed char) called with 'c'
+f(char*) called with "hasegawa"
+f(unsigned char*) called with "kei"
+f(signed char*) called with "compiler developer"

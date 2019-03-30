@@ -1,0 +1,50 @@
+/*
+ * Any number of access specifiers is allowed and no particular order is
+ * required.
+ */
+#include <stdio.h>
+
+extern void f();
+
+struct SS;
+
+struct S {
+  friend void f();
+  friend class SS;
+  int a; // S::a is public by default: struct used
+protected:
+  int b; // S::b is protected
+private:
+  int c; // S::c is private
+public:
+  int d; // S::d is public
+};
+
+void f()
+{
+  printf("`f' called\n");
+  S s;
+  printf("s.a = %d\n", s.a = 1);
+  printf("s.b = %d\n", s.b = 2);
+  printf("s.c = %d\n", s.c = 3);
+  printf("s.d = %d\n", s.d = 4);
+}
+
+struct SS : S {
+  void g()
+  {
+    printf("`S::g' called\n");
+    printf("a = %d\n", a = 1);
+    printf("b = %d\n", b = 2);
+    printf("c = %d\n", c = 3);
+    printf("d = %d\n", d = 4);
+  }
+};
+
+int main()
+{
+  f();
+  SS ss;
+  ss.g();
+  return 0;
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+const int sz = 123;
+
+void f()
+{
+  printf("sz = %d\n", sz);
+}
+
+int main()
+{
+  printf("call f\n");
+  f();
+  printf("\n");
+  printf("call g and h\n");
+  extern void g(); g();
+  extern void h(); h();
+  return 0;
+}

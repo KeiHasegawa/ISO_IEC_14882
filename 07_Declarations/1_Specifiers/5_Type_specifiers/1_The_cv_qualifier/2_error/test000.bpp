@@ -1,0 +1,15 @@
+void f()
+{
+  const int ci = 3; // cv-qualified (initialized as required)
+  ci = 4; // ill-formed: attempt to modify const
+  int i = 2; // not cv-qualified
+  const int* cip; // pointer to const int
+  cip = &i; // OK: cv-qualified access path to unqualified
+  *cip = 4; // ill-formed: attempt to modify through ptr to const
+  int* ip;
+  ip = const_cast<int*>(cip); // cast needed to convert const int* to int*
+  *ip = 4; // defined: *ip points to i, a non-const object
+  const int* ciq = new const int (3); // initialized as required
+  int* iq = const_cast<int*>(ciq); // cast required
+  *iq = 4; // undefined: modifies a const object
+}

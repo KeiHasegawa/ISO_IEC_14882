@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+struct T {
+  int a;
+  int b;
+  int c;
+};
+
+int x = 3;
+
+int y = 5;
+
+struct T t = (struct T){ x+y, x-y, x*y };
+
+int main()
+{
+  printf("t.a = %d, t.b = %d, t.c = %d\n", t.a, t.b, t.c);
+  return 0;
+}

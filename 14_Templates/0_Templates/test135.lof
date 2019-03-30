@@ -1,0 +1,5 @@
+s::f(C*) called
+*p = 6
+T::g() called
+S::f(C2) called
+c2 = 5

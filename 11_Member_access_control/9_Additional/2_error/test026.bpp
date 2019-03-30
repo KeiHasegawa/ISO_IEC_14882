@@ -1,0 +1,7 @@
+class B { int b; };
+class D : public B { void f(); };
+
+void D::f()
+{
+  b;
+}

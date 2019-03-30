@@ -1,0 +1,6 @@
+C:\home\khasegawa\lang\bin\hcxx1.exe: `--generator_option' は無効なオプションです.
+C:\home\khasegawa\lang\bin\hcxx1.exe: 複数の入力ファイルが指定されています. `(' は無視されます.
+C:\home\khasegawa\lang\bin\hcxx1.exe: `--debug' は無効なオプションです.
+C:\home\khasegawa\lang\bin\hcxx1.exe: 複数の入力ファイルが指定されています. `)' は無視されます.
+test000.cpp:6: エラー: `a1' の宣言で `int' が仮定されました.
+dog : /home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/1_Class_names/2_error:hcxx1.exe test000.i --generator_option ( --debug ) was killed by dog

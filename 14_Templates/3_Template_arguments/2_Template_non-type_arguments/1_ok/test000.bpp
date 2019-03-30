@@ -1,0 +1,44 @@
+/*
+ * A template-argument for a non-type, non-template template-parameter shall
+ * be one of:
+ * - an integral constant-expression of integral or enumeration type; or
+ * - the name of a non-type template-parameter; or
+ * - the address of an object or function with external linkage, including
+ *   function templates and function template-ids but excluding non-static
+ *   class members, expressed as & id-expression where the & is optional if
+ *   the name refers to a function or array, or if the corresponding
+ *   template-parameter is a reference; or
+ * - a pointer to member expressed as described in 5.3.1 .
+ * [Note: A string literal (2.13.4) does not satisfy the requirements of any
+ * of these categories and thus is not an acceptable template-argument.
+ */
+#include <stdio.h>
+
+template<class T, char* p> class X {
+  // ...
+public:
+  X();
+  X(const char* q) { /* ... */ }
+  void f();
+};
+
+template<class T, char* p> X<T,p>::X()
+{
+}
+
+template<class T, char* p> void X<T,p>::f()
+{
+  printf("`template<class T, char* p> void X<T,p>::f()' called\n");
+  T t = 1;
+  printf("t = %d\n", t);
+  printf("p = \"%s\"\n", p);
+}
+
+char p[] = "Vivisectionist";
+X<int,p> x2; // OK
+
+int main()
+{
+  x2.f();
+  return 0;
+}

@@ -1,0 +1,29 @@
+/*
+ * Member functions and static data members of a nested class can be defined in
+ * a namespace scope enclosing the definition of their class.
+ */
+#include <stdio.h>
+
+class enclose {
+public:
+  class inner {
+  public:
+    static int x;
+    void f(int i);
+  };
+};
+
+int enclose::inner::x = 1;
+
+void enclose::inner::f(int i)
+{
+  printf("`enclose::inner::f' called with %d\n", i);
+}
+
+int main()
+{
+  printf("enclose::inner::x = %d\n", enclose::inner::x);
+  enclose::inner i;
+  i.f(3);
+  return 0;
+}

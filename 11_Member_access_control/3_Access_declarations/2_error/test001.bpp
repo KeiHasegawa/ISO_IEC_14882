@@ -1,0 +1,71 @@
+/*
+ * The access of a member of a base class can be changed in the derived class
+ * by mentioning its qualified-id in the derived class declaration. Such
+ * mention is called an access declaration. The effect of an access declaration
+ * qualified-id ; is defined to be equivalent to the declaration using
+ * qualified-id ;
+ *
+ * Access declarations are deprecated; member using-declarations (7.3.3)
+ * provide a better means of doing the same things. In earlier versions of
+ * the C++ language, access declarations were more limited; they were
+ * generalized and made equivalent to using-declarations
+ */
+#include <stdio.h>
+
+class A {
+public:
+  int z;
+  int z1;
+};
+
+class B : public A {
+  int a;
+public:
+  int b, c;
+  int bf();
+protected:
+  int x;
+  int y;
+};
+
+class D : private B {
+  int d;
+public:
+  B::c;  // adjust access to B::c
+  B::z;  // adjust access to A::z
+  A::z1; // adjust access to A::z1
+  int e;
+  int df();
+protected:
+  B::x;  // adjust access to B::x
+  int g;
+};
+
+/*
+ * If D were a protected or private base class of X, xf would
+ * have the same privileges as before, but ff would have no access at all.
+ */
+class X : protected D {
+  int xf();
+};
+
+int ef(D&);
+int ff(X&);
+
+int ff(X& x)
+{
+  x.z;       // error
+  x.z1;      // error
+  x.a;       // error
+  x.b;       // error
+  x.c;       // error
+  x.bf();    // error
+  x.x;       // error
+  x.y;       // error
+  x.d;       // error
+  x.e;       // error
+  x.df();    // error
+  x.g;       // error
+  x.xf();    // error
+  return 0;
+}

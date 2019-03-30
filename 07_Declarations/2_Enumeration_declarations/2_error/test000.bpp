@@ -1,0 +1,5 @@
+enum color { red, yellow, green=20, blue };
+color c = 1; // error: type mismatch,
+             // no conversion from int to color
+int i = yellow; // OK: yellow converted to integral value 1
+                // integral promotion

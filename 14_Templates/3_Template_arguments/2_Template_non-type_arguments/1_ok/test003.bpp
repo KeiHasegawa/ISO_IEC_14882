@@ -1,0 +1,120 @@
+/*
+ * The following conversions are performed on each expression used as a
+ * non-type template-argument. If a non-type template-argument cannot be
+ * converted to the type of the corresponding template-parameter then the
+ * program is ill-formed.
+ * - for a non-type template-parameter of integral or enumeration type,
+ *   integral promotions (4.5) and integral conversions (4.7) are applied.
+ * - for a non-type template-parameter of type pointer to object, qualification
+ *   conversions (4.4) and the array-to-pointer conversion (4.2) are applied.
+ *   [Note: In particular, neither the null pointer conversion (4.10) nor the
+ *   derived-to-base conversion (4.10) are applied. Although 0 is a valid
+ *   template-argument for a non-type template-parameter of integral type, it
+ *   is not a valid template-argument for a non-type template-parameter of
+ *   pointer type. ]
+ * - For a non-type template-parameter of type reference to object, no
+ *   conversions apply. The type referred to by the reference may be more
+ *   cv-qualified than the (otherwise identical) type of the templateargument.
+ *   The template-parameter is bound directly to the template-argument, which
+ *   must be an lvalue.
+ * - For a non-type template-parameter of type pointer to function, only the
+ *   function-to-pointer conversion (4.3) is applied. If the template-argument
+ *   represents a set of overloaded functions (or a pointer to such), the
+ *   matching function is selected from the set (13.4).
+ * - For a non-type template-parameter of type reference to function, no
+ *   conversions apply. If the template-argument represents a set of
+ *   overloaded functions, the matching function is selected from the set
+ *   (13.4).
+ * - For a non-type template-parameter of type pointer to member function, no
+ *   conversions apply. If the template-argument represents a set of
+ *   overloaded member functions, the matching member function is selected
+ *   from the set (13.4).
+ * - For a non-type template-parameter of type pointer to data member,
+ *   qualification conversions (4.4) are applied.
+ */
+#include <stdio.h>
+
+template<const int* pci> struct X {
+  void xf()
+  {
+    printf("`X::xf()' called\n");
+    const int* begin = pci;
+    const int* end = pci + 10;
+    for ( ; begin != end ; ++begin )
+      printf("%d ", *begin);
+    printf("\n");
+  }
+};
+int ai[10];
+X<ai> xi; // array to pointer and qualification conversions
+struct Y {
+  void yf() const
+  {
+    printf("`Y::yf()' called\n");
+  }
+};
+template<const Y& b> struct Z {
+  void zf()
+  {
+    printf("`Z::zf()' called\n");
+    b.yf();
+  }
+};
+Y y;
+Z<y> z; // no conversion, but note extra cv-qualification
+template<int (&pa)[5]> struct W {
+  void wf()
+  {
+    printf("`W::wf()' called\n");
+    for ( int i = 0 ; i != 5 ; ++i )
+      printf("%d ", pa[i]);
+    printf("\n");
+  }
+};
+int b[5];
+W<b> w; // no conversion
+void f(char);
+void f(int);
+template<void (*pf)(int)> struct A {
+  void af()
+  {
+    printf("`A::af()' called\n");
+    pf(5);
+  }
+};
+A<&f> a; // selects f(int)
+
+int main()
+{
+  {
+    int* begin = &ai[0];
+    int* end = &ai[sizeof ai/sizeof ai[0]];
+    int* p;
+    for ( p = begin ; p != end ; ++p )
+      *p = p - begin;
+  }
+
+  {
+    int* begin = &b[0];
+    int* end = &b[sizeof b/sizeof b[0]];
+    int* p;
+    for ( p = begin ; p != end ; ++p )
+      *p = p - begin + 100;
+  }
+
+  xi.xf();
+  z.zf();
+  w.wf();
+  a.af();  
+  return 0;
+}
+
+void f(char)
+{
+  printf("`f(char)' called\n");
+}
+
+void f(int)
+{
+  printf("`f(int)' called\n");
+}

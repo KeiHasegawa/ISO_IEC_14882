@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+struct S {
+  static const unsigned int s = static_cast<unsigned int>(-1);
+};
+
+int main()
+{
+  printf("S::s = %d\n", S::s);
+  return 0;
+}

@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+class X {
+  int m_val;
+public:
+  X(int n) : m_val(n) { printf("X::X called\n"); }
+  ~X(){ printf("X::~X called\n"); }
+};
+
+void f()
+{
+  int i = 0;
+ ly:
+  X a = 1;
+  if ( ++i == 2 )
+    return;
+ lx:
+  goto ly; // OK, jump implies destructor
+           // call for a followed by construction
+           // again immediately following label ly
+}
+
+int main()
+{
+  f();
+  return 0;
+}

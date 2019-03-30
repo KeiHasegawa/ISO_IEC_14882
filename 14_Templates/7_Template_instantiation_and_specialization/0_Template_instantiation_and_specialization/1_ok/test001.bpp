@@ -1,0 +1,22 @@
+/*
+ * Each class template specialization instantiated from a template has its own
+ * copy of any static members.
+ */
+#include <stdio.h>
+
+template<class T> class X 
+{
+public:
+  static T s;
+  // ...
+};
+template<class T> T X<T>::s = 0;
+X<int> aa;
+X<char*> bb;
+
+int main()
+{
+  printf("X<int>::s = %d\n", X<int>::s = 123);
+  printf("X<char*>::s = %s\n", X<char*>::s = "hello");
+  return 0;
+}

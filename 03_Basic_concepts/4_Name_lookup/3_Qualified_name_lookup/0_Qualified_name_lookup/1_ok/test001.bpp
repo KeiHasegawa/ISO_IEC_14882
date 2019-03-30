@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+class X { };
+class C {
+  class X { public: int i; };
+public:
+  static const int number = 50;
+  static X arr[number];
+};
+C::X C::arr[number];
+
+void test000()
+{
+  for ( int i = 0 ; i < C::number ; ++i )
+    printf("%d\n", C::arr[i].i = i);
+}
+
+int main()
+{
+  test000();
+  return 0;
+}
+

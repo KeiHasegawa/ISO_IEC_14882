@@ -1,0 +1,4 @@
+`X::f()' called
+`X::g()' called
+`X::g() const' called
+`X::g() const volatile' called

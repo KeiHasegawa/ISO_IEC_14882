@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+struct S {
+  int m;
+  static S s;
+};
+
+S S::s;
+
+int main()
+{
+  printf("S::s.m = %d\n", S::s.m = 123);
+  S tmp = S::s;
+  printf("tmp.m = %d\n", tmp.m = 123);
+  return 0;
+}

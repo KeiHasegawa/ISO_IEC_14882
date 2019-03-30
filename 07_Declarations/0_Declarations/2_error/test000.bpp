@@ -1,0 +1,2 @@
+enum { }; // ill-formed
+typedef class { }; // ill-formed

@@ -1,0 +1,4 @@
+M::M(void) called
+before initialize y
+M::M(const M&) called
+after initialize y

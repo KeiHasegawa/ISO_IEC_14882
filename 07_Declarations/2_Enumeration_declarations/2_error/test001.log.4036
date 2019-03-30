@@ -1,0 +1,9 @@
+C:\home\khasegawa\lang\bin\hcxx1.exe: `--generator_option' は無効なオプションです.
+C:\home\khasegawa\lang\bin\hcxx1.exe: 複数の入力ファイルが指定されています. `(' は無視されます.
+C:\home\khasegawa\lang\bin\hcxx1.exe: `--debug' は無効なオプションです.
+C:\home\khasegawa\lang\bin\hcxx1.exe: 複数の入力ファイルが指定されています. `)' は無視されます.
+test001.cpp:5: エラー: パラメータスコープのない関数定義です.
+test001.cpp: 函数 `f' :
+test001.cpp:5: エラー: `i' は宣言されていません.
+test001.cpp:5: エラー: `i' は宣言されていません.
+dog : /home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/2_Enumeration_declarations/2_error:hcxx1.exe test001.i --generator_option ( --debug ) was killed by dog

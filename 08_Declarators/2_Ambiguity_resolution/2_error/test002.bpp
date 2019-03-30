@@ -1,0 +1,12 @@
+/*
+ * The ambiguity arising from the similarity between a function-style cast and
+ * a type-id can occur in different contexts. The ambiguity appears as a choice
+ * between a function-style cast expression and a declaration of a type. The
+ * resolution is that any construct that could possibly be a type-id in its
+ * syntactic context shall be considered a type-id.
+ */
+void foo()
+{
+  (int(1)); //expression
+  (int())1; //type-id (ill-formed)
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+class A {
+public:
+  static int n;
+};
+int main()
+{
+  int A;
+  A::n = 42; // OK
+  printf("A::n = %d\n", A::n);
+  printf("A = %d\n", A = 51);
+  return 0;
+}
+
+int A::n;

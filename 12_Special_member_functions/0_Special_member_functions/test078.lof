@@ -1,0 +1,3 @@
+X::X() called
+main called
+X::~X() called

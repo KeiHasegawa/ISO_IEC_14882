@@ -1,0 +1,14 @@
+/*
+ * Similarly, a nonstatic member shall not be used in a default argument
+ * expression, even if it is not evaluated, unless it appears as the
+ * id-expression of a class member access expression (5.2.5) or unless it is
+ * used to form a pointer to member (5.3.1).
+ */
+int b;
+class X {
+  int a;
+  int mem1(int i = a); // error: nonstatic member a
+                       // used as default argument
+  int mem2(int i = b); // OK; use X::b
+  static int b;
+};

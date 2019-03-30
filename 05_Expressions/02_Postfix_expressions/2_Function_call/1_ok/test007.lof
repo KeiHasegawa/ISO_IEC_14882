@@ -1,0 +1,3 @@
+d.i = 3, d.j = 4
+B::verbose called
+i = 3

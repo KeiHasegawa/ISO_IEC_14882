@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+class B {
+public:
+  int a;
+private:
+  int b;
+protected:
+  int c;
+};
+
+class D : private B {
+public:
+  B::a;
+protected:
+  B::c;
+};
+
+void f(D* pd)
+{
+  printf("`f' called\n");
+  printf("pd->a = %d\n", pd->a = 1);
+}
+
+int main()
+{
+  D d;
+  f(&d);
+  return 0;
+}

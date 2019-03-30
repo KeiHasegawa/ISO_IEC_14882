@@ -1,0 +1,6 @@
+mem = 1
+X::X(const char*, int) called with Jessie 0
+mem = 0
+mem = 2
+f(X) called
+mem = 3

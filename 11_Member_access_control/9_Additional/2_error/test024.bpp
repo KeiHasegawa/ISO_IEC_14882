@@ -1,0 +1,16 @@
+class B {
+public:
+  virtual void f();
+};
+
+class D : public B {
+private:
+  void f();
+};
+
+void f()
+{
+  D d;
+  D* pd = &d;
+  pd->f();
+}

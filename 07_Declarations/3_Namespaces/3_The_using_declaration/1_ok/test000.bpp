@@ -1,0 +1,36 @@
+/*
+ * Every using-declaration is a declaration and a member-declaration and so
+ * can be used in a class definition.
+ */
+#include <stdio.h>
+
+struct B {
+  void f(char c){ printf("`B::f' called with '%c'\n", c); }
+  void g(char c){ printf("`B::g' called with '%c'\n", c); }
+  enum E { e };
+  union { int x; };
+};
+
+struct D : B {
+  using B::f;
+  void f(int n)
+  {
+    printf("`D::f' called with %d\n", n);
+    f('c'); // calls B::f(char)
+  }
+  void g(int n)
+  {
+    printf("`D::g' called with %d\n", n);
+    if ( n == 'c' )
+      return;
+    g('c'); // recursively calls D::g(int)
+  }
+};
+
+int main()
+{
+  D d;
+  d.f(1);
+  d.g(2);
+  return 0;
+}

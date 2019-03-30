@@ -1,0 +1,31 @@
+/*
+ * Operator functions are usually not called directly; instead they are
+ * invoked to evaluate the operators they implement (13.5.1 - 13.5.7). They can
+ * be explicitly called, however, using the operator-function-id as the name
+ * of the function in the function call syntax (5.2.2).
+ */
+#include <stdio.h>
+
+class complex {
+public:
+  complex& operator+(const complex&);
+};
+
+void f(complex& a, const complex& b, int n)
+{
+  complex z = a.operator+(b); // complex z = a+b;
+  void* p = operator new(sizeof(int)*n);
+}
+
+int main()
+{
+  complex x, y;
+  f(x,y,5);
+  return 0;
+}
+
+complex& complex::operator+(const complex&)
+{
+  printf("`operator+(const complex&)' called\n");
+  return *this;
+}

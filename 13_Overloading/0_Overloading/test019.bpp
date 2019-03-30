@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void f(const char& c)
+{
+  printf("f(const char&) called with '%c'\n", c);
+}
+
+void f(short s)
+{
+  printf("f(short) called with %d\n", s);
+}
+
+int main()
+{
+  f('c');
+
+  const char ch = 'c';
+  f(ch);
+
+  short s = 3;
+  f(s);
+
+  return 0;
+}

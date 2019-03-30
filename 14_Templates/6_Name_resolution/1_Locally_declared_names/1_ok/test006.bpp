@@ -1,0 +1,29 @@
+/*
+ * In the definition of a member of a class template that appears outside of
+ * the class template definition, the name of a member of this template hides
+ * the name of a template-parameter.
+ */
+#include <stdio.h>
+
+template<class T> struct A {
+  struct B {
+    B(){ printf("B::B() called\n"); }
+  };
+  void f();
+};
+
+template<class B> void A<B>::f() {
+  printf("A<B>::f() called\n");
+  B b; // A's B, not the template parameter
+}
+
+struct S {
+  S(){ printf("S::S() called\n"); }
+};
+
+int main()
+{
+  A<S> as;
+  as.f();
+  return 0;
+}

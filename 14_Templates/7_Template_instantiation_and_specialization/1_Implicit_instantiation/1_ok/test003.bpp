@@ -1,0 +1,41 @@
+/*
+ * Implicitly instantiated class and function template specializations are
+ * placed in the namespace where the template is defined. Implicitly
+ * instantiated specializations for members of a class template are placed in
+ * the namespace where the enclosing class template is defined. Implicitly
+ * instantiated member templates are placed in the namespace where the
+ * enclosing class or class template is defined.
+ */
+#include <stdio.h>
+
+namespace N {
+  template<class T> class List {
+  public:
+    T* get();
+    // ...
+  };
+}
+
+template<class K, class V> class Map {
+  N::List<V> lt;
+public:
+  V get(K)
+  {
+    printf("get(K) called\n");
+    return V();
+  }
+  // ...
+};
+
+void g(Map<char*,int>& m)
+{
+  int i = m.get("Nicholas");
+  // ...
+}
+
+int main()
+{
+  Map<char*, int> m;
+  g(m);
+  return 0;
+}

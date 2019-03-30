@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int a;
+
+int b = --a;
+
+int main(void)
+{
+  printf("a = %d\n", a);
+  printf("b = %d\n", b);
+  return 0;
+}

@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+class X {
+public:
+  X operator++()
+  {
+    printf("X::operator++() called\n");
+    return *this;
+  }
+  X operator++(int i)
+  {
+    printf("X::operator++(int) called with %d\n", i);
+    return *this;
+  }
+};
+
+void f(X a)
+{
+  ++a;
+  a++;
+
+  a.operator++();
+  a.operator++(3);
+}
+
+int main()
+{
+  X x;
+  f(x);
+  return 0;
+}

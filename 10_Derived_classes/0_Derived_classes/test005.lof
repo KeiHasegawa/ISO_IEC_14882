@@ -1,0 +1,9 @@
+pc->A::l = 1 pc->a = 2 pc->B::l = 3 pc->b = 4 pc->c = 5
+pa->l = 1 pa->a = 2
+pl->l = 1
+pa->l = 1 pa->a = 2
+pc->A::l = 1 pc->a = 2 pc->B::l = 3 pc->b = 4 pc->c = 5
+pb->l = 3 pb->b = 4
+pl->l = 3
+pb->l = 3 pb->b = 4
+pc->A::l = 1 pc->a = 2 pc->B::l = 3 pc->b = 4 pc->c = 5

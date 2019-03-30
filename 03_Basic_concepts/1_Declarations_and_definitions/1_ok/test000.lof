@@ -1,0 +1,15 @@
+`test000' called
+a = 0
+a = 1234
+c = 1
+f(10) return value 1244
+s.a = 1, s.b = 2
+obj.x = 0, X::y = 1
+up = 0, down = 1
+N::d = 0
+N1::d = 0
+anX.x = 0
+i = 1
+anotherX.x = 0
+d = 0
+N::d = 1, N1::d = 1, d = 1

@@ -1,0 +1,4 @@
+/*
+ * initializer exceeds number of elements.
+ */
+char cv[4] = { 'a', 's', 'd', 'f', 0 }; // error

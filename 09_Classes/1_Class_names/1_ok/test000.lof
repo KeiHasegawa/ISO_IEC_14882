@@ -1,0 +1,7 @@
+`g' called
+a1.a = 1
+a2.a = 2
+`f(X)' called
+x.a = 1
+`f(Y)' called
+y.a = 2

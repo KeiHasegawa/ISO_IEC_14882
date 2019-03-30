@@ -1,0 +1,4 @@
+f(int*, int) called
+f(int*, char) called
+f(int, char) called
+f(int, char) called

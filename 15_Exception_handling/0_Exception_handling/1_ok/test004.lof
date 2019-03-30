@@ -1,0 +1,4 @@
+before f call
+before g call
+catch something in `f'
+catch something in `main'

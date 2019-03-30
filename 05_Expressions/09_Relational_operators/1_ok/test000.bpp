@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+void *p;
+const int *q;
+int **pi;
+const int *const *pci;
+void ct()
+{
+  if ( p <= q ) // Both converted to const void * before comparison
+    printf("ok\n");
+  else
+    printf("error\n");
+  if ( pi <= pci ) // Both converted to const int *const * before comparison
+    printf("ok\n");
+  else
+    printf("error\n");
+}
+
+int main()
+{
+  int a[10];
+  p = &a[0];
+  q = &a[0];
+  int* b[10];
+  pi = &b[0];
+  pci = &b[1];
+  ct();
+  return 0;
+}

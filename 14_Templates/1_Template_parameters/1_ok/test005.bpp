@@ -1,0 +1,25 @@
+/*
+ * The set of default template-arguments available for use with a template
+ * declaration or definition is obtained by merging the default arguments from
+ * the definition (if in scope) and all declarations in scope in the same way
+ * default function arguments are (8.3.6).
+ */
+#include <stdio.h>
+
+template<class T1, class T2 = int> class A;
+template<class T1 = int, class T2> class A;
+
+template<class T1, class T2> class A {
+public:
+  T1 t1;
+  T2 t2;
+};
+
+int main()
+{
+  A<> a;
+  printf("a.t1 = %d\n", a.t1 = 2);
+  printf("a.t2 = %d\n", a.t1 = 3);
+  return 0;
+}
+

@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+struct X {
+  union {
+    int a;
+    float b;
+  };
+};
+
+int main()
+{
+  X x;
+  x.b = 1.0;
+  printf("x.a = 0x%x\n", x.a);
+  return 0;
+}

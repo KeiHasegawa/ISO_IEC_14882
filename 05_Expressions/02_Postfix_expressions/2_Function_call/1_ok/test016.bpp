@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int f(int, int a)
+{
+  return a;
+}
+
+int main()
+{
+  printf("f return value : %d\n", f(1,2));
+  return 0;
+}

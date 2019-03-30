@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+namespace N {
+  class X {
+  public:
+    X(){}
+    X(const X&){}
+  };
+}
+
+struct S {
+  N::X m;
+  N::X f()
+  {
+    printf("S::f() called\n");
+    return m;
+  }
+};
+
+int main()
+{
+  S s;
+  s.f();
+  return 0;
+}

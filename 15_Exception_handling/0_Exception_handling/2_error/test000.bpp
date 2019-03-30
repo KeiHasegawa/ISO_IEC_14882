@@ -1,0 +1,18 @@
+/*
+ * A goto or switch statement shall not be used to transfer control into a try
+ * block or into a handler.
+ */
+
+void f() {
+  goto l1; // Ill-formed
+  goto l2; // Ill-formed
+  try {
+    goto l1; // OK
+    goto l2; // Ill-formed
+  l1: ;
+  } catch (...) {
+  l2: ;
+  goto l1; // Ill-formed
+  goto l2; // OK
+  }
+}

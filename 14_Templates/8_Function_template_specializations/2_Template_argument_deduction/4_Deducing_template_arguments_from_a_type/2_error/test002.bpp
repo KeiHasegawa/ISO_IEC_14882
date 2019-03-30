@@ -1,0 +1,13 @@
+/*
+ * A template type argument cannot be deduced from the type of a non-type
+ * template-argument.
+ */
+
+template<class T, T i> void f(double a[10][i]);
+
+void g()
+{
+  int v[10][20];
+  f(v); //error: argument for template-parameter T cannot be deduced
+}
+

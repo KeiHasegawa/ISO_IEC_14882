@@ -1,0 +1,19 @@
+class B {
+protected:
+  int i;
+};
+
+class D1 : public B {
+};
+
+class D2 : public B {
+  friend void fr(B*, D1* ,D2*);
+  void mem(B*, D1*);
+};
+
+void g(B* pb, D1* p1, D2* p2)
+{
+  pb->i = 1;
+  p1->i = 2;
+  p2->i = 3;
+}

@@ -1,0 +1,7 @@
+a = 3, ::a = 2
+f called with 2
+g called with 7
+a = 35, ::a = 2
+f called with 2
+g called with 7
+a = 35, ::a = 2

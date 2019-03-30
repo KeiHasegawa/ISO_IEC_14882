@@ -1,0 +1,2 @@
+test008.c:12: error: invalid access declaration for `protected a'.
+test008.c:3: error: `a' is declared as public.

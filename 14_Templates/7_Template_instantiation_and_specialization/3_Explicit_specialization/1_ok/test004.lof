@@ -1,0 +1,4 @@
+f(T) called
+g(T) called
+f<>(int) called
+g<>(int) called

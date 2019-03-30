@@ -1,0 +1,15 @@
+/*
+ * Within the definition of a class template or within the definition of a
+ * member of a class template, the keyword typename is not required when
+ * referring to the unqualified name of a previously declared member of the
+ * class template that declares a type. The keyword typename shall always be
+ * specified when the member is referred to using a qualified name, even if
+ * the qualifier is simply the class template name.
+ */
+
+template<class T> struct A {
+  typedef int B;
+  A::B b; // ill-formed: typename required before A::B
+  void f(A<T>::B); // ill-formed: typename required before A<T>::B
+  typename A::B g(); // OK
+};

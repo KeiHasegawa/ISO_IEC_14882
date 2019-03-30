@@ -1,0 +1,41 @@
+/*
+ * In a const member function, the object for which the function is called is
+ * accessed through a const access path; therefore, a const member function
+ * shall not modify the object and its non-static data members.
+ */
+#include <stdio.h>
+struct s {
+  int a;
+  int f() const;
+  int g()
+  {
+    printf("`s::g' called\n");
+    return a++;
+  }
+  int h() const
+  {
+    printf("`s::h' called\n");
+    return a;
+  }
+};
+
+int s::f() const
+{
+  printf("`s::f' called\n");
+  return a;
+}
+
+void k(s& x, const s& y)
+{
+  x.f();
+  x.g();
+  y.f();
+  y.h();
+}
+
+int main()
+{
+  s s1, s2;
+  k(s1,s2);
+  return 0;
+}

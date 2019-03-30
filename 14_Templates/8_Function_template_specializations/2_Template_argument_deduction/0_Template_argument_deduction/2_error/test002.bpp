@@ -1,0 +1,15 @@
+/*
+ * Attempting to use a type in the qualifier portion of a qualified name that
+ * names a type when that type does not contain the specified member, or if
+ * the specified member is not a type where a type is required.
+ */
+
+template <class T> int f(typename T::B*);
+struct A {};
+struct C { int B; };
+void g()
+{
+  int i = f<A>(0);
+  int j = f<C>(0);
+}
+

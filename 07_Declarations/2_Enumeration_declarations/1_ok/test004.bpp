@@ -1,0 +1,28 @@
+/*
+ * Check scope of enumeration works well
+ */
+#include <stdio.h>
+
+class X {
+public:
+  enum direction { left='l', right='r' };
+  int f(int i)
+  { return i==left ? 0 : i==right ? 1 : 2; }
+};
+
+void g(X* p)
+{
+  printf("`g' called\n");
+  int i;
+  i = p->f(X::right); // OK
+  printf("i = %d\n", i);
+  i = p->f(p->left); // OK
+  printf("i = %d\n", i);
+}
+
+int main()
+{
+  X x;
+  g(&x);
+  return 0;
+}

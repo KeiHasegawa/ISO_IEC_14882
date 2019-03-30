@@ -1,0 +1,49 @@
+/*
+ * A function-try-block associates a handler-seq with the ctor-initializer, if
+ * present, and the function-body. An exception thrown during the execution of
+ * the initializer expressions in the ctor-initializer or during the execution
+ * of the function-body transfers control to a handler in a function-try-block
+ * in the same way as an exception thrown during the execution of a try-block
+ * transfers control to other handlers.
+ */
+#include <stdio.h>
+
+int f(int);
+class C {
+  int i;
+  double d;
+public:
+  C(int, double);
+};
+
+C::C(int ii, double id)
+try
+: i(f(ii)), d(id)
+{
+  // constructor function body
+  printf("ok constructed\n");
+}
+catch (...)
+{
+  // handles exceptions thrown from the ctor-initializer
+  // and from the constructor function body
+  printf("catch here\n");
+}
+
+bool flag;
+
+int main()
+{
+  flag = false;
+  C c(3,0.5);
+  flag = true;
+  C cc(4,-1.5);
+  return 0;
+}
+
+int f(int a)
+{
+  if ( flag )
+    throw a;
+  return a + 3;
+}

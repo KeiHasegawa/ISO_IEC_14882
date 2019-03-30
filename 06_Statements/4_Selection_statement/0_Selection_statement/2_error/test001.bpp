@@ -1,0 +1,12 @@
+int f();
+
+void g()
+{
+  if (int x = f()) {
+    int x; // ill-formed, redeclaration of x
+  }
+  else {
+    int x; // ill-formed, redeclaration of x
+  }
+}
+

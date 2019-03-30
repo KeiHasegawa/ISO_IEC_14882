@@ -1,0 +1,22 @@
+/*
+ * There is an implementation-defined quantity that specifies the limit on the
+ * total depth of recursive instantiations, which could involve more than one
+ * template. The result of an infinite recursion in instantiation is undefined.
+ */
+#include <stdio.h>
+
+template<class T> class X {
+public:
+  X<T>* p; // OK
+};
+
+int main()
+{
+  X<int> xi;
+  xi.p = &xi;
+  if ( xi.p->p == &xi )
+    printf("ok\n");
+  else
+    printf("error\n");
+  return 0;
+}

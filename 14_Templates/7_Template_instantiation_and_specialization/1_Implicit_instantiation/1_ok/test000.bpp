@@ -1,0 +1,46 @@
+/*
+ * Unless a function template specialization has been explicitly instantiated
+ * or explicitly specialized, the function template specialization is
+ * implicitly instantiated when the specialization is referenced in a context
+ * that requires a function definition to exist. Unless a call is to a
+ * function template explicit specialization or to a member function of an
+ * explicitly specialized class template, a default argument for a function
+ * template or a member function of a class template is implicitly instantiated
+ * when the function is called in a context that requires the value of the
+ * default argument.
+ */
+#include <stdio.h>
+
+template<class T> class Z {
+public:
+  void f();
+  void g();
+};
+
+template<> void Z<int>::f()
+{
+  printf("Z<int>::f() called\n");
+}
+
+template<> void Z<char>::g()
+{
+  printf("Z<char>::g() called\n");
+}
+
+void h()
+{
+  Z<int> a; // instantiation of class Z<int> required
+  Z<char>* p; // instantiation of class Z<char> not
+              // required
+  Z<double>* q; // instantiation of class Z<double>
+                // not required
+  a.f(); //instantiation of Z<int>::f() required
+  p->g(); //instantiation of class Z<char> required, and
+          // instantiation of Z<char>::g() required
+}
+
+int main()
+{
+  h();
+  return 0;
+}

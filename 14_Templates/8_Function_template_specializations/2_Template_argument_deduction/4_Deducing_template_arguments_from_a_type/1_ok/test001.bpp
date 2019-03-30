@@ -1,0 +1,33 @@
+/*
+ * Here is an example where the template argument is used to instantiate a
+ * derived class type of the corresponding function parameter type:
+ */
+#include <stdio.h>
+
+template <class T> struct B { };
+template <class T> struct D : public B<T> {};
+struct D2 : public B<int> {};
+template <class T> void f(B<T>&)
+{
+  printf("f(B<T>&) called\n");
+}
+
+template<> void f<int>(B<int>&)
+{
+  printf("f<int>(B<int>&) called\n");
+}
+
+void t()
+{
+  D<int> d;
+  D2 d2;
+  f(d); //calls f(B<int>&)
+  f(d2); //calls f(B<int>&)
+}
+
+int main()
+{
+  t();
+  return 0;
+}
+

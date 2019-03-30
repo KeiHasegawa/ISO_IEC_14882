@@ -1,0 +1,8 @@
+catch Matherr in `f'
+Matherr::vf() called
+catch Matherr in `f'
+Overflow::vf() called
+catch Matherr in `f'
+Underflow::vf() called
+catch Matherr in `f'
+Zerodivide::vf() called

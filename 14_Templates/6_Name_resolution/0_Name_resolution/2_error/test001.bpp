@@ -1,0 +1,23 @@
+/*
+ * If a specialization of a template is instantiated for a set of
+ * template-arguments such that the qualified-id prefixed by typename does not
+ * denote a type, the specialization is ill-formed. The usual qualified name
+ * lookup (3.4.3) is used to find the qualified-id even in the presence of
+ * typename.
+ */
+
+struct A {
+  struct X { };
+  int X;
+};
+
+template<class T> void f(T t) {
+  typename T::X x; // ill-formed: finds the data member X
+                   // not the member type X
+}
+
+void g()
+{
+  A a;
+  f(a);
+}

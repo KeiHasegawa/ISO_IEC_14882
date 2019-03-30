@@ -1,0 +1,41 @@
+/*
+ * A declaration consisting solely of class-key identifier ; is either a
+ * redeclaration of the name in the current scope or a forward declaration of
+ * the identifier as a class name. It introduces the class name into the
+ * current scope.
+ * Such declarations allow definition of classes that refer to each other.
+ */
+#include <stdio.h>
+
+class Vector;
+class Matrix {
+  int i;
+  friend Vector operator*(Matrix&, Vector&);
+};
+
+class Vector {
+  int j;
+  friend Vector operator*(Matrix&, Vector&);
+};
+
+Vector operator*(Matrix& m, Vector& v)
+{
+  printf("`operator*(Matrix&, Vector&)' called\n");
+  printf("m.i = %d\n", m.i = 123);
+  printf("v.j = %d\n", v.j = 456);
+  Vector r;
+  return r;
+}
+
+void f()
+{
+  Vector v;
+  Matrix m;
+  v = m * v;
+}
+
+int main()
+{
+  f();
+  return 0;
+}

@@ -1,0 +1,4 @@
+Y::operator int() called
+i = 1
+Y::operator double() called
+d = 1.500000

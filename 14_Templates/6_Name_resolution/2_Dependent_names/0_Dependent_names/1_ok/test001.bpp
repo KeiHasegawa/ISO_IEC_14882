@@ -1,0 +1,25 @@
+/*
+ * In the definition of a class template or a member of a class template, if a
+ * base class of the class template depends on a template-parameter, the base
+ * class scope is not examined during unqualified name lookup either at the
+ * point of definition of the class template or member or during an
+ * instantiation of the class template or member.
+ */
+#include <stdio.h>
+
+typedef double A;
+template<class T> class B {
+  typedef int A;
+};
+template<class T> struct X : B<T> {
+  A a; // a has type double
+};
+
+struct S {};
+
+int main()
+{
+  X<S> xs;
+  printf("%f\n", xs.a = 1.5);
+  return 0;
+}

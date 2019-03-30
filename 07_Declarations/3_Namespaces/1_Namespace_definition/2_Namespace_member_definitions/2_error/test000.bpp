@@ -1,0 +1,13 @@
+namespace Q {
+  namespace V {
+    void f();
+  }
+  void V::f() { /* ... */ } // OK
+  void V::g() { /* ... */ } // error: g() is not yet a member of V
+  namespace V {
+    void g();
+  }
+}
+namespace R {
+  void Q::V::g() { /* ... */ } // error: R doesnÅft enclose Q
+}

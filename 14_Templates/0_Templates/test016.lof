@@ -1,0 +1,3 @@
+pti->member = 123
+ptx->member.d = 34.500000
+456

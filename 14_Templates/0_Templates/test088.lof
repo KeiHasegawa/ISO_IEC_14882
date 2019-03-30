@@ -1,0 +1,4 @@
+C::f enter
+T::~T called
+C::f leave
+T::~T called

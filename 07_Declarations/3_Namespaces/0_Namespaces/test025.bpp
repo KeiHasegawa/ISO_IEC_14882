@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+namespace N {
+  struct X {
+    static int s;
+  };
+}
+
+int N::X::s;
+
+int main()
+{
+  printf("N::X::s = %d\n", N::X::s = 6);
+  return 0;
+}

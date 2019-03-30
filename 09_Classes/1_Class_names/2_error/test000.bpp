@@ -1,0 +1,14 @@
+/*
+ * Check if simple class declaration works well.
+ */
+struct X { int a; };
+struct Y { int a; };
+X a1;
+Y a2;
+int a3;
+
+a1 = a2; // error: Y assigned to X
+a1 = a3; // error: int assigned to X
+
+int f(X);
+int f(Y);

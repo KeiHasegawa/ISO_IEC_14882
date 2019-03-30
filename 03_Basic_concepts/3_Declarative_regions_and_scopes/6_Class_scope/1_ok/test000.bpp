@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+typedef int c;
+enum { i = 1 };
+class X {
+public:
+  int f() { return sizeof(c); } // OK: X::c
+  char c;
+  enum { i = 2 };
+};
+typedef char* T;
+struct Y {
+  typedef long T;
+  T b;
+};
+
+void test000()
+{
+  printf("`test000' called\n");
+  c c = 1;
+  printf("c = %d\n", c);
+  printf("i = %d\n", i);
+  X x;
+  printf("x.f() return value : %d\n", x.f());
+  printf("X::i = %d\n", X::i);
+  T p = "hello world";
+  printf("\"%s\"\n", p);
+  Y y;
+  printf("y.b = %ld\n", y.b = 12);
+}
+
+int main()
+{
+  test000();
+  return 0;
+}
+

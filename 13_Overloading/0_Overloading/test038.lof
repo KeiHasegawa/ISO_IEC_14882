@@ -1,0 +1,4 @@
+X::operator++() called
+X::operator++(int) called with 0
+X::operator++() called
+X::operator++(int) called with 3

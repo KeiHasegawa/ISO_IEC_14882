@@ -1,0 +1,18 @@
+/*
+ * A non-type template-parameter shall not be declared to have floating point,
+ * class, or void type.
+ */
+#include <stdio.h>
+
+template<double* pd> class Y; // OK
+template<double& rd> class Z; // OK
+
+template<double* pd> class Y {
+};
+
+int main()
+{
+  double d;
+  Y<&d> y;
+  return 0;
+}

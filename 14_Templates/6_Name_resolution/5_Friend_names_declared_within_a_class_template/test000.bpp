@@ -1,0 +1,17 @@
+template<typename T> class number {
+public:
+  number(int);
+  //...
+  friend number gcd(number& x, number& y);
+  //...
+};
+
+void g()
+{
+  number<double> a(3), b(4);
+  //...
+  a = gcd(a,b); // finds gcd because number<double> is an
+                // associated class, making gcd visible
+                // in its namespace (global scope)
+  b = gcd(3,4); // ill-formed; gcd is not visible
+}

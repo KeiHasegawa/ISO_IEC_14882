@@ -1,0 +1,2 @@
+S::operator+(int) called
+S::operator-() called

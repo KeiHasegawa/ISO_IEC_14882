@@ -1,0 +1,3 @@
+S::operator+(int) called
+S::operator*() called
+x = 0x12345678

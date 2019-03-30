@@ -1,0 +1,4 @@
+x.delta = 1, x.index = 2
+f called
+(x.faddr)() return value : 6
+x.delta = 3, x.index = 4, x.v_off = 5

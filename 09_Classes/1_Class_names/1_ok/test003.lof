@@ -1,0 +1,3 @@
+`operator*(Matrix&, Vector&)' called
+m.i = 123
+v.j = 456

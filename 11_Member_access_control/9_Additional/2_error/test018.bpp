@@ -1,0 +1,14 @@
+typedef char* T;
+
+class X {
+  typedef int T;
+  T a;
+  friend T h(T);
+};
+
+void h(T a)
+{
+  T aa = a;
+  X x;
+  int b = x.a;
+}

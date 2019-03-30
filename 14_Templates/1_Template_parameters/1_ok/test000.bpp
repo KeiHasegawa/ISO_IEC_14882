@@ -1,0 +1,29 @@
+/*
+ * There is no semantic difference between class and typename in a
+ * template-parameter. typename followed by an unqualified-id names a template
+ * type parameter. typename followed by a qualified-id denotes the type in a
+ * non-type parameter-declaration. A storage class shall not be specified in a
+ * template-parameter declaration. Note: a template parameter may be a class
+ * template.
+ */
+#include <stdio.h>
+
+template<class T> class myarray {
+public:
+  T a[1];
+};
+
+template<class K, class V, template<class T> class C = myarray>
+class Map {
+public:
+  C<K> key;
+  C<V> value;
+};
+
+int main()
+{
+  Map<char*, int> m;
+  printf("\"%s\"\n", m.key.a[0] = "ABCD");
+  printf("%d\n", m.value.a[0] = 2);
+  return 0;
+}

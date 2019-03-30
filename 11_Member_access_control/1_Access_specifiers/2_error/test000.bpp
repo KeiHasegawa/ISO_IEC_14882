@@ -1,0 +1,18 @@
+/*
+ * An access-specifier specifies the access rules for members following it
+ * until the end of the class or until another access-specifier is encountered.
+ */
+class X {
+  int a; // X::a is private by default: class used
+public:
+  int b; // X::b is public
+  int c; // X::c is public
+};
+
+void f()
+{
+  X x;
+  x.a;  // error
+  x.b;
+  x.c;
+}

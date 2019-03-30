@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+struct T {
+  T()
+  {
+    printf("T::T called\n");
+  }
+};
+
+void f(const T& t = T())
+{
+  printf("f called\n");
+}
+
+int main()
+{
+  f();
+  return 0;
+}

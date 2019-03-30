@@ -1,0 +1,5 @@
+class Y;
+
+class X {
+  friend void Y::f();
+};

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Main_function/item.xml">
+    <title>3.6.1 Main function</title>
+</section>
+
+<section url="2_Initialization_of_non_local_objects/item.xml">
+    <title>3.6.2 Initialization of non-local objects</title>
+</section>
+
+<section url="3_Termination/item.xml">
+    <title>3.6.3 Termination</title>
+</section>
+
+</test_item>

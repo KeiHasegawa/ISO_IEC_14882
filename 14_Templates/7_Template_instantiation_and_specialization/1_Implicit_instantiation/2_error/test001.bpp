@@ -1,0 +1,12 @@
+/*
+ * Each default argument is instantiated independently.
+ */
+
+template<class T> void f(T x, T y = ydef(T()), T z = zdef(T()));
+class A { };
+A zdef(A);
+void g(A a, A b, A c) {
+  f(a, b, c); // no default argument instantiation
+  f(a, b); // default argument z = zdef(T()) instantiated
+  f(a); //ill-formed; ydef is not declared
+}

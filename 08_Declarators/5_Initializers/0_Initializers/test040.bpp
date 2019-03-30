@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+struct T {
+  int a;
+  int b;
+  int c;
+};
+
+int x = 3;
+T t1 = { 1, 2, x };
+
+T t2 = { t1.b, t1.c, t1.a };
+
+T t3 = { -1, -x+1, -3 };
+
+int main()
+{
+  printf("t1.a = %d\n", t1.a);
+  printf("t1.b = %d\n", t1.b);
+  printf("t1.c = %d\n", t1.c);
+
+  printf("t2.a = %d\n", t2.a);
+  printf("t2.b = %d\n", t2.b);
+  printf("t2.c = %d\n", t2.c);
+
+  printf("t3.a = %d\n", t3.a);
+  printf("t3.b = %d\n", t3.b);
+  printf("t3.c = %d\n", t3.c);
+
+  return 0;
+}

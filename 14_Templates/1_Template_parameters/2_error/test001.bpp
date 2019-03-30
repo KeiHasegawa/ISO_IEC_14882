@@ -1,0 +1,7 @@
+/*
+ * A non-type template-parameter shall not be declared to have floating point,
+ * class, or void type.
+ */
+template<double d> class X; // error
+template<double* pd> class Y; // OK
+template<double& rd> class Z; // OK

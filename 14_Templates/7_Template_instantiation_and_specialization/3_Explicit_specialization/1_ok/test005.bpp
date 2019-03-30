@@ -1,0 +1,69 @@
+/*
+ * A member or a member template of a class template may be explicitly
+ * specialized for a given implicit instantiation of the class template, even
+ * if the member or member template is defined in the class template
+ * definition. An explicit specialization of a member or member template is
+ * specified using the template specialization syntax.
+ */
+#include <stdio.h>
+
+template<class T> struct A {
+  void f(T);
+  template<class X1> void g1(T, X1);
+  template<class X2> void g2(T, X2);
+  void h(T) { printf("h(T) called\n"); }
+};
+
+// specialization
+template<> void A<int>::f(int);
+
+// out of class member template definition
+template<class T> template<class X1> void A<T>::g1(T, X1)
+{
+  printf("A<T>::g1(T, X1) called\n");
+}
+
+// member template specialization
+template<> template<class X1> void A<int>::g1(int, X1);
+
+// member template specialization
+template<> template<>
+void A<int>::g1(int, char); // X1 deduced as char
+
+template<> template<>
+void A<int>::g2<char>(int, char); // X2 specified as char
+                  // member specialization even if defined in class definition
+
+template<> void A<int>::h(int) { printf("A<int>::h(int) called\n"); }
+
+struct S {};
+
+int main()
+{
+  A<int> ai;
+  ai.f(3);
+  ai.g1(4,"abc");
+  A<S> as;
+  S s;
+  as.g1(s,5);
+  ai.g1(6,'c');
+  ai.h(7);
+  return 0;
+}
+
+template<> void A<int>::f(int)
+{
+  printf("A<int>::f(int) called\n");
+}
+
+template<> template<class X1> void A<int>::g1(int, X1)
+{
+  printf("A<int>::g1(int, X1) called\n");
+}
+
+template<> template<>
+void A<int>::g1(int, char)
+{
+  printf("A<int>::g1(int, char) called\n");
+}
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>派生クラスのポインタから基底クラスのメンバ函数を呼び出す</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>派生クラスのポインタから基底クラスのあいまいなメンバを参照する</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>派生クラスのポインタから基底クラスの static メンバを参照する</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>派生クラスのポインタからあいまいな基底クラスのメンバを参照する</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>基底クラスのメンバ函数を修飾子付きで参照する</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>仮想基底クラスのメンバ, 基底クラスの static メンバ, 基底クラスの enum を参照する</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>基底クラスのメンバを派生クラスの同一名のメンバが隠す例</abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.cpp</source>
+    <abstract>派生クラスのポインタを基底クラスへのポインタ, 仮想基底クラスへのポインタへ変換. </abstract>
+</item>
+
+<item>
+    <source>2_error/test003.cpp</source>
+    <abstract>派生クラスのポインタをあいまいのある基底クラスへのポインタへ変換. </abstract>
+</item>
+
+</test_item>

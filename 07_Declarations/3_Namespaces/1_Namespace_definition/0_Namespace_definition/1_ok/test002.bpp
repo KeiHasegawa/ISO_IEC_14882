@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct N {
+  static int m;
+};
+
+int N::m;
+
+namespace N {  // ok : g++ 3.4.4
+               // error : VC++ 6.0
+  int n;
+};
+
+int main()
+{
+#if 1
+  printf("N::n = %d\n", N::n = 4);  // error : g++ 3.4.4
+#else
+  printf("N::m = %d\n", N::m = 5);  // ok : g++ 3.4.4
+#endif
+  return 0;
+}
+

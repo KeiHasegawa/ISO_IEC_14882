@@ -1,0 +1,41 @@
+/*
+ * Two implicit conversion sequences of the same form are indistinguishable conversion
+ * sequences unless one of the following rules apply:
+ * - Standard conversion sequence S1 is a better conversion sequence than standard
+ *   conversion sequence S2 if
+ *   - S1 is a proper subsequence of S2 (comparing the conversion sequences in the
+ *     canonical form defined by 13.3.3.1.1, excluding any Lvalue Transformation; the
+ *     identity conversion sequence is considered to be a subsequence of any
+ *     non-identity conversion sequence) or, if not that, 
+ *   - the rank of S1 is better than the rank of S2, or S1 and S2 have the same rank
+ *     and are distinguishable by the rules in the paragraph below, or, if not that,
+ *   - S1 and S2 differ only in their qualification conversion and yield similar types
+ *     T1 and T2 (4.4), respectively, and the cv-qualification signature of type T1 is
+ *     a proper subset of the cv-qualification signature of type T2, and S1 is not the
+ *     deprecated string literal array-to-pointer conversion (4.2).
+ *   ...
+ */
+#include <stdio.h>
+
+int f(const int *);
+int f(int *);
+int i;
+int j = f(&i); // Calls f(int *)
+
+int main()
+{
+  printf("j = %d\n", j);
+  return 0;
+}
+
+int f(const int *)
+{
+  printf("`f(const int *)' called\n");
+  return 2;
+}
+
+int f(int *)
+{
+  printf("`f(int *)' called\n");
+  return 3;
+}

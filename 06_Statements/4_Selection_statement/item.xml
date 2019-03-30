@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Selection_statement/item.xml">
+    <title>6.4 Selection statement</title>
+</section>
+
+<section url="1_The_if_statement/item.xml">
+    <title>6.4.1 The if statement</title>
+</section>
+
+<section url="2_The_switch_statement/item.xml">
+    <title>6.4.2 The switch statement</title>
+</section>
+
+</test_item>
+
+
+

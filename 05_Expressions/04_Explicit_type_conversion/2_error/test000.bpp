@@ -1,0 +1,8 @@
+struct A {};
+struct I1 : A {};
+struct I2 : A {};
+struct D : I1, I2 {};
+A *foo( D *p ) {
+  return (A*)( p ); // ill-formed static_cast interpretation
+}
+

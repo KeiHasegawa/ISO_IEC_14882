@@ -1,0 +1,5 @@
+f(char*) called with "Kei Hasegawa"
+f(const char*) called with "compiler developer"
+f2(char*) called with "Kei Hasegawa"
+f3(const char*) called with "Kei Hasegawa"
+f3(const char*) called with "compiler developer"

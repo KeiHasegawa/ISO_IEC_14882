@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>リンケージ</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>後方で宣言される関数を呼び出す</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>ブロックスコープ内のローカルクラスを型とする外部変数</abstract>
+</item>
+
+</test_item>

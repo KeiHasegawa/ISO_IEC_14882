@@ -1,0 +1,21 @@
+/*
+ * Check tag-name and variable name is diffrent.
+ * Check typedef redeclarations are OK if they are not conflict.
+ */
+#include <stdio.h>
+
+typedef struct s { int a; } s;
+typedef int I;
+typedef int I;
+typedef I I;
+
+int main()
+{
+  I I = 1;
+  printf("I = %d\n", I);
+  s s = { 2 };
+  printf("s.a = %d\n", s.a);
+  ++s.a;
+  printf("s.a = %d\n", s.a);
+  return 0;
+}

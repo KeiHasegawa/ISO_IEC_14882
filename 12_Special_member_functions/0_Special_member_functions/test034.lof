@@ -1,0 +1,2 @@
+X::operator delete called
+Y::operator delete called. sz = 4

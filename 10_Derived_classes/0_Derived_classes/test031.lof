@@ -1,0 +1,25 @@
+line::draw called
+tip[0].x = 1, tip[0].y = 2
+tip[1].x = 3, tip[1].y = 4
+line::draw called
+tip[0].x = 1, tip[0].y = 2
+tip[1].x = 3, tip[1].y = 4
+pt2 = (-3, 11)
+line::rotate called with 5
+line::draw called
+tip[0].x = 6, tip[0].y = 2
+tip[1].x = 3, tip[1].y = -1
+triagnle::draw called
+tip[0].x = 5, tip[0].y = 6
+tip[1].x = 7, tip[1].y = 8
+tip[2].x = 9, tip[2].y = 10
+triagnle::draw called
+tip[0].x = 5, tip[0].y = 6
+tip[1].x = 7, tip[1].y = 8
+tip[2].x = 9, tip[2].y = 10
+pt2 = (-3, 11)
+triagnle::rotate called with 5
+triagnle::draw called
+tip[0].x = 10, tip[0].y = 6
+tip[1].x = 7, tip[1].y = 3
+tip[2].x = 50, tip[2].y = 10

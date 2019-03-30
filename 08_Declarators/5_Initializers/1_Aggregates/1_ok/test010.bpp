@@ -1,0 +1,21 @@
+/*
+ * When a union is initialized with a brace-enclosed initializer, the braces
+ * shall only contain an initializer for the first member of the union.
+ */
+#include <stdio.h>
+
+union u { int a; char* b; };
+u a = { 1 };
+u b = a;
+
+void test000()
+{
+  printf("a.a = %d\n", a.a);
+  printf("b.a = %d\n", b.a);
+}
+
+int main()
+{
+  test000();
+  return 0;
+}

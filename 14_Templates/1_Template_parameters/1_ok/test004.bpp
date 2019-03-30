@@ -1,0 +1,37 @@
+/*
+ * A non-type template-parameter of type "array of T" or "function returning T"
+ * is adjusted to be of type "pointer to T" or "pointer to function returning
+ * T", respectively.
+ */
+#include <stdio.h>
+
+template<int *a> struct R {
+  void f()
+  {
+    printf("`R::f()' called\n");
+    printf("*a = %d\n", *a = 3);
+  }
+};
+template<int b[5]> struct S {
+  void g()
+  {
+    printf("`S::g()' called\n");
+    printf("b[0] = %d\n", b[0]);
+  }
+};
+
+int p;
+R<&p> w; // OK
+S<&p> x; // OK due to parameter adjustment
+int v[5];
+R<v> y; // OK due to implicit argument conversion
+S<v> z; // OK due to both adjustment and conversion
+
+int main()
+{
+  w.f();
+  x.g();
+  y.f();
+  z.g();
+  return 0;
+}

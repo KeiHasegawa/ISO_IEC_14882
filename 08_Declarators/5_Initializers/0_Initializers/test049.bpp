@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+struct X {
+  static int s;
+};
+
+int X::s;
+
+struct Y {
+  static int s;
+};
+
+int Y::s;
+
+int main()
+{
+  printf("X::s = %d\n", X::s = 1);
+  printf("Y::s = %d\n", Y::s = 2);
+  return 0;
+}

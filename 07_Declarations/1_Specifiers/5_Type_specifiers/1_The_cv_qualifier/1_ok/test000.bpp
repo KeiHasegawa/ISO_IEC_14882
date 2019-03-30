@@ -1,0 +1,30 @@
+/*
+ * Check const works well.
+ */
+#include <stdio.h>
+
+void f()
+{
+  printf("`f' called\n");
+  const int ci = 3; // cv-qualified (initialized as required)
+  printf("ci = %d\n", ci);
+  int i = 2; // not cv-qualified
+  printf("i = %d\n", i);
+  const int* cip; // pointer to const int
+  cip = &i; // OK: cv-qualified access path to unqualified
+  printf("*cip = %d\n", *cip);
+  int* ip;
+  ip = const_cast<int*>(cip); // cast needed to convert const int* to int*
+  *ip = 4; // defined: *ip points to i, a non-const object
+  printf("i = %d\n", i);
+  const int* ciq = new const int (3); // initialized as required
+  int* iq = const_cast<int*>(ciq); // cast required
+  *iq = 4; // undefined: modifies a const object
+  printf("*ciq = %d\n", *ciq);
+}
+
+int main()
+{
+  f();
+  return 0;
+}

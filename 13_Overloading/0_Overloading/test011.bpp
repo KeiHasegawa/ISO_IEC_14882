@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void f(char c)
+{
+  printf("f(char) called with '%c'\n", c);
+}
+
+void f(int i)
+{
+  printf("f(int) called with %d\n", i);
+}
+
+void f(unsigned u)
+{
+  printf("f(unsigned) called with %d\n", u);
+}
+
+void f(long l)
+{
+  printf("f(long) called with %d\n", l);
+}
+
+int main()
+{
+  f('c');
+  f(1u);
+  f(1);
+  f(1L);
+  return 0;
+}

@@ -1,0 +1,108 @@
+#include <stdio.h>
+
+class X {
+  int i;
+public:
+  X(int ii) : i(ii) {}
+  X& operator=(int ii)
+  {
+    printf("X::operator = called\n");
+    i = ii;
+    return *this;
+  }
+  X& operator+=(int ii)
+  {
+    printf("X::operator += called\n");
+    i += ii;
+    return *this;
+  }
+  X& operator-=(int ii)
+  {
+    printf("X::operator -= called\n");
+    i -= ii;
+    return *this;
+  }
+  X& operator*=(int ii)
+  {
+    printf("X::operator *= called\n");
+    i *= ii;
+    return *this;
+  }
+  X& operator/=(int ii)
+  {
+    printf("X::operator /= called\n");
+    i /= ii;
+    return *this;
+  }
+  X& operator%=(int ii)
+  {
+    printf("X::operator %%= called\n");
+    i %= ii;
+    return *this;
+  }
+  X& operator^=(int ii)
+  {
+    printf("X::operator ^= called\n");
+    i ^= ii;
+    return *this;
+  }
+  X& operator&=(int ii)
+  {
+    printf("X::operator &= called\n");
+    i &= ii;
+    return *this;
+  }
+  X& operator|=(int ii)
+  {
+    printf("X::operator |= called\n");
+    i |= ii;
+    return *this;
+  }
+  X& operator>>=(int ii)
+  {
+    printf("X::operator >>= called\n");
+    i >>= ii;
+    return *this;
+  }
+  X& operator<<=(int ii)
+  {
+    printf("X::operator <<= called\n");
+    i <<= ii;
+    return *this;
+  }
+  void print()
+  {
+    printf("i = %d\n", i);
+  }
+};
+
+int main()
+{
+  X x(1);
+
+  x.print();
+  x = 2;
+  x.print();
+  x += 3;
+  x.print();
+  x -= -4;
+  x.print();
+  x *= 5;
+  x.print();
+  x /= 6;
+  x.print();
+  x %= 5;
+  x.print();
+  x ^= 8;
+  x.print();
+  x &= 9;
+  x.print();
+  x |= 10;
+  x.print();
+  x >>= 2;
+  x.print();
+  x <<= 3;
+  x.print();
+
+  return 0;
+}

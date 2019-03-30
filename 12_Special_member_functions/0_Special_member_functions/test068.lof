@@ -1,0 +1,3 @@
+before initialize y
+V::V(const V&) called
+after initialize y

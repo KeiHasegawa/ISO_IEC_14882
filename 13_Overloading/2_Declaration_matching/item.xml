@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>基底クラスのメンバ函数と同じ名前の派生クラスのメンバ函数
+    </abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>基底クラスのメンバ函数と同じ名前の派生クラスのメンバ函数
+    </abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>スコープの内側から検索される
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>多重定義のメンバ函数にそれぞれ別のアクセス指定子を指定
+    </abstract>
+</item>
+
+</test_item>

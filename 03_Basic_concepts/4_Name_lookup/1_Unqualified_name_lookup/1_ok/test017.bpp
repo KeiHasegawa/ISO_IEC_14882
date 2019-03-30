@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+struct S0 {
+  static int a;
+  struct S1 {
+    int f();
+    struct S2 {
+      int a;
+      int f(int);
+      struct S3 {
+	int a;
+	int f();
+      };
+    };
+  };
+};
+
+int S0::S1::f()
+{
+  return a;
+}
+
+int S0::S1::S2::f(int a)
+{
+  return a;
+}
+
+int S0::S1::S2::S3::f()
+{
+  int a = 5;
+  return a;
+}
+
+int main()
+{
+  S0::a = 1;
+  S0::S1 s1;
+  printf("s1.f() returns %d\n", s1.f());
+  S0::S1::S2 s2;
+  s2.a = 2;
+  printf("s2.f(3) returns %d\n", s2.f(3));
+  S0::S1::S2::S3 s3;
+  s3.a = 4;
+  printf("s3.f() returns %d\n", s3.f());
+  return 0;
+}
+
+int S0::a;

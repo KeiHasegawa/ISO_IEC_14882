@@ -1,0 +1,6 @@
+/*
+ * A template-parameter shall not be given default arguments by two different
+ * declarations in the same scope.
+ */
+template<class T = int> class X;
+template<class T = int> class X { /*... */ }; // error

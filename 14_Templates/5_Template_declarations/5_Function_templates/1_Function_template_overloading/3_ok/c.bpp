@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+extern void g(int*);
+extern void h(int*);
+
+int main()
+{
+  int n;
+  g(&n);
+  h(&n);
+  return 0;
+}

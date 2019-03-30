@@ -1,0 +1,70 @@
+/*
+ * Certain function declarations cannot be overloaded:
+ * - Function declarations that differ only in the return type cannot be
+ *   overloaded.
+ * - Member function declarations with the same name and the same parameter
+ *   types cannot be overloaded
+ *   if any of them is a static member function declaration (9.4). Likewise,
+ *   member function template declarations with the same name, the same
+ *   parameter types, and the same template parameter lists cannot be
+ *   overloaded if any of them is a static member function template
+ *   declaration. The types of the implicit object parameters constructed for
+ *   the member functions for the purpose of overload resolution (13.3.1) are
+ *   not considered when comparing parameter types for enforcement of this
+ *   rule. In contrast, if there is no static member function declaration
+ *   among a set of member function declarations with the same name and the
+ *   same parameter types, then these member function declarations can be
+ *   overloaded if they differ in the type of their implicit object parameter.
+ * ...
+ */
+#include <stdio.h>
+
+class X {
+public:
+  static void f();
+  void g();
+  void g() const; // OK: no static g
+  void g() const volatile; // OK: no static g
+};
+
+void h(const X* p)
+{
+  p->g();
+}
+
+void i(const volatile X* p)
+{
+  p->g();
+}
+
+int main()
+{
+  X::f();
+  X x;
+  x.g();
+  const X* p = &x;
+  h(p);
+  const volatile X* q = &x;
+  i(q);
+  return 0;
+}
+
+void X::f()
+{
+  printf("`X::f()' called\n");
+}
+
+void X::g()
+{
+  printf("`X::g()' called\n");
+}
+
+void X::g() const
+{
+  printf("`X::g() const' called\n");
+}
+
+void X::g() const volatile
+{
+  printf("`X::g() const volatile' called\n");
+}

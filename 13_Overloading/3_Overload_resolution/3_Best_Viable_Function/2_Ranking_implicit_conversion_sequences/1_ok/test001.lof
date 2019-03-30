@@ -1,0 +1,4 @@
+`f(int &)' called
+j = 2
+`X::f() const' called
+`X::f()' called

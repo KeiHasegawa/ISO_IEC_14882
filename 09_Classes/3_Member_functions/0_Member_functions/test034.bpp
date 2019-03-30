@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+class X {
+  int value;
+public:
+  X(int v = 0) : value(v) {}
+  X operator&(X x){ return X(value & x.value); }
+  X operator^(X x){ return X(value ^ x.value); }
+  X operator|(X x){ return X(value | x.value); }
+  void print()
+  {
+    printf("value = 0x%x\n", value);
+  }
+};
+
+int main()
+{
+  X a, b(0x12345678), c(0x9abcdef0);
+  a.print();
+  a = b & c;
+  a.print();
+  a = b ^ c;
+  a.print();
+  a = b | c;
+  a.print();
+
+  return 0;
+}

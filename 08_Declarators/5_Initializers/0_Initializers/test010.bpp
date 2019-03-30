@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int a = 1234;
+
+int b = +a;
+
+int main(void)
+{
+  printf("a = %d\n", a);
+  printf("b = %d\n", b);
+  return 0;
+}

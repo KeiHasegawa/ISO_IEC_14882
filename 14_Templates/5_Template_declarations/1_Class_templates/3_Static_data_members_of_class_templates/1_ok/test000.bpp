@@ -1,0 +1,34 @@
+/*
+ * A definition for a static data member may be provided in a namespace scope
+ * enclosing the definition of the static member's class template.
+ */
+#include <stdio.h>
+
+template<class T> struct X {
+  static T s;
+};
+template<class T> T X<T>::s = 0;
+
+void f(void)
+{
+  printf("X<int>::s = %d\n", X<int>::s = 1);
+  printf("X<double>::s = %f\n", X<double>::s = 2.0);
+}
+
+struct S {
+  int m;
+  S(int mm) : m(mm) {}
+};
+
+void g(void)
+{
+  X<S>::s = 3;
+  printf("X<S>::s.m = %d\n", X<S>::s.m);
+}
+
+int main()
+{
+  f();
+  g();
+  return 0;
+}

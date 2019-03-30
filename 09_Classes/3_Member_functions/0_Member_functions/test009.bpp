@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+class C {
+  int i;
+public:
+  C(int ii) : i(ii) {}
+  void print()
+  {
+    printf("i = %d\n", i);
+  }
+};
+
+int main()
+{
+  C c(3);
+  c.print();
+  return 0;
+}

@@ -1,0 +1,10 @@
+/*
+ * When a member is redeclared within its class definition, the access
+ * specified at its redeclaration shall be the same as at its initial
+ * declaration.
+ */
+struct S {
+  class A;
+private:
+  class A { }; // error: cannot change access
+};

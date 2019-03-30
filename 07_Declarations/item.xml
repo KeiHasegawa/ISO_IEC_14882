@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Declarations/item.xml">
+    <title>7 Declarations</title>
+</section>
+
+<section url="1_Specifiers/item.xml">
+    <title>7.1 Specifiers</title>
+</section>
+
+<section url="2_Enumeration_declarations/item.xml">
+    <title>7.2 Enumeration declarations</title>
+</section>
+
+<section url="3_Namespaces/item.xml">
+    <title>7.3 Namespaces</title>
+</section>
+
+<section url="4_The_asm_declaration/item.xml">
+    <title>7.4 The asm declaration</title>
+</section>
+
+<section url="5_Linkage_specifications/item.xml">
+    <title>7.5 Linkage specifications</title>
+</section>
+
+</test_item>

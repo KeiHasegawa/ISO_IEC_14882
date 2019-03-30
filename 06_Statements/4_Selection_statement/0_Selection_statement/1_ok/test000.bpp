@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void f(int i)
+{
+  printf("`f' called\n");
+  if (i)
+    int i;
+  printf("i = %d\n", i);
+}
+
+void g(int i)
+{
+  printf("`g' called\n");
+  if (i) {
+    int i;
+    i = 1;
+    printf("i = %d\n", i);
+  }
+  printf("i = %d\n", i);
+}
+
+
+int main()
+{
+  f(3);
+  f(4);
+  return 0;
+}

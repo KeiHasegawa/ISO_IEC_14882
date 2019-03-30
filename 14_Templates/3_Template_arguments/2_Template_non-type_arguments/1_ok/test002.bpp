@@ -1,0 +1,22 @@
+/*
+ * Note: Temporaries, unnamed lvalues, and named lvalues that do not have
+ * external linkage are not acceptable template-arguments when the
+ * corresponding template-parameter has reference type.
+ */
+#include <stdio.h>
+
+template<const int& CRI> struct B { void f(); };
+template<const int& CRI> void B<CRI>::f()
+{
+  printf("`template<const int& CRI> B<CRI>::f()' called\n");
+  printf("CRI = %d\n", CRI);
+}
+int c = 1;
+B<c> b1; // OK
+
+int main()
+{
+  b1.f();
+  return 0;
+}
+

@@ -1,0 +1,4 @@
+x = 222
+X::~X called
+x = 222
+after explicit destructor call

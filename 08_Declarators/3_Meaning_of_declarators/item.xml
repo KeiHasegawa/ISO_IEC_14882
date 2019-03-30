@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Pointers/item.xml">
+    <title>8.3.1 Pointers</title>
+</section>
+
+<section url="2_References/item.xml">
+    <title>8.3.2 References</title>
+</section>
+
+<section url="3_Pointers_to_members/item.xml">
+    <title>8.3.3 Pointers to members</title>
+</section>
+
+<section url="4_Arrays/item.xml">
+    <title>8.3.4 Arrays</title>
+</section>
+
+<section url="5_Functions/item.xml">
+    <title>8.3.5 Functions</title>
+</section>
+
+<section url="6_Default_arguments/item.xml">
+    <title>8.3.6 Default arguments</title>
+</section>
+
+</test_item>

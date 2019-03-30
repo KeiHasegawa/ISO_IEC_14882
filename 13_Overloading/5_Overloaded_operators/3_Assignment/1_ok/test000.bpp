@@ -1,0 +1,65 @@
+/*
+ * 1 An assignment operator shall be implemented by a non-static member
+ *   function with exactly one parameter. Because a copy assignment operator
+ *   operator= is implicitly declared for a class if not declared by the user
+ *   (12.8), a base class assignment operator is always hidden by the copy
+ *   assignment operator of the derived class.
+ *
+ * 2 Any assignment operator, even the copy assignment operator, can be
+ *   virtual. [Note: for a derived class D with a base class B for which a
+ *   virtual copy assignment has been declared, the copy assignment operator in
+ *   D does not override B's virtual copy assignment operator.
+ */
+#include <stdio.h>
+
+struct B {
+  virtual int operator=(int);
+  virtual B& operator=(const B&);
+};
+struct D : B {
+  virtual int operator=(int);
+  virtual D& operator=(const B&);
+};
+D dobj1;
+D dobj2;
+B* bptr = &dobj1;
+
+void f() {
+  bptr->operator=(99); // calls D::operator=(int)
+  *bptr = 99; // ditto
+  bptr->operator=(dobj2); // calls D::operator=(const B&)
+  *bptr = dobj2; // ditto
+  dobj1 = dobj2; // calls implicitly-declared
+                 // D::operator=(const D&)
+}
+
+int main()
+{
+  f();
+  return 0;
+}
+
+int B::operator=(int)
+{
+  printf("`B::operator=(int)' called\n");
+  return 0;
+}
+
+B& B::operator=(const B&)
+{
+  printf("`B::operator=(const B&)' called\n");
+  return *this;
+}
+
+int D::operator=(int)
+{
+  printf("`D::operator=(int)' called\n");
+  return 0;
+}
+
+D& D::operator=(const B&)
+{
+  printf("`D::operator=(const B&)' called\n");
+  return *this;
+}
+

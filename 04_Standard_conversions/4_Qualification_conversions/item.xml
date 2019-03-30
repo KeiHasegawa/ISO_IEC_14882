@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>const で修飾された型, const で修飾されたポインタ型</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>const で修飾された型, const で修飾されたポインタ型</abstract>
+</item>
+
+</test_item>

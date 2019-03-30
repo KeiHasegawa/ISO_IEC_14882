@@ -1,0 +1,31 @@
+/*
+ * Each default argument is instantiated independently.
+ */
+#include <stdio.h>
+
+template<class T> void f(T x, T y = ydef(T()), T z = zdef(T()))
+{
+  printf("(%d,%d,%d)\n", x.i, y.i, z.i);
+}
+
+class A { public: int i; A() : i(0) {} };
+A zdef(A a)
+{
+  printf("zdef(A) called\n");
+  ++a.i;
+  return a;
+}
+void g(A a, A b, A c) {
+  f(a, b, c); // no default argument instantiation
+  f(a, b); // default argument z = zdef(T()) instantiated
+}
+
+int main()
+{
+  A x, y, z;
+  x.i = 1;
+  y.i = 2;
+  z.i = 3;
+  g(x,y,z);
+  return 0;
+}

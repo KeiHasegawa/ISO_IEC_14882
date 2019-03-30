@@ -1,0 +1,13 @@
+/*
+ * A lookup that finds an injected-class-name (10.2) can result in an
+ * ambiguity in certain cases (for example, if it is found in more than one
+ * base class). If all of the injected-class-names that are found refer to
+ * specializations of the same class template, and if the name is followed by
+ * a template-argument-list, the reference refers to the class template itself
+ * and not a specialization thereof, and is not ambiguous.
+ */
+template <class T> struct Base { };
+template <class T> struct Derived: Base<int>, Base<char> {
+  typename Derived::Base b; // error: ambiguous
+  typename Derived::Base<double> d; // OK
+};

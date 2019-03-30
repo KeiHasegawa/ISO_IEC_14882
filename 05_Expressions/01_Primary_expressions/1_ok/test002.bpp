@@ -1,0 +1,22 @@
+/* 
+ * unqualified-id : ...
+ *                | ~ class-name
+ */
+
+#include <stdio.h>
+
+struct X {
+  ~X();
+};
+
+X::~X()
+{
+  printf("X::~X() is called\n");
+}
+
+int main()
+{
+  X x;
+  x.~X();  /* ~X is reduced to unqualified-id */
+  return 0;
+}

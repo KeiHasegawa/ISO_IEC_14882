@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+enum E { X = 2 };
+
+E operator|(E, E)
+{
+  printf("operator|(E,E) called\n");
+  return X;
+}
+
+E operator|=(E& a, E b)
+{
+  printf("operator|=(E,E) called\n");
+  return a | b;
+}
+
+int main()
+{
+  E a, b;
+  a |= b;
+  return 0;
+}

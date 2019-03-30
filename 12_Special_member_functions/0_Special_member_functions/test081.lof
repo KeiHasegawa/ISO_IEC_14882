@@ -1,0 +1,5 @@
+X::X(void) called
+X::f called
+X::X(void) called
+X::g called
+X::X(const X&, const X&) called

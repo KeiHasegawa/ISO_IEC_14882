@@ -1,0 +1,12 @@
+/*
+ * A declaration of a function template or class template being explicitly
+ * specialized shall be in scope at the point of declaration of an explicit
+ * specialization. [Note: a declaration, but not a definition of the template
+ * is required. ] The definition of a class or class template shall be in
+ * scope at the point of declaration of an explicit specialization for a
+ * member template of the class or class template.
+ */
+
+template<> class X<int> { /* ... */ }; // error: X not a template
+template<class T> class X;
+template<> class X<char*> { /* ... */ }; // OK: X is a template

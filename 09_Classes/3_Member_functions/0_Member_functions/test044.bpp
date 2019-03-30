@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+class X {
+  int x;
+public:
+  X(int xx) : x(xx) {}
+  void print() const
+  {
+    printf("x = %d\n", x);
+  }
+};
+
+class Y {
+  int y;
+public:
+  Y(int yy) : y(yy) {}
+  void print() const
+  {
+    printf("y = %d\n", y);
+  }
+};
+
+class Z : public X, public Y {
+  int z;
+public:
+  Z(int xx, int yy, int zz) : X(xx), Y(yy), z(zz) {}
+  void print() const
+  {
+    X::print();
+    Y::print();
+    printf("z = %d\n", z);
+  }
+};
+
+int main()
+{
+  Z z(1,2,3);
+  z.print();
+  return 0;
+}

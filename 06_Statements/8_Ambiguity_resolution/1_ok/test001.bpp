@@ -1,0 +1,62 @@
+/*
+ * Check declarations are recognized.
+ */
+#include <stdio.h>
+
+class T {
+  int m1, m2;
+public:
+  T();
+  T(int);
+  T(int, int);
+  void print() const;
+};
+
+T(a); // declaration
+T(*b)(); // declaration
+T(c)=7; // declaration
+T(d),e,f=3; // declaration
+extern int h;
+T(g)(h,2); // declaration
+
+T x()
+{
+  printf("`x' called\n");
+  return T(2,3);
+}
+
+int main()
+{
+  a.print();
+  b = x;
+  T bb = (*b)();
+  bb.print();
+  c.print();
+  d.print();
+  e.print();
+  f.print();
+  g.print();
+  return 0;
+}
+
+T::T() : m1(0), m2(0)
+{
+  printf("`T::T()' called\n");
+}
+
+T::T(int n) : m1(n), m2(-n)
+{
+  printf("`T::T(int)' called\n");
+}
+
+T::T(int u, int v) : m1(u), m2(v)
+{
+  printf("`T::T(int,int)' called\n");
+}
+
+void T::print() const
+{
+  printf("m1 = %d, m2 = %d\n", m1, m2);
+}
+
+int h = 9;

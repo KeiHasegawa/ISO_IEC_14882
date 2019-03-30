@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+struct Y {
+  Y(int mm) : m(mm) {}
+  int m;
+};
+
+class X {
+  Y* m_ptr;
+public:
+  X(Y* ptr) : m_ptr(ptr) {}
+  Y* operator->()
+  {
+    printf("X::operator -> called\n");
+    return m_ptr;
+  }
+};
+
+int main()
+{
+  Y y(3);
+  X x(&y);
+  printf("x->m = %d\n",x->m);
+  x->m = 5;
+  printf("x->m = %d\n",x->m);
+  return 0;
+}

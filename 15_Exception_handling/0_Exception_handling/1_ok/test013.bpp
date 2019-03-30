@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+typedef void(*PFV)();
+
+namespace std {
+  PFV set_unexpected(PFV);
+}
+
+struct X {};
+
+struct Y {};
+
+extern void f(int) throw (X,Y);
+
+void pass_through()
+{
+  printf("pass_through called\n");
+  throw;
+}
+
+void g(int n)
+{
+  using namespace std;
+  PFV old = set_unexpected(&pass_through);
+  try {
+    f(n);
+  }
+  catch (X) {
+    printf("catch X\n");
+  }
+  catch (Y) {
+    printf("catch Y\n");
+  }
+  catch (...) {
+    printf("catch something\n");
+  }
+  set_unexpected(old);
+}
+
+int main()
+{
+  g(0);
+  g(1);
+  g(2);
+  return 0;
+}
+
+struct Z {};
+
+void f(int n) throw (X,Y)
+{
+  switch ( n ){
+  case 0: throw X();
+  case 1: throw Y();
+  default: throw Z();
+  }
+}

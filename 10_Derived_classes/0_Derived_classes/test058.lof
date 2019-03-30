@@ -1,0 +1,4 @@
+d.V::x = -1, d.x = -2
+V::f called
+pd->V::f() return value : -3
+d.V::x = 0, d.x = -2

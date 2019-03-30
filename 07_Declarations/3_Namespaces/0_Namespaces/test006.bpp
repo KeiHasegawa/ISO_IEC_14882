@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+namespace N {
+  template<class A> struct S {
+    A member;
+  };
+}
+
+void f()
+{
+  N::S<int> si;
+  si.member = 1234;
+  printf("si.member = %d\n", si.member);
+}
+
+int main()
+{
+  f();
+  return 0;
+}

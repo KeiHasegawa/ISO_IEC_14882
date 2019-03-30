@@ -1,0 +1,10 @@
+ci = 10
+*pc = 10
+*cpc = 10
+i = 0
+*cp = 0
+`f' called
+i = 10
+*cp = 10
+ok
+ok

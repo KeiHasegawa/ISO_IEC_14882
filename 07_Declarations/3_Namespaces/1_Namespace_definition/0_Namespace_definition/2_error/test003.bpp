@@ -1,0 +1,4 @@
+namespace N {
+  extern int a;
+  double N::a;  // error redeclaration.
+}

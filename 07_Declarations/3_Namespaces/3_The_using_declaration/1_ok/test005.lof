@@ -1,0 +1,6 @@
+`B::f(double)' called with 3.500000
+`B::g(char)' called with 'a'
+`B::g::g()' called
+A::x = 0
+A::x = 99
+`B::x::x()' called

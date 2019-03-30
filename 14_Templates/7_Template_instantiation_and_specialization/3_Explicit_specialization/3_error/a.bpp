@@ -1,0 +1,7 @@
+// file #1
+#include <vector>
+// Primary class template vector
+export template<class T> void f(t) {
+  std::vector<T>; vec; // should match the specialization
+  /* ... */
+}

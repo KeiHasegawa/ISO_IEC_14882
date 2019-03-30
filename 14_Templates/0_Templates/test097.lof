@@ -1,0 +1,4 @@
+S::S() called
+S::S(const S&) called
+S::S(const S<T2>&) called
+x.m = 1, y.m = 2, z.m = 10.000000

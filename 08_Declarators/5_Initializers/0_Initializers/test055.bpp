@@ -1,0 +1,21 @@
+/*
+ * initializer works well.
+ */
+#include <stdio.h>
+
+int f(int);
+int a = 2;
+int b = f(a);
+int c(b);
+
+int main()
+{
+  printf("a = %d, b = %d, c = %d\n", a, b, c);
+  return 0;
+}
+
+int f(int a)
+{
+  printf("`f' called with %d\n", a);
+  return a - 3;
+}

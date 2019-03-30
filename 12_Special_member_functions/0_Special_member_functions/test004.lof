@@ -1,0 +1,4 @@
+X::X called, mem = 1234
+X::X called, mem = 1234
+operator new called
+X::X called, mem = 1234

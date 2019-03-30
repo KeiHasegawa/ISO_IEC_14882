@@ -1,0 +1,41 @@
+/*
+ * If a member template of a class template is partially specialized, the
+ * member template partial specializations are member templates of the
+ * enclosing class template; if the enclosing class template is instantiated
+ * (14.7.1, 14.7.2), a declaration for every member template partial
+ * specialization is also instantiated as part of creating the members of
+ * the class template specialization. If the primary member template is
+ * explicitly specialized for a given (implicit) specialization of the
+ * enclosing class template, the partial specializations of the member
+ * template are ignored for this specialization of the enclosing class
+ * template. If a partial specialization of the member template is
+ * explicitly specialized for a given (implicit) specialization of the
+ * enclosing class template, the primary member template and its other
+ * partial specializations are still considered for this specialization of
+ * the enclosing class template.
+ */
+#include <stdio.h>
+
+template<class T> struct A {
+  template<class T2> struct B {
+    void f(){ printf("`f' called\n"); }
+  }; // #1
+  template<class T2> struct B<T2*> {
+    void g(){ printf("`g' called\n"); }
+  }; // #2
+};
+template<> template<class T2> struct A<short>::B {
+  void h(){ printf("`h' called\n"); }
+}; // #3
+
+A<char>::B<int*> abcip; // uses #2
+A<short>::B<int*> absip; // uses #3
+A<char>::B<int> abci; // uses #1
+
+int main()
+{
+  abcip.g();
+  absip.h();
+  abci.f();
+  return 0;
+}

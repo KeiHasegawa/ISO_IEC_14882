@@ -1,0 +1,31 @@
+/*
+ * A class template defines the layout and operations for an unbounded set of
+ * related types. [Example: a single class template List might provide a
+ * common definition for list of int, list of float, and list of pointers to
+ * Shapes. ]
+ */
+#include <stdio.h>
+
+template<class T> class Array {
+  T* v;
+  int sz;
+public:
+  explicit Array(int n) : sz(n) { v = new T[sz]; }
+  T& operator[](int i){ return v[i]; }
+  T& elem(int i) { return v[i]; }
+  int size() const { return sz; }
+};
+
+int main()
+{
+  Array<int> ai(10);
+  for ( int* p = &ai[0] ; p != &ai[ai.size()] ; ++p )
+    printf("%d ", *p = p - &ai[0]);
+  printf("\n");
+
+  Array<float> af(5);
+  for ( float* p = &af[0] ; p != &af[af.size()] ; ++p )
+    printf("%f ", *p = p - &af[0]);
+  printf("\n");
+  return 0;
+}

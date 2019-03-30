@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>単純な friend 函数の宣言</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>class の friend 宣言</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>X と friend なクラス Y でクラス X の enum 宣言を参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>X と friend でないクラス Z でクラス X の enum 宣言を参照
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>クラスメンバを friend 函数にするクラス宣言</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>friend 函数函数の宣言と定義を同時に書く</abstract>
+</item>
+
+<item>
+    <source>2_error/test002.cpp</source>
+    <abstract>friend は派生しない. また, 伝搬しない</abstract>
+</item>
+
+<item>
+    <source>2_error/test003.cpp</source>
+    <abstract>local クラスにおける friend 宣言</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>local クラスにおける friend 宣言</abstract>
+</item>
+
+</test_item>

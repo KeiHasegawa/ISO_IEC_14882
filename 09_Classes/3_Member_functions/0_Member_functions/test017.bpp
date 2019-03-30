@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+class X {
+  int i;
+public:
+  X(int ii) : i(ii) {}
+  X& operator++()
+  {
+    printf("operator ++ called\n");
+    ++i;
+    return *this;
+  }
+  void print()
+  {
+    printf("i = %d\n", i);
+  }
+};
+
+int main()
+{
+  X x(3);
+  ++x;
+  x.print();
+  return 0;
+}

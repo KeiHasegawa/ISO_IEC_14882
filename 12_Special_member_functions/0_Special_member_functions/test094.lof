@@ -1,0 +1,4 @@
+operator new(size_t) called
+*p = 3
+operator new(size_t, void*) called
+*q = 4

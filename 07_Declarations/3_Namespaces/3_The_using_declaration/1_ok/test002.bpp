@@ -1,0 +1,39 @@
+/*
+ * Members declared by a using-declaration can be referred to by explicit
+ * qualification just like other member names. In a using-declaration, a
+ * prefix :: refers to the global namespace.
+ */
+#include <stdio.h>
+
+void f();
+
+namespace A {
+  void g();
+}
+
+namespace X {
+  using ::f; // global f
+  using A::g; // A's g
+}
+
+void h()
+{
+  X::f(); // calls ::f
+  X::g(); // calls A::g
+}
+
+int main()
+{
+  h();
+  return 0;
+}
+
+void f()
+{
+  printf("`f' called\n");
+}
+
+void A::g()
+{
+  printf("`A::g' called\n");
+}

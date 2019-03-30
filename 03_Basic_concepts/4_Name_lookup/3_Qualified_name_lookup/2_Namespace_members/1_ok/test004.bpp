@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+namespace A {
+  namespace B {
+    void f1(int);
+  }
+}
+namespace C {
+  namespace D {
+    void f1(int);
+  }
+}
+using namespace A;
+using namespace C::D;
+void B::f1(int n)
+{ printf("`B::f1' called with %d\n", n); } // OK, defines A::B::f1(int)
+
+int main()
+{
+  B::f1(3);
+  return 0;
+}

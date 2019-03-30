@@ -1,0 +1,19 @@
+/*
+ * Check mutable works well.
+ */
+#include <stdio.h>
+
+struct S {
+  mutable int a;
+  void f() const
+  {
+    printf("a = %d\n", a = 1);
+  }
+};
+
+int main()
+{
+  S s;
+  s.f();
+  return 0;
+}

@@ -1,0 +1,2 @@
+B::f(int) called with 1
+D::f(char*) called with "Ben"

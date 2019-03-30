@@ -1,0 +1,4 @@
+void f(int a)
+{
+  int(1,a,3);  // error. too many argument
+}

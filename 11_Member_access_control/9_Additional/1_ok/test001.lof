@@ -1,0 +1,4 @@
+`f' called
+p->a = 1
+`g' called
+q->x.a = 2

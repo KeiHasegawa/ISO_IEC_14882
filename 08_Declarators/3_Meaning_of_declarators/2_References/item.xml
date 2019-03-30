@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>リファレンスのパラメータが動作するか</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>リファレンスの函数の戻り型が動作するか</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>ポインタへのリファレンスが動作するか</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>リファレンスの初期化に定数を指定</abstract>
+</item>
+
+</test_item>

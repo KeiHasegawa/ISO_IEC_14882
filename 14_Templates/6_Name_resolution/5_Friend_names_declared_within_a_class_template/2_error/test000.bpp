@@ -1,0 +1,25 @@
+/*
+ * As with non-template classes, the names of namespace-scope friend functions
+ * of a class template specialization are not visible during an ordinary
+ * lookup unless explicitly declared at namespace scope (11.4). Such names may
+ * be found under the rules for associated classes (3.4.2).
+ */
+
+template<typename T> class number {
+  T t;
+public:
+  number(int);
+  //...
+  friend number gcd(number& x, number& y);
+  //...
+};
+
+void g()
+{
+  number<double> a(3), b(4);
+  //...
+  a = gcd(a,b); // finds gcd because number<double> is an
+                // associated class, making gcd visible
+                // in its namespace (global scope)
+  b = gcd(3,4); // ill-formed; gcd is not visible
+}

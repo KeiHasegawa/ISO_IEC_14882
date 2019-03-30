@@ -1,0 +1,19 @@
+/*
+ * initializer for structure works well, where the structure has
+ * static data member.
+ */
+#include <stdio.h>
+
+struct A {
+  int i;
+  static int s;
+  int j;
+} a = { 1, 2 };
+
+int main()
+{
+  printf("a.i = %d, a.s = %d, a.j = %d\n", a.i, a.s, a.j);
+  return 0;
+}
+
+int A::s;

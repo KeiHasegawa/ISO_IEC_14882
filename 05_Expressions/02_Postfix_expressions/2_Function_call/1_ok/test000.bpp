@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int f(int (&rf)())
+{
+  return rf();
+}
+
+int g()
+{
+  return 1234;
+}
+
+int main()
+{
+  printf("f return value : %d\n",f(g));
+  return 0;
+}

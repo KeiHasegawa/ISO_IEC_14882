@@ -1,0 +1,4 @@
+C::f called
+A::f called
+B::f called
+cptr->f() return value : -5

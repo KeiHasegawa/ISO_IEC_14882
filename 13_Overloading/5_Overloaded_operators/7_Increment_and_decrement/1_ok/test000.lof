@@ -1,0 +1,8 @@
+`X::operator++()' called
+`X::operator++(int)' called
+`operator++(Y&)' called
+`operator++(Y&, int)' called
+`X::operator++()' called
+`X::operator++(int)' called
+`operator++(Y&)' called
+`operator++(Y&, int)' called

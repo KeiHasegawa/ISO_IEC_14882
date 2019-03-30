@@ -1,0 +1,4 @@
+/*
+ * There shall not be more initializers than there are array elements.
+ */
+char cv[4] = "asdf"; // error

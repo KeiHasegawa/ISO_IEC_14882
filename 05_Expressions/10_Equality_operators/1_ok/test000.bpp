@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void f()
+{
+  struct B {
+    int f(){ return 0; }
+  };
+  struct L : B { };
+  struct R : B { };
+  struct D : L, R { };
+  int (B::*pb)() = &B::f;
+  int (L::*pl)() = pb;
+  int (R::*pr)() = pb;
+  int (D::*pdl)() = pl;
+  int (D::*pdr)() = pr;
+  bool x = (pdl == pdr); // false
+  if ( x )
+    printf("error\n");
+  else
+    printf("ok\n");
+}
+
+int main()
+{
+  f();
+  return 0;
+}

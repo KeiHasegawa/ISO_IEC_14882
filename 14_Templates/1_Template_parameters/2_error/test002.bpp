@@ -1,0 +1,5 @@
+/*
+ * If a template-parameter has a default template-argument, all subsequent
+ * template-parameters shall have a default template-argument supplied.
+ */
+template<class T1 = int, class T2> class B; // error

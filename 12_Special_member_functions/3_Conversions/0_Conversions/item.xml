@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>暗黙の変換は 1 回のみ適用される.</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>暗黙の変換は 1 回のみ適用される.</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>曖昧な変換</abstract>
+</item>
+
+</test_item>

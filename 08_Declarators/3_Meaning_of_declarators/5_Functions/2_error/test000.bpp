@@ -1,0 +1,5 @@
+typedef void F();
+struct S {
+  const F f; // ill-formed:
+             // not equivalent to: void f() const;
+};

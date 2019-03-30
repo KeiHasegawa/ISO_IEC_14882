@@ -1,0 +1,15 @@
+`ef' called
+r.c = 1
+r.e = 2
+`D::df' called
+b = 1
+c = 2
+`B::bf' called
+a = 1
+b = 2
+c = 3
+`B::bf' called
+n = 0
+d = 3
+e = 4
+`D::df' called

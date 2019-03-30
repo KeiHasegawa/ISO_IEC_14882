@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>簡単な class 宣言</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>class 名と函数名との混在</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>外側のスコープの class 名を内側のスコープのクラス名が隠す</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>複数のクラスでお互いの class 名を参照する</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>内側のスコープの変数名ではなく外側のスコープの class 名を参照する</abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.cpp</source>
+    <abstract>class 名と変数名との混在</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>メンバは同じだがタグ名の異なる class</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>class の二重定義</abstract>
+</item>
+
+</test_item>

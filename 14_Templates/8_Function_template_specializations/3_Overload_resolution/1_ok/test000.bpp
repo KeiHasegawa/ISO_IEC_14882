@@ -1,0 +1,28 @@
+/*
+ * Here is an example involving conversions on a function argument involved in
+ * template-argument deduction:
+ */
+#include <stdio.h>
+
+template<class T> struct B { /* ... */ };
+template<class T> struct D : public B<T> { /* ... */ };
+template<class T> void f(B<T>&);
+
+template<> void f(B<int>&)
+{
+  printf("f(B<int>&) called\n");
+}
+
+void g(B<int>& bi, D<int>& di)
+{
+  f(bi); // f(bi)
+  f(di); // f( (B<int>&)di )
+}
+
+int main()
+{
+  B<int> bi;
+  D<int> di;
+  g(bi,di);
+  return 0;
+}

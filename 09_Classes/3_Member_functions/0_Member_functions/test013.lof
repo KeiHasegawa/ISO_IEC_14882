@@ -1,0 +1,5 @@
+X::operator -> called
+x->m = 3
+X::operator -> called
+X::operator -> called
+x->m = 5

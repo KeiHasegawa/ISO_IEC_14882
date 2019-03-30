@@ -1,0 +1,4 @@
+outer::inner::inner called
+n = 3
+S::S called
+n = 3

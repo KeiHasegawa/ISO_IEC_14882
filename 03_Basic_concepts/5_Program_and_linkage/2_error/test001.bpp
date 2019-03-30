@@ -1,0 +1,7 @@
+void f()
+{
+  struct A { int x; }; // no linkage
+  extern A a; // ill-formed
+  typedef A B;
+  extern B b; // ill-formed
+}

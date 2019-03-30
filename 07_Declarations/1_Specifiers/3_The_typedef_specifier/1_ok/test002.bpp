@@ -1,0 +1,28 @@
+/*
+ * Use typedef-name as a constructor name is OK.
+ */
+#include <stdio.h>
+
+struct S {
+  S();
+  ~S();
+};
+typedef struct S T;
+S a = T(); // OK
+
+int main()
+{
+  printf("`main' called\n");
+  return 0;
+}
+
+S::S()
+{
+  printf("`S::S' called\n");
+}
+
+S::~S()
+{
+  printf("`S::~S' called\n");
+}
+

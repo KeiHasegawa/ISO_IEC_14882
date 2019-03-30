@@ -1,0 +1,38 @@
+/*
+ * Define ICSi(F) as follows:
+ * - if F is a static member function, ICS1(F) is defined such that ICS1(F) is
+ *   neither better nor worse than ICS1(G) for any function G, and,
+ *   symmetrically, ICS1(G) is neither better nor worse than ICS1(F);
+ *   otherwise,
+ * - let ICSi(F) denote the implicit conversion sequence that converts the
+ *   i-th argument in the list to the type of the i-th parameter of viable
+ *   function F. 13.3.3.1 defines the implicit conversion sequences and
+ *   13.3.3.2 defines what it means for one implicit conversion sequence to be
+ *   a better conversion sequence or worse conversion sequence than another.
+ *   Given these definitions, a viable function F1 is defined to be a better
+ *   function than another viable function F2 if for all arguments i, ICSi(F1)
+ *   is not a worse conversion sequence than ICSi(F2), and then
+ * - for some argument j, ICSj(F1) is a better conversion sequence than
+ *   ICSj(F2), or, if not that,
+ * - F1 is a non-template function and F2 is a function template
+ *   specialization, or, if not that,
+ * - F1 and F2 are function template specializations, and the function template
+ *   for F1 is more specialized than the template for F2 according to the
+ *   partial ordering rules described in 14.5.5.2, or, if not that,
+ * - the context is an initialization by user-defined conversion (see 8.5,
+ *   13.3.1.5, and 13.3.1.6) and the standard conversion sequence from the
+ *   return type of F1 to the destination type (i.e., the type of the entity
+ *   being initialized) is a better conversion sequence than the standard
+ *   conversion sequence from the return type of F2 to the destination type.
+ */
+
+struct A {
+  A();
+  operator int();
+  operator double();
+} a;
+int i = a; // a.operator int() followed by no conversion
+           // is better than a.operator double() followed by
+           // a conversion to int
+float x = a; // ambiguous: both possibilities require conversions,
+             // and neither is better than the other

@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+struct T {
+  int a;
+  int b;
+  int c;
+};
+
+T t = { 1, 2, 3 };
+
+T* pt = &t;
+
+int T::*pa = &T::a;
+int a = pt->*pa;
+
+int T::*pb = &T::b;
+int b = pt->*pb;
+
+int T::*pc = &T::c;
+int c = pt->*pc;
+
+int main()
+{
+  printf("t = { %d, %d, %d }\n", pt->a, pt->b, pt->c); 
+  printf("a = %d, b = %d, c = %d\n", a, b, c);
+  return 0;
+}

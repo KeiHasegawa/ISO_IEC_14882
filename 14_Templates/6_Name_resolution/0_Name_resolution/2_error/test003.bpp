@@ -1,0 +1,33 @@
+/*
+ * Knowing which names are type names allows the syntax of every template
+ * definition to be checked. No diagnostic shall be issued for a template
+ * definition for which a valid specialization can be generated. If no valid
+ * specialization can be generated for a template definition, and that
+ * template is not instantiated, the template definition is ill-formed, no
+ * diagnostic required. If a type used in a non-dependent name is incomplete
+ * at the point at which a template is defined but is complete at the point
+ * at which an instantiation is done, and if the completeness of that type
+ * affects whether or not the program is well-formed or affects the semantics
+ * of the program, the program is ill-formed; no diagnostic is required.
+ * [Note: if a template is instantiated, errors will be diagnosed according to
+ * the other rules in this Standard. Exactly when these errors are diagnosed
+ * is a quality of implementation issue. ]
+ */
+
+int j;
+template<class T> class X {
+  // ...
+  void f(T t, int i, char* p)
+  {
+    t = i; // diagnosed if X::f is instantiated
+           // and the assignment to t is an error
+    p = i; // may be diagnosed even if X::f is
+           // not instantiated
+    p = j; // may be diagnosed even if X::f is
+           // not instantiated
+  }
+  void g(T t) {
+    +; //may be diagnosed even if X::g is
+       // not instantiated
+  }
+};

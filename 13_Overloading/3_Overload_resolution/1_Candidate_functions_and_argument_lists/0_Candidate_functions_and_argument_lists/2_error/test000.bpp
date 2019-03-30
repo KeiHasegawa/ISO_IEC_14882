@@ -1,0 +1,18 @@
+/*
+ * Because only one user-defined conversion is allowed in an implicit
+ * conversion sequence, special rules apply when selecting the best
+ * user-defined conversion (13.3.3, 13.3.3.1).
+ */
+class T {
+public:
+  T();
+  // ...
+};
+
+class C : T {
+public:
+  C(int);
+  // ...
+};
+
+T a = 1; // ill-formed: T(C(1)) not tried

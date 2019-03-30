@@ -1,0 +1,10 @@
+A::f called
+a = 1
+B::f called
+b = 2
+C::f called
+c = 3
+A::f called
+a = 1
+B::f called
+b = 2

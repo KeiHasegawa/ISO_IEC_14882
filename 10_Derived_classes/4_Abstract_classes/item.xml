@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>簡単な純粋仮想函数</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>純粋仮想函数の定義をする</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>抽象クラスのポインタ, 抽象クラスのリファレンス</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>抽象クラスのオブジェクト, 抽象クラスをパラメータとする函数, 抽象クラスを返す函数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>抽象クラスのから派生したクラスが抽象クラス</abstract>
+</item>
+
+</test_item>

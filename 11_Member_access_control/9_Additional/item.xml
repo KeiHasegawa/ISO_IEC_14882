@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.c</source>
+    <abstract>public な enum のタグ名, enumerator literal, データメンバ,
+    メンバ函数を参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.c</source>
+    <abstract>struct, union はデフォルトで public</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.c</source>
+    <abstract>基底クラスの public メンバに public な派生クラスでアクセス</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.c</source>
+    <abstract>基底クラスの public メンバに private な派生クラスで
+    static メンバを qualifier 付きでアクセス</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.c</source>
+    <abstract>基底クラス B から private 派生したクラス D のメンバ, D の friend
+    で D* -> B* の変換
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.c</source>
+    <abstract>access declaration</abstract>
+</item>
+
+<item>
+    <source>1_ok/test006.c</source>
+    <abstract>access declaration で基底クラスの public メンバを
+    public 宣言. 基底クラスの protect メンバを protect 宣言.</abstract>
+</item>
+
+<item>
+    <source>1_ok/test007.c</source>
+    <abstract>access declaration で基底クラスの public な
+    overload されたメンバ函数を
+    public 宣言.</abstract>
+</item>
+
+<item>
+    <source>1_ok/test008.c</source>
+    <abstract>friend な函数による private メンバアクセス</abstract>
+</item>
+
+<item>
+    <source>1_ok/test009.c</source>
+    <abstract>異なるクラスに friend な函数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test010.c</source>
+    <abstract>friend な函数によるユーザー定義の変換</abstract>
+</item>
+
+<item>
+    <source>1_ok/test011.c</source>
+    <abstract>friend な member 函数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test012.c</source>
+    <abstract>friend なクラス</abstract>
+</item>
+
+<item>
+    <source>1_ok/test013.c</source>
+    <abstract>friend な C 言語の函数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test014.c</source>
+    <abstract>friend な 函数で private な enumerator literal を参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test015.c</source>
+    <abstract>friend な 函数で static な(internal linkage をもつ)函数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test016.c</source>
+    <abstract>クラス内で定義された friend な函数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test017.c</source>
+    <abstract>friend な函数から基底クラスの protect メンバの参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test018.c</source>
+    <abstract>メンバ函数から基底クラスの protect メンバの参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test019.c</source>
+    <abstract>基底クラスの仮想函数を派生クラスで private な override.
+    基底クラスのポインタ経由で仮想函数を呼び出す</abstract>
+</item>
+
+<item>
+    <source>1_ok/test020.c</source>
+    <abstract>多重継承における基底クラスのアクセス</abstract>
+</item>
+
+<item>
+    <source>1_ok/test021.c</source>
+    <abstract>基底クラス B から private 派生したクラス D のメンバ, D の friend
+    で D* -> B* の変換
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test022.c</source>
+    <abstract>グローバルスコープにある多重定義された operator を参照
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test023.c</source>
+    <abstract>グローバルスコープにある不完全型タグを参照
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test024.c</source>
+    <abstract>クラス内で定義されたクラスを参照
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test025.c</source>
+    <abstract>クラス内で定義されたクラスを参照
+    </abstract>
+</item>
+
+<item>
+    <source>2_error/test000.c</source>
+    <abstract>基底クラスの private メンバを派生クラスで参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.c</source>
+    <abstract>private な enum のタグ名, enumerator literal, データメンバ,
+    メンバ函数を参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test002.c</source>
+    <abstract>class はデフォルトで private</abstract>
+</item>
+
+<item>
+    <source>2_error/test003.c</source>
+    <abstract>基底クラスの public メンバに private な派生クラスで
+    メンバ函数以外からアクセス</abstract>
+</item>
+
+<item>
+    <source>2_error/test004.c</source>
+    <abstract>基底クラスの public メンバに private な派生クラスでアクセス</abstract>
+</item>
+
+<item>
+    <source>2_error/test005.c</source>
+    <abstract>基底クラス B から private 派生したクラス D に対して
+    D のメンバでも friend でもない函数で D* -> B* の変換
+    </abstract>
+</item>
+
+<item>
+    <source>2_error/test006.c</source>
+    <abstract>access declaration で qualifier の前に型を指定</abstract>
+</item>
+
+<item>
+    <source>2_error/test007.c</source>
+    <abstract>access declaration で基底クラスの private メンバを
+    public 宣言</abstract>
+</item>
+
+<item>
+    <source>2_error/test008.c</source>
+    <abstract>access declaration で基底クラスの public メンバを
+    protect 宣言</abstract>
+</item>
+
+<item>
+    <source>2_error/test009.c</source>
+    <abstract>access declaration で基底クラスの public メンバを
+    private 宣言</abstract>
+</item>
+
+<item>
+    <source>2_error/test010.c</source>
+    <abstract>access declaration で基底クラスの異なるアクセス指定をもつ
+    overload されたメンバ函数を
+    public 宣言.</abstract>
+</item>
+
+<item>
+    <source>2_error/test011.c</source>
+    <abstract>基底クラスと同じメンバ名をもつメンバを宣言し,
+    さらに access declaration する.</abstract>
+</item>
+
+<item>
+    <source>2_error/test012.c</source>
+    <abstract>member 函数でユーザー定義の変換を期待したコード</abstract>
+</item>
+
+<item>
+    <source>2_error/test013.c</source>
+    <abstract>friend で virtual な函数を宣言</abstract>
+</item>
+
+<item>
+    <source>2_error/test014.c</source>
+    <abstract>friend なクラスの宣言でクラスそのものの宣言</abstract>
+</item>
+
+<item>
+    <source>2_error/test015.c</source>
+    <abstract>friend でないクラスでクラスの private な enumerator literal を
+    参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test016.c</source>
+    <abstract>friend 宣言で不完全型のクラスのメンバを参照する</abstract>
+</item>
+
+<item>
+    <source>2_error/test017.c</source>
+    <abstract>最初の宣言が friend で, それに続く後の宣言が static を伴なう</abstract>
+</item>
+
+<item>
+    <source>2_error/test018.c</source>
+    <abstract>同じ名前の函数は friend だが, 型の違う函数でクラスの private メンバ
+    を参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test019.c</source>
+    <abstract>friend の friend から private メンバの参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test020.c</source>
+    <abstract>friend の派生から private メンバの参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test021.c</source>
+    <abstract>friend な函数から基底クラスの protect メンバを
+    基底クラスのポインタを経由して参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test022.c</source>
+    <abstract>メンバ函数から基底クラスの protect メンバを
+    基底クラスのポインタを経由して参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test023.c</source>
+    <abstract>friend でない函数から基底クラスの protect メンバを
+    基底クラスのポインタを経由して参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test024.c</source>
+    <abstract>基底クラスの仮想函数を派生クラスで private な override.
+    派生クラスのポインタ経由で仮想函数を呼び出す</abstract>
+</item>
+
+<item>
+    <source>2_error/test025.c</source>
+    <abstract>friend な函数をメンバ函数のように呼び出す</abstract>
+</item>
+
+<item>
+    <source>2_error/test026.c</source>
+    <abstract>public 派生クラスのメンバ函数で基底クラスの private メンバを参照</abstract>
+</item>
+
+</test_item>

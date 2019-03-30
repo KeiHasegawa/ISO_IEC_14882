@@ -1,0 +1,2 @@
+`B::~B()' called
+`D::operator delete(void*)' called

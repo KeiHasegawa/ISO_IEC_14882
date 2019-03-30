@@ -1,0 +1,8 @@
+X copy constructor called
+x.mem = 1
+mem = 2
+a.mem = 1, b.mem = 2
+Y copy constructor called
+y.mem = 3, n = 0
+mem = 0
+a.mem = 3, b.mem = 0

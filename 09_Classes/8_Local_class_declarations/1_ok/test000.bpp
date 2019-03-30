@@ -1,0 +1,43 @@
+/*
+ * A class can be defined within a function definition; such a class is called
+ * a local class. The name of a local class is local to its enclosing scope.
+ * The local class is in the scope of the enclosing scope, and has the same
+ * access to names outside the function as does the enclosing function.
+ * Declarations in a local class can use only type names, static variables,
+ * extern variables and functions, and enumerators from the enclosing scope.
+ */
+#include <stdio.h>
+
+int x;
+
+void f()
+{
+  printf("`f' called\n");
+  static int s ;
+  int x;
+  extern int g();
+  struct local {
+    int h() { printf("`local::h' called\n"); return s; } // OK
+    int k() { printf("`local::k' called\n"); return ::x; } // OK
+    int l() { printf("`local::l' called\n"); return g(); } // OK
+  };
+  local loc;
+  printf("loc.h() return value %d\n", loc.h());
+  printf("loc.k() return value %d\n", loc.k());
+  printf("loc.l() return value %d\n", loc.l());
+  ++s;
+  --::x;
+}
+
+int main()
+{
+  f();
+  f();
+  return 0;
+}
+
+int g()
+{
+  printf("`g' called\n");
+  return -5;
+}

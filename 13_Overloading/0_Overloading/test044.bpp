@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+class X {
+public:
+  int x;
+  X(int xx) : x(xx) {}
+  operator int();
+};
+
+int main()
+{
+  X a(5);
+  printf("a.x = %d\n", a.x);
+  X b(a);
+  printf("b.x = %d\n", b.x);
+  return 0;
+}

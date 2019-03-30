@@ -1,0 +1,8 @@
+class X {
+  enum { a = 100 };
+  friend class Y;
+};
+
+class Z {
+  int v[X::a];
+};

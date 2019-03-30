@@ -1,0 +1,4 @@
+`D::D(A*)' called
+pa->m = 1
+`X::X(A*)' called
+pa->m = 2

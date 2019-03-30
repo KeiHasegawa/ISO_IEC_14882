@@ -1,0 +1,5 @@
+test001.c:In function `h'
+test001.c:10: error: `E1' is private in this context.
+test001.c:11: error: `a1' is private in this context.
+test001.c:12: error: `i1' is private in this context.
+test001.c:13: error: `f1' is private in this context.

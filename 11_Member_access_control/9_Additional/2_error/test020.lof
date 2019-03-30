@@ -1,0 +1,2 @@
+test020.c:In function `D::f'
+test020.c:13: error: `a' is private in this context.

@@ -1,0 +1,10 @@
+/*
+ * A union for which objects or pointers are declared is not an anonymous
+ * union.
+ */
+void f()
+{
+  union { int aa; char* p; } obj, *ptr = &obj;
+  aa = 1; // error
+  ptr->aa = 1; // OK
+}

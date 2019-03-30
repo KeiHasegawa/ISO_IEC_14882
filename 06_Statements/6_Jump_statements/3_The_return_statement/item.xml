@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source></source>
+    <abstract></abstract>
+</item>
+
+</test_item>

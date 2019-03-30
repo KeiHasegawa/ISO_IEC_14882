@@ -1,0 +1,8 @@
+`f' called
+i = 3
+i = 3
+i = 3
+`g' called
+i = 4
+j = 8
+ok

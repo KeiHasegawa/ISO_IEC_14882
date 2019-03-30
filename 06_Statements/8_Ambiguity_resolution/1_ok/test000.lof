@@ -1,0 +1,11 @@
+`T(int)' called with 1
+`T(int)' called with 1
+`T(int,int)' called with 1, 5
+`S& operator<<(S&, int)' called
+`x(int)' called with 5
+0 0
+1 -1
+2 -2
+3 -3
+4 -4
+f.a = 1, f.b = 2

@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+class Y;
+
+class X {
+public:
+  int x;
+  void f(Y*);
+};
+
+class Y {
+  friend class X;
+  int y;
+};
+
+void X::f(Y* py)
+{
+  printf("`X::f' called\n");
+  py->y = x;
+  printf("py->y = %d\n", py->y);
+}
+
+int main()
+{
+  X x;
+  x.x = 5;
+  Y y;
+  x.f(&y);
+  return 0;
+}

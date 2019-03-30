@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>メンバポインタを介したメンバ函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>メンバポインタを介したメンバアクセス</abstract>
+</item>
+
+</test_item>

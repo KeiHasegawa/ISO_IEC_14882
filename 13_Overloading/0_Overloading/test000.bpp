@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+double abs(double d)
+{
+  printf("abs(double) called with %f\n", d);
+  return d;
+}
+
+int abs(int i)
+{
+  printf("abs(int) called with %d\n", i);
+  return i;
+}
+
+int main()
+{
+  abs(1);
+  abs(1.0);
+  return 0;
+}

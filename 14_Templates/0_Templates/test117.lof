@@ -1,0 +1,4 @@
+S1::operator+(int) called
+operator+(int, const S1&) called
+S2::operator+(int) called
+operator+(int, const S2&) called

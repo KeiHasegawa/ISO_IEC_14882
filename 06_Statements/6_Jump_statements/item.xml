@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_The_break_statement/item.xml">
+    <title>6.6.1 The break statement</title>
+</section>
+
+<section url="2_The_continue_statement/item.xml">
+    <title>6.6.2 The continue statement</title>
+</section>
+
+<section url="3_The_return_statement/item.xml">
+    <title>6.6.3 The return statement</title>
+</section>
+
+<section url="4_The_goto_statement/item.xml">
+    <title>6.6.4 The goto statement</title>
+</section>
+
+</test_item>

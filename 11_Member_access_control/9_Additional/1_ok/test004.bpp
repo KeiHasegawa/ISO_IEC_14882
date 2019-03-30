@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+class B {};
+
+class D : private B {
+public:
+  friend B* f(D* p){ return p; }
+  B* mem(){ return this; }
+};
+
+int main()
+{
+  D d;
+  f(&d);
+  d.mem();
+  printf("just compile ok test\n");
+  return 0;
+}

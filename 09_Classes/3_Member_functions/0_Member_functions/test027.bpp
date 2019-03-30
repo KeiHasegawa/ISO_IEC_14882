@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+class X {
+  int i;
+public:
+  X(int ii) : i(ii) {}
+  void f()
+  {
+    printf("i = %d\n", i);
+  }
+  void g(int ii)
+  {
+    i = ii;
+  }
+};
+
+int main()
+{
+  X x(3);
+  x.f();
+  x.g(5);
+  x.f();
+  return 0;
+}

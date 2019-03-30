@@ -1,0 +1,30 @@
+/*
+ * A friend of a class is a function or class that is not a member of the class
+ * but is permitted to use the private and protected member names from the
+ * class. The name of a friend is not in the scope of the class, and the
+ * friend is not called with the member access operators (5.2.5) unless it is
+ * a member of another class. Example: the following example illustrates
+ * the differences between members and friends:
+ */
+#include <stdio.h>
+
+class X {
+  int a;
+  friend void friend_set(X*, int);
+public:
+  void member_set(int);
+  void print() const { printf("a = %d\n", a); }
+};
+
+void friend_set(X* p, int i) { p->a = i; }
+void X::member_set(int i) { a = i; }
+
+int main()
+{
+  X obj;
+  friend_set(&obj,10);
+  obj.print();
+  obj.member_set(9);
+  obj.print();
+  return 0;
+}

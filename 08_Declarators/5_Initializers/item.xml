@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Initializers/item.xml">
+    <title>8.5 Initializers</title>
+</section>
+
+<section url="1_Aggregates/item.xml">
+    <title>8.5.1 Aggregates</title>
+</section>
+
+<section url="2_Character_arrays/item.xml">
+    <title>8.5.2 Character arrays</title>
+</section>
+
+<section url="3_References/item.xml">
+    <title>8.5.3 References</title>
+</section>
+
+</test_item>

@@ -1,0 +1,13 @@
+/*
+ * Certain function declarations cannot be overloaded:
+ * ...
+ * - Parameter declarations that differ only in that one is a function type and
+ *   the other is a pointer to the same function type are equivalent. That is,
+ *   the function type is adjusted to become a pointer to function type
+ *   (8.3.5).
+ * ...
+ */
+void h(int());
+void h(int (*)()); // redeclaration of h(int())
+void h(int x()) { } // definition of h(int())
+void h(int (*x)()) { } // ill-formed: redefinition of h(int())

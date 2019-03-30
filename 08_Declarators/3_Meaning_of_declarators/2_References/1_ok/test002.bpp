@@ -1,0 +1,42 @@
+/*
+ * Check reference to pointer works well.
+ */
+#include <stdio.h>
+
+struct link {
+  link* next;
+};
+
+link* first;
+
+void h(link*& p) // p is a reference to pointer
+{
+  p->next = first;
+  first = p;
+  p = 0;
+}
+
+void k()
+{
+  link* q = new link;
+  h(q);
+  if ( !q )
+    printf("ok\n");
+  else
+    printf("error\n");
+  if ( first ){
+    link* p = first->next;
+    if ( !p )
+      printf("ok\n");
+    else
+      printf("error\n");
+  }
+  else
+    printf("error\n");
+}
+
+int main()
+{
+  k();
+  return 0;
+}

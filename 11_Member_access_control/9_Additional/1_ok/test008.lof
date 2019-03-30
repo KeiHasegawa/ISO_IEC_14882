@@ -1,0 +1,4 @@
+`friend_set' called
+p->a = 2
+`X::member_set' called
+a = 3

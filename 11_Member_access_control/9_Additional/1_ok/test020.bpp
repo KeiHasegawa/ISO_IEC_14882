@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+class W { public: void f(); };
+class A : private virtual W { };
+class B : public virtual W { };
+class C : public A, public B {
+public:
+  void f(){ W::f(); }
+};
+
+int main()
+{
+  C c;
+  c.f();
+  return 0;
+}
+
+void W::f()
+{
+  printf("`W::f' called\n");
+}

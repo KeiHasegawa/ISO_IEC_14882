@@ -1,0 +1,5 @@
+/* A member function template shall not be virtual. */
+template <class T> struct AA {
+  template <class C> virtual void g(C); // error
+  virtual void f(); // OK
+};

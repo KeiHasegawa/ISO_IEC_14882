@@ -1,0 +1,27 @@
+/*
+ * A name used in a template declaration or definition and that is dependent
+ * on a template-parameter is assumed not to name a type unless the applicable
+ * name lookup finds a type name or the name is qualified by the keyword
+ * typename.
+ */
+
+// no B declared here
+class X;
+template<class T> class Y {
+  class Z; // forward declaration of member class
+  void f() {
+    X* a1; // declare pointer to X
+    T* a2; // declare pointer to T
+    Y* a3; // declare pointer to Y<T>
+    Z* a4; // declare pointer to Z
+    typedef typename T::A TA;
+    TA* a5; // declare pointer to T's A
+    typename T::A* a6; // declare pointer to T's A
+    T::A* a7; // T::A is not a type name:
+              // multiply T::A by a7; ill-formed,
+              // no visible declaration of a7
+    B* a8; // B is not a type name:
+           // multiply B by a8; ill-formed,
+           // no visible declarations of B and a8
+  }
+};

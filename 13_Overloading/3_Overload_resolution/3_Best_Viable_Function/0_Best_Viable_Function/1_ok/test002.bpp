@@ -1,0 +1,30 @@
+/*
+ * If the best viable function resolves to a function for which multiple
+ * declarations were found, and if at least two of these declarations - or the
+ * declarations they refer to in the case of using-declarations - specify a
+ * default argument that made the function viable, the program is ill-formed.
+ */
+#include <stdio.h>
+
+namespace A {
+  extern "C" void f(int = 5);
+}
+namespace B {
+  extern "C" void f(int = 5);
+}
+using A::f;
+using B::f;
+void use() {
+  f(3); // OK, default argument was not used for viability
+}
+
+int main()
+{
+  use();
+  return 0;
+}
+
+extern "C" void A::f(int a)
+{
+  printf("`A::f(int)' calledÅ@%d\n", a);
+}

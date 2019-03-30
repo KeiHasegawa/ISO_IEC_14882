@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+// translation unit 1:
+struct X {
+  X(int);
+  X(int, int);
+};
+
+X::X(int = 0)
+{
+  printf("`X::X(int)' called\n");
+}
+
+class D: public X { };
+
+D d2; // X(int) called by D()
+
+extern void f();
+
+int main()
+{
+  f();
+  return 0;
+}

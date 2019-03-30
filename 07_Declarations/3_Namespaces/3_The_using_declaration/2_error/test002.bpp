@@ -1,0 +1,15 @@
+/*
+ * A using-declaration for a class member shall be a member-declaration.
+ */
+struct X {
+  int i;
+  static int s;
+};
+
+void f()
+{
+  using X::i; // error: X::i is a class member
+              // and this is not a member declaration.
+  using X::s; // error: X::s is a class member
+              // and this is not a member declaration.
+}

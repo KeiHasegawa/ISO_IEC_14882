@@ -1,0 +1,10 @@
+f(A*) called
+A::vf() called
+f(A*) called
+B::vf() called
+f(A*) called
+C::vf() called
+g(B*) called
+B::vf() called
+g(B*) called
+C::vf() called

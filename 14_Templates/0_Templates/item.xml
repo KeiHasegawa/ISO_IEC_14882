@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>test000.cpp</source>
+    <abstract>単純な template 函数</abstract>
+</item>
+
+<item>
+    <source>test001.cpp</source>
+    <abstract>template クラス</abstract>
+</item>
+
+<item>
+    <source>test002.cpp</source>
+    <abstract>template クラス</abstract>
+</item>
+
+<item>
+    <source>test003.cpp</source>
+    <abstract>template クラスの型の等価性</abstract>
+</item>
+
+<item>
+    <source>test004.cpp</source>
+    <abstract>template クラスの型の等価性</abstract>
+</item>
+
+<item>
+    <source>test005.cpp</source>
+    <abstract>template 函数の宣言</abstract>
+</item>
+
+<item>
+    <source>test006.cpp</source>
+    <abstract>template 函数の宣言</abstract>
+</item>
+
+<item>
+    <source>test007.cpp</source>
+    <abstract>戻り値にのみ type-name で指定されたクラスをもつ
+    template 函数の static メンバ宣言</abstract>
+</item>
+
+<item>
+    <source>test008.cpp</source>
+    <abstract>template 函数の特別バージョン</abstract>
+</item>
+
+<item>
+    <source>test009.cpp</source>
+    <abstract>template クラスの特別バージョン</abstract>
+</item>
+
+<item>
+    <source>test010.cpp</source>
+    <abstract>template クラスの特別バージョンを
+    プログラミング言語の能力以外で実装する</abstract>
+</item>
+
+<item>
+    <source>test011.cpp</source>
+    <abstract>template クラスの特別バージョンを
+    プログラミング言語の能力以外で実装する</abstract>
+</item>
+
+<item>
+    <source>test012.cpp</source>
+    <abstract>template なメンバ函数の定義</abstract>
+</item>
+
+<item>
+    <source>test013.cpp</source>
+    <abstract>template なメンバ函数(コンストラクタ)の定義</abstract>
+</item>
+
+<item>
+    <source>test014.cpp</source>
+    <abstract>template なクラスの template なメンバ函数</abstract>
+</item>
+
+<item>
+    <source>test015.cpp</source>
+    <abstract>template なクラスのコンストラクタ, デストラクタの
+    明示的な呼び出し</abstract>
+</item>
+
+<item>
+    <source>test016.cpp</source>
+    <abstract>template なクラスの friend 函数</abstract>
+</item>
+
+<item>
+    <source>test017.cpp</source>
+    <abstract>template なクラスの static データメンバの宣言と定義</abstract>
+</item>
+
+<item>
+    <source>test018.cpp</source>
+    <abstract>template な函数のブロック内 static 変数</abstract>
+</item>
+
+<item>
+    <source>test019.cpp</source>
+    <abstract>単純な template 構造体</abstract>
+</item>
+
+<item>
+    <source>test020.cpp</source>
+    <abstract>メンバ函数の戻り型を class-key とタグ名で指定</abstract>
+</item>
+
+<item>
+    <source>test021.cpp</source>
+    <abstract>2 種類の template で引数の class 名が同一</abstract>
+</item>
+
+<item>
+    <source>test022.cpp</source>
+    <abstract>戻り値にのみ type-name で指定されたクラスをもつ
+    template 函数の宣言</abstract>
+    <comment>ARM 14.4 pp 346 ではエラーとしているが, 最新の ISO の規格では
+    では OK. 14.5.5.1 Function template overloading pp 259 参照</comment>
+</item>
+
+<item>
+    <source>test023.cpp</source>
+    <abstract>ローカル変数にのみ type-name で指定されたクラスをもつ
+    template 函数の定義</abstract>
+    <comment>ARM 14.4 pp 346 ではエラーとしているが, 最新の ISO の規格では
+    では OK. 14.5.5.1 Function template overloading pp 259 参照</comment>
+</item>
+
+<item>
+    <source>test024.cpp</source>
+    <abstract>template パラメータを複数持つクラス</abstract>
+</item>
+
+<item>
+    <source>test025.cpp</source>
+    <abstract>template パラメータを複数持つ函数</abstract>
+</item>
+
+<item>
+    <source>test026.cpp</source>
+    <abstract>戻り値にのみ type-name で指定されたクラスをもつ
+    template 函数の static メンバ宣言の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test027.cpp</source>
+    <abstract>template パラメータのデフォルト引数</abstract>
+</item>
+
+<item>
+    <source>test028.cpp</source>
+    <abstract>template パラメータのデフォルト引数</abstract>
+</item>
+
+<item>
+    <source>test029.cpp</source>
+    <abstract>template クラスの特別バージョン</abstract>
+</item>
+
+<item>
+    <source>test030.cpp</source>
+    <abstract>名前空間にあるテンプレート</abstract>
+</item>
+
+<item>
+    <source>test031.cpp</source>
+    <abstract>テンプレート内の typedef</abstract>
+</item>
+
+<item>
+    <source>test032.cpp</source>
+    <abstract>テンプレートパラメータが int のテンプレート函数</abstract>
+</item>
+
+<item>
+    <source>test033.cpp</source>
+    <abstract>テンプレートパラメータが函数ポインタのテンプレートクラス</abstract>
+</item>
+
+<item>
+    <source>test034.cpp</source>
+    <abstract>テンプレートな函数とそうでない函数のオーバーロード</abstract>
+</item>
+
+<item>
+    <source>test035.cpp</source>
+    <abstract>不完全型テンプレートクラスの宣言でテンプレートパラメータのデフォルト引数を
+    指定し, その後で完全型のテンプレートクラスの宣言をする</abstract>
+</item>
+
+<item>
+    <source>test036.cpp</source>
+    <abstract>テンプレート内で typedef されたシンボルを
+    函数のパラメータの型に指定</abstract>
+</item>
+
+<item>
+    <source>test037.cpp</source>
+    <abstract>テンプレート内で typedef されたシンボルを
+    函数のデフォルト引数にコンストラクタのスタイルで指定</abstract>
+</item>
+
+<item>
+    <source>test038.cpp</source>
+    <abstract>不完全型テンプレートクラスの宣言でテンプレートパラメータのデフォルト引数を
+    指定する</abstract>
+</item>
+
+<item>
+    <source>test039.cpp</source>
+    <abstract>不完全型テンプレートクラスの宣言でテンプレートパラメータのデフォルト引数を
+    指定する</abstract>
+</item>
+
+<item>
+    <source>test040.cpp</source>
+    <abstract>テンプレートクラスで宣言された構造体を参照する</abstract>
+</item>
+
+<item>
+    <source>test041.cpp</source>
+    <abstract>template クラスの特別バージョン</abstract>
+</item>
+
+<item>
+    <source>test042.cpp</source>
+    <abstract>template クラスの特別バージョン</abstract>
+</item>
+
+<item>
+    <source>test043.cpp</source>
+    <abstract>template クラスで宣言された構造体を参照する</abstract>
+</item>
+
+<item>
+    <source>test044.cpp</source>
+    <abstract>template クラスを基底クラスとする</abstract>
+</item>
+
+<item>
+    <source>test045.cpp</source>
+    <abstract>template クラスを基底クラスとする</abstract>
+</item>
+
+<item>
+    <source>test046.cpp</source>
+    <abstract>函数 template の特別バージョンから通常バージョンを呼び出す</abstract>
+</item>
+
+<item>
+    <source>test047.cpp</source>
+    <abstract>函数 template の overloading</abstract>
+</item>
+
+<item>
+    <source>test048.cpp</source>
+    <abstract>函数 template の引数が template クラス</abstract>
+</item>
+
+<item>
+    <source>test049.cpp</source>
+    <abstract>template クラスの static メンバの定義</abstract>
+</item>
+
+<item>
+    <source>test050.cpp</source>
+    <abstract>template パラメータのデフォルト引数</abstract>
+</item>
+
+<item>
+    <source>test051.cpp</source>
+    <abstract>template パラメータのデフォルト引数</abstract>
+</item>
+
+<item>
+    <source>test052.cpp</source>
+    <abstract>template パラメータのデフォルト引数</abstract>
+</item>
+
+</test_item>

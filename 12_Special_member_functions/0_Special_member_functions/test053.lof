@@ -1,0 +1,7 @@
+V::V(int) called with 1
+V::V(int) called with 2
+A::A(int) called with 2
+B::B(int) called with 3
+A::A(void) called
+B::B(void) called
+C::C(int) called with 4

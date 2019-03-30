@@ -1,0 +1,38 @@
+/*
+ * The name of a template-argument shall be accessible at the point where it is
+ * used as a template-argument. [Note: if the name of the template-argument is
+ * accessible at the point where it is used as a templateargument, there is no
+ * further access restriction in the resulting instantiation where the
+ * corresponding template-parameter name is used. ]
+ */
+#include <stdio.h>
+
+template<class T> class X {
+public:
+  static T t;
+};
+
+template<class T> T X<T>::t;
+
+class Y {
+private:
+  struct S { int m; };
+  X<S> x; // OK: S is accessible
+          // X<Y::S> has a static member of type Y::S
+          // OK: even though Y::S is private
+public:
+  void f();
+};
+
+int main()
+{
+  Y y;
+  y.f();
+  return 0;
+}
+
+void Y::f()
+{
+  printf("`Y::f()' called\n");
+  printf("x.t.m = %d\n", x.t.m = 2);
+}

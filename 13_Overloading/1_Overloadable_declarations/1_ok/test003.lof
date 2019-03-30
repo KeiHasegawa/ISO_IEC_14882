@@ -1,0 +1,3 @@
+`f(char*)' called with "Program"
+`g(char (*)[10])' called with "language"
+`g(char (*)[20])' called with "C++"

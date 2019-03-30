@@ -1,0 +1,39 @@
+/*
+ * A variable declared to be a T&, that is "reference to type T" (8.3.2),
+ * shall be initialized by an object, or function, of type T or by an object
+ * that can be converted into a T.
+ */
+#include <stdio.h>
+
+int g(int);
+
+void f()
+{
+  int i;
+  int& r = i; // r refers to i
+  r = 1; // the value of i becomes 1
+  printf("i = %d, r = %d\n", i, r);
+  int* p = &r; // p points to i
+  ++*p;
+  printf("i = %d, r = %d, *p = %d\n", i, r, *p);
+  int& rr = r; // rr refers to what r refers to, that is, to i
+  ++rr;
+  printf("i = %d, r = %d, *p = %d, rr = %d\n", i, r, *p, rr);
+  int (&rg)(int) = g; // rg refers to the function g
+  rg(i); // calls function g
+  int a[3];
+  int (&ra)[3] = a; // ra refers to the array a
+  ra[1] = i; // modifies a[1]
+  printf("a[1] = %d, ra[1] = %d\n", a[1], ra[1]);
+}
+
+int g(int n)
+{
+  printf("`g' called with %d\n", n);
+}
+
+int main()
+{
+  f();
+  return 0;
+}

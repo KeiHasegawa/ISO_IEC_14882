@@ -1,0 +1,18 @@
+/*
+ * Check const qualifier works well.
+ */
+
+typedef char* Pc;
+void f(const Pc); // void f(char* const) (not const char*)
+void g(const int Pc); // void g(const int)
+
+void f(const Pc x)
+{
+  x = "Programming";  // error
+}
+
+void g(const int Pc)
+{
+  Pc = 1; // error
+}
+

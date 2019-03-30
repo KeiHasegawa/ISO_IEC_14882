@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int init_a();
+
+int a = init_a();
+
+int init_b();
+
+int b = init_b();
+
+int init_c();
+
+int c = init_c();
+
+int main()
+{
+  printf("a = '%c'\n", a);
+  printf("b = '%c'\n", b);
+  printf("c = '%c'\n", c);
+  return 0;
+}
+
+int init_a()
+{
+  printf("init_a called\n");
+  return 'a';
+}
+
+int init_b()
+{
+  printf("init_b called\n");
+  return a + 1;
+}
+
+int init_c()
+{
+  printf("init_c called\n");
+  return b + 1;
+}

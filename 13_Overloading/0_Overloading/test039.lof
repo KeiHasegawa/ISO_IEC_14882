@@ -1,0 +1,4 @@
+operator++(Y&) called
+operator++(Y&, int i) called i = 0
+operator++(Y&) called
+operator++(Y&, int i) called i = 3

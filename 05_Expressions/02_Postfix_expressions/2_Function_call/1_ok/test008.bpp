@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+struct B {
+  int i;
+};
+
+struct D : B {
+  int j;
+};
+
+void f(B& r)
+{
+  r.i = -r.i;
+}
+
+int main()
+{
+  D d;
+  d.i = 1;
+  d.j = 2;
+  printf("d.i = %d, d.j = %d\n", d.i, d.j);
+  f(d);
+  printf("d.i = %d, d.j = %d\n", d.i, d.j);
+  return 0;
+}

@@ -1,0 +1,6 @@
+typedef int FIC(int) const;
+FIC f; // ill-formed: does not declare a member function
+struct S {
+  FIC f; // OK
+};
+FIC S::*pm = &S::f; // OK

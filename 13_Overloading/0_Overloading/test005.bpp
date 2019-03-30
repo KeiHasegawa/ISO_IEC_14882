@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+void f(char c)
+{
+  printf("f(char) called with '%c'\n", c);
+}
+
+void f(unsigned char uc)
+{
+  printf("f(unsigned char) called with '%c'\n", uc);
+}
+
+void f(signed char sc)
+{
+  printf("f(signed char) called with '%c'\n", sc);
+}
+
+void f(char* pc)
+{
+  printf("f(char*) called with \"%s\"\n", pc);
+}
+
+void f(unsigned char* puc)
+{
+  printf("f(unsigned char*) called with \"%s\"\n", puc);
+}
+
+void f(signed char* psc)
+{
+  printf("f(signed char*) called with \"%s\"\n", psc);
+}
+
+int main()
+{
+  f('a');
+  f((unsigned char)'b');
+  f((signed char)'c');
+
+  f("hasegawa");
+  f((unsigned char*)"kei");
+  f((signed char*)"compiler developer");
+
+  return 0;
+}

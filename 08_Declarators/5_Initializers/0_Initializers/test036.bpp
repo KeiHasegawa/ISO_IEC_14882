@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int init_a()
+{
+  return 5;
+}
+
+int init_b()
+{
+  return 7;
+}
+
+int a = init_a();
+
+int b = init_b(); 
+
+int c = (a, b);
+
+int main()
+{
+  printf("a = %d, b = %d, c = %d\n", a, b, c);
+  return 0;
+}

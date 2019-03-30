@@ -1,0 +1,12 @@
+/*
+ * The identifier in an original-namespace-definition shall not have been
+ * previously defined in the declarative region in which the
+ * original-namespace-definition appears. The identifier in an
+ * original-namespacedefinition is the name of the namespace. Subsequently in
+ * that declarative region, it is treated as an original-namespace-name.
+ */
+int N;
+
+namespace N {  // error
+  int n;
+}

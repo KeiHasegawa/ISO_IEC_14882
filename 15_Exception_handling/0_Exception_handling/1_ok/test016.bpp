@@ -1,0 +1,46 @@
+/*
+ * A goto, break, return, or continue statement can be used to transfer control
+ * out of a try block or handler. When this happens, each variable declared in
+ * the try block will be destroyed in the context that directly contains its
+ * declaration.
+ */
+#include <stdio.h>
+
+struct T1 { ~T1(); };
+
+struct T2 { ~T2(); };
+
+void f(bool condition)
+{
+ lab: try {
+   T1 t1;
+   try {
+     T2 t2;
+     if (condition)
+       goto lab;
+   } catch(...) { printf("handler 2\n"); }
+ } catch(...) { printf("handler 1\n"); }
+}
+
+/*
+ * Here, executing goto lab; will destroy first t2, then t1, assuming the
+ * condition does not declare a variable. Any exception raised while destroying
+ * t2 will result in executing handler 2; any exception raised while destroying
+ * t1 will result in executing handler 1.
+*/
+
+int main()
+{
+  f(true);
+  return 0;
+}
+
+T1::~T1()
+{
+  throw *this;
+}
+
+T2::~T2()
+{
+  throw *this;
+}

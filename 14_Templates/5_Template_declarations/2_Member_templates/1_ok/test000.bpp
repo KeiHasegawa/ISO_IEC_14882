@@ -1,0 +1,44 @@
+/*
+ * A template can be declared within a class or class template; such a
+ * template is called a member template. A member template can be defined
+ * within or outside its class definition or class template definition. A
+ * member template of a class template that is defined outside of its class
+ * template definition shall be specified with the template-parameters of the
+ * class template followed by the template-parameters of the member template.
+ */
+#include <stdio.h>
+
+template<class T> class string {
+public:
+  string(){}
+  template<class T2> int compare(const T2&);
+  template<class T2> string(const string<T2>& s)
+  {
+    printf("member template constructor called\n");
+  }
+  // ...
+};
+
+template<class T> template<class T2> int string<T>::compare(const T2& s)
+{
+  printf("`string<T>::compare(const T2&)' called\n");
+  printf("s = %d\n", s);
+  return 0;
+}
+
+void f(void)
+{
+  string<char> sc;
+  string<int> si;
+  sc = si;
+  char c = 'a';
+  sc.compare(c);
+  int n = 3;
+  si.compare(n);
+}
+
+int main()
+{
+  f();
+  return 0;
+}

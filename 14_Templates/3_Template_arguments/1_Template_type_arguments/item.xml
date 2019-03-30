@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>テンプレートの引数にローカルなクラスを指定</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>テンプレートがテンプレートパラメータ型のメンバを持つとき,
+    引数に函数を指定</abstract>
+</item>
+
+</test_item>

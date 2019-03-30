@@ -1,0 +1,18 @@
+/*
+ * initilizer for static member works well.
+ */
+#include <stdio.h>
+
+int a;
+struct X {
+  static int a;
+  static int b;
+};
+int X::a = 1;
+int X::b = a; // X::b = X::a
+
+int main()
+{
+  printf("X::a = %d, X::b = %d\n", X::a, X::b);
+  return 0;
+}

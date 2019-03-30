@@ -1,0 +1,6 @@
+`test000' called
+S::S() called
+S::S(const S&) called
+S::operator=(const S&) called
+S::~S() called
+S::~S() called

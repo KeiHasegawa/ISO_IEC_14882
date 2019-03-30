@@ -1,0 +1,8 @@
+class X {
+  friend int g();
+};
+
+static int g()
+{
+  return 0;
+}

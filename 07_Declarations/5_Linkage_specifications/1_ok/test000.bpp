@@ -1,0 +1,38 @@
+/*
+ * Every implementation shall provide for linkage to functions written in the
+ * C programming language, "C", and linkage to C++ functions, "C++".
+ */
+#include <stdio.h>
+
+struct complex {
+  double re;
+  double im;
+};
+
+complex sqrt(complex); // C++ linkage by default
+
+extern "C" {
+  double sqrt(double); // C linkage
+}
+
+int main()
+{
+  complex c = { 1, 2 };
+  sqrt(c);
+  double d = 3;
+  sqrt(d);
+  return 0;
+}
+
+complex sqrt(complex c)
+{
+  printf("`sqrt(complex)' called\n");
+  return c;
+}
+
+double sqrt(double d)
+{
+  printf("`sqrt(double)' called\n");
+  return d;
+}
+

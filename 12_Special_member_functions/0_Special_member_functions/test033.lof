@@ -1,0 +1,2 @@
+X::operator new(size_t) called
+X::operator new(size_t, Arena*) called

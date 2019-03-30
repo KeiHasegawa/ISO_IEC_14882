@@ -1,0 +1,9 @@
+/*
+ * Note: Temporaries, unnamed lvalues, and named lvalues that do not have
+ * external linkage are not acceptable template-arguments when the
+ * corresponding template-parameter has reference type.
+ */
+template<const int& CRI> struct B { /* ... */ };
+B<1> b2; // error: temporary would be required for template argument
+int c = 1;
+B<c> b1; // OK

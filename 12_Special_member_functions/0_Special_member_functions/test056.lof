@@ -1,0 +1,4 @@
+X::X(void) called
+before initialize of y
+X::X(const X&) called
+after initialize of y

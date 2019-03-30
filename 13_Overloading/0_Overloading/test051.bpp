@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int x;
+
+struct S {
+  const S& operator+(int) const
+  {
+    printf("S::operator+(int) called\n");
+    return *this;
+  }
+  int& operator*() const
+  {
+    printf("S::operator*() called\n");
+    return x;
+  }
+  int& operator[](int n) const
+  {
+    return *(*this + n);
+  }
+};
+
+int main()
+{
+  S s;
+  s[3] = 0x12345678;
+  printf("x = 0x%x\n", x);
+  return 0;
+}

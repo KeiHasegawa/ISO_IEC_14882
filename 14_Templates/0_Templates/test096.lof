@@ -1,0 +1,8 @@
+tic.a = 1
+tic.b = 'a'
+*tisc.c = 2
+tisc.d() : 'b'
+tisi.e[0] = 0
+tisi.e[1] = 1
+tisi.e[2] = 2
+*pc = 2

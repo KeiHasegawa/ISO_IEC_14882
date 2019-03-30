@@ -1,0 +1,59 @@
+/*
+ * When an id-expression (5.1) that is not part of a class member access syntax
+ * (5.2.5) and not used to form a pointer to member (5.3.1) is used in the body
+ * of a nonstatic member function of class X or used in the mem-initializer
+ * for a constructor of class X, if name lookup (3.4.1) resolves the name in
+ * the id-expression to a nonstatic nontype member of class X or of a base
+ * class of X, the id-expression is transformed into a class member access
+ * expression (5.2.5) using (*this) (9.3.2) as the postfix-expression to the
+ * left of the . operator. The member name then refers to the member of the
+ * object for which the function is called. Similarly during name lookup, when
+ * an unqualified-id (5.1) used in the definition of a member function for
+ * class X resolves to a static member, an enumerator or a nested type of
+ * class X or of a base class of X, the unqualified-id is transformed into a
+ * qualified-id (5.1) in which the nested-name-specifier names the class of
+ * the member function.
+ */
+#include <stdio.h>
+#include <string.h>
+
+struct tnode {
+  char tword[20];
+  int count;
+  tnode *left;
+  tnode *right;
+  void set(char*, tnode* l, tnode* r);
+};
+
+void tnode::set(char* w, tnode* l, tnode* r)
+{
+  count = strlen(w)+1;
+  if (sizeof(tword)<=count)
+    perror("tnode string too long");
+  strcpy(tword,w);
+  left = l;
+  right = r;
+}
+
+void print(tnode* p)
+{
+  printf("\"%s\", %d\n", p->tword, p->count);
+  if ( p->left )
+    print(p->left);
+  if ( p->right )
+    print(p->right);
+}
+
+void f(tnode n1, tnode n2)
+{
+  n1.set("abc",&n2,0);
+  n2.set("def",0,0);
+  print(&n1);
+}
+
+int main()
+{
+  tnode n1, n2;
+  f(n1,n2);
+  return 0;
+}

@@ -1,0 +1,26 @@
+/*
+ * If a function declaration in namespace scope or block scope has the same
+ * name and the same parameter types as a function introduced by a
+ * using-declaration, and the declarations do not declare the same function,
+ * the program is ill-formed.
+ */
+namespace B {
+  void f(int);
+  void f(double);
+}
+
+namespace C {
+  void f(int);
+  void f(double);
+  void f(char);
+}
+
+void h()
+{
+  using B::f;  // B::f(int) and B::f(double)
+  using C::f;  // C::f(int), C::f(double), and C::f(char)
+  f('h');      // calls C::f(char)
+  f(1);        // error: ambiguous: B::f(int) or C::f(int) ?
+  void f(int); // error:
+               // f(int) conflicts with C::f(int) and B::f(int)
+}

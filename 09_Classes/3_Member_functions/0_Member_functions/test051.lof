@@ -1,0 +1,84 @@
+test called with 0
+i = 0 at X::X
+i = 5 at X::X
+i = 5 at X::~X
+i = 0 at X::~X
+test called with 2
+i = 0 at X::X
+i = 1 at X::X
+i = 1 at X::~X
+i = 0 at X::~X
+test called with 4
+i = 0 at X::X
+i = 5 at X::X
+i = 5 at X::~X
+i = 0 at X::~X
+test called with 6
+i = 0 at X::X
+i = 1 at X::X
+i = 1 at X::~X
+i = 0 at X::~X
+test called with 8
+i = 0 at X::X
+i = 3 at X::X
+i = 3 at X::~X
+i = 0 at X::~X
+test called with 10
+i = 0 at X::X
+i = 1 at X::X
+i = 1 at X::~X
+i = 0 at X::~X
+test called with 12
+i = 0 at X::X
+i = 3 at X::X
+i = 3 at X::~X
+i = 0 at X::~X
+test called with 14
+i = 0 at X::X
+i = 1 at X::X
+i = 1 at X::~X
+i = 0 at X::~X
+test called with 16
+i = 0 at X::X
+i = 5 at X::X
+i = 5 at X::~X
+i = 0 at X::~X
+test called with 18
+i = 0 at X::X
+i = 1 at X::X
+i = 1 at X::~X
+i = 0 at X::~X
+test called with 20
+i = 0 at X::X
+i = 5 at X::X
+i = 5 at X::~X
+i = 0 at X::~X
+test called with 22
+i = 0 at X::X
+i = 1 at X::X
+i = 1 at X::~X
+i = 0 at X::~X
+test called with 24
+i = 0 at X::X
+i = 3 at X::X
+i = 4 at X::X
+i = 4 at X::~X
+i = 3 at X::~X
+i = 0 at X::~X
+test called with 26
+i = 0 at X::X
+i = 1 at X::X
+i = 1 at X::~X
+i = 0 at X::~X
+test called with 28
+i = 0 at X::X
+i = 3 at X::X
+i = 4 at X::X
+i = 4 at X::~X
+i = 3 at X::~X
+i = 0 at X::~X
+test called with 30
+i = 0 at X::X
+i = 1 at X::X
+i = 1 at X::~X
+i = 0 at X::~X

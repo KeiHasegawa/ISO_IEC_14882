@@ -1,0 +1,4 @@
+f(const T&) called
+N::S<int>::sc.m = 3
+T::g(const S<C>&) called
+sc.m = 3

@@ -1,0 +1,10 @@
+/*
+ * The template parameters are specified in the angle bracket enclosed list
+ * that immediately follows the keyword template. For partial specializations,
+ * the template argument list is explicitly written immediately following the
+ * class template name. For primary templates, this list is implicitly
+ * described by the template parameter list. Specifically, the order of the
+ * template arguments is the sequence in which they appear in the template
+ * parameter list. 
+ */
+template<class T1, class T2, int I> class A<T1, T2, I> { }; // error

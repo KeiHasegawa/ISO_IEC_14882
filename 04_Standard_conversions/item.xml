@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Lvalue_to_rvalue_conversion/item.xml">
+    <title>4.1 Lvalue-to-rvalue conversion</title>
+</section>
+
+<section url="2_Array_to_pointer_conversion/item.xml">
+    <title>4.2 Array-to-pointer conversion</title>
+</section>
+
+<section url="3_Function_to_pointer_conversion/item.xml">
+    <title>4.3 Function-to-pointer conversion</title>
+</section>
+
+<section url="4_Qualification_conversions/item.xml">
+    <title>4.4 Qualification conversions</title>
+</section>
+
+<section url="5_Integral_promotions/item.xml">
+    <title>4.5 Integral promotions</title>
+</section>
+
+<section url="6_Floating_point_promotion/item.xml">
+    <title>4.6 Floating point promotion</title>
+</section>
+
+<section url="7_Integral_conversions/item.xml">
+    <title>4.7 Integral conversions</title>
+</section>
+
+<section url="8_Floating_point_conversions/item.xml">
+    <title>4.8 Floating point conversions</title>
+</section>
+
+<section url="9_Floating_integral_conversions/item.xml">
+    <title>4.9 Floating-integral conversions</title>
+</section>
+
+<section url="10_Pointer_conversions/item.xml">
+    <title>4.10 Pointer conversions</title>
+</section>
+
+<section url="11_Pointer_to_member_conversions/item.xml">
+    <title>4.11 Pointer to member conversions</title>
+</section>
+
+<section url="12_Boolean_conversions/item.xml">
+    <title>4.12 Boolean conversions</title>
+</section>
+
+</test_item>

@@ -1,0 +1,22 @@
+/*
+ * A template friend declaration specifies that all specializations of that
+ * template, whether they are implicitly instantiated (14.7.1), partially
+ * specialized (14.5.4) or explicitly specialized (14.7.3), are friends of
+ * the class containing the template friend declaration.
+ */
+#include <stdio.h>
+
+class X {
+  template<class T> friend struct A;
+  class Y { };
+};
+template<class T> struct A { X::Y ab; }; // OK
+template<class T> struct A<T*> { X::Y ab; }; // OK
+
+int main()
+{
+  A<int> x;
+  A<int*> y;
+  printf("just compile test\n");
+  return 0;
+}

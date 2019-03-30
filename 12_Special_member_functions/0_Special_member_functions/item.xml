@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>test000.cpp</source>
+    <abstract>コピーコンストラクタとデフォルトコンストラクタ</abstract>
+</item>
+
+<item>
+    <source>test001.cpp</source>
+    <abstract>コピーコンストラクタの宣言</abstract>
+</item>
+
+<item>
+    <source>test002.cpp</source>
+    <abstract>コンストラクタ, デストラクタをもつクラスの配列</abstract>
+</item>
+
+<item>
+    <source>test003.cpp</source>
+    <abstract>コンストラクタ, デストラクタをもつ基底クラスと派生クラス</abstract>
+</item>
+
+<item>
+    <source>test004.cpp</source>
+    <abstract>コンストラクタのような函数のアドレスを参照</abstract>
+</item>
+
+<item>
+    <source>test005.cpp</source>
+    <abstract>コンストラクタを function sytle cast の構文で使用</abstract>
+</item>
+
+<item>
+    <source>test006.cpp</source>
+    <abstract>コンストラクタからコンストラクタを呼び出す</abstract>
+</item>
+
+<item>
+    <source>test007.cpp</source>
+    <abstract>コンストラクタからメンバ函数を呼び出す</abstract>
+</item>
+
+<item>
+    <source>test008.cpp</source>
+    <abstract>コピーコンストラクタ, デストラクタをもつクラスの変数を函数引数にしたり,
+    函数の戻り値にする</abstract>
+</item>
+
+<item>
+    <source>test010.cpp</source>
+    <abstract>コンストラクタによる暗黙の変換</abstract>
+</item>
+
+<item>
+    <source>test011.cpp</source>
+    <abstract>コンストラクタによる暗黙の変換</abstract>
+</item>
+
+<item>
+    <source>test012.cpp</source>
+    <abstract>コンストラクタによる暗黙の変換. ユーザが意図しない例</abstract>
+</item>
+
+<item>
+    <source>test013.cpp</source>
+    <abstract>コンストラクタによる暗黙の変換. ユーザが意図しない例を回避</abstract>
+</item>
+
+<item>
+    <source>test014.cpp</source>
+    <abstract>ユーザ定義の変換. 初期化と代入</abstract>
+</item>
+
+<item>
+    <source>test015.cpp</source>
+    <abstract>ユーザ定義の変換. 初期化と代入以外</abstract>
+</item>
+
+<item>
+    <source>test016.cpp</source>
+    <abstract>ユーザ定義の変換の継承</abstract>
+</item>
+
+<item>
+    <source>test017.cpp</source>
+    <abstract>ユーザ定義の変換を virtual 宣言</abstract>
+</item>
+
+<item>
+    <source>test010.cpp</source>
+    <abstract>ユーザ定義の変換</abstract>
+</item>
+
+<item>
+    <source>test011.cpp</source>
+    <abstract>ユーザ定義の二項演算子</abstract>
+</item>
+
+<item>
+    <source>test012.cpp</source>
+    <abstract>意図しないコンストラクタの誤用例</abstract>
+</item>
+
+<item>
+    <source>test013.cpp</source>
+    <abstract>意図しないコンストラクタの誤用例を避ける例</abstract>
+</item>
+
+<item>
+    <source>test014.cpp</source>
+    <abstract>ユーザ定義の operator</abstract>
+</item>
+
+<item>
+    <source>test015.cpp</source>
+    <abstract>ユーザ定義の operator</abstract>
+</item>
+
+<item>
+    <source>test016.cpp</source>
+    <abstract>ユーザ定義の operator を基底クラスにもつ派生クラス</abstract>
+</item>
+
+<item>
+    <source>test017.cpp</source>
+    <abstract>ユーザ定義の operator を基底クラスにもつ派生クラス. 派生クラスで
+    基底クラスのユーザ定義 operator を隠す</abstract>
+</item>
+
+<item>
+    <source>test018.cpp</source>
+    <abstract>曖昧があるときにユーザ定義の operator によって
+    曖昧性がなくなる例</abstract>
+</item>
+
+<item>
+    <source>test019.cpp</source>
+    <abstract>デストラクタが定義されている構造体をメンバにもつ構造体</abstract>
+</item>
+
+<item>
+    <source>test020.cpp</source>
+    <abstract>デストラクタが定義されている構造体を基底クラスにもつ構造体</abstract>
+</item>
+
+<item>
+    <source>test021.cpp</source>
+    <abstract>デストラクタが定義されている構造体の配列</abstract>
+</item>
+
+<item>
+    <source>test022.cpp</source>
+    <abstract>virtual なデストラクタ</abstract>
+</item>
+
+<item>
+    <source>test023.cpp</source>
+    <abstract>デストラクタでのメンバ函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>test024.cpp</source>
+    <abstract>static なデストラクタをもつクラスのオブジェクト</abstract>
+</item>
+
+<item>
+    <source>test025.cpp</source>
+    <abstract>デストラクタをもつクラスのオブジェクトへのポインタの delete</abstract>
+</item>
+
+<item>
+    <source>test026.cpp</source>
+    <abstract>明示的なデストラクタの呼び出し</abstract>
+</item>
+
+<item>
+    <source>test027.cpp</source>
+    <abstract>デストラクタと operator ~</abstract>
+</item>
+
+<item>
+    <source>test028.cpp</source>
+    <abstract>デストラクタの qualifier 付きの呼び出し</abstract>
+</item>
+
+<item>
+    <source>test029.cpp</source>
+    <abstract>デストラクタを持たない型に対する qualifier 付きのデストラクタ呼び出し</abstract>
+</item>
+
+<item>
+    <source>test030.cpp</source>
+    <abstract>operator new</abstract>
+</item>
+
+<item>
+    <source>test031.cpp</source>
+    <abstract>配置構文の operator new 呼び出し</abstract>
+</item>
+
+<item>
+    <source>test032.cpp</source>
+    <abstract>配置構文を要求する operator new メンバと
+    引数を取らないコンストラクタ</abstract>
+    <comment>ARM 12.5 pp 282 では実装によりエラーになるかもしれない
+    ということが書かれているが, この実装では合法とする.</comment>
+</item>
+
+<item>
+    <source>test033.cpp</source>
+    <abstract>operator new を static 宣言</abstract>
+</item>
+
+<item>
+    <source>test034.cpp</source>
+    <abstract>operator delete</abstract>
+</item>
+
+<item>
+    <source>test035.cpp</source>
+    <abstract>operator delete を static 宣言</abstract>
+</item>
+
+<item>
+    <source>test036.cpp</source>
+    <abstract>引数を 2 つ取る operator delete の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test037.cpp</source>
+    <abstract>基底クラスのポインタに対して operator delete の適用</abstract>
+</item>
+
+<item>
+    <source>test038.cpp</source>
+    <abstract>コンストラクタの overload</abstract>
+</item>
+
+<item>
+    <source>test039.cpp</source>
+    <abstract>引数を 1 つとるコンストラクタのさまざまな形</abstract>
+</item>
+
+<item>
+    <source>test040.cpp</source>
+    <abstract>引数を 1 つとるコンストラクタのさまざまな形</abstract>
+</item>
+
+<item>
+    <source>test041.cpp</source>
+    <abstract>ユーザ定義の変換が適用されるコンストラクタ呼び出し</abstract>
+</item>
+
+<item>
+    <source>test042.cpp</source>
+    <abstract>組み込み型の引数を 1 つとる初期化</abstract>
+</item>
+
+<item>
+    <source>test043.cpp</source>
+    <abstract>コンストラクタをもつクラスの配列の初期化</abstract>
+</item>
+
+<item>
+    <source>test044.cpp</source>
+    <abstract>コンストラクタをもたないクラスをメンバとするクラス</abstract>
+</item>
+
+<item>
+    <source>test045.cpp</source>
+    <abstract>デフォルトコンストラクタをもつクラスをメンバとするクラス</abstract>
+</item>
+
+<item>
+    <source>test046.cpp</source>
+    <abstract>デフォルトコンストラクタ以外のコンストラクタをもつクラスをメンバとするクラス</abstract>
+</item>
+
+<item>
+    <source>test047.cpp</source>
+    <abstract>デフォルトコンストラクタ以外のコンストラクタをもつクラスをメンバとするクラス</abstract>
+</item>
+
+<item>
+    <source>test048.cpp</source>
+    <abstract>配列をメンバとするクラスのコンストラクタ</abstract>
+</item>
+
+<item>
+    <source>test049.cpp</source>
+    <abstract>static でなく, 配列でないメンバの ctor-initializer での初期化</abstract>
+</item>
+
+<item>
+    <source>test050.cpp</source>
+    <abstract>ctor-initializer での基底クラスの初期化</abstract>
+</item>
+
+<item>
+    <source>test051.cpp</source>
+    <abstract>ctor-initializer での初期化. base-clause の順序, member の
+    宣言の順序と ctor-initializer での順序が異なる</abstract>
+</item>
+
+<item>
+    <source>test052.cpp</source>
+    <abstract>仮想基底クラスをもつクラスのコンストラクタ</abstract>
+</item>
+
+<item>
+    <source>test053.cpp</source>
+    <abstract>仮想基底クラスをもつクラスのコンストラクタ</abstract>
+</item>
+
+<item>
+    <source>test054.cpp</source>
+    <abstract>ctor-initializer でメンバを参照</abstract>
+</item>
+
+<item>
+    <source>test055.cpp</source>
+    <abstract>コンストラクタ, デストラクタでの仮想函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>test056.cpp</source>
+    <abstract>const リファレンスを引数にとるコピーコンストラクタ</abstract>
+</item>
+
+<item>
+    <source>test057.cpp</source>
+    <abstract>const なしのリファレンスを引数にとるコピーコンストラクタ</abstract>
+</item>
+
+<item>
+    <source>test058.cpp</source>
+    <abstract>const リファレンスを引数にとるコピーコンストラクタをメンバとするクラス</abstract>
+</item>
+
+<item>
+    <source>test059.cpp</source>
+    <abstract>const リファレンスを引数にとるコピーコンストラクタを基底とするクラス</abstract>
+</item>
+
+<item>
+    <source>test060.cpp</source>
+    <abstract>const なしのリファレンスを引数にとるコピーコンストラクタをメンバとするクラス</abstract>
+</item>
+
+<item>
+    <source>test061.cpp</source>
+    <abstract>const なしのリファレンスを引数にとるコピーコンストラクタを基底とするクラス</abstract>
+</item>
+
+<item>
+    <source>test062.cpp</source>
+    <abstract>const リファレンスを引数にとる代入演算子をメンバとするクラス</abstract>
+</item>
+
+<item>
+    <source>test063.cpp</source>
+    <abstract>const なしのリファレンスを引数にとる代入演算子をメンバとするクラス</abstract>
+</item>
+
+<item>
+    <source>test064.cpp</source>
+    <abstract>const リファレンスを引数にとる代入演算子をメンバとするクラス</abstract>
+</item>
+
+<item>
+    <source>test065.cpp</source>
+    <abstract>const リファレンスを引数にとる代入演算子を基底とするクラス</abstract>
+</item>
+
+<item>
+    <source>test066.cpp</source>
+    <abstract>const なしのリファレンスを引数にとる代入演算子をメンバとするクラス</abstract>
+</item>
+
+<item>
+    <source>test067.cpp</source>
+    <abstract>const なしのリファレンスを引数にとる代入演算子を基底とするクラス</abstract>
+</item>
+
+<item>
+    <source>test068.cpp</source>
+    <abstract>コピーコンストラクタをもつクラスを仮想基底クラスとするクラス</abstract>
+</item>
+
+<item>
+    <source>test069.cpp</source>
+    <abstract>代入演算子をもつクラスを仮想基底クラスとするクラス</abstract>
+</item>
+
+<item>
+    <source>test070.cpp</source>
+    <abstract>コピーコンストラクタがデフォルト引数をとるように宣言</abstract>
+</item>
+
+<item>
+    <source>test071.cpp</source>
+    <abstract>X の代入演算子が引数に X のリファレンス以外をとるように宣言</abstract>
+</item>
+
+<item>
+    <source>test072.cpp</source>
+    <abstract>基底クラスに派生クラスを代入</abstract>
+</item>
+
+<item>
+    <source>test073.cpp</source>
+    <abstract>基底クラスにポインタを介して派生クラスを代入</abstract>
+</item>
+
+<item>
+    <source>test074.cpp</source>
+    <abstract>派生クラスを基底クラスのリファレンスにキャストして基底クラスを代入</abstract>
+</item>
+
+<item>
+    <source>test075.cpp</source>
+    <abstract>コピーコンストラクタをもつクラスのオブジェクトを可変個引数をとる函数の引数として
+    呼び出す</abstract>
+</item>
+
+<item>
+    <source>test076.cpp</source>
+    <abstract>plain structure に対するデフォルトコンストラクタ,
+    コピーコンストラクタの呼び出し</abstract>
+</item>
+
+<item>
+    <source>test077.cpp</source>
+    <abstract>函数の外側でのコピーコンストラクタをもつクラスオブジェクトの初期化</abstract>
+</item>
+
+<item>
+    <source>test078.cpp</source>
+    <abstract>函数の外側でのコンストラクタ, デストラクタをもつクラスオブジェクトの初期化</abstract>
+</item>
+
+<item>
+    <source>test079.cpp</source>
+    <abstract>operator int() の宣言</abstract>
+</item>
+
+<item>
+    <source>test080.cpp</source>
+    <abstract>operator int() の宣言と同時に定義</abstract>
+</item>
+
+<item>
+    <source>test081.cpp</source>
+    <abstract>第一引数で const リファレンスを取るが, コピーコンストラクタではない
+    コンストラクタ</abstract>
+</item>
+
+<item>
+    <source>test082.cpp</source>
+    <abstract>operator int() をメンバにもつクラスのオブジェクトを
+    int を引数にとる函数に引数として指定して呼び出す</abstract>
+</item>
+
+<item>
+    <source>test084.cpp</source>
+    <abstract>クラス X にデストラクタが定義されているとき X のポインタを delete</abstract>
+</item>
+
+<item>
+    <source>test086.cpp</source>
+    <abstract>基底クラスのポインタに対して operator delete の適用</abstract>
+</item>
+
+<item>
+    <source>test087.cpp</source>
+    <abstract>基底クラスのポインタに対して operator delete の適用</abstract>
+</item>
+
+<item>
+    <source>test088.cpp</source>
+    <abstract>リファレンスメンバの参照</abstract>
+</item>
+
+<item>
+    <source>test089.cpp</source>
+    <abstract>operator int により初期化. 初期化される型は float</abstract>
+</item>
+
+<item>
+    <source>test090.cpp</source>
+    <abstract>operator int により初期化. 初期化される型は float.
+    operator int は基底クラスで定義されている.</abstract>
+</item>
+
+<item>
+    <source>test091.cpp</source>
+    <abstract>operator int の宣言と定義を別々にする</abstract>
+</item>
+
+<item>
+    <source>test092.c</source>
+    <abstract>コンストラクタなしのクラスに対して function sytle の
+    キャストを適用</abstract>
+</item>
+
+<item>
+    <source>test093.c</source>
+    <abstract>operator function を const 指定</abstract>
+</item>
+
+</test_item>

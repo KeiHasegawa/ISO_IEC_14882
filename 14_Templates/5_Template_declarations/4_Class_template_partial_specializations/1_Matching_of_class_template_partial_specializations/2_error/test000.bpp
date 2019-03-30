@@ -1,0 +1,17 @@
+/*
+ * A partial specialization matches a given actual template argument list if
+ * the template arguments of the partial specialization can be deduced from
+ * the actual template argument list (14.8.2).
+ */
+
+template<class T1, class T2, int I> class A { }; // #1
+template<class T, int I> class A<T, T*, I> { }; // #2
+template<class T1, class T2, int I> class A<T1*, T2, I> { }; // #3
+template<class T> class A<int, T*, 5> { }; // #4
+template<class T1, class T2, int I> class A<T1, T2*, I> { }; // #5
+
+A<int, int, 1> a1; // uses #1
+A<int, int*, 1> a2; // uses #2, T is int, I is 1
+A<int, char*, 5> a3; // uses #4, T is char
+A<int, char*, 1> a4; // uses #5, T1 is int, T2 is char, I is 1
+A<int*, int*, 2> a5; // ambiguous: matches #3 and #5

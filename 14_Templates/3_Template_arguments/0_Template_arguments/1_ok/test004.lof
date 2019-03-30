@@ -1,0 +1,4 @@
+`template<class T> A<T>::~A()' called
+m = 1
+`template<class T> A<T>::~A()' called
+m = 2

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>POD でないクラスのメンバを参照する</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>POD でないクラスのメンバを参照する</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>オブジェクトの構築の過程で基底クラスへのポインタの
+              変換をする</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>オブジェクトの構築の過程で基底クラスへのポインタの
+              変換をする</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>オブジェクトの構築の過程で仮想函数を呼び出す</abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.cpp</source>
+    <abstract>オブジェクトの構築の過程で仮想函数を呼び出す</abstract>
+</item>
+
+<item>
+    <source>1_ok/test006.cpp</source>
+    <abstract>オブジェクトの構築の過程で typeid や dynamic_cast を適用する
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test007.cpp</source>
+    <abstract>オブジェクトの構築の過程で typeid や dynamic_cast を適用する
+    </abstract>
+</item>
+
+</test_item>

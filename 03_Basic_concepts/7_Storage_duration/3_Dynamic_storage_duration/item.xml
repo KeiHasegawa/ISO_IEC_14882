@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Allocation_functions/item.xml">
+    <title>3.7.3.1 Allocation functions</title>
+</section>
+
+<section url="2_Deallocation_functions/item.xml">
+    <title>3.7.3.2 Deallocation functions</title>
+</section>
+
+</test_item>

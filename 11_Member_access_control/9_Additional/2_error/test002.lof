@@ -1,0 +1,2 @@
+test002.c:In function `f'
+test002.c:7: error: `a' is private in this context.

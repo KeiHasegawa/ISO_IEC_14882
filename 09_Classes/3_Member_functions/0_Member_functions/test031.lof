@@ -1,0 +1,7 @@
+X::operator << called
+i = 1
+X::operator << called
+i = 2
+Y::operator >> called
+Y::operator >> called
+b = 3, c = 4

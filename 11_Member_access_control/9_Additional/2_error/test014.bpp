@@ -1,0 +1,3 @@
+class Y {
+  friend class X { int a; };
+};

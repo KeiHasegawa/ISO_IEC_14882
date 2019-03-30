@@ -1,0 +1,15 @@
+/*
+ * An explicit instantiation does not constitute a use of a default argument,
+ * so default argument instantiation is not done.
+ */
+#include <stdio.h>
+
+char* p = 0;
+template<class T> T g(T = &p);
+template int g<int>(int); // OK even though &p isnft an int.
+
+int main()
+{
+  printf("just ok compile test\n");
+  return 0;
+}

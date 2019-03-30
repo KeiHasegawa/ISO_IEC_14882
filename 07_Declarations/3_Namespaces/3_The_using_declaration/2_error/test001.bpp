@@ -1,0 +1,14 @@
+/*
+ * A using-declaration shall not name a template-id.
+ */
+class A {
+public:
+  template <class T> void f(T);
+  template <class T> struct X { };
+};
+
+class B : public A {
+public:
+  using A::f<double>; // ill-formed
+  using A::X<int>; // ill-formed
+};

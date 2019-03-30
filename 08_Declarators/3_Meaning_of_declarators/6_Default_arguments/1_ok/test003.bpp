@@ -1,0 +1,34 @@
+/*
+ * Except for member functions of class templates, the default arguments in a
+ * member function definition that appears outside of the class definition are
+ * added to the set of default arguments provided by the member function
+ * declaration in the class definition. Default arguments for a member function
+ * of a class template shall be specified on the initial declaration of the
+ * member function within the class template.
+ */
+#include <stdio.h>
+
+class C {
+public:
+  void f(int i = 3);
+  void g(int i, int j = 99);
+};
+
+void C::f(int i)
+{
+  printf("`C::f' called with %d\n", i);
+}
+
+void C::g(int i = 88, int j) // in this translation unit,
+{                            // C::g can be called with no argument
+  printf("`C::g' called with %d, %d\n", i, j);
+}
+
+int main()
+{
+  C c;
+  c.f();
+  c.g();
+  return 0;
+}
+

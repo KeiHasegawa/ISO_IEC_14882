@@ -1,0 +1,73 @@
+/*
+ * When a using-declaration brings names from a base class into a derived class
+ * scope, member functions in the derived class override and/or hide member
+ * functions with the same name and parameter types in a base class (rather
+ * than conflicting).
+ */
+#include <stdio.h>
+
+struct B {
+  virtual void f(int);
+  virtual void f(char);
+  void g(int);
+  void h(int);
+};
+
+struct D : B {
+  using B::f;
+  void f(int); // OK: D::f(int) overrides B::f(int);
+  using B::g;
+  void g(char); // OK
+  using B::h;
+  void h(int); // OK: D::h(int) hides B::h(int)
+};
+
+void k(D* p)
+{
+  p->f(1);    // calls D::f(int)
+  p->f('a');  // calls B::f(char)
+  p->g(1);    // calls B::g(int)
+  p->g('a');  // calls D::g(char)
+}
+
+int main()
+{
+  D d;
+  k(&d);
+  return 0;
+}
+
+void B::f(int a)
+{
+  printf("`B::f(int)' called with %d\n", a);
+}
+
+void B::f(char a)
+{
+  printf("`B::f(char)' called with '%c'\n", a);
+}
+
+void B::g(int a)
+{
+  printf("`B::g(int)' called with %d\n", a);
+}
+
+void B::h(int a)
+{
+  printf("`B::g(int)' called with %d\n", a);
+}
+
+void D::f(int a)
+{
+  printf("`D::f(int)' called with %d\n", a);
+}
+
+void D::g(char a)
+{
+  printf("`D::g(char)' called with '%c'\n", a);
+}
+
+void D::h(int a)
+{
+  printf("`D::h(int)' called with %d\n", a);
+}

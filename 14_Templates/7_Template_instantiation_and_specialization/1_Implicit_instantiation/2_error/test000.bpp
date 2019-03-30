@@ -1,0 +1,7 @@
+/*
+ * If an implicit instantiation of a class template specialization is required
+ * and the template is declared but not defined, the program is ill-formed.
+ */
+
+template<class T> class X;
+X<char> ch; // error: definition of X required

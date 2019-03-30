@@ -1,0 +1,9 @@
+/*
+ * When parsing a default template-argument for a non-type template-parameter,
+ * the first non-nested > is taken as the end of the template-parameter-list
+ * rather than a greater-than operator.
+ */
+template<int i = 3 > 4 > // syntax error
+class X { /* ... */ };
+template<int i = (3 > 4) > // OK
+class Y { /* ... */ };

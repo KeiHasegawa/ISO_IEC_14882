@@ -1,0 +1,70 @@
+/*
+ * For two class template partial specializations, the first is at least as
+ * specialized as the second if, given the following rewrite to two function
+ * templates, the first function template is at least as specialized as the
+ * second according to the ordering rules for function templates (14.5.5.2):
+ * - the first function template has the same template parameters as the first
+ *   partial specialization and has a single function parameter whose type is
+ *   a class template specialization with the template arguments of the first
+ *   partial specialization, and
+ * - the second function template has the same template parameters as the
+ *   second partial specialization and has a single function parameter whose
+ *   type is a class template specialization with the template arguments
+ *   of the second partial specialization.
+ */
+#include <stdio.h>
+#include <string.h>
+
+template<int I, int J, class T> class X {
+public:
+  T t[I+J];
+};
+
+template<int I, int J> class X<I, J, int> {
+public:
+  double d[I][J];
+}; // #1
+
+template<int I> class X<I, I, int> {
+public:
+  char c[I];
+}; // #2
+
+template<int I, int J> void f(X<I, J, int>) // #A
+{
+  printf("f(X<I,J,int>) called\n");
+}
+
+template<int I> void f(X<I, I, int>) // #B
+{
+  printf("f(X<I,I,int>) called\n");
+}
+
+/*
+ * The partial specialization #2 is more specialized than the partial
+ * specialization #1 because the function template #B is more specialized than
+ * the function template #A according to the ordering rules for function
+ * templates.
+ */
+
+struct S { int m; };
+
+int main()
+{
+  X<1,2,S> a;
+  for ( int i = 0 ; i != sizeof a.t/sizeof a.t[0] ; ++i ){
+    printf(" %d", a.t[i].m = i);
+  }
+  printf("\n");
+  X<3,4> b;
+  for ( int i = 0 ; i != sizeof b.d/sizeof b.d[0] ; ++i ){
+    printf(" %f", b.d[i] = i);
+  }
+  printf("\n");
+  X<5> c;
+  printf("%s\n", strcpy(&c.c[0],"C++"));
+
+  f(b);
+  f(c);
+  return 0;
+}

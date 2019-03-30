@@ -1,0 +1,46 @@
+/*
+ * An implicitly declared special member function (clause 12) shall have an
+ * exception-specification. If f is an implicitly declared default constructor,
+ * copy constructor, destructor, or copy assignment operator, its implicit
+ * exception-specification specifies the type-id T if and only if T is allowed
+ * by the exceptionspecification of a function directly invoked by f's implicit
+ * definition; f shall allow all exceptions if any function it directly invokes
+ * allows all exceptions, and f shall allow no exceptions if every function it
+ * directly invokes allows no exceptions.
+ */
+#include <stdio.h>
+
+class X {};
+
+struct A {
+  A();
+  A(const A&) throw();
+  ~A() throw(X);
+};
+
+class Y {};
+
+struct B {
+  B() throw();
+  B(const B&) throw();
+  ~B() throw(Y);
+};
+
+struct D : public A, public B {
+  // Implicit declaration of D::D();
+  // Implicit declaration of D::D(const D&) throw();
+  // Implicit declaration of D::~D() throw (X,Y);
+};
+
+/*
+ * Furthermore, if A::~A() or B::~B() were virtual, D::~D() would not be as
+ * restrictive as that of A::~A, and the program would be ill-formed since a
+ * function that overrides a virtual function from a base class shall have an
+ * exception-specification at least as restrictive as that in the base class.
+ */
+
+int main()
+{
+  printf("just ok compile test\n");
+  return 0;
+}

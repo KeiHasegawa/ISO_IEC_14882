@@ -1,0 +1,32 @@
+/*
+ * The presence of unused ellipsis and default arguments has no effect on the
+ * partial ordering of function templates.
+ */
+#include <stdio.h>
+
+template<class T> void f(T) // #1
+{
+  printf("f(T) called\n");
+}
+
+template<class T> void f(T*, int=1) // #2
+{
+  printf("f(T*, int=1) called\n");
+}
+
+template<class T> void g(T) // #3
+{
+  printf("g(T) called\n");
+}
+
+template<class T> void g(T*, ...) // #4
+{
+  printf("g(T*, ...) called\n");
+}
+
+int main() {
+  int* ip;
+  f(ip); //calls #2
+  g(ip); //calls #4
+  return 0;
+}

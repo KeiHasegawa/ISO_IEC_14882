@@ -1,0 +1,8 @@
+`R::f()' called
+*a = 3
+`S::g()' called
+b[0] = 3
+`R::f()' called
+*a = 3
+`S::g()' called
+b[0] = 3

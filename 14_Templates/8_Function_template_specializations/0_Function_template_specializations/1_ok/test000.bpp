@@ -1,0 +1,32 @@
+/*
+ * Each function template specialization instantiated from a template has its
+ * own copy of any static variable.
+ */
+#include <stdio.h>
+
+template<class T> void f(T* p)
+{
+  static T s;
+  // ...
+  T tmp = *p;
+  *p = s;
+  s = tmp;
+};
+
+void g(int a, char* b)
+{
+  f(&a); //call f<int>(int*)
+  f(&b); //call f<char*>(char**)
+  printf("a = %d\n", a);
+  printf("b = %d\n", b);
+  f(&a);
+  f(&b);
+  printf("a = %d\n", a);
+  printf("b = %s\n", b);
+}
+
+int main()
+{
+  g(4,"hase");
+  return 0;
+}

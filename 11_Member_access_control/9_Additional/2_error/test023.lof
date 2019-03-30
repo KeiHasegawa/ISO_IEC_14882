@@ -1,0 +1,4 @@
+test023.c:In function `g'
+test023.c:16: error: `i' is private in this context.
+test023.c:17: error: `i' is private in this context.
+test023.c:18: error: `i' is private in this context.

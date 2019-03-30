@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int f();
+
+int a = f();
+
+int b;
+
+int c = a > b;
+
+int main(void)
+{
+  printf("a = %d\n", a);
+  printf("b = %d\n", b);
+  printf("c = %d\n", c);
+  return 0;
+}
+
+int f()
+{
+  b = 1234;
+  return b + 1;
+}

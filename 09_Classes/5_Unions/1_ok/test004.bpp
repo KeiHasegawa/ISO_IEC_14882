@@ -1,0 +1,31 @@
+/*
+ * A union of the form
+ *
+ *   union { member-specification } ;
+ *
+ * is called an anonymous union; it defines an unnamed object of unnamed type.
+ * The member-specification of an anonymous union shall only define non-static
+ * data members. [Note: nested types and functions cannot be declared within an
+ * anonymous union. ] The names of the members of an anonymous union shall be
+ * distinct from the names of any other entity in the scope in which the
+ * anonymous union is declared. For the purpose of name lookup, after the
+ * anonymous union definition, the members of the anonymous union are
+ * considered to have been defined in the scope in which the anonymous union
+ * is declared.
+ */
+#include <stdio.h>
+
+void f()
+{
+  union { int a; char* p; };
+  a = 1;
+  printf("a = %d\n", a);
+  p = "Jennifer";
+  printf("p = \"%s\"\n", p);
+}
+
+int main()
+{
+  f();
+  return 0;
+}

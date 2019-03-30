@@ -1,0 +1,29 @@
+/*
+ * postfix-expression : ...
+ *                    | typename ::opt nested-name-specifier identifier ( expression-listopt )
+ */
+
+#include <stdio.h>
+
+struct S1 {
+  struct S2 {
+    struct S3 { S3(); };
+  };
+};
+
+S1::S2::S3::S3()
+{
+  printf("S1::S2::S3::S3() is called.\n");
+}
+
+
+template<class C> void g()
+{
+  typename C::S2::S3();
+}
+
+int main()
+{
+  g<S1>();
+  return 0;
+}

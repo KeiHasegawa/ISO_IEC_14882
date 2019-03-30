@@ -1,0 +1,56 @@
+/*
+ * All implicit type conversions (clause 4) are considered when initializing
+ * the aggregate member with an initializer from an initializer-list. If the
+ * initializer can initialize a member, the member is initialized. Otherwise,
+ * if the member is itself a non-empty subaggregate, brace elision is assumed
+ * and the initializer is considered for the initialization of the first member
+ * of the subaggregate.
+ */
+#include <stdio.h>
+
+struct A {
+  int i;
+  operator int(){ return i; }
+};
+
+struct B {
+  A a1, a2;
+  int z;
+};
+
+A a;
+B b = { 4, a, a };
+
+void test000()
+{
+  printf("a.i = %d\n", a.i);
+  printf("b.a1.i = %d\n", b.a1.i);
+  printf("b.a2.i = %d\n", b.a2.i);
+  printf("b.z = %d\n", b.z);
+}
+
+void test001()
+{
+  struct A {
+    int i;
+    operator int(){ return i; }
+  };
+  struct B {
+    A a1, a2;
+    int z;
+  };
+  A a;
+  a.i = -5;
+  B b = { 4, a, a };
+  printf("a.i = %d\n", a.i);
+  printf("b.a1.i = %d\n", b.a1.i);
+  printf("b.a2.i = %d\n", b.a2.i);
+  printf("b.z = %d\n", b.z);
+}
+
+int main()
+{
+  test000();
+  test001();
+  return 0;
+}

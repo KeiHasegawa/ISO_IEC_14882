@@ -1,0 +1,3 @@
+`X::X(int)' called with 1
+`X::X(const X&, int)' called with 0
+`X::X(const X&, int)' called with 1

@@ -1,0 +1,19 @@
+/*
+ * A function can be defined in a friend declaration of a class if and only if
+ * the class is a non-local class (9.8), the function name is unqualified, and
+ * the function has namespace scope.
+ */
+#include <stdio.h>
+
+class M {
+  int m;
+  friend void f() { M x; printf("x.m = %d\n", x.m = 78); }
+                      // definition of global f, a friend of M,
+                      // not the definition of a member function
+};
+
+int main(void)
+{
+  f();
+  return 0;
+}

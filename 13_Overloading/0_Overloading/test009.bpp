@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+class X { public: X(int){} };
+class Y {};
+
+void f(X,int)
+{
+  printf("f(X,int) called\n");
+}
+
+void f(X,double)
+{
+  printf("f(X,double) called\n");
+}
+
+void f(Y,double)
+{
+  printf("f(Y,double) called\n");
+}
+
+int main()
+{
+  f(1,1);
+  return 0;
+}

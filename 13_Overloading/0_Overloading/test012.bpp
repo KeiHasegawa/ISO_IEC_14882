@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void f(float f)
+{
+  printf("f(float) called with %f\n", f);
+}
+
+void f(double d)
+{
+  printf("f(double) called with %f\n", d);
+}
+
+void f(int i)
+{
+  printf("f(int) called with %d\n", i);
+}
+
+int main()
+{
+  f(1.0);
+  f(1.0F);
+  f(1);
+  return 0;
+}

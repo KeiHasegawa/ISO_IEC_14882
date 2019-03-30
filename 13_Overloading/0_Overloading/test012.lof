@@ -1,0 +1,3 @@
+f(double) called with 1.000000
+f(float) called with 1.000000
+f(int) called with 1

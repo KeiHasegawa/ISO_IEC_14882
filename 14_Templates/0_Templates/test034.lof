@@ -1,0 +1,6 @@
+sizeof(a) = 4
+a = -3
+f(int) called
+n = 1234
+f(X) called
+x.member = 5678

@@ -1,0 +1,4 @@
+`enclose::inner::f' called
+x = 3, y = 3, enclose::s = 3
+`enclose::inner::g' called
+e.x = 4

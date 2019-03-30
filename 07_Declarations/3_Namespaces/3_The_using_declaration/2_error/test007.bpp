@@ -1,0 +1,18 @@
+/*
+ * The alias created by the using-declaration has the usual accessibility for
+ * a member-declaration.
+ */
+class A {
+private:
+  void f(char);
+public:
+  void f(int);
+protected:
+  void g();
+};
+
+class B : public A {
+  using A::f; // error: A::f(char) is inaccessible
+public:
+  using A::g; // B::g is a public synonym for A::g
+};

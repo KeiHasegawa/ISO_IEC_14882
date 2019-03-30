@@ -1,0 +1,64 @@
+/*
+ * Check declarations are recognized.
+ */
+#include <stdio.h>
+
+struct T1 {
+  T1 operator()(int x)
+  {
+    printf("`T1::operator()(int)' called\n");
+    return T1(x);
+  }
+  int operator=(int x)
+  {
+    printf("`T1::operator=(int)' called\n");
+    return x;
+  }
+  T1(int)
+  {
+    printf("`T1::T1(int)' called\n");
+  }
+};
+struct T2 {
+  T2(int)
+  {
+    printf("`T2::T2(int)' called\n");
+  }
+};
+
+int a, (*(*b)(T2))(int), c, d;
+void f() {
+  // disambiguation requires this to be parsed
+  // as a declaration
+  T1(a) = 3,
+  T2(4);                    // T2 will be declared as
+                            // a variable of type T1
+}
+
+int y(int n)
+{
+  printf("`y' called with %d\n", n);
+  return n + 1;
+}
+
+int (*z(T2))(int)
+{
+  printf("`z' called\n");
+  return y;
+}
+
+int main()
+{
+  a = 1;
+  printf("a = %d\n", a);
+  T2 x(3);
+  b = z;
+  int (*bb)(int) = (*b)(x);
+  (*bb)(5);
+  c = 7;
+  printf("c = %d\n", c);
+  d = 9;
+  printf("d = %d\n", d);
+  f();
+  return 0;
+}

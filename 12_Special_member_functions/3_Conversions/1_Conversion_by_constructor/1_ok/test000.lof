@@ -1,0 +1,5 @@
+a.get_m() = 1
+`X::X(const char*, int)' called
+Jessie
+b.get_m() = 0
+a.get_m() = 2

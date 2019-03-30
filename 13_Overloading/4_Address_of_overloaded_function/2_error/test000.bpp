@@ -1,0 +1,53 @@
+/*
+ * 1 A use of an overloaded function name without arguments is resolved in
+ *   certain contexts to a function, a pointer to function or a pointer to
+ *   member function for a specific function from the overload set. A function
+ *   template name is considered to name a set of overloaded functions in such
+ *   contexts. The function selected is the one whose type matches the target
+ *   type required in the context. The target can be
+ *   - an object or reference being initialized (8.5, 8.5.3),
+ *   - the left side of an assignment (5.17),
+ *   - a parameter of a function (5.2.2),
+ *   - a parameter of a user-defined operator (13.5),
+ *   - the return value of a function, operator function, or conversion
+ *     (6.6.3),
+ *   - an explicit type conversion (5.2.3, 5.2.9, 5.4), or
+ *   - a non-type template-parameter (14.3.2).
+ *   The overloaded function name can be preceded by the & operator. An
+ *   overloaded function name shall not be used without arguments in contexts
+ *   other than those listed. [Note: any redundant set of parentheses
+ *   surrounding the overloaded function name is ignored (5.1). ]
+ *
+ * 2 If the name is a function template, template argument deduction is done
+ *   (14.8.2.2), and if the argument deduction succeeds, the resulting template
+ *   argument list is used to generate a single function template
+ *   specialization, which is added to the set of overloaded functions
+ *   considered.
+ *
+ * 3 Non-member functions and static member functions match targets of type
+ *   "pointer-to-function" or "reference-to-function." Nonstatic member
+ *   functions match targets of type "pointer-to-member-function;" the function
+ *   type of the pointer to member is used to select the member function from
+ *   the set of overloaded member functions. If a nonstatic member function is
+ *   selected, the reference to the overloaded function name is required to
+ *   have the form of a pointer to member as described in 5.3.1.
+ *
+ * 4 If more than one function is selected, any function template
+ *   specializations in the set are eliminated if the set also contains a
+ *   non-template function, and any given function template specialization F1
+ *   is eliminated if the set contains a second function template
+ *   specialization whose function template is more specialized than the
+ *   function template of F1 according to the partial ordering rules of
+ *   14.5.5.2. After such eliminations, if any, there shall remain exactly one
+ *   selected function.
+ */
+int f(double);
+int f(int);
+int (*pfd)(double) = &f; // selects f(double)
+int (*pfi)(int) = &f; // selects f(int)
+int (*pfe)(...) = &f; // error: type mismatch
+int (&rfi)(int) = f; // selects f(int)
+int (&rfd)(double) = f; // selects f(double)
+void g() {
+  (int (*)(int))&f; // cast expression as selector
+}

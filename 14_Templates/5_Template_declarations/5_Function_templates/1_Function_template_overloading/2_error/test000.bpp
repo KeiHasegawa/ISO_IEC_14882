@@ -1,0 +1,40 @@
+/*
+ * This rule guarantees that equivalent declarations will be linked with one
+ * another, while not requiring implementations to use heroic efforts to
+ * guarantee that functionally equivalent declarations will be treated
+ * as distinct. For example, the last two declarations are functionally
+ * equivalent and would cause a program to be ill-formed:
+ */
+#include <stdio.h>
+
+template <int I> struct A {};
+
+// Guaranteed to be the same
+template <int I> void f(A<I>, A<I+10>);
+template <int I> void f(A<I>, A<I+10>);
+// Guaranteed to be different
+template <int I> void f(A<I>, A<I+10>);
+template <int I> void f(A<I>, A<I+11>);
+// Ill-formed, no diagnostic required
+template <int I> void f(A<I>, A<I+10>);
+template <int I> void f(A<I>, A<I+1+2+3+4>);
+
+template <int I> void f(A<I>, A<I+10>)
+{
+  printf("f(A<I>, A<I+10>) called\n");
+}
+
+template <int I> void f(A<I>, A<I+11>)
+{
+  printf("f(A<I>, A<I+11>) called\n");
+}
+
+int main()
+{
+  A<0> a0;
+  A<10> a10;
+  f(a0,a10);
+  A<11> a11;
+  f(a0,a11);
+  return 0;
+}

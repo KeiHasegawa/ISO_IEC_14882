@@ -1,0 +1,59 @@
+/*
+ * The ambiguity arising from the similarity between a function-style cast and
+ * a declaration mentioned in 6.8 can also occur in the context of a
+ * declaration. In that context, the choice is between a function declaration
+ * with a redundant set of parentheses around a parameter name and an object
+ * declaration with a function-style cast as the initializer. Just as for the
+ * ambiguities mentioned in 6.8, the resolution is to consider any construct
+ * that could possibly be a declaration a declaration.
+ */
+#include <stdio.h>
+
+struct S {
+  S(int);
+};
+
+int f()
+{
+  printf("`f' called\n");
+  return 7;
+}
+
+void foo(double a)
+{
+  printf("`foo' called with %f\n", a);
+  S w(int(a));  // function declaration
+  S x(int());   // function declaration
+  S y((int)a);  // object declaration
+  S z = int(a); // object declaration
+
+  w(6);
+  x(f);
+}
+
+int main()
+{
+  foo(5.0);
+  return 0;
+}
+
+
+S w(int a)
+{
+  printf("`w' called with %d\n", a);
+  S s(8);
+  return s;
+}
+
+S x(int fun())
+{
+  printf("`x' called\n");
+  fun();
+  S s(9);
+  return s;
+}
+
+S::S(int a)
+{
+  printf("`S::S' called with %d\n", a);
+}

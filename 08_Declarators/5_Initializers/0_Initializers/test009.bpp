@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int a = 1234;
+
+int* pa = &a;
+
+int b = *pa;
+
+int main(void)
+{
+  printf("a = %d\n", a);
+  printf("b = %d\n", b);
+  return 0;
+}

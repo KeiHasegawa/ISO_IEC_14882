@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int* p = new int;
+
+int main(void)
+{
+  *p = 1234;
+  printf("*p = %d\n", *p);
+  delete p;
+  return 0;
+}

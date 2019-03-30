@@ -1,0 +1,5 @@
+`test000' called
+N::i = 0
+N::g(3) return value : 3
+N::g('a') return value : 'b'
+N::j() return value : 1234

@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+class X {
+  enum { a = 100 };
+  friend class Y;
+};
+
+class Y {
+  int v[X::a];
+public:
+  void f();
+};
+
+int main()
+{
+  Y y;
+  y.f();
+  return 0;
+}
+
+void Y::f()
+{
+  printf("`Y::f' called\n");
+  printf("sizeof v/sizeof v[0] = %d\n", sizeof v/sizeof v[0]);
+}

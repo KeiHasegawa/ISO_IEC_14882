@@ -1,0 +1,5 @@
+`f' called
+pv->v = 1
+pa->v = 2, pa->a = 3
+pb->v = 4, pb->b = 5
+pc->v = 6, pc->a = 7, pc->b = 8, pc->c = 9

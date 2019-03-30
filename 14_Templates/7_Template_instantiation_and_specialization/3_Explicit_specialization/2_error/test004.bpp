@@ -1,0 +1,28 @@
+/*
+ * In an explicit specialization declaration for a member of a class template
+ * or a member template that appears in namespace scope, the member template
+ * and some of its enclosing class templates may remain unspecialized, except
+ * that the declaration shall not explicitly specialize a class member template
+ * if its enclosing class templates are not explicitly specialized as well. In
+ * such explicit specialization declaration, the keyword template followed by a
+ * template-parameter-list shall be provided instead of the template<>
+ * preceding the explicit specialization declaration of the member. The types
+ * of the template-parameters in the template-parameter-list shall be the same
+ * as those specified in the primary template definition.
+ */
+
+template<class T1> class A {
+  template<class T2> class B {
+    template<class T3> void mf1(T3);
+    void mf2();
+  };
+};
+template<> template<class X>
+class A<int>::B { };
+
+template<> template<> template<class T>
+void A<int>::B<double>::mf1(T t) { }
+
+template<class Y> template<>
+void A<Y>::B<double>::mf2() { } // ill-formed; B<double> is specialized but
+                                // its enclosing class template A is not

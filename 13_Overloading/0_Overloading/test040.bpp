@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int f(int i)
+{
+  printf("f(int) called\n");
+  return i;
+}
+
+int f(int& r)
+{
+  printf("f(int&) called\n");
+  return r;
+}
+
+int main()
+{
+  printf("f(1) return valiue : %d\n", f(1));
+  return 0;
+}

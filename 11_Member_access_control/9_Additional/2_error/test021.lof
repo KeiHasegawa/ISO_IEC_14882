@@ -1,0 +1,3 @@
+test021.c:In function `fr'
+test021.c:16: error: `i' is private in this context.
+test021.c:17: error: `i' is private in this context.

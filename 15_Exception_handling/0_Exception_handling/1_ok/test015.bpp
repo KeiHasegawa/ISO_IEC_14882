@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+typedef void(*PFV)();
+
+namespace std {
+  PFV set_unexpected(PFV);
+}
+
+class UNEXPECTED {};
+
+void throw_UNEXPECTED()
+{
+  printf("throw_UNEXPECTED called\n");
+  throw UNEXPECTED();
+}
+
+void f()
+{
+  std::set_unexpected(&throw_UNEXPECTED);
+  struct local {};
+  throw local();
+}
+
+int main()
+{
+  try {
+    f();
+  } catch ( ... ){
+    printf("catch UNEXPECTED\n");
+  }
+  return 0;
+}

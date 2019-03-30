@@ -1,0 +1,3 @@
+test025.c:In function `g'
+test025.c:9: error: structure has no member named `f'.
+test025.c:9: error: called object is not a function.

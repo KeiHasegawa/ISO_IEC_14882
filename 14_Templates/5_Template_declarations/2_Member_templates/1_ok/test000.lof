@@ -1,0 +1,5 @@
+member template constructor called
+`string<T>::compare(const T2&)' called
+s = 97
+`string<T>::compare(const T2&)' called
+s = 3

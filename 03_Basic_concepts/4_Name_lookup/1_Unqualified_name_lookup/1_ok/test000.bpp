@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+typedef int f;
+struct A {
+  friend void f(A &);
+  operator int();
+  void g(A a) {
+    f(a);
+  }
+};
+
+void test000()
+{
+  printf("`test000' called\n");
+  f f = 123;
+  printf("f = %d\n", f);
+  A a;
+  int n = a;
+  printf("n = %d\n", n);
+  a.g(a);
+}
+
+int main()
+{
+  test000();
+  return 0;
+}

@@ -1,0 +1,30 @@
+/*
+ * Declaring a class to be a friend implies that the names of private and
+ * protected members from the class granting friendship can be accessed in
+ * declarations of members of the befriended class. [Note: this means that
+ * access to private and protected names is also granted to member functions
+ * of the friend class (as if the functions were each friends) and to the
+ * static data member definitions of the friend class. This also means that
+ * private and protected type names from the class granting friendship can be
+ * used in the base-clause of a nested class of the friend class. However, the
+ * declarations of members of classes nested within the friend class cannot
+ * access the names of private and protected members from the class granting
+ * friendship. Also, because the base-clause of the friend class is not part
+ * of its member declarations, the base-clause of the friend class cannot
+ * access the names of the private and protected members from the class
+ * granting friendship. For example,
+ */
+
+class A {
+  class B { };
+  friend class X;
+};
+
+class X : A::B { // ill-formed: A::B cannot be accessed
+                 // in the base-clause for X
+  A::B mx; // OK: A::B used to declare member of X
+  class Y : A::B { // OK: A::B used to declare member of X
+    A::B my; // ill-formed: A::B cannot be accessed
+             // to declare members of nested class of X
+  };
+};

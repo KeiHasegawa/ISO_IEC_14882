@@ -1,0 +1,10 @@
+/*
+ * A template-id that names a class template explicit specialization that has
+ * been declared but not defined can be used exactly like the names of other
+ * incompletely-defined classes (3.9).
+ */
+
+template<class T> class X; // X is a class template
+template<> class X<int>;
+X<int>* p; // OK: pointer to declared class X<int>
+X<int> x; // error: object of incomplete class X<int>

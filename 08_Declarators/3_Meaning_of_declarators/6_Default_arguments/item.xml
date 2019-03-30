@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>デフォルト引数が正しく動作するか</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>デフォルト引数を後付けで宣言</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>デフォルト引数を後付けで宣言</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>デフォルト引数に実行時に決まる変数を指定</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>メンバ函数のデフォルト引数を後付けで宣言</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>メンバ函数のデフォルト引数を後付けで宣言</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>メンバ函数のデフォルト引数に static メンバ変数を指定</abstract>
+</item>
+
+<item>
+    <source>2_error/test005.cpp</source>
+    <abstract>メンバ函数のデフォルト引数にメンバ変数を指定</abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.cpp</source>
+    <abstract>デフォルト引数が函数の型に影響しないことを示す例</abstract>
+</item>
+
+<item>
+    <source>2_error/test006.cpp</source>
+    <abstract>デフォルト引数が函数の型に影響しないことを示す例</abstract>
+</item>
+
+<item>
+    <source>1_ok/test006.cpp</source>
+    <abstract>デフォルト引数をとる仮想函数</abstract>
+</item>
+
+<item>
+    <source>2_error/test007.cpp</source>
+    <abstract>デフォルト引数をとる仮想函数</abstract>
+</item>
+
+<item>
+    <source>2_error/test002.cpp</source>
+    <abstract>デフォルト引数にローカル変数を指定</abstract>
+</item>
+
+<item>
+    <source>2_error/test003.cpp</source>
+    <abstract>デフォルト引数に this を指定</abstract>
+</item>
+
+<item>
+    <source>2_error/test004.cpp</source>
+    <abstract>デフォルト引数に別のパラメータを参照する式を指定</abstract>
+</item>
+
+</test_item>

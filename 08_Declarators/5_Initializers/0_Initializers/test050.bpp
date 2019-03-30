@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+struct S {
+  static const int a = 1;
+  static const int b = 2;
+  static const int c = 4;
+  static const int d = a | b | c;
+};
+
+int main()
+{
+  printf("S::a = %d\n", S::a);
+  printf("S::b = %d\n", S::b);
+  printf("S::c = %d\n", S::c);
+  printf("S::d = %d\n", S::d);
+  return 0;
+}

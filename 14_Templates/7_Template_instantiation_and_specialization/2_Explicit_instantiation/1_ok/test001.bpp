@@ -1,0 +1,25 @@
+/*
+ * An explicit instantiation of a class or function template specialization is
+ * placed in the namespace in which the template is defined. An explicit
+ * instantiation for a member of a class template is placed in the namespace
+ * where the enclosing class template is defined. An explicit instantiation
+ * for a member template is placed in the namespace where the enclosing class
+ * or class template is defined.
+ */
+#include <stdio.h>
+
+namespace N {
+  template<class T> class Y { void mf() { } };
+}
+
+using N::Y;
+template class Y<int>; // OK: explicit instantiation in namespace N
+template class N::Y<char*>; // OK: explicit instantiation in namespace N
+template void N::Y<double>::mf(); // OK: explicit instantiation
+                                  // in namespace N
+
+int main()
+{
+  printf("just ok compile test\n");
+  return 0;
+}

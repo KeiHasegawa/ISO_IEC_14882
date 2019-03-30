@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Member_access_control/item.xml">
+    <title>11 Member access control</title>
+</section>
+
+<section url="1_Access_specifiers/item.xml">
+    <title>11.1 Access specifiers</title>
+</section>
+
+<section url="2_Accessibility_of_base_classes_and_base_class_members/item.xml">
+    <title>11.2 Accessibility of base classes and base class members</title>
+</section>
+
+<section url="3_Access_declarations/item.xml">
+    <title>11.3 Access declarations</title>
+</section>
+
+<section url="4_Friends/item.xml">
+    <title>11.4 Friends</title>
+</section>
+
+<section url="5_Protected_member_access/item.xml">
+    <title>11.5 Protected member access</title>
+</section>
+
+<section url="6_Access_to_virtual_functions/item.xml">
+    <title>11.6 Access to virtual functions</title>
+</section>
+
+<section url="7_Multiple_access/item.xml">
+    <title>11.7 Multiple access</title>
+</section>
+
+<section url="8_Nested_classes/item.xml">
+    <title>11.8 Nested classes</title>
+</section>
+
+</test_item>

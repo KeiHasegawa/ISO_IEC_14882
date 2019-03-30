@@ -1,0 +1,11 @@
+/*
+ * Every namespace-definition shall appear in the global scope or in a
+ * namespace scope
+ */
+void f()
+{
+  namespace N {  // error
+    int n;
+  }
+}
+

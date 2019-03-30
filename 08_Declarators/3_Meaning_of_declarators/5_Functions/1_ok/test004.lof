@@ -1,0 +1,12 @@
+`f' called
+i = 0
+*pi = 123
+`f' called
+f() return value -1
+`fpi' called with 3
+*p = 8
+`x' called with "Programming" and "Languages"
+n = -5
+`fpif' called with 4
+`h' called with 5
+m = 10

@@ -1,0 +1,38 @@
+/*
+ * 1 A template-argument for a template template-parameter shall be the name of
+ *   a class template, expressed as id-expression. Only primary class templates
+ *   are considered when matching the template template argument with the
+ *   corresponding parameter; partial specializations are not considered even
+ *   if their parameter lists match that of the template template parameter.
+ *
+ * 2 Any partial specializations (14.5.4) associated with the primary class
+ *   template are considered when a specialization based on the template
+ *   template-parameter is instantiated. If a specialization is not visible at
+ *   the point of instantiation, and it would have been selected had it been
+ *   visible, the program is ill-formed; no diagnostic is required.
+ */
+template<class T> class A { // primary template
+public:
+  int x;
+};
+template<class T> class A<T*> { // partial specialization
+public:
+  long x;
+};
+template<template<class U> class V> class C {
+public:
+  V<int> y;
+  V<int*> z;
+};
+
+C<A> c; // V<int> within C<A> uses the primary template,
+        // so c.y.x has type int
+        // V<int*> within C<A> uses the partial specialization,
+        // so c.z.x has type long
+
+void f()
+{
+  int* p = &c.y.x;  /* ok */
+  int* q = &c.z.x;  /* error */
+}
+

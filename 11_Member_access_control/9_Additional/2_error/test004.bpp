@@ -1,0 +1,20 @@
+class B {
+public:
+  static void f();
+  void g();
+};
+
+class D : private B {};
+
+class DD : public D {
+  void h();
+};
+
+void DD::h()
+{
+  D::f();
+  this->f();
+  this->B::f();
+  f();
+  g();
+}

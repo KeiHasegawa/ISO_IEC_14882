@@ -1,0 +1,5 @@
+`f(double)' called with 1.000000
+`f(int)' called with 2
+`f(int)' called with 3
+`f(double)' called with 4.000000
+`f(int)' called with 5

@@ -1,0 +1,21 @@
+/*
+ * A template argument list may be specified when referring to a specialization
+ * of a function template
+ * - when a function is called,
+ * - when the address of a function is taken, when a function initializes a
+ *   reference to function, or when a pointer to member function is formed,
+ * - in an explicit specialization,
+ * - in an explicit instantiation, or
+ * - in a friend declaration.
+ * Trailing template arguments that can be deduced (14.8.2) may be omitted from
+ * the list of explicit templatearguments. If all of the template arguments can
+ * be deduced, they may all be omitted; in this case, the empty template
+ * argument list <> itself may also be omitted.
+ */
+
+template<class X, class Y> X f(Y);
+void g()
+{
+  int i = f<int>(5.6); // Y is deduced to be double
+  int j = f(5.6); // ill-formed: X cannot be deduced
+}

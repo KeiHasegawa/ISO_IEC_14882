@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Template_declarations/item.xml">
+    <title>14.5 Template declarations</title>
+</section>
+
+<section url="1_Class_templates/item.xml">
+    <title>14.5.1 Class templates</title>
+</section>
+
+<section url="2_Member_templates/item.xml">
+    <title>14.5.2 Member templates</title>
+</section>
+
+<section url="3_Friends/item.xml">
+    <title>14.5.3 Friends</title>
+</section>
+
+<section url="4_Class_template_partial_specializations/item.xml">
+    <title>14.5.4 Class template partial specializations</title>
+</section>
+
+<section url="5_Function_templates/item.xml">
+    <title>14.5.5 Function templates</title>
+</section>
+
+</test_item>

@@ -1,0 +1,72 @@
+/*
+ * A C language linkage is ignored for the names of class members and the
+ * member function type of class member functions.
+ */
+#include <stdio.h>
+
+extern "C" typedef void FUNC_c();
+
+class C {
+public:
+  void mf1(FUNC_c*); // the name of the function mf1 and the member
+                     // function's type have C++ language linkage; the
+                     // parameter has type pointer to C function
+  FUNC_c mf2;        // the name of the function mf2 and the member
+                     // function's type have C++ language linkage
+  static FUNC_c* q;  // the name of the data member q has C++ language
+                     // linkage and the data member's type is pointer to
+                     // C function
+};
+
+extern "C" {
+  class X {
+  public:
+    void mf();           // the name of the function mf and the member
+                         // function's type have C++ language linkage
+    void mf2(void(*)()); // the name of the function mf2 has C++ language
+                         // linkage; the parameter has type pointer to
+                         // C function
+  };
+}
+
+extern "C" void f1()
+{
+  printf("`f1' called\n");
+}
+
+int main()
+{
+  C c;
+  c.mf1(f1);
+  c.mf2();
+  C::q = f1;
+  (*C::q)();
+  X x;
+  x.mf();
+  x.mf2(f1);
+  return 0;
+}
+
+void C::mf1(FUNC_c* pf)
+{
+  printf("`C::mf1' called\n");
+  (*pf)();
+}
+
+void C::mf2()
+{
+  printf("`C::mf2' called\n");
+}
+
+FUNC_c* C::q;
+
+void X::mf()
+{
+  printf("`X::mf' called\n");
+}
+
+void X::mf2(void (*pf)())
+{
+  printf("`X::mf2' called\n");
+  (*pf)();
+}

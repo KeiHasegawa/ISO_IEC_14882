@@ -1,0 +1,23 @@
+/*
+ * A member of a class template may be declared to be a friend of a
+ * non-template class. In this case, the corresponding member of every
+ * specialization of the class template is a friend of the class granting
+ * friendship.
+ */
+#include <stdio.h>
+
+template<class T> struct A {
+  struct B { };
+  void f();
+};
+
+class C {
+  template<class T> friend struct A<T>::B;
+  template<class T> friend void A<T>::f();
+};
+
+int main()
+{
+  printf("just compile test\n");
+  return 0;
+}

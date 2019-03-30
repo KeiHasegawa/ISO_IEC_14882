@@ -1,0 +1,4 @@
+S1::f called
+c = 1
+S2::f called
+c = 1.500000

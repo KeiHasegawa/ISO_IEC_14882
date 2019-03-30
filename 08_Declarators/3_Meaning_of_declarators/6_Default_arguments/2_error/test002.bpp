@@ -1,0 +1,8 @@
+/*
+ * Local variables shall not be used in default argument expressions.
+ */
+void f()
+{
+  int i;
+  extern void g(int x = i); // error
+}

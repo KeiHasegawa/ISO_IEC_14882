@@ -1,0 +1,14 @@
+class X {
+private:
+  enum E1 { a1, b1 };
+  int i1;
+  void f1();
+};
+
+void h(X* p)
+{
+  X::E1 e1;
+  int x1 = X::a1;
+  p->i1 = 1;
+  p->f1();
+}

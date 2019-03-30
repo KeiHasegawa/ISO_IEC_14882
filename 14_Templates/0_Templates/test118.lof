@@ -1,0 +1,3 @@
+T::operator+(int) called
+ok : S::operator-(const B&) called
+d = 3.000000

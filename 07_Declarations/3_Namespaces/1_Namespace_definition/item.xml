@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+
+
+<section url="0_Namespace_definition/item.xml">
+    <title>7.3.1 Namespace definition</title>
+</section>
+
+<section url="1_Unnamed_namespaces/item.xml">
+    <title>7.3.1.1 Unnamed namespaces</title>
+</section>
+
+<section url="2_Namespace_member_definitions/item.xml">
+    <title>7.3.1.2 Namespace member definitions</title>
+</section>
+
+</test_item>

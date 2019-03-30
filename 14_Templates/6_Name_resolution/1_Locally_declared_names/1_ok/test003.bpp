@@ -1,0 +1,33 @@
+/*
+ * Within the scope of a class template, when the unqualified name of a nested
+ * class of the class template is referred to, it is equivalent to the name of
+ * the nested class qualified by the name of the enclosing class template.
+ */
+#include <stdio.h>
+
+template <class T> struct A {
+  struct B {
+    T m; }; // B is equivalent to A::B, which is equivalent to A<T>::B,
+            // which is dependent.
+  struct C : B { };
+};
+
+template<class T> void f(A<T>* p)
+{
+  printf("f(A<T>*) called\n");
+  typename A<T>::B b;
+  printf("%f\n", b.m.d = 0.25);
+  typename A<T>::C c;
+  printf("%f\n", c.m.d = -0.5);
+}
+
+struct S {
+  double d;
+};
+
+int main()
+{
+  A<S> as;
+  f(&as);
+  return 0;
+}

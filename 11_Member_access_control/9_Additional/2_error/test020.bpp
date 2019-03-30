@@ -1,0 +1,15 @@
+class A {
+  friend class B;
+  int a;
+};
+
+class B {
+  friend class C;
+};
+
+class D : public B {
+  void f(A* p)
+  {
+    p->a++;
+  }
+};

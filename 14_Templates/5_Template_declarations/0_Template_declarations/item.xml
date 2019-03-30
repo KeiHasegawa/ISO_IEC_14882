@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>最初のテンプレートの宣言で, テンプレート名の
+    後に template-argument-list を指定している</abstract>
+</item>
+
+</test_item>

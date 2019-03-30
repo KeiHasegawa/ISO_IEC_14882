@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+struct T { int t; };
+
+void f(T& ref)
+{
+  printf("f(T&) called\n");
+  printf("ref.t = %d\n", ref.t);
+}
+
+void f(const T& ref)
+{
+  printf("f(const T&) called\n");
+  printf("ref.t = %d\n", ref.t);
+}
+
+void f(volatile T& ref)
+{
+  printf("f(volatile T&) called\n");
+  printf("ref.t = %d\n", ref.t);
+}
+
+void g(T& a, const T& b, volatile T& c)
+{
+  f(a);
+  f(b);
+  f(c);
+}
+
+int main()
+{
+  T x = { 1 };
+  T y = { 2 };
+  T z = { 3 };
+  g(x,y,z);
+
+  return 0;
+}

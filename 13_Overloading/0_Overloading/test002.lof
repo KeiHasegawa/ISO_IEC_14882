@@ -1,0 +1,6 @@
+f(T*) called
+p->t = 1
+f(const T*) called
+p->t = 2
+f(volatile T*) called
+p->t = 3

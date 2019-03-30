@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+namespace A {
+  int a;
+}
+namespace B {
+  using namespace A;
+}
+namespace C {
+  using namespace A;
+}
+namespace BC {
+  using namespace B;
+  using namespace C;
+}
+void f()
+{
+  BC::a++; //OK: S is { A::a, A::a }
+}
+namespace D {
+  using A::a;
+}
+namespace BD {
+  using namespace B;
+  using namespace D;
+}
+void g()
+{
+  BD::a++; //OK: S is { A::a, A::a }
+}
+
+int main()
+{
+  printf("A::a = %d\n", A::a);
+  f();
+  printf("A::a = %d\n", A::a);
+  g();
+  printf("A::a = %d\n", A::a);
+  return 0;
+}

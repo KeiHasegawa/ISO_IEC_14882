@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Template_arguments/item.xml">
+    <title>14.3 Template arguments</title>
+</section>
+
+<section url="1_Template_type_arguments/item.xml">
+    <title>14.3.1 Template type arguments</title>
+</section>
+
+<section url="2_Template_non-type_arguments/item.xml">
+    <title>14.3.2 Template non-type arguments</title>
+</section>
+
+<section url="3_Template_template_arguments/item.xml">
+    <title>14.3.3 Template template arguments</title>
+</section>
+
+</test_item>

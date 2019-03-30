@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+enum e { A, B } ee;
+enum { A2, B2 };
+
+void f(int i)
+{
+  printf("f(int) called with %d\n", i);
+}
+
+void f(e i)
+{
+  printf("f(e) called with %d\n", i);
+}
+
+int main()
+{
+  f(0);
+  f(A);
+  f(A+1);
+  f(ee);
+  f(A2);
+  return 0;
+}

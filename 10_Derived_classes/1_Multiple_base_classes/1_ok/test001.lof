@@ -1,0 +1,6 @@
+`f' called
+`C::f' called
+`D::f' called
+pl->next = 1, pa->next = 2, pb->next = 3
+pc->A::next = 5, pc->B::next = 5
+pd->A::next = 6

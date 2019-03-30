@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+struct S {
+  virtual void vf1()
+  {
+    printf("S::vf1 called\n");
+  }
+  virtual void vf2()
+  {
+    printf("S::vf2 called\n");
+  }
+};
+
+int main()
+{
+  S s;
+  void (S::* pmf)() = &S::vf2;
+  (s.*pmf)();
+  return 0;
+}

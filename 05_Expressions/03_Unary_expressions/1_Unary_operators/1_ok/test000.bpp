@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+struct A { int i; };
+struct B : A { };
+
+void f(A a, B* bp)
+{
+  int A::* p = &B::i;
+  printf("a.*p = %d\n", a.*p);
+  printf("bp->*p = %d\n", bp->*p);
+}
+
+int main()
+{
+  A a = { 3 }; 
+  B b;
+  b.i = 4;
+  f(a,&b);
+  return 0;
+}
+

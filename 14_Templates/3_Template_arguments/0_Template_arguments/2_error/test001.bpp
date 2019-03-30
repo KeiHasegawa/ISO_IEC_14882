@@ -1,0 +1,8 @@
+/*
+ * When default template-arguments are used, a template-argument list can be
+ * empty. In that case the empty <> brackets shall still be used as the
+ * template-argument-list.
+ */
+template<class T = char> class String;
+String<>* p; // OK: String<char>
+String* q; // syntax error

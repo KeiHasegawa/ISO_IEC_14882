@@ -1,0 +1,13 @@
+complex::complex(double) called
+a = (1.000000,0.000000)
+b = (1.000000,0.000000)
+complex::complex(double, double) called
+c = (1.000000,2.000000)
+sqrt called
+x = (1.000000,0.000000)
+y = (1.000000,2.000000)
+d = (1.000000,0.000000)
+complex::complex() called
+e = (0.000000,0.000000)
+complex::complex(double) called
+f = (3.000000,0.000000)

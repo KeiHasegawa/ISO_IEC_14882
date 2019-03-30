@@ -1,0 +1,10 @@
+/*
+ * An exception-specification shall appear only on a function declarator in a
+ * function, pointer, reference or pointer to member declaration or definition.
+ * An exception-specification shall not appear in a typedef declaration.
+ */
+
+void f() throw(int); // OK
+void (*fp)() throw (int); // OK
+void g(void pfa() throw(int)); // OK
+typedef int (*pf)() throw(int); // ill-formed

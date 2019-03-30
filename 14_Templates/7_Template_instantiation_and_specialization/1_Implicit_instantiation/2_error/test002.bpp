@@ -1,0 +1,12 @@
+/*
+ * There is an implementation-defined quantity that specifies the limit on the
+ * total depth of recursive instantiations, which could involve more than one
+ * template. The result of an infinite recursion in instantiation is undefined.
+ */
+
+template<class T> class X {
+  X<T>* p; // OK
+  X<T*> a; // implicit generation of X<T> requires
+           // the implicit instantiation of X<T*> which requires
+           // the implicit instantiation of X<T**> which ...
+};

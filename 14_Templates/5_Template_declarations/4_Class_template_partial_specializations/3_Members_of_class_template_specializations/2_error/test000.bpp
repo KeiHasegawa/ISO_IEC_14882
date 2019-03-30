@@ -1,0 +1,47 @@
+/*
+ * The template parameter list of a member of a class template partial
+ * specialization shall match the template parameter list of the class
+ * template partial specialization. The template argument list of a member
+ * of a class template partial specialization shall match the template
+ * argument list of the class template partial specialization. A class
+ * template specialization is a distinct template. The members of the class
+ * template partial specialization are unrelated to the members of the
+ * primary template. Class template partial specialization members that are
+ * used in a way that requires a definition shall be defined; the definitions
+ * of members of the primary template are never used as definitions for
+ * members of a class template partial specialization. An explicit
+ * specialization of a member of a class template partial specialization is
+ * declared in the same way as an explicit specialization of the primary
+ * template.
+ */
+
+// primary template
+template<class T, int I> struct A {
+  void f();
+};
+template<class T, int I> void A<T,I>::f() { }
+// class template partial specialization
+template<class T> struct A<T,2> {
+  void f();
+  void g();
+  void h();
+};
+// member of class template partial specialization
+template<class T> void A<T,2>::g() { }
+
+// explicit specialization
+template<> void A<char,2>::h() { }
+
+int main()
+{
+  A<char,0> a0;
+  A<char,2> a2;
+  a0.f(); //OK, uses definition of primary template's member
+  a2.g(); //OK, uses definition of
+          // partial specialization's member
+  a2.h(); //OK, uses definition of
+          // explicit specialization's member
+  a2.f(); //ill-formed, no definition of f for A<T,2>
+          // the primary template is not used here
+  return 0;
+}

@@ -1,0 +1,4 @@
+test012.c:In function `f'
+test012.c:10: error: not lvalue.
+test012.c:10: error: invalid operands to binary +.
+test012.c:10: error: invalid assignment.

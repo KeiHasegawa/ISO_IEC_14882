@@ -1,0 +1,15 @@
+/*
+ * enumerator definition whose value is specified by the same name.
+ */
+#include <stdio.h>
+
+int main(void)
+{
+  const int x = 12;
+  {
+    enum { x = x };
+    printf("x = %d\n", x);
+  }
+  return 0;
+}
+

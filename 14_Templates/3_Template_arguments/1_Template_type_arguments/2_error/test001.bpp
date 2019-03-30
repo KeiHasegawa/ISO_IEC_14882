@@ -1,0 +1,12 @@
+/*
+ * If a declaration acquires a function type through a type dependent on a
+ * template-parameter and this causes a declaration that does not use the
+ * syntactic form of a function declarator to have function type, the program
+ * is ill-formed.
+ */
+template<class T> struct A {
+  static T t;
+};
+typedef int function();
+A<function> a; // ill-formed: would declare A<function>::t
+               // as a static member function

@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+class X {
+  int i;
+public:
+  X(int ii = 0) : i(ii) {}
+  void print()
+  {
+    printf("i = %d\n", i);
+  }
+};
+
+X buf[10];
+
+void* operator new(size_t sz, void* p)
+{
+  return p;
+}
+
+int main()
+{
+  for ( int i = 0 ; i < 10 ; ++i )
+    new (&buf[i]) X(i);
+  for ( int i = 0 ; i < 10 ; ++i )
+    buf[i].print();
+  return 0;
+}

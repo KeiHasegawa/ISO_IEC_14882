@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>test000.cpp</source>
+    <abstract>名前空間にある静的な変数への参照</abstract>
+</item>
+
+<item>
+    <source>test001.cpp</source>
+    <abstract>スコープ解決演算子による file スコープにある変数の参照</abstract>
+</item>
+
+<item>
+    <source>test002.cpp</source>
+    <abstract>メンバ函数でのシンボルの参照</abstract>
+</item>
+
+<item>
+    <source>test003.cpp</source>
+    <abstract>名前空間で定義された函数</abstract>
+</item>
+
+<item>
+    <source>test004.cpp</source>
+    <abstract>名前空間で定義された構造体</abstract>
+</item>
+
+<item>
+    <source>test005.cpp</source>
+    <abstract>名前空間で定義された typedef </abstract>
+</item>
+
+<item>
+    <source>test006.cpp</source>
+    <abstract>名前空間で定義された template class </abstract>
+</item>
+
+<item>
+    <source>test007.cpp</source>
+    <abstract>構造体で定義された構造体</abstract>
+</item>
+
+<item>
+    <source>test008.cpp</source>
+    <abstract>名前空間で定義された template</abstract>
+</item>
+
+<item>
+    <source>test009.cpp</source>
+    <abstract>名前空間の using-directive</abstract>
+</item>
+
+<item>
+    <source>test010.c</source>
+    <abstract>名前空間で定義された typedef 名を using-directive</abstract>
+</item>
+
+<item>
+    <source>test011.c</source>
+    <abstract>名前空間で定義された template クラス名を using-directive</abstract>
+</item>
+
+<item>
+    <source>test012.cpp</source>
+    <abstract>グローバルスコープにある多重定義された函数を :: 指定して呼び出す
+</abstract>
+</item>
+
+</test_item>

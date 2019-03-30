@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+namespace N {
+  int i;
+  int g(int a) { return a; }
+  int j();
+  void q();
+}
+namespace { int l=1; }
+// the potential scope of l is from its point of declaration
+// to the end of the translation unit
+namespace N {
+  int g(char a) // overloads N::g(int)
+  {
+    return l+a; // l is from unnamed namespace
+  }
+  int j(); // OK: duplicate function declaration
+  int j() // OK: definition of N::j()
+  {
+    return g(i); // calls N::g(int)
+  }
+}
+
+
+void test000()
+{
+  printf("`test000' called\n");
+  printf("N::i = %d\n", N::i);
+  printf("N::g(3) return value : %d\n", N::g(3));
+  printf("N::g('a') return value : '%c'\n", N::g('a'));
+  N::i = 1234;
+  printf("N::j() return value : %d\n", N::j());
+}
+
+int main(void)
+{
+  test000();
+  return 0;
+}

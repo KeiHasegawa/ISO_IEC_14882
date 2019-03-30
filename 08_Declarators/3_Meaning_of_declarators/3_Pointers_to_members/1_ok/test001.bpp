@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+struct T {
+  int i;
+};
+
+int main()
+{
+  int T::* pm;
+  pm = &T::i;
+  T t;
+  t.*pm = 1;
+  printf("t.*pm = %d\n",t.*pm);
+  return 0;
+}

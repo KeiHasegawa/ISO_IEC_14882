@@ -1,0 +1,22 @@
+/*
+ * Check static const member works well.
+ */
+
+#include <stdio.h>
+
+struct S {
+  static const int x = 1;
+};
+
+struct T {
+  enum E { X = 2 };
+  static const E x = E(S::x);
+};
+
+int main()
+{
+  printf("S::x = %d\n", S::x);
+  printf("T::x = %d\n", T::x);
+  printf("T::X = %d\n", T::X);
+  return 0;
+}

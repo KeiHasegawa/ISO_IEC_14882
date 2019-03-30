@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void f(char c)
+{
+  printf("f(char) called with '%c'\n", c);
+}
+
+void f(int i)
+{
+  printf("f(int) called with %d\n", i);
+}
+
+void g(short s)
+{
+  f(s);
+}
+
+int main()
+{
+  g('x');
+  return 0;
+}

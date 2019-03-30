@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+void f(int& r)
+{
+  r = 1;
+}
+
+int main()
+{
+  int a;
+  f(a);
+  printf("a = %d\n",a);
+  return 0;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Class_names/item.xml">
+    <title>9.1 Class names</title>
+</section>
+
+<section url="2_Class_members/item.xml">
+    <title>9.2 Class members</title>
+</section>
+
+<section url="3_Member_functions/item.xml">
+    <title>9.3 Member functions</title>
+</section>
+
+<section url="4_Static_members/item.xml">
+    <title>9.4 Static members</title>
+</section>
+
+<section url="5_Unions/item.xml">
+    <title>9.5 Unions</title>
+</section>
+
+<section url="6_Bit_fields/item.xml">
+    <title>9.6 Bit-fields</title>
+</section>
+
+<section url="7_Nested_class_declarations/item.xml">
+    <title>9.7 Nested class declarations</title>
+</section>
+
+<section url="8_Local_class_declarations/item.xml">
+    <title>9.8 Local class declarations</title>
+</section>
+
+<section url="9_Nested_type_names/item.xml">
+    <title>9.9 Nested type names</title>
+</section>
+
+</test_item>

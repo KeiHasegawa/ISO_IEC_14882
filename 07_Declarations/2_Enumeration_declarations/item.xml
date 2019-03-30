@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>列挙の宣言を正しく処理できるか</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>列挙メンバの値を正しく処理できるか</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>比較における整数への格上げ</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>代入における整数への格上げ</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>代入における整数から列挙への変換</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>列挙のスコープを正しく処理できるか</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>列挙のスコープを正しく処理できるか</abstract>
+</item>
+
+</test_item>

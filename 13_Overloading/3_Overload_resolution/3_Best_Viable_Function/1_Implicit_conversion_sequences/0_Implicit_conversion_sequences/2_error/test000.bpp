@@ -1,0 +1,36 @@
+/*
+ * The ambiguous conversion sequence is ranked with user-defined conversion
+ * sequences because multiple conversion sequences for an argument can exist
+ * only if they involve different user-defined conversions. The ambiguous
+ * conversion sequence is indistinguishable from any other user-defined
+ * conversion sequence because it represents at least two user-defined
+ * conversion sequences, each with a different user-defined conversion, and
+ * any other user-defined conversion sequence must be indistinguishable from
+ * at least one of them. This rule prevents a function from becoming non-viable
+ * because of an ambiguous conversion sequence for one of its parameters.
+ * Consider this example,
+ */
+
+class B;
+class A { A (B&); };
+class B { operator A (); };
+class C { C (B&); };
+void f(A) { }
+void f(C) { }
+B b;
+
+void g()
+{
+  f(b); //ambiguous because b -> C via constructor and
+        // b -> A via constructor or conversion function.
+}
+
+/*
+ * If it were not for this rule, f(A) would be eliminated as a viable function
+ * for the call f(b) causing overload resolution to select f(C) as the function
+ * to call even though it is not clearly the best choice. On the other hand,
+ * if an f(B) were to be declared then f(b) would resolve to that f(B) because
+ * the exact match with f(B) is better than any of the sequences required to
+ * match f(A).
+ */
+

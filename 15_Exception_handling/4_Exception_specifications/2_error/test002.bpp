@@ -1,0 +1,16 @@
+/*
+ * A similar restriction applies to assignment to and initialization of
+ * pointers to functions, pointers tom ember functions, and references to
+ * functions: the target entity shall allow at least the exceptions allowed by
+ * the source value in the assignment or initialization.
+ */
+
+class A { /* ... */ };
+void (*pf1)(); // no exception specification
+void (*pf2)() throw(A);
+
+void f()
+{
+  pf1 = pf2; // OK: pf1 is less restrictive
+  pf2 = pf1; // error: pf2 is more restrictive
+}

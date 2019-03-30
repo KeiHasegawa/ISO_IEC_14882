@@ -1,0 +1,25 @@
+/*
+ * A using-declaration used as a member-declaration shall refer to a member of
+ * a base class of the class being defined, shall refer to a member of an
+ * anonymous union that is a member of a base class of the class being defined,
+ * or shall refer to an enumerator for an enumeration type that is a member of
+ * a base class of the class being defined.
+ */
+
+struct B {
+  void f(char);
+  void g(char);
+  enum E { e };
+  union { int x; };
+};
+
+class C {
+  int g();
+};
+
+class D2 : public B {
+  using B::f; // OK: B is a base of D2
+  using B::e; // OK: e is an enumerator of base B
+  using B::x; // OK: x is a union member of base B
+  using C::g; // error: C isnÅft a base of D2
+};

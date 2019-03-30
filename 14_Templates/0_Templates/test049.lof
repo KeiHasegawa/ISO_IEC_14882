@@ -1,0 +1,8 @@
+S<char>::s = 'c'
+S<char>::s = 'a'
+S<int>::s = 99
+S<int>::s = 1
+S<float>::s = 99.000000
+S<float>::s = 2.500000
+S<dobule>::s = 99.000000
+S<dobule>::s = -0.125000

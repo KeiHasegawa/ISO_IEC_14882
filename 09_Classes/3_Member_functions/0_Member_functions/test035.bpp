@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+class X {
+  bool b;
+public:
+  X(bool bb) : b(bb) {}
+  bool operator&&(X x)
+  {
+    return b && x.b;
+  }
+  bool operator||(X x)
+  {
+    return b || x.b;
+  }
+};
+
+int main()
+{
+  X a(true), b(false);
+
+  if ( a && b ) printf("error\n");
+  else          printf("ok\n");
+
+  if ( a || b ) printf("ok\n");
+  else          printf("error\n");
+
+  if ( a && a ) printf("ok\n");
+  else          printf("error\n");
+
+  if ( b || b ) printf("error\n");
+  else          printf("ok\n");
+
+  return 0;
+}

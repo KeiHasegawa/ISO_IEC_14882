@@ -1,0 +1,37 @@
+/*
+ * A friend template may be declared within a class or class template. A
+ * friend function template may be defined within a class or class template,
+ * but a friend class template may not be defined in a class or class
+ * template. In these cases, all specializations of the friend class or
+ * friend function template are friends of the class or class template
+ * granting friendship.
+ */
+#include <stdio.h>
+
+class A {
+  int m;
+  template<class T> friend class B; // OK
+  template<class T> friend void f(T)
+  {
+    A a;
+    printf("a.m = %d\n", a.m = 2);
+  }
+};
+
+template<class T> class B {
+public:
+  void mf()
+  {
+    A a;
+    printf("a.m = %d\n", a.m = 1);
+  }
+};
+
+int main()
+{
+  f(10);
+  B<int> b;
+  b.mf();
+  return 0;
+}
+

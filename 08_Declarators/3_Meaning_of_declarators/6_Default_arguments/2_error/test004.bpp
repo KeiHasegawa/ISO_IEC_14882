@@ -1,0 +1,15 @@
+/*
+ * Default arguments are evaluated each time the function is called. The order
+ * of evaluation of function arguments is unspecified. Consequently, parameters
+ * of a function shall not be used in default argument expressions, even if
+ * they are not evaluated. Parameters of a function declared before a default
+ * argument expression are in scope and can hide namespace and class member
+ * names.
+ */
+int a;
+int f(int a, int b = a); // error: parameter a
+                         // used as default argument
+typedef int I;
+int g(float I, int b = I(2)); // error: parameter I found
+int h(int a, int b = sizeof(a)); // error, parameter a used
+                                 // in default argument

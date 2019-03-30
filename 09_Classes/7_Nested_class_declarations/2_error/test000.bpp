@@ -1,0 +1,32 @@
+/*
+ * A class can be defined within another class. A class defined within another
+ * is called a nested class. The name of a nested class is local to its
+ * enclosing class. The nested class is in the scope of its enclosing class.
+ * Except by using explicit pointers, references, and object names,
+ * declarations in a nested class can use only type names, static members, and
+ * enumerators from the enclosing class.
+ */
+int x;
+int y;
+
+class enclose {
+public:
+  int x;
+  static int s;
+  class inner {
+    void f(int i)
+    {
+      int a = sizeof(x); // error: refers to enclose::x
+      x = i; // error: assign to enclose::x
+      s = i; // OK: assign to enclose::s
+      ::x = i; // OK: assign to global x
+      y = i; // OK: assign to global y
+    }
+    void g(enclose* p, int i)
+    {
+      p->x = i; // OK: assign to enclose::x
+    }
+  };
+};
+
+inner* p = 0; // error: inner not in scope

@@ -1,0 +1,3 @@
+S::s = 5
+sizeof(a) = 5
+S::f called

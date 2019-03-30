@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>test000.cpp</source>
+    <abstract>グローバル変数の初期化に変数を指定</abstract>
+</item>
+
+<item>
+    <source>test001.cpp</source>
+    <abstract>グローバル変数の初期化に添字演算子を指定</abstract>
+</item>
+
+<item>
+    <source>test002.cpp</source>
+    <abstract>グローバル変数の初期化に函数呼び出し演算子を指定</abstract>
+</item>
+
+<item>
+    <source>test003.cpp</source>
+    <abstract>グローバル変数の初期化にメンバ参照演算子(.)を指定</abstract>
+</item>
+
+<item>
+    <source>test004.cpp</source>
+    <abstract>グローバル変数の初期化にメンバ参照演算子(->)を指定</abstract>
+</item>
+
+<item>
+    <source>test005.cpp</source>
+    <abstract>グローバル変数の初期化に後置の ++ を指定</abstract>
+</item>
+
+<item>
+    <source>test006.cpp</source>
+    <abstract>グローバル変数の初期化に後置の -- を指定</abstract>
+</item>
+
+<item>
+    <source>test007.cpp</source>
+    <abstract>グローバル変数の初期化に前置の ++ を指定</abstract>
+</item>
+
+<item>
+    <source>test008.cpp</source>
+    <abstract>グローバル変数の初期化に前置の -- を指定</abstract>
+</item>
+
+<item>
+    <source>test009.cpp</source>
+    <abstract>グローバル変数の初期化に単項の * を指定</abstract>
+</item>
+
+<item>
+    <source>test010.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない単項の + を指定</abstract>
+</item>
+
+<item>
+    <source>test011.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない単項の - を指定</abstract>
+</item>
+
+<item>
+    <source>test012.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない単項の ~ を指定</abstract>
+</item>
+
+<item>
+    <source>test013.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない単項の ! を指定</abstract>
+</item>
+
+<item>
+    <source>test014.cpp</source>
+    <abstract>グローバル変数の初期化に new を指定</abstract>
+</item>
+
+<item>
+    <source>test015.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない二項の * を指定</abstract>
+</item>
+
+<item>
+    <source>test016.cpp</source>
+    <abstract>グローバル変数の初期化に定数でな/ を指定</abstract>
+</item>
+
+<item>
+    <source>test017.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない % を指定</abstract>
+</item>
+
+<item>
+    <source>test018.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない二項の + を指定</abstract>
+</item>
+
+<item>
+    <source>test019.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない二項の - を指定</abstract>
+</item>
+
+<item>
+    <source>test020.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない == を指定</abstract>
+</item>
+
+<item>
+    <source>test021.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない != を指定</abstract>
+</item>
+
+<item>
+    <source>test022.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない &lt; を指定</abstract>
+</item>
+
+<item>
+    <source>test023.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない &lt;= を指定</abstract>
+</item>
+
+<item>
+    <source>test024.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない > を指定</abstract>
+</item>
+
+<item>
+    <source>test025.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない >= を指定</abstract>
+</item>
+
+<item>
+    <source>test026.cpp</source>
+    <abstract>複数のグローバル変数の定数でない初期化</abstract>
+</item>
+
+<item>
+    <source>test027.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない &lt;&lt; を指定</abstract>
+</item>
+
+<item>
+    <source>test028.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない >> を指定</abstract>
+</item>
+
+<item>
+    <source>test029.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない二項の &amp; を指定</abstract>
+</item>
+
+<item>
+    <source>test030.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない ^ を指定</abstract>
+</item>
+
+<item>
+    <source>test031.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない | を指定</abstract>
+</item>
+
+<item>
+    <source>test032.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない &amp;&amp; を指定</abstract>
+</item>
+
+<item>
+    <source>test033.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない || を指定</abstract>
+</item>
+
+<item>
+    <source>test034.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない 3 項演算子を指定</abstract>
+</item>
+
+<item>
+    <source>test035.cpp</source>
+    <abstract>グローバル変数の初期化に代入演算子を指定</abstract>
+</item>
+
+<item>
+    <source>test036.cpp</source>
+    <abstract>グローバル変数の初期化に定数でないカンマ演算子を指定</abstract>
+</item>
+
+<item>
+    <source>test037.cpp</source>
+    <abstract>グローバル変数の初期化に .* を指定</abstract>
+</item>
+
+<item>
+    <source>test038.cpp</source>
+    <abstract>グローバル変数の初期化に ->* を指定</abstract>
+</item>
+
+<item>
+    <source>test039.cpp</source>
+    <abstract>グローバル変数の初期化に定数でない単項の &amp; を指定</abstract>
+</item>
+
+<item>
+    <source>test040.cpp</source>
+    <abstract>構造体のグローバル変数の初期化に変数指定</abstract>
+</item>
+
+<item>
+    <source>test041.cpp</source>
+    <abstract>配列のグローバル変数の初期化に変数指定</abstract>
+</item>
+
+<item>
+    <source>test042.cpp</source>
+    <abstract>ブロック外で, 配列の compound literal に変数指定</abstract>
+</item>
+
+<item>
+    <source>test043.cpp</source>
+    <abstract>ブロック外で, 構造体の compound literal に変数指定</abstract>
+</item>
+
+<item>
+    <source>test044.cpp</source>
+    <abstract>ブロック内で, static 変数の初期化に変数指定</abstract>
+</item>
+
+<item>
+    <source>test045.cpp</source>
+    <abstract>ブロック内で, static 変数の初期化に変数指定. その2</abstract>
+</item>
+
+<item>
+    <source>test046.cpp</source>
+    <abstract>static メンバの初期化</abstract>
+</item>
+
+<item>
+    <source>test047.cpp</source>
+    <abstract>char, signed char, unsigned char</abstract>
+</item>
+
+<item>
+    <source>test048.cpp</source>
+    <abstract>static const なデータメンバ</abstract>
+</item>
+
+</test_item>

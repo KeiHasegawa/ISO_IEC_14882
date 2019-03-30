@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+class X {
+public:
+  X& operator<<(int i)
+  {
+    printf("X::operator << called\n");
+    printf("i = %d\n", i);
+    return *this;
+  }
+};
+
+class Y {
+  int* ptr;
+public:
+  Y(int *p) : ptr(p) {}
+  Y& operator>>(int& i)
+  {
+    printf("Y::operator >> called\n");
+    i = *ptr++;
+    return *this;
+  }
+};
+
+int main()
+{
+  X x;
+  x << 1 << 2;
+  int a[] = { 3, 4 };
+  Y y(&a[0]);
+  int b, c;
+  y >> b >> c;
+  printf("b = %d, c = %d\n", b, c);
+  return 0;
+}

@@ -1,0 +1,21 @@
+/*
+ * In a const member function, the object for which the function is called is
+ * accessed through a const access path; therefore, a const member function
+ * shall not modify the object and its non-static data members.
+ */
+struct s {
+  int a;
+  int f() const;
+  int g() { return a++; }
+  int h() const { return a++; } // error
+};
+
+int s::f() const { return a; }
+
+void k(s& x, const s& y)
+{
+  x.f();
+  x.g();
+  y.f();
+  y.g(); //error
+}

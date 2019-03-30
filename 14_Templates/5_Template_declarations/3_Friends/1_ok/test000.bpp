@@ -1,0 +1,112 @@
+/*
+ * A friend of a class or class template can be a function template or class
+ * template, a specialization of a function template or class template, or an
+ * ordinary (nontemplate) function or class. For a friend function declaration
+ * that is not a template declaration:
+ * - if the name of the friend is a qualified or unqualified template-id, the
+ *   friend declaration refers to a specialization of a function template,
+ *   otherwise
+ * - if the name of the friend is a qualified-id and a matching nontemplate
+ *   function is found in the specified class or namespace, the friend
+ *   declaration refers to that function, otherwise,
+ * - if the name of the friend is a qualified-id and a matching specialization
+ *   of a function template is found in the specified class or namespace, the
+ *   friend declaration refers to that function template specialization,
+ *   otherwise,
+ * - the name shall be an unqualified-id that declares (or redeclares) an
+ *   ordinary (nontemplate) function.
+ */
+#include <stdio.h>
+
+template<class T> class task;
+template<class T> task<T>* preempt(task<T>*);
+template<class T> class task {
+  // ...
+  friend void next_time();
+  friend void process(task<T>*);
+  friend task<T>* preempt<T>(task<T>*);
+  template<class C> friend int func(C);
+  friend class task<int>;
+  template<class P> friend class frd;
+  // ...
+  int i;
+public:
+  void mf();
+};
+
+/*
+ * Here, each specialization of the task class template has the function
+ * next_time as a friend; because process does not have explicit
+ * template-arguments, each specialization of the task class template has
+ * an appropriately typed function process as a friend, and this friend is not
+ * a function template specialization; because the friend preempt has an
+ * explicit template-argument <T>, each specialization of the task class
+ * template has the appropriate specialization of the function template preempt
+ * as a friend; and each specialization of the task class template has all
+ * specializations of the function template func as friends. Similarly, each
+ * specialization of the task class template has the class template
+ * specialization task<int> as a friend, and has all specializations of the
+ * class template frd as friends.
+ */
+
+template<class T> void task<T>::mf()
+{
+  printf("`task<T>::mf()' called\n");
+}
+
+template<class T> void process(task<T>* p)
+{
+  printf("p->i = %d\n", p->i = 2);
+}
+
+template<> void task<int>::mf()
+{
+  task<double> u;
+  printf("u.i = %d\n", u.i = -1);
+}
+
+
+void next_time()
+{
+  task<int> t;
+  printf("t.i = %d\n", t.i = 1);
+}
+
+template<class T> task<T>* preempt(task<T>* q)
+{
+  printf("q->i = %d\n", q->i = 3);
+  return q;
+}
+
+template<class C> int func(C c)
+{
+  task<C> s;
+  printf("c = %d, s.i = %d\n", c, s.i = 4);
+  return 0;
+}
+
+template<class P> class frd {
+public:
+  void mf(task<float>* r)
+  {
+    printf("r->i = %d\n", r->i = 5);
+  }
+};
+
+struct S;
+
+int main()
+{
+  task<char> a;
+  a.mf();
+  task<int> b;
+  b.mf();
+  next_time();
+  process(&a);
+  preempt(&b);
+  func(1);
+  frd<S> c;
+  task<float> d;
+  c.mf(&d);
+  return 0;
+}

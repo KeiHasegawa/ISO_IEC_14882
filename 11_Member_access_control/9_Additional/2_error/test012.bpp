@@ -1,0 +1,11 @@
+class complex {
+public:
+  complex(int);
+  complex operator+=(complex);
+};
+
+void f()
+{
+  complex z(3);
+  1 += z;
+}

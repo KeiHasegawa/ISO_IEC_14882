@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+void f(int n)
+{
+  int m = n;
+  static int x = n;
+  printf("f called\n");
+  printf("n = %d\n", n);
+  printf("m = %d\n", m);
+  printf("x = %d\n", x);
+}
+
+int main()
+{
+  f(3);
+  f(5);
+  f(7);
+  return 0;
+}

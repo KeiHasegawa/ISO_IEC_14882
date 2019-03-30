@@ -1,0 +1,28 @@
+/*
+ * Certain function declarations cannot be overloaded:
+ * - Function declarations that differ only in the return type cannot be
+ *   overloaded.
+ * - Member function declarations with the same name and the same parameter
+ *   types cannot be overloaded
+ *   if any of them is a static member function declaration (9.4). Likewise,
+ *   member function template declarations with the same name, the same
+ *   parameter types, and the same template parameter lists cannot be
+ *   overloaded if any of them is a static member function template
+ *   declaration. The types of the implicit object parameters constructed for
+ *   the member functions for the purpose of overload resolution (13.3.1) are
+ *   not considered when comparing parameter types for enforcement of this
+ *   rule. In contrast, if there is no static member function declaration
+ *   among a set of member function declarations with the same name and the
+ *   same parameter types, then these member function declarations can be
+ *   overloaded if they differ in the type of their implicit object parameter.
+ * ...
+ */
+class X {
+  static void f();
+  void f(); // ill-formed
+  void f() const; // ill-formed
+  void f() const volatile; // ill-formed
+  void g();
+  void g() const; // OK: no static g
+  void g() const volatile; // OK: no static g
+};

@@ -1,0 +1,17 @@
+/*
+ * A function template defines an unbounded set of related functions.
+ */
+#include <stdio.h>
+
+template<class T> class Array { };
+template<class T> void sort(Array<T>&)
+{
+  printf("`sort(Array<T>&)' called\n");
+}
+
+int main(void)
+{
+  Array<int> ai;
+  sort(ai);
+  return 0;
+}

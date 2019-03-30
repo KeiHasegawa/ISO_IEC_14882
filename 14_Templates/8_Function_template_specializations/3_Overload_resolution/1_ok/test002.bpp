@@ -1,0 +1,26 @@
+/*
+ * Only the signature of a function template specialization is needed to enter
+ * the specialization in a set of candidate functions. Therefore only the
+ * function template declaration is needed to resolve a call for which a
+ * template specialization is a candidate.
+ */
+#include <stdio.h>
+
+template<class T> void f(T); // declaration
+
+template<> void f(const char*)
+{
+  printf("void f(const char*) called\n");
+}
+
+void g()
+{
+  f("Annemarie"); // call of f<const char*>
+}
+
+int main()
+{
+  g();
+  return 0;
+}
+

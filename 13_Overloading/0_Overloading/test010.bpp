@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+struct foo {
+  operator char()
+  {
+    printf("foo::operator char() called\n");
+    return 'a';
+  }
+};
+
+struct ostream {
+  ostream& operator<<(char c)
+  {
+    printf("ostream::operator <<(char) called with '%c'\n", c);
+    return *this;
+  }
+  ostream& operator<<(double d)
+  {
+    printf("ostream::operator <<(double) called with %f\n", d);
+    return *this;
+  }
+};
+
+foo x;
+ostream cout;
+
+int main()
+{
+  cout << x;
+  return 0;
+}

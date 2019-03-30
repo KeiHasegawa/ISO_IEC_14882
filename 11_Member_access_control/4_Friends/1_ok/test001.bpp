@@ -1,0 +1,22 @@
+/*
+ * An elaborated-type-specifier shall be used in a friend declaration for a
+ * class. A class shall not be defined in a friend declaration.
+ */
+#include <stdio.h>
+
+class X {
+  enum { a=100 };
+  friend class Y;
+};
+
+class Y {
+public:
+  int v[X::a]; // OK, Y is a friend of X
+};
+
+int main()
+{
+  Y y;
+  printf("sizeof y.v/sizeof y.v[0] = %d\n", sizeof y.v/sizeof y.v[0]);
+  return 0;
+}

@@ -1,0 +1,2 @@
+test017.c:5: error: redeclaration of `g'.
+test017.c:2: error: previous declaration is here.

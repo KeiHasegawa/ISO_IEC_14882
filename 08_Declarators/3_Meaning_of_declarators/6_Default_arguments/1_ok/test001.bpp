@@ -1,0 +1,44 @@
+/*
+ * For non-template functions, default arguments can be added in later
+ * declarations of a function in the same scope. Declarations in different
+ * scopes have completely distinct sets of default arguments. That is,
+ * declarations in inner scopes do not acquire default arguments from
+ * declarations in outer scopes, and vice versa. In a given function
+ * declaration, all parameters subsequent to a parameter with a default
+ * argument shall have default arguments supplied in this or previous
+ * declarations. A default argument shall not be redefined by a later
+ * declaration (not even to the same value).
+ */
+#include <stdio.h>
+
+void f(int, int);
+void f(int, int = 7);
+void h()
+{
+  f(3); //OK, calls f(3, 7)
+}
+
+void m()
+{
+  void f(int, int); // has no defaults
+  void f(int, int = 5); // OK
+  f(4); //OK, calls f(4, 5);
+}
+
+void n()
+{
+  f(6); //OK, calls f(6, 7)
+}
+
+int main()
+{
+  h();
+  m();
+  n();
+  return 0;
+}
+
+void f(int a, int b)
+{
+  printf("`f' called with %d, %d\n", a, b);
+}

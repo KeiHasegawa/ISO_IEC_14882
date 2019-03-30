@@ -1,0 +1,9 @@
+void f()
+{
+  struct S {
+    mutable int i;
+  };
+  const S cs;
+  int S::* pm = &S::i; // pm refers to mutable member S::i
+  cs.*pm = 88; // ill-formed: cs is a const object
+}

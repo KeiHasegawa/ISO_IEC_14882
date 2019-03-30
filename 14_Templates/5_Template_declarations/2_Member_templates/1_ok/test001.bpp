@@ -1,0 +1,33 @@
+/*
+ * A local class shall not have member templates. Access control rules (clause
+ * 11) apply to member template names. A destructor shall not be a member
+ * template. A normal (non-template) member function with a given name and
+ * type and a member function template of the same name, which could be used
+ * to generate a specialization of the same type, can both be declared in a
+ * class. When both exist, a use of that name and type refers to the
+ * non-template member unless an explicit template argument list is supplied.
+ */
+
+template <class T> struct A {
+  void f(int);
+  template <class T2> void f(T2);
+};
+
+template <> void A<int>::f(int) // non-template member
+{
+  printf("`A<int>::f(int)' called\n");
+}
+
+template <> template <> void A<int>::f<>(int) // template member
+{
+  printf("`A<int>::f<>(int)' called\n");
+}
+
+int main()
+{
+  A<char> ac;
+  ac.f(1); //non-template
+  ac.f('c'); //template
+  ac.f<>(1); //template
+  return 0;
+}

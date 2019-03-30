@@ -1,0 +1,22 @@
+/*
+ * Check reference type parameter works well.
+ */
+#include <stdio.h>
+
+void f(double& a) { a += 3.14; }
+
+void g()
+{
+  printf("`g' called\n");
+  double d = 0;
+  printf("d = %f\n",  d);
+  f(d);
+  printf("d = %f\n",  d);
+}
+
+int main()
+{
+  g();
+  return 0;
+}
+

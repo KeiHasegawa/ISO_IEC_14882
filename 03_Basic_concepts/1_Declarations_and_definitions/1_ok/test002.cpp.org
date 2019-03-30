@@ -1,0 +1,10 @@
+#include <string>
+using namespace std;
+
+struct C {
+  string s;
+  C(): s() { }
+  C(const C& x): s(x.s) { }
+  C& operator=(const C& x) { s = x.s; return *this; }
+  ~C() { }
+};

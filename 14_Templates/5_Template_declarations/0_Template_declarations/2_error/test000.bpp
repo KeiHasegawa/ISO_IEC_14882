@@ -1,0 +1,7 @@
+/*
+ * A template-id, that is, the template-name followed by a
+ * template-argument-list shall not be specified in the declaration of a
+ * primary template declaration.
+ */
+template<class T1, class T2, int I> class A<T1, T2, I> { }; // error
+template<class T1, int I> void sort<T1, I>(T1 data[I]); // error

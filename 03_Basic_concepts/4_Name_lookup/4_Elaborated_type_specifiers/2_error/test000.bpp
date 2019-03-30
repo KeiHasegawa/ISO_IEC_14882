@@ -1,0 +1,26 @@
+struct Node {
+  struct Node* Next; // OK: Refers to Node at global scope
+  struct Data* Data; // OK: Declares type Data
+  // at global scope and member Data
+};
+struct Data {
+  struct Node* Node; // OK: Refers to Node at global scope
+  friend struct ::Glob; // error: Glob is not declared
+  // cannot introduce a qualified type (7.1.5.3)
+  friend struct Glob; // OK: Refers to (as yet) undeclared Glob
+  // at global scope.
+  /* ... */
+};
+struct Base {
+  struct Data; // OK: Declares nested Data
+  struct ::Data* thatData; // OK: Refers to ::Data
+  struct Base::Data* thisData; // OK: Refers to nested Data
+  friend class ::Data; // OK: global Data is a friend
+  friend class Data; // OK: nested Data is a friend
+  struct Data { /* ... */ }; // Defines nested Data
+};
+struct Data; // OK: Redeclares Data at global scope
+struct ::Data; // error: cannot introduce a qualified type (7.1.5.3)
+struct Base::Data; // error: cannot introduce a qualified type (7.1.5.3)
+struct Base::Datum; // error: Datum undefined
+struct Base::Data* pBase; // OK: refers to nested Data

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Function_template_overloading/item.xml">
+    <title>14.5.5.1 Function template overloading</title>
+</section>
+
+<section url="2_Partial_ordering_of_function_templates/item.xml">
+    <title>14.5.5.2 Partial ordering of function templates</title>
+</section>
+
+</test_item>

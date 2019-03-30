@@ -1,0 +1,15 @@
+/*
+ * Here is an example in which different parameter/argument pairs produce
+ * inconsistent template argument deductions:
+ */
+
+template<class T> void f(T x, T y) { /* ... */ }
+struct A { /* ... */ };
+struct B : A { /* ... */ };
+int g(A a, B b)
+{
+  f(a,b); //error: T could be A or B
+  f(b,a); //error: T could be A or B
+  f(a,a); //OK: T is A
+  f(b,b); //OK: T is B
+}

@@ -1,0 +1,34 @@
+/*
+ * Note: the lookup rules for operators in expressions are different than the
+ * lookup rules for operator function names in a function call, as shown in
+ * the following example:
+ */
+#include <stdio.h>
+
+struct A { };
+void operator + (A, A);
+struct B {
+  void operator + (B);
+  void f ();
+};
+A a;
+void B::f() {
+  a + a; // OK - calls global operator+
+}
+
+int main()
+{
+  B b;
+  b.f();
+  return 0;
+}
+
+void operator + (A, A)
+{
+  printf("`operator + (A, A)' called\n");
+}
+
+void B::operator+(B)
+{
+  printf("`B::operator+(B)' called\n");
+}

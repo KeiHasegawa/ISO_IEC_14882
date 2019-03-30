@@ -1,0 +1,24 @@
+/*
+ * A non-type non-reference template-parameter is not an lvalue. It shall not
+ * be assigned to or in any other way have its value changed. A non-type
+ * non-reference template-parameter cannot have its address taken. When a
+ * non-type non-reference template-parameter is used as an initializer for a
+ * reference, a temporary is always used.
+ */
+#include <stdio.h>
+
+class X {};
+
+template<const X& x, int i> void f()
+{
+  &x; //OK
+  const int& cri = i; // OK: const reference bound to temporary
+}
+
+int main()
+{
+  X x;
+  f<x,3>();
+  return 0;
+}
+

@@ -1,0 +1,5 @@
+X::~X called. x = 4
+X::~X called. x = 3
+X::~X called. x = 2
+X::~X called. x = 1
+X::~X called. x = 0

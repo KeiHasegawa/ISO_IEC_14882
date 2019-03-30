@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void f(char c)
+{
+  printf("f(char) called with '%c'\n" , c);
+}
+
+void f(double d)
+{
+  printf("f(double) called with %f\n" , d);
+}
+
+int main()
+{
+  f('a');
+  f(1.0);
+  return 0;
+}

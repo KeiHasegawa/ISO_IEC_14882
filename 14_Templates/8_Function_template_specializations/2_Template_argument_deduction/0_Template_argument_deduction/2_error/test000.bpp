@@ -1,0 +1,14 @@
+/*
+ * Attempting to create an array with an element type that is void, a function
+ * type, or a reference type, or attempting to create an array with a size that
+ * is zero or negative.
+ */
+
+template <class T> int f(T[5]);
+
+void g()
+{
+  int I = f<int>(0);
+  int j = f<void>(0); // invalid array
+}
+

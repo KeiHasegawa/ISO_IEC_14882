@@ -1,0 +1,30 @@
+/*
+ * If the overload resolution process can determine the correct function to
+ * call without instantiating a class template definition, it is unspecified
+ * whether that instantiation actually takes place. 
+ */
+#include <stdio.h>
+
+template <class T> struct S {
+  operator int();
+};
+void f(int);
+void f(S<int>&);
+void f(S<float>);
+void g(S<int>& sr) {
+  f(sr); // instantiation of S<int> allowed but not required
+         // instantiation of S<float> allowed but not required
+};
+
+int main()
+{
+  S<int> si;
+  g(si);
+  return 0;
+}
+
+void f(S<int>&)
+{
+  printf("f(S<int>&) called\n");
+}
+

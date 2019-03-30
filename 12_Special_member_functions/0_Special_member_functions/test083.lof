@@ -1,0 +1,3 @@
+Y::operator X called
+X::operator int called
+b = 3

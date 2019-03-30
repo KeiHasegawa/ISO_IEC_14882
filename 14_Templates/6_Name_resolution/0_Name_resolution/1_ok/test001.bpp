@@ -1,0 +1,33 @@
+/*
+ * When looking for the declaration of a name used in a template definition,
+ * the usual lookup rules (3.4.1,3.4.2) are used for nondependent names. The
+ * lookup of names dependent on the template parameters is postponed until the
+ * actual template argument is known (14.6.2).
+ */
+#include <iostream>
+using namespace std;
+template<class T> class Set {
+  T* p;
+  int cnt;
+public:
+  Set() : cnt(4)
+  {
+    p = (T*)malloc(sizeof(int)*cnt);
+    for ( int i = 0 ; i != cnt ; ++i )
+      p[i] = T(i);
+  }
+  Set<T>(const Set<T>&);
+  void printall()
+  {
+    for (int i = 0; i<cnt; i++)
+      cout << p[i] << '\n';
+  }
+  // ...
+};
+
+int main()
+{
+  Set<int> s;
+  s.printall();
+  return 0;
+}

@@ -1,0 +1,26 @@
+/*
+ * Partial specialization declarations themselves are not found by name
+ * lookup. Rather, when the primary template name is used, any previously
+ * declared partial specializations of the primary template are also
+ * considered. One consequence is that a using-declaration which refers to a
+ * class template does not restrict the set of partial specializations which
+ * may be found through the using-declaration.
+ */
+
+#include <stdio.h>
+
+namespace N {
+  template<class T1, class T2> class A {public: int i;}; // primary template
+}
+using N::A; // refers to the primary template
+namespace N {
+  template<class T> class A<T, T*> {public: int j; }; // partial specialization
+}
+A<int,int*> a; // uses the partial specialization, which is found through
+               // the using declaration which refers to the primary template
+
+int main(void)
+{
+  printf("a.j = %d\n", a.j = 456);
+  return 0;
+}

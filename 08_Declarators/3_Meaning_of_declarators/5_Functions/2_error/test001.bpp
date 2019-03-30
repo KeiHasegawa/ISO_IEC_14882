@@ -1,0 +1,4 @@
+typedef void F();
+F fv; // OK: equivalent to void fv();
+F fv { } // ill-formed
+void fv() { } // OK: definition of fv

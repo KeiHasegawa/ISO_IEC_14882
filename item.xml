@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_General/item.xml">
+    <title>1 General</title>
+</section>
+
+<section url="2_Lexical_conventions/item.xml">
+    <title>2 Lexical conventions</title>
+</section>
+
+<section url="3_Basic_concepts/item.xml">
+    <title>3 Basic concepts</title>
+</section>
+
+<section url="4_Standard_conversions/item.xml">
+    <title>4 Standard conversions</title>
+</section>
+
+<section url="5_Expressions/item.xml">
+    <title>5 Expressions</title>
+</section>
+
+<section url="6_Statements/item.xml">
+    <title>6 Statements</title>
+</section>
+
+<section url="7_Declarations/item.xml">
+    <title>7 Declarations</title>
+</section>
+
+<section url="8_Declarators/item.xml">
+    <title>8 Declarators</title>
+</section>
+
+<section url="9_Classes/item.xml">
+    <title>9 Classes</title>
+</section>
+
+<section url="10_Derived_classes/item.xml">
+    <title>10 Derived classes</title>
+</section>
+
+<section url="11_Member_access_control/item.xml">
+    <title>11 Member access control</title>
+</section>
+
+<section url="12_Special_member_functions/item.xml">
+    <title>12 Special member functions</title>
+</section>
+
+<section url="13_Overloading/item.xml">
+    <title>13 Overloading</title>
+</section>
+
+<section url="14_Templates/item.xml">
+    <title>14 Templates</title>
+</section>
+
+<section url="15_Exception_handling/item.xml">
+    <title>15 Exception handling</title>
+</section>
+
+<section url="16_Preprocessing_directives/item.xml">
+    <title>16 Preprocessing directives</title>
+</section>
+
+<section url="17_Library_introduction/item.xml">
+    <title>17 Library introduction</title>
+</section>
+
+<section url="18_Language_support_library/item.xml">
+    <title>18 Language support library</title>
+</section>
+
+<section url="19_Diagnostics_library/item.xml">
+    <title>19 Diagnostics library</title>
+</section>
+
+<section url="20_General_utilities_library/item.xml">
+    <title>20 General utilities library</title>
+</section>
+
+<section url="21_Strings_library/item.xml">
+    <title>21 Strings library</title>
+</section>
+
+<section url="22_Localization_library/item.xml">
+    <title>22 Localization library</title>
+</section>
+
+<section url="23_Containers_library/item.xml">
+    <title>23 Containers library</title>
+</section>
+
+<section url="24_Iterators_library/item.xml">
+    <title>24 Iterators library</title>
+</section>
+
+<section url="25_Algorithms_library/item.xml">
+    <title>25 Algorithms library</title>
+</section>
+
+<section url="26_Numerics_library/item.xml">
+    <title>26 Numerics library</title>
+</section>
+
+<section url="27_Input_output_library/item.xml">
+    <title>27 Input output library</title>
+</section>
+
+</test_item>

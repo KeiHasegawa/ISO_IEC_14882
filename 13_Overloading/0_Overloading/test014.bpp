@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+class X {
+public:
+  void f() const
+  {
+    printf("X::f() const called\n");
+  }
+  void f()
+  {
+    printf("X::f() called\n");
+  }
+};
+
+void g(const X& a, X b)
+{
+  a.f();
+  b.f();
+}
+
+int main()
+{
+  X a, b;
+  g(a,b);
+  return 0;
+}

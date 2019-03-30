@@ -1,0 +1,16 @@
+/*
+ * Member declaration which reference previous member declaration
+ */
+#include <stdio.h>
+
+struct X {
+  enum E { z = 16 };
+  int b[X::z]; // OK
+};
+
+int main()
+{
+  struct X x;
+  printf("sizeof x.b/sizeof x.b[0] = %d\n", sizeof x.b/sizeof x.b[0]);
+  return 0;
+}

@@ -1,0 +1,3 @@
+sc.i = 1
+sort(Array<T>&) called
+sort<char*>(Array<char*>&) called

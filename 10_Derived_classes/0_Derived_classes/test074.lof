@@ -1,0 +1,5 @@
+`f' called
+pb->a = 1, pb->b = 2, pb->c = 3
+pd->a = 4, pd->Base::b = 5, pd->c = 6, pd->b = 7
+pd2->a = 8, pd2->Base::b = 9, pd2->Base::c = 10
+pd2->b = 11, pd2->c = 12

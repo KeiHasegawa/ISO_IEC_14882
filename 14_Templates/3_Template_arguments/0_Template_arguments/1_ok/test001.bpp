@@ -1,0 +1,35 @@
+/*
+ * In a template-argument, an ambiguity between a type-id and an expression is
+ * resolved to a type-id, regardless of the form of the corresponding
+ * template-parameter.
+ */
+#include <stdio.h>
+
+int h()
+{
+  printf("`h' called\n");
+  return 0;
+}
+
+template<class T> void f()
+{
+  printf("`template<class T> void f()' called\n");
+  T pf = &h;
+  pf();
+}
+
+template<int I> void f()
+{
+  printf("`template<int I> void f()' called\n");
+}
+
+void g()
+{
+  f<int()>(); // int() is a type-id: call the first f()
+}
+
+int main()
+{
+  g();
+  return 0;
+}

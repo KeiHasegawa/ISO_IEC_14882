@@ -1,0 +1,56 @@
+/*
+ * If a function declaration in namespace scope or block scope has the same
+ * name and the same parameter types as a function introduced by a
+ * using-declaration, and the declarations do not declare the same function,
+ * the program is ill-formed.
+ */
+#include <stdio.h>
+
+namespace B {
+  void f(int);
+  void f(double);
+}
+
+namespace C {
+  void f(int);
+  void f(double);
+  void f(char);
+}
+
+void h()
+{
+  using B::f;  // B::f(int) and B::f(double)
+  using C::f;  // C::f(int), C::f(double), and C::f(char)
+  f('h');      // calls C::f(char)
+}
+
+int main()
+{
+  h();
+  return 0;
+}
+
+void B::f(int a)
+{
+  printf("`B::f(int)' called with %d\n", a);
+}
+
+void B::f(double a)
+{
+  printf("`B::f(double)' called with %f\n", a);
+}
+
+void C::f(int a)
+{
+  printf("`C::f(int)' called with %d\n", a);
+}
+
+void C::f(double a)
+{
+  printf("`C::f(double)' called with %f\n", a);
+}
+
+void C::f(char a)
+{
+  printf("`C::f(char)' called with '%c'\n", a);
+}

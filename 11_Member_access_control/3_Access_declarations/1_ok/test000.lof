@@ -1,0 +1,39 @@
+`ef' called
+d.c = 1
+d.z = 2
+d.z1 = 3
+d.e = 4
+`D::df' called
+b = 100
+c = 101
+z = 102
+z1 = 103
+`B::bf' called
+a = 200
+b = 201
+c = 202
+z = 203
+z1 = 204
+`B::bf' called
+x = 205
+y = 206
+x = 104
+y = 105
+d = 106
+e = 107
+`D::df' called
+g = 108
+`X::xf' called
+c = 300
+z = 301
+z1 = 302
+e = 303
+`D::df' called
+x = 304
+g = 305
+`ff' called
+x.c = 400
+x.z = 401
+x.z1 = 402
+x.e = 403
+`D::df' called

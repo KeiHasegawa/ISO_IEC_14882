@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+struct A { A(); };
+struct B: public A { B(); };
+A::A() { printf("`A::A' called\n"); }
+B::B() { printf("`B::B' called\n"); }
+B::A ba; // object of type A
+
+int main()
+{
+  printf("`main' called\n");
+  return 0;
+}
+

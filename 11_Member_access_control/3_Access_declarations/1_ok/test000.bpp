@@ -1,0 +1,141 @@
+/*
+ * The access of a member of a base class can be changed in the derived class
+ * by mentioning its qualified-id in the derived class declaration. Such
+ * mention is called an access declaration. The effect of an access declaration
+ * qualified-id ; is defined to be equivalent to the declaration using
+ * qualified-id ;
+ *
+ * Access declarations are deprecated; member using-declarations (7.3.3)
+ * provide a better means of doing the same things. In earlier versions of
+ * the C++ language, access declarations were more limited; they were
+ * generalized and made equivalent to using-declarations
+ */
+#include <stdio.h>
+
+class A {
+public:
+  int z;
+  int z1;
+};
+
+class B : public A {
+  int a;
+public:
+  int b, c;
+  int bf();
+protected:
+  int x;
+  int y;
+};
+
+class D : private B {
+  int d;
+public:
+  B::c;  // adjust access to B::c
+  B::z;  // adjust access to A::z
+  A::z1; // adjust access to A::z1
+  int e;
+  int df();
+protected:
+  B::x;  // adjust access to B::x
+  int g;
+};
+
+class X : public D {
+  int xf();
+public:
+  X(){ xf(); }
+};
+
+int ef(D&);
+int ff(X&);
+
+/*
+ * The external function ef can use only the names c, z, z1, e, and df. Being
+ * a member of D, the function df can use the names b, c, z, z1, bf, x, y, d,
+ * e, df, and g, but not a. Being a member of B, the function bf can use the
+ * members a, b, c, z, z1, bf, x, and y. The function xf can use the public
+ * and protected names from D, that is, c, z, z1, e, and df (public), and x,
+ * and g (protected). Thus the external function ff has access only to c, z,
+ * z1, e, and df. If D were a protected or private base class of X, xf would
+ * have the same privileges as before, but ff would have no access at all.
+ */
+
+int ef(D& d)
+{
+  printf("`ef' called\n");
+  printf("d.c = %d\n", d.c = 1);
+  printf("d.z = %d\n", d.z = 2);
+  printf("d.z1 = %d\n", d.z1 = 3);
+  printf("d.e = %d\n", d.e = 4);
+  d.df();
+  return 0;
+}
+
+int D::df()
+{
+  printf("`D::df' called\n");
+  if ( e != 4 )
+    return 0;
+  printf("b = %d\n", b = 100);
+  printf("c = %d\n", c = 101);
+  printf("z = %d\n", z = 102);
+  printf("z1 = %d\n", z1 = 103);
+  bf();
+  printf("x = %d\n", x = 104);
+  printf("y = %d\n", y = 105);
+  printf("d = %d\n", d = 106);
+  printf("e = %d\n", e = 107);
+  df();
+  printf("g = %d\n", g = 108);
+  return 0;
+}
+
+int B::bf()
+{
+  printf("`B::bf' called\n");
+  if ( z1 == 204 )
+    return 0;
+  printf("a = %d\n", a = 200);
+  printf("b = %d\n", b = 201);
+  printf("c = %d\n", c = 202);
+  printf("z = %d\n", z = 203);
+  printf("z1 = %d\n", z1 = 204);
+  bf();
+  printf("x = %d\n", x = 205);
+  printf("y = %d\n", y = 206);
+  return 0;
+}
+
+int X::xf()
+{
+  printf("`X::xf' called\n");
+  printf("c = %d\n", c = 300);
+  printf("z = %d\n", z = 301);
+  printf("z1 = %d\n", z1 = 302);
+  printf("e = %d\n", e = 303);
+  df();
+  printf("x = %d\n", x = 304);
+  printf("g = %d\n", g = 305);
+  return 0;
+}
+
+int ff(X& x)
+{
+  printf("`ff' called\n");
+  printf("x.c = %d\n", x.c = 400);
+  printf("x.z = %d\n", x.z = 401);
+  printf("x.z1 = %d\n", x.z1 = 402);
+  printf("x.e = %d\n", x.e = 403);
+  x.df();
+  return 0;
+}
+
+int main(void)
+{
+  D d;
+  ef(d);
+  X x;
+  ff(x);
+  return 0;
+}

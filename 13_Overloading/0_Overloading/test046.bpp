@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+enum E { X = 2 };
+
+E operator~(E x)
+{
+  printf("operator~(E) called\n");
+  return X;
+}
+
+E f(E x)
+{
+  printf("f called\n");
+  return ~x;
+}
+
+int main()
+{
+  f(X);
+  return 0;
+}
+

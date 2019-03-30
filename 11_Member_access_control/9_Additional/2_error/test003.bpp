@@ -1,0 +1,14 @@
+class B {
+public:
+  int i;
+};
+
+class D1 : B {};
+
+struct D2 : private B {};
+
+void f(D1* pd1, D2* pd2)
+{
+  pd1->i = 1;
+  pd2->i = 2;
+}

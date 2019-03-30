@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>メンバ函数の多重定義</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>メンバ函数の多重定義</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>typedef 名を使用した場合の多重定義の扱い</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>typedef 名を使用した場合の多重定義の扱い</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>enum と整数型での多重定義</abstract>
+</item>
+
+<item>
+    <source>2_error/test002.cpp</source>
+    <abstract>rewrite における多重定義の扱い</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>rewrite における多重定義の扱い</abstract>
+</item>
+
+<item>
+    <source>2_error/test003.cpp</source>
+    <abstract>パラメータが const で修飾された場合における多重定義の扱い
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>デフォルト引数の多重定義の扱い</abstract>
+</item>
+
+<item>
+    <source>2_error/test004.cpp</source>
+    <abstract>デフォルト引数の多重定義の扱い</abstract>
+</item>
+
+</test_item>

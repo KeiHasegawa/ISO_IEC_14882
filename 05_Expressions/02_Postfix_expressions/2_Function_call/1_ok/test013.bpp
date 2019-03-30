@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int a = 1;
+int f(int);
+int g(int x = f(a));
+
+int main()
+{
+  a = 2;
+  {
+    int a = 3;
+    printf("a = %d, ::a = %d\n",a,::a);
+    a = g();
+    printf("a = %d, ::a = %d\n",a,::a);
+    a = g();
+    printf("a = %d, ::a = %d\n",a,::a);
+  }
+  return 0;
+}
+
+int f(int x)
+{
+  printf("f called with %d\n", x);
+  return x + 5;
+}
+
+int g(int x)
+{
+  printf("g called with %d\n", x);
+  return x * 5;
+}

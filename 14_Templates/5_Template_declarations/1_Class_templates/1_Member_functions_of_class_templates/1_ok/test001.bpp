@@ -1,0 +1,43 @@
+/*
+ * The template-arguments for a member function of a class template are
+ * determined by the template arguments of the type of the object for which
+ * the member function is called. [Example: the template argument for
+ * Array<T>::operator[]() will be determined by the Array to which the
+ * subscripting operation is applied.
+ */
+#include <stdio.h>
+
+template<class T> class Array {
+  T* v;
+  int sz;
+public:
+  explicit Array(int n)
+  {
+    v = new T[sz = n];
+  }
+  T& operator[](int i){ return v[i]; }
+  T& elem(int i) { return v[i]; }
+  // ...
+};
+
+struct dcomplex {
+  int re, im;
+  dcomplex() : re(0), im(0) {}
+  dcomplex(int a, int b) : re(a), im(b) {}
+};
+
+void f()
+{
+  Array<int> v1(20);
+  Array<dcomplex> v2(30);
+  v1[3] = 7; // Array<int>::operator[]()
+  v2[3] = dcomplex(7,8); // Array<dcomplex>::operator[]()
+  printf("v1[3] = %d\n", v1[3]);
+  printf("v2[3] = (%d,%d)\n", v2[3].re, v2[3].im);
+}
+
+int main()
+{
+  f();
+  return 0;
+}

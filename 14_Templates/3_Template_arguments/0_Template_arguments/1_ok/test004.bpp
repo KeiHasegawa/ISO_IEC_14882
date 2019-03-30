@@ -1,0 +1,29 @@
+/*
+ * An explicit destructor call (12.4) for an object that has a type that is a
+ * class template specialization may explicitly specify the template-arguments.
+ */
+#include <stdio.h>
+
+template<class T> struct A {
+  int m;
+  ~A();
+};
+
+template<class T> A<T>::~A()
+{
+  printf("`template<class T> A<T>::~A()' called\n");
+  printf("m = %d\n", m);
+}
+
+void f(A<int>* p, A<int>* q) {
+  p->A<int>::~A(); // OK: destructor call
+  q->A<int>::~A<int>(); // OK: destructor call
+}
+
+int main()
+{
+  A<int>* x = new A<int>; x->m = 1;
+  A<int>* y = new A<int>; y->m = 2;
+  f(x,y);
+  return 0;
+}

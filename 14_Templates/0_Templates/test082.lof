@@ -1,0 +1,2 @@
+outer::S = 0
+S<double>::x.m = 1234

@@ -1,0 +1,23 @@
+/*
+ * Check qualified style definition works well.
+ */
+#include <stdio.h>
+
+namespace Q {
+  namespace V {
+    void f();
+  }
+  void V::f() { printf("`Q::V::f' called\n"); }
+  namespace V {
+    void g();
+  }
+}
+
+void Q::V::g() { printf("`Q::V::g' called\n"); }
+
+int main()
+{
+  Q::V::f();
+  Q::V::g();
+  return 0;
+}

@@ -1,0 +1,4 @@
+x.v = 1, x.B::a = 2, x.b = 3, x.C::a = 4, x.c = 5, x.d = 6
+bp->v = 1, bp->a = 2, bp->b = 3
+cp->v = 1, cp->a = 4, cp->b = 5
+vp->v = 1

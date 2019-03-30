@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Special_member_functions/item.xml">
+    <title>12 Special member functions</title>
+</section>
+
+<section url="1_Constructors/item.xml">
+    <title>12.1 Constructors</title>
+</section>
+
+<section url="2_Temporary_objects/item.xml">
+    <title>12.2 Temporary objects</title>
+</section>
+
+<section url="3_Conversions/item.xml">
+    <title>12.3 Conversions</title>
+</section>
+
+<section url="4_Destructors/item.xml">
+    <title>12.4 Destructors</title>
+</section>
+
+<section url="5_Free_store/item.xml">
+    <title>12.5 Free store</title>
+</section>
+
+<section url="6_Initialization/item.xml">
+    <title>12.6 Initialization</title>
+</section>
+
+<section url="7_Construction_and_destruction/item.xml">
+    <title>12.7 Construction and destruction</title>
+</section>
+
+<section url="8_Copying_class_objects/item.xml">
+    <title>12.8 Copying class objects</title>
+</section>
+
+</test_item>

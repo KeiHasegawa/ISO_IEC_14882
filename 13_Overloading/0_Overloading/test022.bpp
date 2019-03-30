@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+class A {};
+class B : public A {};
+class C : public B {};
+
+void g(A*)
+{
+  printf("g(A*) called\n");
+}
+
+void g(B*)
+{
+  printf("g(B*) called\n");
+}
+
+C cc;
+
+void f()
+{
+  g(&cc);
+}
+
+void h(void*)
+{
+  printf("h(void*) called\n");
+}
+
+void h(A*)
+{
+  printf("h(A*) called\n");
+}
+
+void hh()
+{
+  h(&cc);
+}
+
+int main()
+{
+  f();
+  hh();
+  return 0;
+}

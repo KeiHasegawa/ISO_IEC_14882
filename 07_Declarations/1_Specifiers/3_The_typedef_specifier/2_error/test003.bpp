@@ -1,0 +1,4 @@
+typedef struct {
+  S(); //error: requires a return type because S is
+       // an ordinary member function, not a constructor
+} S;

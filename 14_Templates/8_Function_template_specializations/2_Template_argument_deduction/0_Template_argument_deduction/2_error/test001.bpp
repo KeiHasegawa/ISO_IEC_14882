@@ -1,0 +1,9 @@
+/*
+ * Attempting to use a type that is not a class type in a qualified name.
+ */
+template <class T> int f(typename T::B*);
+void g()
+{
+  int i = f<int>(0);
+}
+

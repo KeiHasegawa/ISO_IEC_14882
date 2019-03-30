@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>暗黙のユーザ定義の変換が 1 回のみ試される</abstract>
+</item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>暗黙のユーザ定義の変換が 1 回のみ試される</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>変換が 2 つある場合の演算子の多重定義</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>変換が 2 つある場合の演算子の多重定義</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>変換が 2 つある場合の演算子の多重定義</abstract>
+</item>
+
+</test_item>

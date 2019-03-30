@@ -1,0 +1,55 @@
+/*
+ * When a friend or a member function of a derived class references a
+ * protected nonstatic member function or protected nonstatic data member of a
+ * base class, an access check applies in addition to those described earlier
+ * in clause 11.102) Except when forming a pointer to member (5.3.1), the
+ * access must be through a pointer to, reference to, or object of the derived
+ * class itself (or any class derived from that class) (5.2.5). If the access
+ * is to form a pointer to member, the nested-name-specifier shall name the
+ * derived class (or any class derived from that class).
+ */
+class B {
+protected:
+  int i;
+  static int j;
+};
+
+class D1 : public B {
+};
+
+class D2 : public B {
+  friend void fr(B*,D1*,D2*);
+  void mem(B*,D1*);
+};
+
+void fr(B* pb, D1* p1, D2* p2)
+{
+  pb->i = 1; // ill-formed
+  p1->i = 2; // ill-formed
+  p2->i = 3; // OK (access through a D2)
+  p2->B::i = 4; // OK (access through a D2, even though
+                // naming class is B)
+  int B::* pmi_B = &B::i; // ill-formed
+  int B::* pmi_B2 = &D2::i; // OK (type of &D2::i is int B::*)
+  B::j = 5; // OK (because refers to static member)
+  D2::j = 6; // OK (because refers to static member)
+}
+
+void D2::mem(B* pb, D1* p1)
+{
+  pb->i = 1; // ill-formed
+  p1->i = 2; // ill-formed
+  i = 3; // OK (access through this)
+  B::i = 4; // OK (access through this, qualification ignored)
+  int B::* pmi_B = &B::i; // ill-formed
+  int B::* pmi_B2 = &D2::i; // OK
+  j = 5; // OK (because j refers to static member)
+  B::j = 6; // OK (because B::j refers to static member)
+}
+
+void g(B* pb, D1* p1, D2* p2)
+{
+  pb->i = 1; // ill-formed
+  p1->i = 2; // ill-formed
+  p2->i = 3; // ill-formed
+}

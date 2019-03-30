@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+struct S {
+  S operator+(int) const
+  {
+    printf("S::operator+(int) called\n");
+    return *this;
+  }
+  void f(int n)
+  {
+    *this + n;
+  }
+};
+
+S operator+(int n, const S& s)
+{
+  printf("operator+(int, const S&) called\n");
+  return s;
+}
+
+int main()
+{
+  S s;
+  int n = 1;
+  s.f(n);
+  n + s;
+  return 0;
+}

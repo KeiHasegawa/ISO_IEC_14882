@@ -1,0 +1,9 @@
+X constrctor called
+X constrctor called
+X constrctor called
+mem = 2
+X destuctor called
+mem = 1
+X destuctor called
+mem = 0
+X destuctor called

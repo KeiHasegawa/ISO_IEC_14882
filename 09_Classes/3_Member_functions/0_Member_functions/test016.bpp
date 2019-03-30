@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+class X {
+public:
+  X()
+  {
+    printf("X::X() called\n");
+  }
+  X(int i)
+  {
+    printf("X::X(int) called\n");
+    printf("i = %d\n", i);
+  }
+  X(int i, int j)
+  {
+    printf("X::X(int) called\n");
+    printf("i = %d, j = %d\n", i, j);
+  }
+};
+
+int main()
+{
+  X x0;
+  X x1(1.0);
+  X x2(2,3);
+  return 0;
+}

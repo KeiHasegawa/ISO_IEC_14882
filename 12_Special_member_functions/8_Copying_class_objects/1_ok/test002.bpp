@@ -1,0 +1,33 @@
+/*
+ * A declaration of a constructor for a class X is ill-formed if its first
+ * parameter is of type (optionally cv-qualified) X and either there are no
+ * other parameters or else all other parameters have default arguments. A
+ * member function template is never instantiated to perform the copy of a
+ * class object to an object of its class type.
+ */
+#include <stdio.h>
+
+struct S {
+  template<typename T> S(T);
+};
+S f();
+void g() {
+  S a( f() ); // does not instantiate member template
+}
+
+int main()
+{
+  g();
+  return 0;
+}
+
+template<typename T> S::S(T)
+{
+  printf("`template<typename T> S::S(T)' called\n");
+}
+
+S f()
+{
+  printf("`f' called\n");
+  return S(5);
+}

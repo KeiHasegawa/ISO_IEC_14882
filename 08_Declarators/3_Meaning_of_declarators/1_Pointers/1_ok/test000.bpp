@@ -1,0 +1,39 @@
+/*
+ * Check Pointer declarations work well.
+ */
+#include <stdio.h>
+
+const int ci = 10, *pc = &ci, *const cpc = pc, **ppc;
+int i, *p, *const cp = &i;
+
+void f()
+{
+  printf("`f' called\n");
+  i = ci;
+  *cp = ci;
+  pc++;
+  pc = cpc;
+  pc = p;
+  ppc = &pc;
+}
+
+int main()
+{
+  printf("ci = %d\n", ci);
+  printf("*pc = %d\n", *pc);
+  printf("*cpc = %d\n", *cpc);
+  printf("i = %d\n", i);
+  printf("*cp = %d\n", *cp);
+  f();
+  printf("i = %d\n", i);
+  printf("*cp = %d\n", *cp);
+  if ( pc )
+    printf("error\n");
+  else
+    printf("ok\n");
+  if ( ppc == &pc )
+    printf("ok\n");
+  else
+    printf("error\n");
+  return 0;
+}

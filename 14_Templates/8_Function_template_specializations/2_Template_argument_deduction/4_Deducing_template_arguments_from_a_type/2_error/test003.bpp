@@ -1,0 +1,18 @@
+/*
+ * except for reference and pointer types, a major array bound is not part of
+ * a function parameter type and cannot be deduced from an argument:
+ */
+
+template<int i> void f1(int a[10][i]);
+template<int i> void f2(int a[i][20]);
+template<int i> void f3(int (&a)[i][20]);
+
+void g()
+{
+  int v[10][20];
+  f1(v); //OK: i deduced to be 20
+  f1<20>(v); //OK
+  f2(v); //error: cannot deduce template-argument i
+  f2<10>(v); //OK
+  f3(v); //OK: i deduced to be 10
+}

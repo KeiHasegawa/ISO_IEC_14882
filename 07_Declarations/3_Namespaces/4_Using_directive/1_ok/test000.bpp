@@ -1,0 +1,38 @@
+/*
+ * A using-directive specifies that the names in the nominated namespace can
+ * be used in the scope in which the using-directive appears after the
+ * using-directive. During unqualified name lookup (3.4.1), the names appear
+ * as if they were declared in the nearest enclosing namespace which contains
+ * both the using-directive and the nominated namespace.
+ */
+#include <stdio.h>
+
+namespace A {
+  int i;
+  namespace B {
+    namespace C {
+      int i;
+    }
+    using namespace A::B::C;
+    void f1() {
+      i = 5; // OK, C::i visible in B and hides A::i
+    }
+  }
+  namespace D {
+    using namespace B;
+    using namespace C;
+  }
+  void f3() {
+    i = 5; // uses A::i
+  }
+}
+
+int main()
+{
+  printf("A::i = %d, A::B::C::i = %d\n", A::i, A::B::C::i);
+  A::B::f1();
+  printf("A::i = %d, A::B::C::i = %d\n", A::i, A::B::C::i);
+  A::f3();
+  printf("A::i = %d, A::B::C::i = %d\n", A::i, A::B::C::i);
+  return 0;
+}

@@ -1,0 +1,34 @@
+/*
+ * The ambiguity arising from the similarity between a function-style cast and
+ * a type-id can occur in different contexts. The ambiguity appears as a choice
+ * between a function-style cast expression and a declaration of a type. The
+ * resolution is that any construct that could possibly be a type-id in its
+ * syntactic context shall be considered a type-id.
+ */
+#include <stdio.h>
+
+#include <cstddef>
+char *p;
+void *operator new(size_t, int);
+void foo() {
+  printf("`foo' called\n");
+  const int x = 63;
+  new (int(*p)) int; // new-placement expression
+  new (int(*[x])); // new type-id
+}
+
+int main()
+{
+  int n;
+  p = (char*)&n;
+  foo();
+  return 0;
+}
+
+void *operator new(size_t, int)
+{
+  printf("`operator new(size_t,int)' called\n");
+  static char buffer[100];
+  return &buffer[0];
+}
+

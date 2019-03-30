@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int* p;
+
+int init_a();
+
+int a = init_a();
+
+int* q = &*p;
+
+int main()
+{
+  printf("*p = %d\n", *p);
+  printf("*q = %d\n", *q);
+  printf("a = %d\n", a);
+  return 0;
+}
+
+int init_a()
+{
+  p = &a;
+  return 1234;
+}

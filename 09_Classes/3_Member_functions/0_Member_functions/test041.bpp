@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+struct B {
+  virtual void vf()
+  {
+    printf("B::vf called\n");
+  }
+};
+
+struct D : B {
+  void vf()
+  {
+    printf("D::vf called\n");
+  }
+};
+
+void f(B* pb)
+{
+  pb->vf();
+}
+
+int main()
+{
+  B b;
+  f(&b);
+  D d;
+  f(&d);
+  return 0;
+}

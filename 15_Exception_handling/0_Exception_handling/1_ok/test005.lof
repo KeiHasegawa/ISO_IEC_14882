@@ -1,0 +1,4 @@
+before my_function call
+lock::grab() called
+lock::release() called
+catch unexpected in `main'

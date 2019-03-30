@@ -1,0 +1,10 @@
+/*
+ * Attempting to create "pointer to member of T" when T is not a class type.
+ */
+template <class T> int f(int T::*);
+
+void g()
+{
+  int i = f<int>(0);
+}
+

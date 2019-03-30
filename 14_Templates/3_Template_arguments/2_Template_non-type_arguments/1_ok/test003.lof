@@ -1,0 +1,8 @@
+`X::xf()' called
+0 1 2 3 4 5 6 7 8 9 
+`Z::zf()' called
+`Y::yf()' called
+`W::wf()' called
+100 101 102 103 104 
+`A::af()' called
+`f(int)' called

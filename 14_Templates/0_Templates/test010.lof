@@ -1,0 +1,8 @@
+*pivec.elem(0) = 0
+*pivec.elem(1) = 1
+*pivec.elem(2) = 2
+icmpvec[0]->print() = (0.000000,0.000000)
+icmpvec[1]->print() = (1.000000,-1.000000)
+icmpvec[2]->print() = (2.000000,-2.000000)
+icmpvec[3]->print() = (3.000000,-3.000000)
+Kei Hasegawa C++ compiler developer 

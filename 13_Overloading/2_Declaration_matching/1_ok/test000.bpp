@@ -1,0 +1,38 @@
+/*
+ * Two function declarations of the same name refer to the same function if
+ * they are in the same scope and have equivalent parameter declarations
+ * (13.1). A function member of a derived class is not in the same scope as a
+ * function member of the same name in a base class.
+ */
+#include <stdio.h>
+
+class B {
+public:
+  int f(int);
+};
+class D : public B {
+public:
+  int f(char*);
+};
+void h(D* pd)
+{
+  pd->B::f(1); // OK
+  pd->f("Ben"); // OK, calls D::f
+}
+
+int main()
+{
+  D d;
+  h(&d);
+  return 0;
+}
+
+int B::f(int a)
+{
+  printf("`B::f(int)' called with %d\n", a);
+}
+
+int D::f(char* a)
+{
+  printf("`B::f(char*)' called with \"%s\"\n", a);
+}

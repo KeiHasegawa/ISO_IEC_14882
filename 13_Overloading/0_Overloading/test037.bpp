@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Y { int m; };
+
+class Yptr {
+  Y* p;
+public:
+  Yptr(const char* arg);
+  Y* operator->();
+};
+
+Yptr::Yptr(const char* arg)
+{
+  if ( strcmp(arg,"hasegawa") == 0 ){
+    p = new Y;
+    p->m = 123;
+  }
+  else
+    p = 0;
+}
+
+Y* Yptr::operator->()
+{
+  if (p) {
+    printf("Yptr::operator->(), p is valid\n");
+    p->m *= 2;
+  }
+  else {
+    printf("Yptr::operator->(), p is not valid\n");
+    p = new Y;
+    p->m = 456;
+  }
+  return p;
+}
+
+void f(Yptr y, Yptr& yr, Yptr* yp)
+{
+  int i = y->m;
+  printf("i = %d\n", i);
+  i = yr->m;
+  printf("i = %d\n", i);
+}
+
+int main()
+{
+  Yptr x = "hasegawa";
+  Yptr y = "kei";
+  f(x,y,&x);
+  return 0;
+}

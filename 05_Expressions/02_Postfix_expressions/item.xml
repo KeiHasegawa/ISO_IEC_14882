@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Subscripting/item.xml">
+    <title>5.2.1 Subscripting</title>
+</section>
+
+<section url="2_Function_call/item.xml">
+    <title>5.2.2 Function call</title>
+</section>
+
+<section url="3_Explicit_type_conversion/item.xml">
+    <title>5.2.3 Explicit type conversion (functional notation)</title>
+</section>
+
+<section url="4_Pseudo_destructor_call/item.xml">
+    <title>5.2.4 Pseudo destructor call</title>
+</section>
+
+<section url="5_Class_member_access/item.xml">
+    <title>5.2.5 Class member access</title>
+</section>
+
+<section url="6_Increment_and_decrement/item.xml">
+    <title>5.2.6 Increment and decrement</title>
+</section>
+
+<section url="7_Dynamic_cast/item.xml">
+    <title>5.2.7 Dynamic cast</title>
+</section>
+
+<section url="8_Type_identification/item.xml">
+    <title>5.2.8 Type identification</title>
+</section>
+
+<section url="9_Static_cast/item.xml">
+    <title>5.2.9 Static cast</title>
+</section>
+
+<section url="10_Reinterpret_cast/item.xml">
+    <title>5.2.10 Reinterpret cast</title>
+</section>
+
+<section url="11_Const_cast/item.xml">
+    <title>5.2.11 Const cast</title>
+</section>
+
+</test_item>

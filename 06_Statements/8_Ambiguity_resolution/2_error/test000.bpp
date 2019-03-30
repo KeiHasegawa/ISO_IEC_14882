@@ -1,0 +1,17 @@
+/*
+ * Check declaration statements are recognized.
+ */
+class T {
+  int m;
+public:
+  T(int a) : m(a) { }
+};
+
+void f(int* g)
+{
+  {
+    T(*g)(double(3)); // declaration of `g' whose type is pointer to T and
+                      // initialized with double(3). In this case, initializer
+                      // is not ok.
+  }
+}

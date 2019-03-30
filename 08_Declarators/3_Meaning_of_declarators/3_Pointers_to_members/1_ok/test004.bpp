@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct T {
+  int a;
+  int b;
+  void f()
+  {
+    printf("T::a = %d, T::b = %d\n", T::a, T::b);
+    int i = T::a;
+    printf("i = %d\n", i);
+    T::b = i;
+    printf("T::a = %d, T::b = %d\n", T::a, T::b);
+  }
+};
+
+int main()
+{
+  T t;
+  t.a = 1;
+  t.b = 2;
+  t.f();
+  return 0;
+}

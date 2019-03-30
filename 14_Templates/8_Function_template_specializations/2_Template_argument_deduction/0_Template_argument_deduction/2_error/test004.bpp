@@ -1,0 +1,7 @@
+/*
+ * Attempting to perform an invalid conversion in either a template argument
+ * expression, or an expression used in the function declaration.
+ */
+
+template <class T, T*> int f(int);
+int i2 = f<int,1>(0); // can't conv 1 to int*

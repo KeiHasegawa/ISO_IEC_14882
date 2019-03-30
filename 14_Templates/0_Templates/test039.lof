@@ -1,0 +1,6 @@
+B = false
+x1.f() return value : 1
+B = false
+x2.f() return value : 2.500000
+B = true
+y.m = 'a'

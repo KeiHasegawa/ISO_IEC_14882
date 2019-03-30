@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+struct S {
+  int a;
+};
+
+struct SS : S {
+  int b;
+};
+
+int main()
+{
+  S x;
+  x.a = 1;
+  SS xx;
+  xx.a = 2;
+  xx.b = 3;
+  printf("x.a = %d, xx.a = %d, xx.b = %d\n", x.a, xx.a, xx.b);
+  x = xx;
+  printf("x.a = %d, xx.a = %d, xx.b = %d\n", x.a, xx.a, xx.b);
+  return 0;
+}

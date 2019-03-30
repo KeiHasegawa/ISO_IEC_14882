@@ -1,0 +1,35 @@
+/*
+ * A name used in a template declaration or definition and that is dependent
+ * on a template-parameter is assumed not to name a type unless the applicable
+ * name lookup finds a type name or the name is qualified by the keyword
+ * typename.
+ */
+#include <stdio.h>
+
+// no B declared here
+class X;
+template<class T> class Y {
+public:
+  class Z; // forward declaration of member class
+  void f() {
+    X* a1; // declare pointer to X
+    T* a2; // declare pointer to T
+    Y* a3; // declare pointer to Y<T>
+    Z* a4; // declare pointer to Z
+    typedef typename T::A TA;
+    TA* a5; // declare pointer to T's A
+    typename T::A* a6; // declare pointer to T's A
+  }
+};
+
+struct S {
+  typedef int A;
+};
+
+int main()
+{
+  Y<S> ys;
+  ys.f();
+  printf("Just compile test\n");
+  return 0;
+}

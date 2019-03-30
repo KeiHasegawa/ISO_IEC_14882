@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct S {
+  static void f()
+  {
+    printf("S::f called\n");
+  }
+};
+
+struct T {
+  typedef S SS;
+  void g()
+  {
+    SS::f();
+  }
+};
+
+int main()
+{
+  T t;
+  t.g();
+  return 0;
+}

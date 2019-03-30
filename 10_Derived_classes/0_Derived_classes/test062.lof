@@ -1,0 +1,4 @@
+B1::f1 called
+b1 = 1
+B2::f2 called
+b2 = 2

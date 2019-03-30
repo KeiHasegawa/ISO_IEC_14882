@@ -1,0 +1,4 @@
+Bignum::operator int() called
+Vector::Vector called with 5
+Bignum::operator int() called
+Vector::Vector called with 5

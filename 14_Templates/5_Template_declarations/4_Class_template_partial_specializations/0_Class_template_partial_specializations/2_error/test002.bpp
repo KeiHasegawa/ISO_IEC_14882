@@ -1,0 +1,15 @@
+/*
+ * Within the argument list of a class template partial specialization, the
+ * following restrictions apply:
+ * - A partially specialized non-type argument expression shall not involve a
+ *   template parameter of the partial specialization except when the argument
+ *   expression is a simple identifier.
+ * - The type of a template parameter corresponding to a specialized non-type
+ *   argument shall not be dependent on a parameter of the specialization
+ * - The argument list of the specialization shall not be identical to the
+ *   implicit argument list of the primary template.
+ */
+template <int I, int J> struct A {};
+template <int I> struct A<I+5, I*2> {}; // error
+template <int I, int J> struct B {};
+template <int I> struct B<I, I> {}; // OK

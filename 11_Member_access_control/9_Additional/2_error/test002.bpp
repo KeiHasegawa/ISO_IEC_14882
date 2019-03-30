@@ -1,0 +1,8 @@
+class X {
+  int a;
+};
+
+void f(X* p)
+{
+  p->a = 1;
+}

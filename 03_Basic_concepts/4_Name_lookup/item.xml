@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Unqualified_name_lookup/item.xml">
+    <title>3.4.1 Unqualified name lookup</title>
+</section>
+
+<section url="2_Argument_dependent_name_lookup/item.xml">
+    <title>3.4.2 Argument-dependent name lookup</title>
+</section>
+
+<section url="3_Qualified_name_lookup/item.xml">
+    <title>3.4.3 Qualified name lookup</title>
+</section>
+
+<section url="4_Elaborated_type_specifiers/item.xml">
+    <title>3.4.4 Elaborated type specifiers</title>
+</section>
+
+<section url="5_Class_member_access/item.xml">
+    <title>3.4.5 Class member access</title>
+</section>
+
+<section url="6_Using_directives_and_namespace_aliases/item.xml">
+    <title>3.4.6 Using-directives and namespace aliases</title>
+</section>
+
+</test_item>
+
+

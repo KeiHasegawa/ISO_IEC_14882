@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+class X {
+  int i;
+  int j;
+  int k;
+public:
+  X(int ii, int jj, int kk) : i(ii), j(jj), k(kk) {}
+  int& operator->*(int n)
+  {
+    switch ( n ){
+    case 0: return i;
+    case 4: return j;
+    default: return k;
+    }
+  }
+  void print()
+  {
+    printf("i = %d, j = %d, k = %d\n", i, j, k);
+  }
+};
+
+int main()
+{
+  X x(1,2,3);
+
+  x->*0 = 4;
+  printf("x->*0 = %d\n", x->*0);
+  x.print();
+  x->*4 = 5;
+  printf("x->*4 = %d\n", x->*4);
+  x.print();
+  x->*8 = 6;
+  printf("x->*8 = %d\n", x->*8);
+  x.print();
+
+  return 0;
+}

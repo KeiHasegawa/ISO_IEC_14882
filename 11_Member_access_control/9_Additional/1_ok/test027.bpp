@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+class X {
+  friend class Y;
+  static const int s = 1234;
+};
+
+class Y {
+  static const int s = X::s;
+public:
+  void f();
+};
+
+int main()
+{
+  Y y;
+  y.f();
+  return 0;
+}
+
+void Y::f()
+{
+  printf("`Y::f' called");
+  printf("X::s = %d\n", X::s);
+  printf("Y::s = %d\n", Y::s);
+}

@@ -1,0 +1,3 @@
+X::X(void) called
+X::X(const X&) called
+main called

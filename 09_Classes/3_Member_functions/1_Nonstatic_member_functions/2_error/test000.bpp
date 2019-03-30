@@ -1,0 +1,23 @@
+/*
+ * A nonstatic member function may be declared const, volatile, or
+ * const volatile. These cvqualifiers affect the type of the this pointer
+ * (9.3.2). They also affect the function type (8.3.5) of the member function;
+ * a member function declared const is a const member function, a member
+ * function declared volatile is a volatile member function and a member
+ * function declared const volatile is a const volatile member function.
+ */
+struct X {
+  void g();
+  void h() const;
+};
+
+void fg(const X* p)
+{
+  p->g(); // error. discard qualifier.
+}
+
+void fh(const volatile X* p)
+{
+  p->h(); // error. discard qualifier.
+}
+

@@ -1,0 +1,27 @@
+/*
+ * Whenever an exception is thrown and the search for a handler (15.3)
+ * encounters the outermost block of a function with an
+ * exception-specification, the function unexpected() is called (15.5.2) if
+ * the exceptionspecification does not allow the exception.
+ */
+#include <stdio.h>
+
+class X { };
+class Y { };
+class Z: public X { };
+class W { };
+
+void f() throw (X, Y)
+{
+  int n = 0;
+  if (n) throw X(); // OK
+  if (n) throw Z(); // also OK
+  throw W(); // will call unexpected()
+}
+
+int main()
+{
+  printf("just ok compile test\n");
+  return 0;
+}
+

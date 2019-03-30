@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>test000.cpp</source>
+    <abstract>簡単な overload された函数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test001.cpp</source>
+    <abstract>型 T に対して T&amp;, const T&amp;, volatile T&amp; の違いで overload
+    </abstract>
+</item>
+
+<item>
+    <source>test002.cpp</source>
+    <abstract>型 T に対して T*, const T*, volatile T* の違いで overload</abstract>
+</item>
+
+<item>
+    <source>test003.cpp</source>
+    <abstract>const リファレンスを引数にとる函数を定数で呼び出す</abstract>
+</item>
+
+<item>
+    <source>test004.cpp</source>
+    <abstract>f(int) と f(E) で overload. E は enum</abstract>
+</item>
+
+<item>
+    <source>test005.cpp</source>
+    <abstract>char を引数にとる函数の overload</abstract>
+</item>
+
+<item>
+    <source>test006.cpp</source>
+    <abstract>派生クラスで基底クラスと同じ名前の函数を定義.
+    函数の型は異なる.</abstract>
+</item>
+
+<item>
+    <source>test007.cpp</source>
+    <abstract>派生クラスで基底クラスと同じ名前の函数を定義.
+    同じ型と異なる型の函数を定義.</abstract>
+</item>
+
+<item>
+    <source>test008.cpp</source>
+    <abstract>overload されたメンバ函数に違うアクセス指定子を宣言</abstract>
+</item>
+
+<item>
+    <source>test009.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test010.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>test011.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [1] pp 318, pp 320</comment>
+</item>
+
+<item>
+    <source>test012.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [1] pp 318, pp 320</comment>
+</item>
+
+<item>
+    <source>test013.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [1] pp 318, pp 320</comment>
+</item>
+
+<item>
+    <source>test014.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [1] pp 318, pp 321</comment>
+</item>
+
+<item>
+    <source>test015.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [1] pp 318, pp 321</comment>
+</item>
+
+<item>
+    <source>test016.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [2] pp 318, pp 321</comment>
+</item>
+
+<item>
+    <source>test017.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [2] pp 318, pp 322</comment>
+</item>
+
+<item>
+    <source>test018.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [2] pp 318, pp 322 では実装依存であるとしているが,
+    この実装では sizeof(short) &lt; sizeof(int) であるとしてテストしている</comment>
+</item>
+
+<item>
+    <source>test019.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [3] pp 318, pp 323</comment>
+</item>
+
+<item>
+    <source>test020.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [3] pp 318, pp 324</comment>
+</item>
+
+<item>
+    <source>test021.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [3] pp 318, pp 324</comment>
+</item>
+
+<item>
+    <source>test022.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [3] pp 318, pp 324</comment>
+</item>
+
+<item>
+    <source>test023.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [4] pp 318, pp 325</comment>
+</item>
+
+<item>
+    <source>test024.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [5] pp 318, pp 325</comment>
+</item>
+
+<item>
+    <source>test025.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [5] pp 318, pp 326</comment>
+</item>
+
+<item>
+    <source>test026.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [5] pp 318, pp 326</comment>
+</item>
+
+<item>
+    <source>test027.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [5] pp 318, pp 326</comment>
+</item>
+
+<item>
+    <source>test028.cpp</source>
+    <abstract>overload された函数のアドレス</abstract>
+</item>
+
+<item>
+    <source>test029.cpp</source>
+    <abstract>型は異なるがキャストして初期化している函数ポインタ</abstract>
+</item>
+
+<item>
+    <source>test030.cpp</source>
+    <abstract>operator + (メンバ函数)の明示的な呼び出し</abstract>
+</item>
+
+<item>
+    <source>test031.cpp</source>
+    <abstract>operator new (非メンバ函数)の明示的な呼び出し</abstract>
+</item>
+
+<item>
+    <source>test032.cpp</source>
+    <abstract>単項演算子の overload</abstract>
+</item>
+
+<item>
+    <source>test033.cpp</source>
+    <abstract>単項演算子の overload</abstract>
+</item>
+
+<item>
+    <source>test034.cpp</source>
+    <abstract>二項演算子の overload</abstract>
+</item>
+
+<item>
+    <source>test035.cpp</source>
+    <abstract>function call operator overload</abstract>
+</item>
+
+<item>
+    <source>test036.cpp</source>
+    <abstract>subscript operator overload</abstract>
+</item>
+
+<item>
+    <source>test037.cpp</source>
+    <abstract>operator -> overload</abstract>
+</item>
+
+<item>
+    <source>test038.cpp</source>
+    <abstract>メンバ函数の operator ++ overload</abstract>
+</item>
+
+<item>
+    <source>test039.cpp</source>
+    <abstract>非メンバ函数の operator ++ overload</abstract>
+</item>
+
+<item>
+    <source>test040.cpp</source>
+    <abstract>定数により overload が解決される例</abstract>
+</item>
+
+<item>
+    <source>test041.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+    <comment>ARM 13.2 [3] pp 318, pp 323 ではエラーとしているが,
+    ここでは一般的なコンパイラと同じように合法とし f(short) を呼ぶことにする</comment>
+</item>
+
+<item>
+    <source>test042.c</source>
+    <abstract>overload された非メンバ函数の operator +. 
+    引数に変換が必要になる.</abstract>
+</item>
+
+<item>
+    <source>test043.c</source>
+    <abstract>operator int を適用した結果を二項の +</abstract>
+</item>
+
+</test_item>

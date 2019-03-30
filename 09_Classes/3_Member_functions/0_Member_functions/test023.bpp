@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+class X {
+  bool b;
+public:
+  X(bool bb) : b(bb) {}
+  bool operator!()
+  {
+    printf("operator ! called\n");
+    return !b;
+  }
+};
+
+int main()
+{
+  X x(true);
+  if ( !x )
+    printf("error\n");
+  else
+    printf("ok\n");
+
+  X xx(false);
+  if ( !xx )
+    printf("ok\n");
+  else
+    printf("error\n");
+  return 0;
+}

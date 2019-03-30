@@ -1,0 +1,29 @@
+/*
+ * A type-parameter defines its identifier to be a type-name (if declared with
+ * class or typename) or template-name (if declared with template) in the scope
+ * of the template declaration. Note: because of the name lookup rules, a
+ * template-parameter that could be interpreted as either a non-type
+ * templateparameter or a type-parameter (because its identifier is the name of
+ * an already existing class) is taken as a type-parameter.
+ */
+#include <stdio.h>
+
+class T {
+public:
+  int m;
+};
+int i;
+template<class T, T i> void f(T t)
+{
+  T t1 = i; // template-parameters T and i
+  ::T t2 = ::i; // global namespace members T and i
+}
+
+struct S { int s; };
+
+int main()
+{
+#error
+  f<double,4.0>(5.0);
+  return 0;
+}

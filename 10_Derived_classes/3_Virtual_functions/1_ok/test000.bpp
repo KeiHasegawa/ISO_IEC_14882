@@ -1,0 +1,48 @@
+/*
+ * If a virtual member function vf is declared in a class Base and in a class
+ * Derived, derived directly or indirectly from Base, a member function vf with
+ * the same name and same parameter list as Base::vf is declared, then
+ * Derived::vf is also virtual (whether or not it is so declared) and it
+ * overrides Base::vf. For convenience we say that any virtual function
+ * overrides itself. Then in any well-formed class, for each virtual function
+ * declared in that class or any of its direct or indirect base classes there
+ * is a unique final overrider that overrides that function and every other
+ * overrider of that function. The rules for member lookup (10.2) are used to
+ * determine the final overrider for a virtual function in the scope of a
+ * derived class but ignoring names introduced by using-declarations.
+ */
+#include <stdio.h>
+
+struct A {
+  virtual void f();
+};
+
+struct B : virtual A {
+  virtual void f();
+};
+
+struct C : B , virtual A {
+  using A::f;
+};
+
+void foo() {
+  C c;
+  c.f(); // calls B::f, the final overrider
+  c.C::f(); // calls A::f because of the using-declaration
+}
+
+int main()
+{
+  foo();
+  return 0;
+}
+
+void A::f()
+{
+  printf("`A::f' called\n");
+}
+
+void B::f()
+{
+  printf("`B::f' called\n");
+}

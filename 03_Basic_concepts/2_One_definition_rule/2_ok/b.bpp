@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+// translation unit 2:
+struct X {
+  X(int);
+  X(int, int);
+};
+
+X::X(int = 0, int = 0)
+{
+  printf("X::X(int,int)' called\n");
+}
+
+class D: public X { }; // X(int, int) called by D();
+                       // D()Åfs implicit definition
+                       // violates the ODR
+
+void f()
+{
+  D d;
+}

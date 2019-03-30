@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct S {
+  S operator+(int)
+  {
+    printf("S::operator+(int) called\n");
+    S r;
+    return r;
+  }
+  int operator-()
+  {
+    printf("S::operator-() called\n");
+    return 0;
+  }
+};
+
+int main()
+{
+  S s;
+  s + 5;
+  -s;
+  return 0;
+}

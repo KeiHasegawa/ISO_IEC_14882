@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Static_storage_duration/item.xml">
+    <title>3.7.1 Static storage duration</title>
+</section>
+
+<section url="2_Automatic_storage_duration/item.xml">
+    <title>3.7.2 Automatic storage duration</title>
+</section>
+
+<section url="3_Dynamic_storage_duration/item.xml">
+    <title>3.7.3 Dynamic storage duration</title>
+</section>
+
+<section url="4_Duration_of_sub_objects/item.xml">
+    <title>3.7.4 Duration of sub-objects</title>
+</section>
+
+</test_item>

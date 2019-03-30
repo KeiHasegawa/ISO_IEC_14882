@@ -1,0 +1,4 @@
+B::h(void) called
+pc->h() return value : 1
+B::h(int) called with 3
+pc->h(1) return value : 2

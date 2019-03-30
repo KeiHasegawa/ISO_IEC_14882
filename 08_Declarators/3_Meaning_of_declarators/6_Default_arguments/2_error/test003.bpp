@@ -1,0 +1,7 @@
+/*
+ * The keyword this shall not be used in a default argument of a member
+ * function.
+ */
+class A {
+  void f(A* p = this) { } // error
+};

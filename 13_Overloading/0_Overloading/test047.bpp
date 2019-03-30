@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+struct T {
+  T& operator--()
+  {
+    printf("T::operator--() called\n");
+  }
+  int operator*()
+  {
+    printf("T::operator*() called\n");
+    return 0;
+  }
+};
+
+int main()
+{
+  T t;
+  *--t;
+  return 0;
+}

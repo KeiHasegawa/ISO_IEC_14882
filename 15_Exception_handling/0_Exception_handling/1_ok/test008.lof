@@ -1,0 +1,6 @@
+before g call
+catch network error in `f'
+before g call
+catch file system error in `f'
+before g call
+catch network error in `f'

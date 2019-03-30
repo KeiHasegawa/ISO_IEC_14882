@@ -1,0 +1,11 @@
+/*
+ * A default argument is not part of the type of a function.
+ */
+int f(int = 0);
+void h()
+{
+  int j = f(1);
+  int k = f(); // OK, means f(0)
+}
+int (*p1)(int) = &f;
+int (*p2)() = &f; // error: type mismatch

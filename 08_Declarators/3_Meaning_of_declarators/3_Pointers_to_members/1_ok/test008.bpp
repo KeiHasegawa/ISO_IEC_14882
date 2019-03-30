@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+struct V {
+  void f()
+  {
+    printf("V::f called\n");
+  }
+};
+
+struct B : virtual V {
+  void g();
+};
+
+void h(B* bp, void (B::*bpm)())
+{
+  (bp->*bpm)();
+}
+
+int main()
+{
+  B b;
+  h(&b,&V::f);
+  return 0;
+}

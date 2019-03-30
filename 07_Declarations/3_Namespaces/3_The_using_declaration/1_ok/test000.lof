@@ -1,0 +1,4 @@
+`D::f' called with 1
+`B::f' called with 'c'
+`D::g' called with 2
+`D::g' called with 99

@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+class X {
+public:
+  void f()
+  {
+    printf("X::f called\n");
+  }
+  void g()
+  {
+    printf("X::g called\n");
+  }
+};
+
+int main()
+{
+  X x;
+  void (X::*pm)() = &X::f;
+  (x.*pm)();
+  pm = &X::g;
+  (x.*pm)();
+  return 0;
+}

@@ -1,0 +1,67 @@
+/*
+ * There are three forms of template-argument, corresponding to the three forms
+ * of template-parameter: type, non-type and template. The type and form of
+ * each template-argument specified in a template-id shall match the type and
+ * form specified for the corresponding parameter declared by the template in
+ * its template-parameter-list.
+ */
+#include <complex>
+using namespace std;
+
+template<class T> class Array {
+  T* v;
+  int sz;
+public:
+  explicit Array(int);
+  T& operator[](int);
+  T& elem(int i) { return v[i]; }
+  int size() const { return sz; }
+};
+
+template<class T> Array<T>::Array(int n) : sz(n)
+{
+  v = new T[sz];
+}
+
+template<class T> T& Array<T>::operator[](int i)
+{
+  return v[i];
+}
+
+Array<int> v1(20);
+typedef complex<double> dcomplex; // complex is a standard
+                                  // library template
+Array<dcomplex> v2(30);
+Array<dcomplex> v3(40);
+void bar() {
+  v1[3] = 7;
+  v2[3] = v3.elem(4) = dcomplex(7,8);
+}
+
+int main()
+{
+  bar();
+
+  for ( int i = 0 ; i != v1.size() ; ++i ){
+    printf("%d ", v1[i]);
+    if ( (i % 10) == 9 )
+      printf("\n");
+  }
+  printf("\n");
+
+  for ( int i = 0 ; i != v2.size() ; ++i ){
+    printf("(%f %f)", v2[i].real(), v2[i].imag());
+    if ( (i % 4) == 3 )
+      printf("\n");
+  }
+  printf("\n");
+
+  for ( int i = 0 ; i != v3.size() ; ++i ){
+    printf("(%f %f)", v3[i].real(), v3[i].imag());
+    if ( (i % 4) == 3 )
+      printf("\n");
+  }
+  printf("\n");
+  return 0;
+}
+

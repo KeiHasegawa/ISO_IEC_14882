@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+struct X {
+  int mem;
+  operator int()
+  {
+    printf("X::operator int() called\n");
+    return mem;
+  }
+};
+
+void f(X a, X b)
+{
+  int c = a+b;
+  printf("c = %d\n", c);
+}
+
+int main()
+{
+  X a, b;
+  a.mem = 1;
+  b.mem = 2;
+  f(a,b);
+  return 0;
+}

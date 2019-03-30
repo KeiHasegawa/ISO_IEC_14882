@@ -1,0 +1,10 @@
+/*
+ * When a union is initialized with a brace-enclosed initializer, the braces
+ * shall only contain an initializer for the first member of the union.
+ */
+union u { int a; char* b; };
+u a = { 1 };
+u b = a;
+u c = 1; // error
+u d = { 0, "asdf" }; // error
+u e = { "asdf" }; // error

@@ -1,0 +1,14 @@
+B1::B1f called
+(x.*pmf1)() return value : 1
+B2::B2f called
+i = 2
+j = 3
+k = 4
+(y.*pmf2)() return value : 101
+B1::B1vf2 called
+(z.*pmf3)() return value : 7
+B2::B2vf1 called
+i = 6
+j = 7
+k = 8
+(w.*pmf4)() return value : 202

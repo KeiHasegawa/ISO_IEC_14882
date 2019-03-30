@@ -1,0 +1,2 @@
+Y::operator new called. flag = 3
+Y::Y called

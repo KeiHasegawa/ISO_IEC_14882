@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+class Real {
+public:
+  Real(long x){}
+  Real(long x, long y){}
+};
+
+double sqrt(double d)
+{
+  printf("sqrt(double) is called with %f\n", d);
+  return d;
+}
+
+Real sqrt(Real r)
+{
+  printf("sqrt(Real) is called\n");
+  return r;
+}
+
+void g(long ll)
+{
+  Real r = sqrt(ll);
+}
+
+int main()
+{
+  g(123);
+  return 0;
+}

@@ -1,0 +1,2 @@
+`stat(struct stat*)' called
+p->i = 123

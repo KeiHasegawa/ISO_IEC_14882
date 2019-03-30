@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_The_cv_qualifier/item.xml">
+    <title>7.1.5.1 The cv-qualifier</title>
+</section>
+
+<section url="2_Simple_type_specifiers/item.xml">
+    <title>7.1.5.2 Simple type specifiers</title>
+</section>
+
+<section url="3_Elaborated_type_specifiers/item.xml">
+    <title>7.1.5.3 Elaborated type specifiers</title>
+</section>
+
+</test_item>

@@ -1,0 +1,54 @@
+/*
+ * [Note: A member of a private base class might be inaccessible as an
+ * inherited member name, but accessible directly. Because of the rules on
+ * pointer conversions (4.10) and explicit casts (5.4), a conversion from a
+ * pointer to a derived class to a pointer to an inaccessible base class might
+ * be ill-formed if an implicit conversion is used, but well-formed if an
+ * explicit cast is used. For example,
+ */
+#include <stdio.h>
+
+class B {
+public:
+  int mi; // nonstatic member
+  static int si; // static member
+};
+
+class D : private B {
+};
+
+extern void g();
+
+class DD : public D {
+  friend void g();
+  void f();
+};
+
+void DD::f() {
+  printf("`DD::f' called\n");
+  ::B b;
+  b.mi = 3; // OK (b.mi is different from this->mi)
+  printf("b.mi = %d\n", b.mi);
+  b.si = 3; // OK (b.si is different from this->si)
+  printf("b.si = %d\n", b.si);
+  ::B::si = 3; // OK
+  printf("::B::si = %d\n", ::B::si);
+  ::B* bp2 = (::B*)this; // OK with cast
+  bp2->mi = 3; // OK: access through a pointer to B.
+  printf("bp2->mi = %d\n", bp2->mi);
+}
+
+void g()
+{
+  printf("`g' called\n");
+  DD d;
+  d.f();
+}
+
+int main()
+{
+  g();
+  return 0;
+}
+
+int B::si;

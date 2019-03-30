@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Declarative_regions_and_scopes/item.xml">
+    <title>3.3 Declarative regions and scopes</title>
+</section>
+
+<section url="1_Point_of_declaration/item.xml">
+    <title>3.3.1 Point of declaration</title>
+</section>
+
+<section url="2_Local_scope/item.xml">
+    <title>3.3.2 Local scope</title>
+</section>
+
+<section url="3_Function_prototype_scope/item.xml">
+    <title>3.3.3 Function prototype scope</title>
+</section>
+
+<section url="4_Function_scope/item.xml">
+    <title>3.3.4 Function scope</title>
+</section>
+
+<section url="5_Namespace_scope/item.xml">
+    <title>3.3.5 Namespace scope</title>
+</section>
+
+<section url="6_Class_scope/item.xml">
+    <title>3.3.6 Class scope</title>
+</section>
+
+</test_item>

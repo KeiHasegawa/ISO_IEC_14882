@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+struct B1 {
+  int i;
+  int B1f()
+  {
+    printf("B1::B1f called\n");
+    return i;
+  }
+  int virtual B1vf1()
+  {
+    printf("B1::B1vf1 called\n");
+    return i+1;
+  }
+  int virtual B1vf2()
+  {
+    printf("B1::B1vf2 called\n");
+    return i+2;
+  }
+};
+
+struct B2 {
+  int i, j, k;
+  int B2f()
+  {
+    printf("B2::B2f called\n");
+    printf("i = %d\n", i);
+    printf("j = %d\n", j);
+    printf("k = %d\n", k);
+    return 101;
+  }
+  int virtual B2vf1()
+  {
+    printf("B2::B2vf1 called\n");
+    printf("i = %d\n", i);
+    printf("j = %d\n", j);
+    printf("k = %d\n", k);
+    return 202;
+  }
+};
+
+struct D : public B1, public B2 {};
+
+int (D::*pmf1)() = &D::B1f;
+int (D::*pmf2)() = &D::B2f;
+int (D::*pmf3)() = &D::B1vf2;
+int (D::*pmf4)() = &D::B2vf1;
+
+int main()
+{
+  D x;
+  x.B1::i = 1;
+  printf("(x.*pmf1)() return value : %d\n", (x.*pmf1)());
+  D y;
+  y.B2::i = 2;
+  y.B2::j = 3;
+  y.B2::k = 4;
+  printf("(y.*pmf2)() return value : %d\n", (y.*pmf2)());
+  D z;
+  z.B1::i = 5;
+  printf("(z.*pmf3)() return value : %d\n", (z.*pmf3)());
+  D w;
+  w.B2::i = 6;
+  w.B2::j = 7;
+  w.B2::k = 8;
+  printf("(w.*pmf4)() return value : %d\n", (w.*pmf4)());
+  return 0;
+}

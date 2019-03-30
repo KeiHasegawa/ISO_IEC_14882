@@ -1,0 +1,29 @@
+/*
+ * The injected-class-name of a class template or class template
+ * specialization can be used either with or without a template-argument-list
+ * wherever it is in scope.
+ */
+#include <stdio.h>
+
+template <class T> struct Base {
+  Base* p;
+};
+
+template <class T> struct Derived: public Base<T> {
+  typename Derived::Base* p; // meaning Derived::Base<T>
+};
+
+struct S {};
+
+int main()
+{
+  Base<S> bs;
+  bs.p = &bs;
+  Derived<S> ds;
+  ds.p = &bs;
+  if ( ds.p->p == &bs )
+    printf("ok\n");
+  else
+    printf("error\n");
+  return 0;
+}

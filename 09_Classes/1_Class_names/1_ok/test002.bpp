@@ -1,0 +1,35 @@
+/*
+ * A declaration consisting solely of class-key identifier ; is either a
+ * redeclaration of the name in the current scope or a forward declaration of
+ * the identifier as a class name. It introduces the class name into the
+ * current scope.
+ */
+#include <stdio.h>
+
+struct s { int a; };
+
+void g()
+{
+  struct s; // hide global struct s
+            // with a local declaration
+  s* p; // refer to local struct s
+  struct s { char* p; }; // define local struct s
+  struct s; // redeclaration, has no effect
+  extern void h(char*);
+  s s;
+  p = &s;
+  h(p->p = "Bjarne Stroustrup");
+}
+
+int main()
+{
+  s s;
+  printf("s.a = %d\n", s.a = 7);
+  g();
+  return 0;
+}
+
+void h(char* s)
+{
+  printf("`h' called with \"%s\"\n", s);
+}

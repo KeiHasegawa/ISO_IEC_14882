@@ -1,0 +1,37 @@
+/*
+ * A using-declaration is a declaration and can therefore be used repeatedly
+ * where (and only where) multiple declarations are allowed.
+ */
+#include <stdio.h>
+
+namespace A {
+  int i;
+}
+
+namespace A1 {
+  using A::i;
+  using A::i; // OK: double declaration
+}
+
+void f()
+{
+  using A::i;
+  ++i;
+}
+
+class B {
+public:
+  int i;
+};
+
+class X : public B {
+  using B::i;
+};
+
+int main()
+{
+  printf("A::i = %d, A1::i = %d\n", A::i, A1::i); 
+  f();
+  printf("A::i = %d, A1::i = %d\n", A::i, A1::i); 
+  return 0;
+}

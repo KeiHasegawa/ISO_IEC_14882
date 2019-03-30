@@ -1,0 +1,17 @@
+X::f called
+X::operator ~ called
+before aa.~X() call
+after aa.~X() call
+before this->~X() call
+after this->~X() call
+X::operator ~ called
+X::f called
+X::operator ~ called
+before aa.~X() call
+after aa.~X() call
+before this->~X() call
+Y::~Y called
+after this->~X() call
+X::operator ~ called
+before return from main
+Y::~Y called

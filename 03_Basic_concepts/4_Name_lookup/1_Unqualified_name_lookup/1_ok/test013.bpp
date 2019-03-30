@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+class B {};
+
+int i;
+
+namespace M {
+  int i;
+  namespace N {
+    int i;
+    class X : public B {
+    public:
+      void f();
+    };
+  }
+}
+void M::N::X::f() {
+  i = 16;
+}
+// The following scopes are searched for a declaration of i:
+// 1) outermost block scope of M::N::X::f, before the use of i
+// 2) scope of class M::N::X
+// 3) scope of M::N::XÅfs base class B
+// 4) scope of namespace M::N
+// 5) scope of namespace M
+// 6) global scope, before the definition of M::N::X::f
+
+int main()
+{
+  M::N::X x;
+  x.f();
+  printf("::i = %d\n", ::i);
+  printf("M::i = %d\n", M::i);
+  printf("M::N::i = %d\n", M::N::i);
+  return 0;
+}
+

@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int f(){ return 1234; }
+
+int a = f();
+
+int main(void)
+{
+  printf("a = %d\n", a);
+  return 0;
+}

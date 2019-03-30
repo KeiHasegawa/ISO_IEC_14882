@@ -1,0 +1,2 @@
+test009.c:8: error: invalid access declaration for `private a'.
+test009.c:3: error: `a' is declared as public.

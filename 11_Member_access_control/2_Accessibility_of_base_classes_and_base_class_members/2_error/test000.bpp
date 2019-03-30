@@ -1,0 +1,86 @@
+/*
+ * In the absence of an access-specifier for a base class, public is assumed
+ * when the derived class is declared struct and private is assumed when the
+ * class is declared class.
+ */
+class B {
+private:
+  int pri;
+protected:
+  int pro;
+public:
+  int pub;
+};
+
+class D1 : private B {
+  void f()
+  {
+    pri;  // error
+    pro;  // error
+    pub;  // error
+  }
+};
+
+class D2 : public B {
+  void f()
+  {
+    pri;  // error
+    pro;
+    pub;
+  }
+};
+
+class D3 : B {  // B private by default
+  void f()
+  {
+    pri;  // error
+    pro;  // error
+    pub;  // error
+  }
+};
+
+struct D4 : public B {
+  void f()
+  {
+    pri;  // error
+    pro;
+    pub;
+  }
+};
+
+struct D5 : private B {
+  void f()
+  {
+    pri;  // error
+    pro;  // error
+    pub;  // error
+  }
+};
+
+struct D6 : B {  // B public by default
+  void f()
+  {
+    pri;  // error
+    pro;
+    pub;
+  }
+};
+
+class D7 : protected B {
+  void f()
+  {
+    pri;  // error
+    pro;  // error
+    pub;
+  }
+};
+
+struct D8 : protected B {
+  void f()
+  {
+    pri;  // error
+    pro;  // error
+    pub;
+  }
+};
+

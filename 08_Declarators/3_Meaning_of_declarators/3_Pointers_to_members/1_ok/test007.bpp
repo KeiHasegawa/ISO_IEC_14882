@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+struct A {
+  int a;
+  void f()
+  {
+    printf("A::f called\n");
+    printf("a = %d\n", a);
+  }
+};
+
+struct B {
+  int b;
+  void f()
+  {
+    printf("B::f called\n");
+    printf("b = %d\n", b);
+  }
+};
+
+struct C : public A, public B {
+  int c;
+  void f()
+  {
+    printf("C::f called\n");
+    printf("c = %d\n", c);
+    void (A::*pma)() = &A::f;
+    (this->*pma)();
+    void (B::*pmb)() = &B::f;
+    (this->*pmb)();
+  }
+};
+
+void fa(C* pc, void (A::*pma)())
+{
+  (pc->*pma)();
+}
+
+void fb(C* pc, void (B::*pmb)())
+{
+  (pc->*pmb)();
+}
+
+void fc(C* pc, void (C::*pmc)())
+{
+  (pc->*pmc)();
+}
+
+int main()
+{
+  C x;
+  x.a = 1;
+  x.b = 2;
+  x.c = 3;
+  fa(&x,&A::f);
+  fb(&x,&B::f);
+  fc(&x,&C::f);
+  return 0;
+}

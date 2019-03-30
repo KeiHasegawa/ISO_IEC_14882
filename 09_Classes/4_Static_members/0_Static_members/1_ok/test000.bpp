@@ -1,0 +1,40 @@
+/*
+ * A static member s of class X may be referred to using the qualified-id
+ * expression X::s; it is not necessary to use the class member access syntax
+ * (5.2.5) to refer to a static member. A static member may be referred to
+ * using the class member access syntax, in which case the object-expression
+ * is evaluated.
+ */
+#include <stdio.h>
+
+class process {
+public:
+  static void reschedule();
+};
+
+process& g();
+
+void f()
+{
+  process::reschedule(); // OK: no object necessary
+  g().reschedule(); // g() is called
+}
+
+int main()
+{
+  f();
+  return 0;
+}
+
+void process::reschedule()
+{
+  printf("`process::reschedule' called\n");
+}
+
+process& g()
+{
+  printf("`g' called\n");
+  static process ret;
+  return ret;
+}
+

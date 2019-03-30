@@ -1,0 +1,35 @@
+/*
+ * A template argument list may be specified when referring to a specialization
+ * of a function template
+ * - when a function is called,
+ * - when the address of a function is taken, when a function initializes a
+ *   reference to function, or when a pointer to member function is formed,
+ * - in an explicit specialization,
+ * - in an explicit instantiation, or
+ * - in a friend declaration.
+ * Trailing template arguments that can be deduced (14.8.2) may be omitted from
+ * the list of explicit templatearguments. If all of the template arguments can
+ * be deduced, they may all be omitted; in this case, the empty template
+ * argument list <> itself may also be omitted.
+ */
+#include <stdio.h>
+
+template <class T> int f(T) // #1
+{
+  printf("f(T) called\n");
+  return 0;
+}
+
+int f(int) // #2
+{
+  printf("f(int) called\n");
+  return 0;
+}
+
+int main()
+{
+  int k = f(1); // uses #2
+  int l = f<>(1); // uses #1
+  return 0;
+}
+

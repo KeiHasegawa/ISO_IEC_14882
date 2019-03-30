@@ -1,0 +1,30 @@
+/*
+ * When a friend declaration refers to an overloaded name or operator, only
+ * the function specified by the parameter types becomes a friend. A member
+ * function of a class X can be a friend of a class Y.
+ */
+#include <stdio.h>
+
+struct X {
+  char* foo(int);
+};
+
+class Y {
+  friend char* X::foo(int);
+  int y;
+};
+
+int main(void)
+{
+  X x;
+  x.foo(3);
+  return 0;
+}
+
+char* X::foo(int n)
+{
+  printf("`X::foo' called\n");
+  Y y;
+  printf("y.y = %d\n", y.y = 56);
+  return 0;
+}

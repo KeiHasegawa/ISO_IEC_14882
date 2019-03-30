@@ -1,0 +1,11 @@
+`A::g' called
+`A::f' called
+a.i = 1
+y.j = 2
+`A::f' called
+a.i = 1
+`A::h' called with 3
+y.j = -2
+`h' called with 4
+`f2<>(int)' called with 5
+y.j = 7

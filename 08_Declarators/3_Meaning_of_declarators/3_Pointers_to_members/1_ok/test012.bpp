@@ -1,0 +1,39 @@
+/*
+ * Check pointer to member works well.
+ */
+#include <stdio.h>
+
+class X {
+public:
+  void f(int);
+  int a;
+};
+
+class Y;
+int X::* pmi = &X::a;
+void (X::* pmf)(int) = &X::f;
+double X::* pmd;
+char Y::* pmc;
+
+void f()
+{
+  X obj;
+  //...
+  obj.*pmi = 7; // assign 7 to an integer
+                // member of obj
+  printf("obj.a = %d\n", obj.a);
+  (obj.*pmf)(7); // call a function member of obj
+                 // with the argument 7
+
+}
+
+int main()
+{
+  f();
+  return 0;
+}
+
+void X::f(int a)
+{
+  printf("`X::f' called with %d\n", a);
+}

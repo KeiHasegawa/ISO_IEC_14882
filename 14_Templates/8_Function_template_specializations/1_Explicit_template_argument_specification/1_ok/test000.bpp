@@ -1,0 +1,60 @@
+/*
+ * Template arguments can be specified when referring to a function template
+ * specialization by qualifying the function template name with the list of
+ * template-arguments in the same way as template-arguments are specified in
+ * uses of a class template specialization.
+ */
+#include <complex>
+
+template<class T> class Array;
+
+typedef std::complex<double> dcomplex;
+
+template<class T> void sort(Array<T>& v);
+
+template<> void sort<dcomplex>(Array<dcomplex>&)
+{
+  printf("sort<dcomplex>(Array<dcomplex>&) called\n");
+}
+
+template<> void sort<int>(Array<int>&)
+{
+  printf("sort<int>(Array<int>&) called\n");
+}
+
+void f(Array<dcomplex>& cv, Array<int>& ci)
+{
+  sort<dcomplex>(cv); // sort(Array<dcomplex>&)
+  sort<int>(ci); // sort(Array<int>&)
+}
+
+template<class U, class V> U convert(V v);
+
+template<> int convert<int,double>(double)
+{
+  printf("int convert(double) called\n");
+  return 0;
+}
+
+template<> char convert<char,double>(double)
+{
+  printf("char convert(double) called\n");
+  return 0;
+}
+
+void g(double d)
+{
+  int i = convert<int,double>(d); // int convert(double)
+  char c = convert<char,double>(d); // char convert(double)
+}
+
+template<class T> class Array {};
+
+int main()
+{
+  Array<dcomplex> x;
+  Array<int> y;
+  f(x,y);
+  g(3.5);
+  return 0;
+}

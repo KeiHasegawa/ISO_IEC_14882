@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>初期化指定子に多重定義された函数のアドレスを指定.
+              キャストのオペランドに多重定義された函数のアドレスを指定.
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>初期化指定子に多重定義された函数のアドレスを指定.
+              キャストのオペランドに多重定義された函数のアドレスを指定.
+    </abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>初期化指定子に多重定義されたメンバ函数のアドレスを指定.
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>初期化指定子に多重定義されたメンバ函数のアドレスを指定.
+    </abstract>
+</item>
+
+<item>
+    <source>2_error/test002.cpp</source>
+    <abstract>戻り値の型が異なる函数へのポインタでの初期化.
+              パラメータの型が異なる函数へのポインタでの初期化.
+    </abstract>
+</item>
+
+</test_item>

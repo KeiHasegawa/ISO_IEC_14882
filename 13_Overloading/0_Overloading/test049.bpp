@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+namespace N {
+  struct S {
+    S operator-(int)
+    {
+      printf("N::S::operator-(int) caled\n");
+      S r;
+      return r;
+    }
+  };
+}
+
+namespace N2 {
+  struct S2 {
+    N::S m;
+    S2(){}
+    S2(N::S){}
+    S2 operator+(int n)
+    {
+      printf("N2::S2::operator+(int) called\n");
+      return S2(m-n);
+    }
+  };
+}
+
+int main()
+{
+  N2::S2 s2;
+  s2+5;
+  return 0;
+}

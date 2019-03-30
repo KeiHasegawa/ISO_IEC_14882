@@ -1,0 +1,22 @@
+/*
+ * A class template partial specialization may be declared or redeclared in
+ * any namespace scope in which its definition may be defined
+ * (14.5.1 and 14.5.2).
+ */
+#include <stdio.h>
+
+template<class T> struct A {
+  class C {
+    template<class T2> struct B { int i; };
+  };
+};
+// partial specialization of A<T>::C::B<T2>
+template<class T> template<class T2>
+struct A<T>::C::B<T2*> { };
+A<short>::C::B<int*> absip; // uses partial specialization
+
+int main(void)
+{
+  printf("%d\n", absip.i = 123);
+  return 0;
+}

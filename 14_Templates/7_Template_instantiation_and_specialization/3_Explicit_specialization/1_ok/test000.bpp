@@ -1,0 +1,41 @@
+/*
+ * An explicit specialization of any of the following:
+ * - function template
+ * - class template
+ * - member function of a class template
+ * - static data member of a class template
+ * - member class of a class template
+ * - member class template of a class template
+ * - member function template of a class template
+ * can be declared by a declaration introduced by template<>; that is:
+ *
+ * explicit-specialization:
+ *   template < > declaration
+ */
+#include <stdio.h>
+
+template<class T> class stream;
+template<> class stream<char> { public: int i; };
+template<class T> class Array { /* ... */ };
+template<class T> void sort(Array<T>& v)
+{
+  printf("sort(Array<T>&) called\n");
+}
+
+template<> void sort<char*>(Array<char*>&) ;
+
+int main()
+{
+  stream<char> sc;
+  printf("sc.i = %d\n", sc.i = 1);
+  Array<int> ai;
+  sort(ai);
+  Array<char*> apc;
+  sort(apc);
+  return 0;
+}
+
+template<> void sort<char*>(Array<char*>&)
+{
+  printf("sort<char*>(Array<char*>&) called\n");
+}

@@ -1,0 +1,31 @@
+/*
+ * Different versions of an overloaded member function can be given different
+ * access rules.
+ */
+#include <stdio.h>
+
+class buffer {
+private:
+  char* p;
+  int size;
+protected:
+  buffer(int s, char* store) { size = s; p = store; }
+  // ...
+public:
+  buffer(int s) { p = new char[size = s]; }
+  // ...
+};
+
+class duffer : public buffer {
+  char a[3];
+public:
+  duffer() : buffer(sizeof a, a) {}
+};
+
+int main()
+{
+  printf("just ok compile test\n");
+  buffer b(5);
+  duffer d;
+  return 0;
+}

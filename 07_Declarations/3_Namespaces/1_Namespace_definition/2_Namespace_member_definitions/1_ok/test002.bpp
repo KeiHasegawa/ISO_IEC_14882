@@ -1,0 +1,74 @@
+/*
+ * When looking for a prior declaration of a class or a function declared as
+ * a friend, and when the name of the friend class or function is neither
+ * a qualified name nor a template-id, scopes outside the innermost enclosing
+ * namespace scope are not considered.
+ */
+#include <stdio.h>
+
+// Assume f and g have not yet been defined.
+void h(int);
+template <class T> void f2(T);
+namespace A {
+  class X {
+    int i;
+    friend void f(X); // A::f(X) is a friend
+    public:
+    class Y {
+      int j;
+      friend void g(); // A::g is a friend
+      friend void h(int); // A::h is a friend
+      // ::h not considered
+      friend void f2<>(int); // ::f2<>(int) is a friend
+    };
+  };
+  // A::f, A::g and A::h are not visible here
+  X x;
+  void g() // definition of A::g
+  {
+    printf("`A::g' called\n");
+    f(x);
+    X::Y y;
+    printf("y.j = %d\n", y.j = 2);
+  }
+  void f(X a) // definition of A::f
+  {
+    printf("`A::f' called\n");
+    printf("a.i = %d\n", a.i = 1);
+  }
+  void h(int a) // definition of A::h
+  {
+    printf("`A::h' called with %d\n", a);
+    X::Y y;
+    printf("y.j = %d\n", y.j = -2);
+  }
+  // A::f, A::g and A::h are visible here and known to be friends
+}
+
+using A::x;
+void h()
+{
+  A::f(x);
+}
+
+template<> void f2(int a)
+{
+  printf("`f2<>(int)' called with %d\n", a);
+  A::X::Y y;
+  printf("y.j = %d\n", y.j = 7);
+}
+
+int main()
+{
+  A::g();
+  h();
+  A::h(3);
+  ::h(4);
+  f2(5);
+  return 0;
+}
+
+void h(int a)
+{
+  printf("`h' called with %d\n", a);
+}

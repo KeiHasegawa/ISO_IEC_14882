@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+class X {
+  int i;
+public:
+  void set(int ii){ i = ii; }
+  void print(){ printf("i = %d\n",i); }
+  void* operator new[](size_t sz)
+  {
+    printf("operator new called\n");
+    return malloc(sz);
+  }
+  void operator delete[](void* ptr)
+  {
+    printf("operator delete called\n");
+    free(ptr);
+  }
+};
+
+int main()
+{
+  int sz = 10;
+  X* p = new X[sz];
+  for ( int i = 0 ; i < sz ; ++i )
+    p[i].set(i);
+  for ( int i = 0 ; i < sz ; ++i )
+    p[i].print();
+  delete[] p;
+  return 0;
+}

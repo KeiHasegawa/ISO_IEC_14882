@@ -1,0 +1,24 @@
+/*
+ * When an expression that references a template parameter is used in the
+ * function parameter list or the return type in the declaration of a function
+ * template, the expression that references the template parameter is part
+ * of the signature of the function template. This is necessary to permit a
+ * declaration of a function template in one translation unit to be linked with
+ * another declaration of the function template in another translation unit
+ * and, conversely, to ensure that function templates that are intended to be
+ * distinct are not linked with one another.
+ */
+#include <stdio.h>
+
+template <int N> struct A {
+};
+
+template <int I, int J> A<I+J> f(A<I>, A<J>); // #1
+template <int K, int L> A<K+L> f(A<K>, A<L>); // same as #1
+template <int I, int J> A<I-J> f(A<I>, A<J>); // different from #1
+
+int main()
+{
+  printf("Just compile test\n");
+  return 0;
+}

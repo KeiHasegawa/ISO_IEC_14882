@@ -1,0 +1,9 @@
+ac.x = 0
+as.x = -1
+ad.xx = 1
+ai.xxx = 2
+g(U) called
+g<int>(int) called
+g(char) called
+B<S>::x = -2
+B<int>::x = 1

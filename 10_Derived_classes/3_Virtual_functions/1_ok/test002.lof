@@ -1,0 +1,5 @@
+`Derived::vf1' called
+`Base::vf2' called
+`Base::f' called
+`Derived::vf4' called
+`Derived::vf4' called

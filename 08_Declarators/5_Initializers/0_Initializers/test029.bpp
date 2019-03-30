@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int a = 0x12345678;
+
+int b = 0x9abcdef0;
+
+int c = a & b;
+
+int main()
+{
+  printf("a = 0x%x\n", a);
+  printf("b = 0x%x\n", b);
+  printf("c = 0x%x\n", c);
+  return 0;
+}

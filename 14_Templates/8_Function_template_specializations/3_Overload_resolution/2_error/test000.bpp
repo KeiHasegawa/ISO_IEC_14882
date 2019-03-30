@@ -1,0 +1,27 @@
+/*
+ * A function template can be overloaded either by (non-template) functions of
+ * its name or by (other) function templates of the same name. When a call to
+ * that name is written (explicitly, or implicitly using the operator
+ * notation), template argument deduction (14.8.2) and checking of any explicit
+ * template arguments (14.3) are performed for each function template to find
+ * the template argument values (if any) that can be used with that function
+ * template to instantiate a function template specialization that can be
+ * invoked with the call arguments. For each function template, if the
+ * argument deduction and checking succeeds, the templatearguments (deduced
+ * and/or explicit) are used to instantiate a single function template
+ * specialization which is added to the candidate functions set to be used in
+ * overload resolution. If, for a given function template, argument deduction
+ * fails, no such function is added to the set of candidate functions for that
+ * template. The complete set of candidate functions includes all the function
+ * templates instantiated in this way and all of the non-template overloaded
+ * functions of the same name. The function template specializations are
+ * treated like any other functions in the remainder of overload resolution,
+ * except as explicitly noted in 13.3.3.
+ */
+template<class T> T max(T a, T b) { return a>b?a:b; }
+void f(int a, int b, char c, char d)
+{
+  int m1 = max(a,b); // max(int a, int b)
+  char m2 = max(c,d); // max(char a, char b)
+  int m3 = max(a,c); // error: cannot generate max(int,char)
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+void f(int* = 0);
+
+int main()
+{
+  f();
+  int n = 3;
+  f(&n);
+  return 0;
+}
+
+void f(int* p)
+{
+  if ( p )
+    printf("*p = %d\n", *p);
+  else
+    printf("p = 0\n");
+}

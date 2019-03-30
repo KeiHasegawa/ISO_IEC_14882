@@ -1,0 +1,5 @@
+f() called
+f(int) called
+a = 1
+f(int, int) called
+a = 2, b = 3

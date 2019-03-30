@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+class X {
+  int* m_ptr;
+public:
+  X(int* ptr) : m_ptr(ptr) {}
+  int& operator[](int i)
+  { return m_ptr[i]; }
+};
+
+int main()
+{
+  int a[10];
+  X x(&a[0]);
+
+  for ( int i = 0 ; i < sizeof a/sizeof a[0] ; ++i )
+    x[i] = i;
+
+  for ( int i = 0 ; i < sizeof a/sizeof a[0] ; ++i )
+    printf("a[%d] = %d\n", i, a[i]);
+
+  for ( int i = 0 ; i < sizeof a/sizeof a[0] ; ++i )
+    printf("x[%d] = %d\n", i, x[i]);
+
+  return 0;
+}

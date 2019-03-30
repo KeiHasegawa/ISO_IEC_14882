@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+class complex {
+  int m;
+public:
+  complex(int);
+};
+
+complex operator+(complex,complex);
+
+void f(complex z)
+{
+  1 + z;
+}
+
+int main()
+{
+  complex z(5);
+  f(z);
+  return 0;
+}
+
+complex::complex(int n) : m(n) {}
+
+complex operator+(complex y, complex)
+{
+  printf("`operator+(complex,complex)' called\n");
+  return y;
+}
+
+

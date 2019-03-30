@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Class_template_partial_specializations/item.xml">
+    <title>14.5.4 Class template partial specializations</title>
+</section>
+
+<section url="1_Matching_of_class_template_partial_specializations/item.xml">
+    <title>14.5.4.1 Matching of class template partial specializations</title>
+</section>
+
+<section url="2_Partial_ordering_of_class_template_specializations/item.xml">
+    <title>14.5.4.2 Partial ordering of class template specializations</title>
+</section>
+
+<section url="3_Members_of_class_template_specializations/item.xml">
+    <title>14.5.4.3 Members of class template specializations</title>
+</section>
+
+</test_item>

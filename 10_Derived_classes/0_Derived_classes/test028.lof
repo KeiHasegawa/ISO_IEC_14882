@@ -1,0 +1,9 @@
+p->b = 1
+D::f called
+p->b = 4
+p->b = 3
+B::f called
+p->b = 4
+p->b = 4, p->d = 2
+D::f called
+p->b = 5, p->d = 6

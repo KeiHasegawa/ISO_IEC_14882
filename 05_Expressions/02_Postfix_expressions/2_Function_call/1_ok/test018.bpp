@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+struct S {
+  int m;
+  static S s;
+};
+
+S S::s;
+
+void f(S& s)
+{
+  s.m = 123;
+}
+
+int main()
+{
+  S::s.m = 456;
+  printf("S::s.m = %d\n", S::s.m);
+  f(S::s);
+  printf("S::s.m = %d\n", S::s.m);
+  return 0;
+}

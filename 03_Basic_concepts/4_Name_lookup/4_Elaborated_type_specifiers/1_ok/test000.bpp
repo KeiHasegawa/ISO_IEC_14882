@@ -1,0 +1,114 @@
+#include <stdio.h>
+
+struct Node {
+  struct Node* Next; // OK: Refers to Node at global scope
+  struct Data* Data; // OK: Declares type Data
+  // at global scope and member Data
+};
+struct Data {
+  struct Node* Node; // OK: Refers to Node at global scope
+  friend struct Glob; // OK: Refers to (as yet) undeclared Glob
+                      // at global scope.
+  void f();
+};
+struct Base {
+  struct Data; // OK: Declares nested Data
+  struct ::Data* thatData; // OK: Refers to ::Data
+  struct Base::Data* thisData; // OK: Refers to nested Data
+  friend class ::Data; // OK: global Data is a friend
+  friend class Data; // OK: nested Data is a friend
+  struct Data { int i; void f(); }; // Defines nested Data
+private:
+  int i;
+};
+struct Data; // OK: Redeclares Data at global scope
+struct Base::Data* pBase; // OK: refers to nested Data
+
+void g(Node* p)
+{
+  printf("`g' called\n");
+  Data* q = p->Data;
+  if ( q->Node == p )
+    printf("ok\n");
+  else
+    printf("error\n");
+}
+
+void f(Node* p)
+{
+  for ( ; p ; p = p->Next )
+    g(p);
+}
+
+void test000()
+{
+  printf("`test000' called\n");
+  Data d0;
+  Node n0;
+  d0.Node = &n0;
+  n0.Next = 0;
+  n0.Data = &d0;
+  Data d1;
+  Node n1;
+  d1.Node = &n1;
+  n1.Next = &n0;
+  n1.Data = &d1;
+  f(&n1);
+}
+
+void i(Base::Data* p)
+{
+  printf("`i' called\n");
+  printf("p->i = %d\n", p->i);
+}
+
+void h(Base* p)
+{
+  printf("`h' called\n");
+  Data* q = p->thatData;
+  if ( q->Node )
+    printf("error\n");
+  else
+    printf("ok\n");
+  Base::Data* r = p->thisData;
+  i(r);
+}
+
+void test001()
+{
+  printf("`test001' called\n");
+  Data d0;
+  d0.Node = 0;
+  Base::Data d1;
+  d1.i = 2;
+  Base b;
+  b.thatData = &d0;
+  b.thisData = &d1;
+  h(&b);
+  pBase = &d1;
+  i(pBase);
+  d0.f();
+  d1.f();
+}
+
+int main()
+{
+  test000();
+  test001();
+  return 0;
+}
+
+void Data::f()
+{
+  printf("`Data::f' called\n");
+  Base b;
+  printf("b.i = %d\n", b.i = 4);
+}
+
+void Base::Data::f()
+{
+  printf("`Base::Data::f' called\n");
+  Base b;
+  printf("b.i = %d\n", b.i = 5);
+}
+

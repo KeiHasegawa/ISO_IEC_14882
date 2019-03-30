@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+class X {
+public:
+  void f(int x = a);
+  static int a;
+};
+
+int main()
+{
+  X x;
+  x.f();
+  x.f(3);
+  return 0;
+}
+
+void X::f(int x)
+{
+  printf("X::f called with %d\n", x);
+}
+
+int X::a = 5;

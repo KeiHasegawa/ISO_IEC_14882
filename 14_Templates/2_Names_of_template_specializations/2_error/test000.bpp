@@ -1,0 +1,14 @@
+/*
+ * After name lookup (3.4) finds that a name is a template-name, if this name
+ * is followed by a <, the < is always taken as the beginning of a
+ * template-argument-list and never as a name followed by the less-than
+ * operator. When parsing a template-id, the first non-nested > is taken as
+ * the end of the templateargument-list rather than a greater-than operator.
+ */
+
+template<int i> class X { /* ... */ };
+X< 1>2 > x1; // syntax error
+X<(1>2)> x2; // OK
+template<class T> class Y { /* ... */ };
+Y< X<1> > x3; // OK
+Y<X<6>> 1> > x4; // OK: Y< X< (6>>1) > >

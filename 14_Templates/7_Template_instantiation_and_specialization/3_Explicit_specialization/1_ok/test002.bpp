@@ -1,0 +1,29 @@
+/*
+ * A template explicit specialization is in the scope of the namespace in which
+ * the template was defined.
+ */
+#include <stdio.h>
+
+namespace N {
+  template<class T> class X { public: int i; };
+  template<class T> class Y { public: int j; };
+  template<> class X<int> { public: int ii; }; // OK: specialization
+                                               // in same namespace
+  template<> class Y<double>; // forward declare intent to
+                              // specialize for double
+}
+
+template<> class N::Y<double> { public: int jj; }; // OK: specialization
+                                                   // in same namespace
+int main()
+{
+  N::X<int> nxi;
+  printf("nxi.ii = %d\n", nxi.ii = 1);
+  N::X<double> nxd;
+  printf("nxd.i = %d\n", nxd.i = 2);
+  N::Y<int> nyi;
+  printf("nyi.j = %d\n", nyi.j = 3);
+  N::Y<double> nyd;
+  printf("nyd.jj = %d\n", nyd.jj = 4);
+  return 0;
+}

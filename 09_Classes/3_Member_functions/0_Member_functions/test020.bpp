@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+class X {
+  int* p;
+public:
+  X(int* pp) : p(pp) {}
+  int* operator&()
+  {
+    printf("operator & called\n");
+    return p;
+  }
+};
+
+int main()
+{
+  int i;
+  X x(&i);
+  int* p = &x;
+  *p = 1234;
+  printf("i = %d\n", i);
+  printf("*&x = %d\n", *&x);
+  return 0;
+}

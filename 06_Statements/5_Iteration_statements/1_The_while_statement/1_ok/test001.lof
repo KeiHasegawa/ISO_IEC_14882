@@ -1,0 +1,5 @@
+`A::A' called
+while body
+`A::~A' called
+`A::A' called
+`A::~A' called

@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+class X {
+public:
+  void f();
+  void f(int);
+};
+
+class Y : private X {
+public:
+  X::f;
+};
+
+void g(Y* p)
+{
+  p->f();
+  p->f(1);
+}
+
+int main()
+{
+  Y y;
+  g(&y);
+  return 0;
+}
+
+void X::f()
+{
+  printf("`X::f()' called\n");
+}
+
+void X::f(int a)
+{
+  printf("`X::f(int)' called with %d\n", a);
+}

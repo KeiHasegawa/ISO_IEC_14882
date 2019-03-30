@@ -1,0 +1,35 @@
+/*
+ * If there is exactly one viable function that is a better function than all
+ * other viable functions, then it is the one selected by overload resolution;
+ * otherwise the call is ill-formed.
+ */
+#include <stdio.h>
+
+void Fcn(const int*, short);
+void Fcn(int*, int);
+int i;
+short s = 0;
+void f() {
+  Fcn(&i, 1L); // calls Fcn(int*, int), because
+               // &i -> int* is better than &i -> const int*
+               // and 1L -> short and 1L -> int are indistinguishable
+  Fcn(&i,'c'); // calls Fcn(int*, int), because
+               // &i -> int* is better than &i -> const int*
+               // and c -> int is better than c -> short
+}
+
+int main()
+{
+  f();
+  return 0;
+}
+
+void Fcn(const int*, short)
+{
+  printf("`Fcn(const int*, short)' is called.\n");
+}
+
+void Fcn(int*, int)
+{
+  printf("`Fcn(int*, int)' is called.\n");
+}

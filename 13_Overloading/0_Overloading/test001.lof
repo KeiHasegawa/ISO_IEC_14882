@@ -1,0 +1,6 @@
+f(T&) called
+ref.t = 1
+f(const T&) called
+ref.t = 2
+f(volatile T&) called
+ref.t = 3

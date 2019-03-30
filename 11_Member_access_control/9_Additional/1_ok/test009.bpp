@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+class Vector;
+
+class Matrix {
+  int a;
+  friend Vector operator*(Matrix&, Vector&);
+};
+
+class Vector {
+  int b;
+  friend Vector operator*(Matrix&, Vector&);
+};
+
+int main()
+{
+  Matrix m;
+  Vector v;
+  m * v;
+  return 0;
+}
+
+Vector operator*(Matrix& m, Vector& v)
+{
+  printf("`operator*(Matrix&, Vector&)' called\n");
+  printf("m.a = %d\n", m.a = 1);
+  printf("v.b = %d\n", v.b = 2);
+  return v;
+}

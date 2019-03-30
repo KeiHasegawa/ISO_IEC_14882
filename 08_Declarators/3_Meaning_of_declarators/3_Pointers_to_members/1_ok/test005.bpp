@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+class X {
+public:
+  void f()
+  {
+    printf("X::f called\n");
+    void (X::*pm)() = &X::g;
+    (this->*pm)();
+  }
+  void g()
+  {
+    printf("X::g called\n");
+  }
+};
+
+int main()
+{
+  X x;
+  x.f();
+  return 0;
+}

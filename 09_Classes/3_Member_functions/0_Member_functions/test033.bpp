@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+class X {
+  int i;
+public:
+  X(int ii) : i(ii) {}
+  bool operator==(X x)
+  {
+    return i == x.i;
+  }
+  bool operator!=(X x)
+  {
+    return i != x.i;
+  }
+};
+
+int main()
+{
+  X a(1), b(2);
+
+  if ( a == b ) printf("error\n");
+  else          printf("ok\n");
+
+  if ( a != b ) printf("ok\n");
+  else          printf("error\n");
+
+  if ( a == a ) printf("ok\n");
+  else          printf("error\n");
+
+  if ( a != a ) printf("error\n");
+  else          printf("ok\n");
+
+  return 0;
+}

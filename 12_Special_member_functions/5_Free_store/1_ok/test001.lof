@@ -1,0 +1,4 @@
+`X::operator delete(void*)' called
+`X::operator delete[](void*, size_t)' called
+`Y::operator delete(void*, size_t)' called
+`Y::operator delete[](void*)' called

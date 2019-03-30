@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+namespace N {
+  template<class T> struct C {
+    int mem;
+  };
+}
+
+namespace M {
+  using N::C;
+}
+
+int main()
+{
+  M::C<int> ci;
+  ci.mem = 'a';
+  printf("ci.mem = '%c'\n", ci.mem);
+  return 0;
+}

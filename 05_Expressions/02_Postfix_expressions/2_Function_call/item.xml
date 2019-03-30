@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>函数へのリファンレンスを介した函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>パラメータがリファレンスで宣言された函数呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>new, delete</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>定数のデフォルト引数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.cpp</source>
+    <abstract>変数のデフォルト引数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test006.cpp</source>
+    <abstract>new T[sz], delete[]</abstract>
+</item>
+
+<item>
+    <source>1_ok/test007.cpp</source>
+    <abstract>基底クラスへのポインタを引数に取る函数に派生クラスのポインタを
+    引数として函数を呼び出す.</abstract>
+</item>
+
+<item>
+    <source>1_ok/test008.cpp</source>
+    <abstract>基底クラスへのリファレンスを引数に取る函数に派生クラスを
+    引数として函数を呼び出す.</abstract>
+</item>
+
+<item>
+    <source>1_ok/test009.cpp</source>
+    <abstract>配置構文のある new</abstract>
+</item>
+
+<item>
+    <source>1_ok/test010.cpp</source>
+    <abstract>asm("...");</abstract>
+</item>
+
+<item>
+    <source>1_ok/test011.cpp</source>
+    <abstract>extern "C++", extern "C"</abstract>
+</item>
+
+<item>
+    <source>1_ok/test012.cpp</source>
+    <abstract>函数呼び出しのデフォルト引数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test013.cpp</source>
+    <abstract>函数呼び出しのデフォルト引数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test014.cpp</source>
+    <abstract>函数呼び出しのデフォルト引数</abstract>
+</item>
+
+<item>
+    <source>1_ok/test015.cpp</source>
+    <abstract>overload された函数の呼び出し</abstract>
+</item>
+
+<item>
+    <source>1_ok/test016.cpp</source>
+    <abstract>引数の最初の declarator が省略されている</abstract>
+</item>
+
+<item>
+    <source>1_ok/test017.cpp</source>
+    <abstract>函数呼び出しのデフォルト引数</abstract>
+</item>
+
+</test_item>

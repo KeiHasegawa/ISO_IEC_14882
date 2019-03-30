@@ -1,0 +1,15 @@
+/*
+ * If, in the declaration of a function template with a non-type
+ * template-parameter, the non-type templateparameter is used in an expression
+ * in the function parameter-list, the corresponding template-argument must
+ * always be explicitly specified or deduced elsewhere because type deduction
+ * would otherwise always fail for such a template-argument.
+ */
+
+template<int i> class A { /* ... */ };
+template<short s> void g(A<s+1>);
+void k() {
+  A<1> a;
+  g(a); //error: deduction fails for expression s+1
+  g<0>(a); //OK
+}

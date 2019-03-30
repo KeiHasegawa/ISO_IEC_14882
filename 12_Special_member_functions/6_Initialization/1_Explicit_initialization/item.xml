@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>初期化指定子</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>コンストラクタが定義されているクラスに初期化指定子で初期化
+    </abstract>
+</item>
+
+</test_item>

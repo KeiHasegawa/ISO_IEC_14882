@@ -1,0 +1,26 @@
+/*
+ * The syntax for explicit instantiation is:
+ *
+ * explicit-instantiation:
+ *   template declaration
+ * 
+ * If the explicit instantiation is for a class, a function or a member
+ * template specialization, the unqualified-id in the declaration shall be
+ * either a template-id or, where all template arguments can be deduced, a
+ * template-name. [Note: the declaration may declare a qualified-id, in which
+ * case the unqualified-id of the qualified-id must be a template-id. ] If the
+ * explicit instantiation is for a member function, a member class or a static
+ * data member of a class template specialization, the name of the class
+ * template specialization in the qualified-id for the member declarator shall
+ * be a template-id.
+ */
+
+template<class T> class Array { void mf(); };
+template class Array<char>;
+template void Array<int>::mf();
+template<class T> void sort(Array<T>& v) { /* ... */ }
+template void sort(Array<char>&); // argument is deduced here
+namespace N {
+  template<class T> void f(T&) { }
+}
+template void N::f<int>(int&);

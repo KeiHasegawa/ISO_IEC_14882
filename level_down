@@ -1,0 +1,59 @@
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label:diff test.log test.lof /// ƒGƒ‰[‚É‚È‚é‚Ì‚Í a.bpp b.bpp ‚Ì‚Ü‚Ü‚Å‚à‚Æ‚à‚Æ‚Å‚«‚Ä‚¢‚È‚¢‚à‚Ì
+
+
+
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/11_Member_access_control/0_Member_access_control/1_ok:hcxx1.exe -o test001.s test001.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/11_Member_access_control/9_Additional/1_ok:hcxx1.exe -o test028.s test028.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/11_Member_access_control/9_Additional/1_ok:hcxx1.exe -o test024.s test024.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/11_Member_access_control/9_Additional/1_ok:hcxx1.exe -o test002.s test002.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/11_Member_access_control/9_Additional/1_ok:hcxx1.exe -o test018.s test018.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/8_Declarators/2_Ambiguity_resolution/2_error:diff test004.log test004.lof 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/8_Declarators/2_Ambiguity_resolution/1_ok:hcxx1.exe -o test008.s test008.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/8_Declarators/2_Ambiguity_resolution/1_ok:hcxx1.exe -o test007.s test007.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/8_Declarators/5_Initializers/0_Initializers:hcxx1.exe -o test052.s test052.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/8_Declarators/5_Initializers/0_Initializers:hcxx1.exe -o test048.s test048.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/12_Special_member_functions/8_Copying_class_objects/1_ok:hcxx1.exe -o test004.s test004.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/12_Special_member_functions/1_Constructors/1_ok:hcxx1.exe -o test000.s test000.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/12_Special_member_functions/0_Special_member_functions:hcxx1.exe -o test097.s test097.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/5_Linkage_specifications/1_ok:hcxx1.exe -o test004.s test004.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test021.s test021.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test022.s test022.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test005.s test005.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test003.s test003.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test016.s test016.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test014.s test014.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test024.s test024.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test004.s test004.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test000.s test000.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test013.s test013.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test002.s test002.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test018.s test018.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test020.s test020.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test017.s test017.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/0_Namespaces:hcxx1.exe -o test015.s test015.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/1_Namespace_definition/0_Namespace_definition/1_ok:hcxx1.exe -o test001.s test001.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/1_Namespace_definition/0_Namespace_definition/1_ok:hcxx1.exe -o test000.s test000.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/7_Declarations/3_Namespaces/1_Namespace_definition/2_Namespace_member_definitions/1_ok:hcxx1.exe -o test000.s test000.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/7_Nested_class_declarations/1_ok:hcxx1.exe -o test002.s test002.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/3_Member_functions/1_Nonstatic_member_functions/1_ok:hcxx1.exe -o test001.s test001.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/3_Member_functions/0_Member_functions:hcxx1.exe -o test007.s test007.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/3_Member_functions/0_Member_functions:hcxx1.exe -o test001.s test001.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/3_Member_functions/0_Member_functions:hcxx1.exe -o test005.s test005.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/3_Member_functions/0_Member_functions:hcxx1.exe -o test003.s test003.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/3_Member_functions/0_Member_functions:hcxx1.exe -o test000.s test000.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/3_Member_functions/0_Member_functions:hcxx1.exe -o test002.s test002.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/6_Bit_fields/1_ok:diff test000.log test000.lof 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/9_Classes/9_Nested_type_names/1_ok:hcxx1.exe -o test000.s test000.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/10_Derived_classes/0_Derived_classes:hcxx1.exe -o test045.s test045.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/10_Derived_classes/0_Derived_classes:hcxx1.exe -o test037.s test037.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/5_Expressions/2_Postfix_expressions/2_Function_call/1_ok:diff test010.log test010.lof 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/5_Expressions/2_Postfix_expressions/3_Explicit_type_conversion/2_error:diff test001.log test001.lof 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/5_Expressions/2_Postfix_expressions/3_Explicit_type_conversion/2_error:diff test003.log test003.lof 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/5_Expressions/2_Postfix_expressions/3_Explicit_type_conversion/2_error:diff test004.log test004.lof 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/5_Expressions/2_Postfix_expressions/3_Explicit_type_conversion/2_error:diff test000.log test000.lof 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/5_Expressions/2_Postfix_expressions/3_Explicit_type_conversion/2_error:diff test002.log test002.lof 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/5_Expressions/2_Postfix_expressions/3_Explicit_type_conversion/1_ok:hcxx1.exe -o test003.s test003.i --generator-option ( --debug ) 
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/5_Expressions/2_Postfix_expressions/3_Explicit_type_conversion/1_ok:hcxx1.exe -o test004.s test004.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/5_Expressions/2_Postfix_expressions/3_Explicit_type_conversion/1_ok:hcxx1.exe -o test002.s test002.i --generator-option ( --debug ) was killed by wdog
+wdog : /cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/5_Expressions/1_Primary_expressions/1_ok:hcxx1.exe -o test001.s test001.i --generator-option ( --debug ) was killed by wdog
+>

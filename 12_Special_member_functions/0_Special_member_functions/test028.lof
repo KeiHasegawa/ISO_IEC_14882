@@ -1,0 +1,7 @@
+enter void h(X&)
+X::~X called
+XX::~XX called
+X::~X called
+leave void h(X&)
+XX::~XX called
+X::~X called

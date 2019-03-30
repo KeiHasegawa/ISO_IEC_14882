@@ -1,0 +1,28 @@
+/*
+ * typedef declaration for member function
+ */
+
+typedef int FIC(int) const;
+struct S {
+  FIC f; // OK
+};
+FIC S::*pm = &S::f; // OK
+
+void g(const S* p)
+{
+  p->f(1);
+  (p->*pm)(2);
+}
+
+int main()
+{
+  S s;
+  g();
+  return 0;
+}
+
+int S::f(int a) const
+{
+  printf("`S::f(int)' called with %d\n", a);
+  return a + 1;
+}

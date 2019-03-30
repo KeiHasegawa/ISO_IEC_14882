@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+class B {
+public:
+  int f(int);
+};
+
+class D : public B {
+public:
+  int f(char*);
+  int f(int a)
+  {
+    printf("D::f(int) called with %d\n", a);
+  }
+};
+
+void h(D* pd)
+{
+  pd->f(1);
+}
+
+int main()
+{
+  D d;
+  h(&d);
+  return 0;
+}

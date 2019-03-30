@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>基底クラスに対するアクセス属性がない場合のデフォルトの派生.
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>基底クラスから private 派生した派生クラスのメンバで, 基底クラス
+              のメンバにアクセスする.</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>基底クラスから private 派生した派生クラスのメンバで, 基底クラス
+              のメンバにアクセスする.</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>基底クラスから public 派生したクラスのポインタ経由で, 基底クラス
+              のメンバにアクセスする.</abstract>
+</item>
+
+</test_item>

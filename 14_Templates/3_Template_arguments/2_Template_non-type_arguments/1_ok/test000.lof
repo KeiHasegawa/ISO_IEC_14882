@@ -1,0 +1,3 @@
+`template<class T, char* p> void X<T,p>::f()' called
+t = 1
+p = "Vivisectionist"

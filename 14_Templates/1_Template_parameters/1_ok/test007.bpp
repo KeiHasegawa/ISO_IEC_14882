@@ -1,0 +1,19 @@
+/*
+ * The scope of a template-parameter extends from its point of declaration
+ * until the end of its template. In particular, a template-parameter can be
+ * used in the declaration of subsequent template-parameters and their default
+ * arguments.
+ */
+#include <stdio.h>
+
+template<class T, T* p, class U = T> class X { /* ... */ };
+template<class T> void f(T* p = new T);
+
+struct S { int m; };
+
+int main()
+{
+  S s;
+  X<&s> x;
+  return 0;
+}

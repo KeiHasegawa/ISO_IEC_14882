@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+struct A {
+  typedef int AT;
+  void f1(AT);
+  void f2(float);
+};
+struct B {
+  typedef float BT;
+  friend void A::f1(AT); // parameter type is A::AT
+  friend void A::f2(BT); // parameter type is B::BT
+private:
+  int i;
+};
+
+void test000()
+{
+  printf("`test000' called\n");
+  A::AT x = 1;
+  printf("x = %d\n", x);
+  A a;
+  a.f1(3);
+  a.f2(4);
+  B::BT y = 7;
+  printf("y = %f\n", y);
+}
+
+void A::f1(AT x)
+{
+  printf("A::f1 called\n");
+  printf("x = %d\n", x);
+  B b;
+  printf("b.i = %d\n", b.i = 5);
+}
+
+void A::f2(float x)
+{
+  printf("A::f2 called\n");
+  printf("x = %f\n", x);
+  B b;
+  printf("b.i = %d\n", b.i = 6);
+}
+
+int main()
+{
+  test000();
+  return 0;
+}

@@ -1,0 +1,50 @@
+/*
+ * Standard conversion sequences are ordered by their ranks: an Exact Match is a
+ * better conversion than a Promotion, which is a better conversion than a Conversion.
+ * Two conversion sequences with the same rank are indistinguishable unless one of the
+ * following rules applies:
+ * - A conversion that is not a conversion of a pointer, or pointer to member, to bool
+ *   is better than another conversion that is such a conversion.
+ * - If class B is derived directly or indirectly from class A, conversion of B* to A*
+ *   is better than conversion of B* to void*, and conversion of A* to void* is better
+ *   than conversion of B* to void*.
+ * - If class B is derived directly or indirectly from class A and class C is derived
+ *   directly or indirectly from B,
+ *   - conversion of C* to B* is better than conversion of C* to A*,
+ *   - binding of an expression of type C to a reference of type B& is better than
+ *     binding an expression of type C to a reference of type A&,
+ *   - conversion of A::* to B::* is better than conversion of A::* to C::*,
+ *   - conversion of C to B is better than conversion of C to A,
+ *   - conversion of B* to A* is better than conversion of C* to A*,
+ *   - binding of an expression of type B to a reference of type A& is better than
+ *     binding an expression of type C to a reference of type A&,
+ *   - conversion of B::* to C::* is better than conversion of A::* to C::*, and
+ *   - conversion of B to A is better than conversion of C to A.
+ */
+#include <stdio.h>
+
+struct A {};
+struct B : public A {};
+struct C : public B {};
+C *pc;
+int f(A *);
+int f(B *);
+int i = f(pc); // Calls f(B *)
+
+int main()
+{
+  printf("i = %d\n", i);
+  return 0;
+}
+
+int f(A *)
+{
+  printf("`f(A*)' called\n");
+  return 5;
+}
+
+int f(B *)
+{
+  printf("`f(B*)' called\n");
+  return 6;
+}

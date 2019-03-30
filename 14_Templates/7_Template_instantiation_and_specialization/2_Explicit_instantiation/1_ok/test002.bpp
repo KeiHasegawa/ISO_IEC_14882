@@ -1,0 +1,19 @@
+/*
+ * A trailing template-argument can be left unspecified in an explicit
+ * instantiation of a function template specialization or of a member function
+ * template specialization provided it can be deduced from the type of a
+ * function parameter (14.8.2).
+ */
+#include <stdio.h>
+
+template<class T> class Array { /* ... */ };
+template<class T> void sort(Array<T>& v);
+
+// instantiate sort(Array<int>&) - template-argument deduced
+template void sort<>(Array<int>&);
+
+int main()
+{
+  printf("just ok compile test\n");
+  return 0;
+}

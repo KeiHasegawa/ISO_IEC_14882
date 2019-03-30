@@ -1,0 +1,16 @@
+/*
+ * If a virtual function has an exception-specification, all declarations,
+ * including the definition, of any function that overrides that virtual
+ * function in any derived class shall only allow exceptions that are allowed
+ * by the exception-specification of the base class virtual function.
+ */
+
+struct B {
+  virtual void f() throw (int, double);
+  virtual void g();
+};
+
+struct D: B {
+  void f(); // ill-formed
+  void g() throw (int); // OK
+};

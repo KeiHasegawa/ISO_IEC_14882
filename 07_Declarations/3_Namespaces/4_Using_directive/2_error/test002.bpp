@@ -1,0 +1,27 @@
+/*
+ * The using-directive is transitive: if a scope contains a using-directive
+ * that nominates a second namespace that itself contains using-directives,
+ * the effect is as if the using-directives from the second namespace also
+ * appeared in the first.
+ */
+namespace A {
+  int i;
+}
+
+namespace B {
+  int i;
+  int j;
+  namespace C {
+    namespace D {
+      using namespace A;
+      int j;
+      int k;
+      int a = i; // B::i hides A::i
+    }
+    using namespace D;
+    int k = 89; // no problem yet
+    int l = k; // ambiguous: C::k or D::k
+    int m = i; // B::i hides A::i
+    int n = j; // D::j hides B::j
+  }
+}

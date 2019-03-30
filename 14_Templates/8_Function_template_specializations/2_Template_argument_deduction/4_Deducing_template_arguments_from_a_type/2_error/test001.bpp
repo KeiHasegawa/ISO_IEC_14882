@@ -1,0 +1,16 @@
+/*
+ * Here is an example where two template arguments are deduced from a single
+ * function parameter/argument pair. This can lead to conflicts that cause
+ * type deduction to fail:
+ */
+
+template <class T, class U> void f( T (*)( T, U, U ) );
+int g1( int, float, float);
+char g2( int, float, float);
+int g3( int, char, float);
+void r()
+{
+  f(g1); //OK: T is int and U is float
+  f(g2); //error: T could be char or int
+  f(g3); //error: U could be char or float
+}

@@ -1,0 +1,38 @@
+/*
+ * A static member may be referred to directly in the scope of its class or in
+ * the scope of a class derived (clause 10) from its class; in this case, the
+ * static member is referred to as if a qualified-id expression was used, with
+ * the nested-name-specifier of the qualified-id naming the class scope from
+ * which the static member is referenced.
+ */
+#include <stdio.h>
+
+int g();
+
+struct X {
+  static int g();
+};
+
+struct Y : X {
+  static int i;
+};
+
+int Y::i = g(); // equivalent to Y::g();
+
+int main()
+{
+  printf("Y::i = %d\n", Y::i);
+  return 0;
+}
+
+int g()
+{
+  printf("`g' called\n");
+  return 1;
+}
+
+int X::g()
+{
+  printf("`X::g' called\n");
+  return 2;
+}

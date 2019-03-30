@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>クラスのメンバ宣言での using declaration</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>using declaration で基底クラスのメンバ, 基底クラスの列挙, 基底クラスの anonymous union を参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>using declaration で基底クラス以外のメンバを参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>using declaration で template-id を参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test002.cpp</source>
+    <abstract>クラスメンバを参照する using declaration を函数で宣言
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>using declaration でスコープ解決演算子を使用</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>using declaration を名前空間で二重に使用</abstract>
+</item>
+
+<item>
+    <source>2_error/test003.cpp</source>
+    <abstract>using declaration をメンバ宣言, ブロックスコープで二重に使用</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>using declaration の出現するポイントと有効範囲</abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.cpp</source>
+    <abstract>using declaration の名前の衝突</abstract>
+</item>
+
+<item>
+    <source>2_error/test004.cpp</source>
+    <abstract>using declaration の名前の衝突</abstract>
+</item>
+
+<item>
+    <source>1_ok/test006.cpp</source>
+    <abstract>using declaration による函数のオーバーローディング</abstract>
+</item>
+
+<item>
+    <source>2_error/test006.cpp</source>
+    <abstract>using declaration による函数のオーバーローディング</abstract>
+</item>
+
+<item>
+    <source>1_ok/test007.cpp</source>
+    <abstract>using declaration により基底クラスから派生クラスに導入された名前の多重性</abstract>
+</item>
+
+<item>
+    <source>2_error/test007.cpp</source>
+    <abstract>using declaration に対するアクセス制限</abstract>
+</item>
+
+</test_item>

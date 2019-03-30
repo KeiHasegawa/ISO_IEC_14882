@@ -1,0 +1,42 @@
+/*
+ * The using-directive is transitive: if a scope contains a using-directive
+ * that nominates a second namespace that itself contains using-directives,
+ * the effect is as if the using-directives from the second namespace also
+ * appeared in the first.
+ */
+#include <stdio.h>
+
+namespace A {
+  int i = 1;
+}
+
+namespace B {
+  int i = 2;
+  int j = 3;
+  namespace C {
+    namespace D {
+      using namespace A;
+      int j = 4;
+      int k = 5;
+      int a = i; // B::i hides A::i
+    }
+    using namespace D;
+    int k = 89; // no problem yet
+    int m = i; // B::i hides A::i
+    int n = j; // D::j hides B::j
+  }
+}
+
+int main()
+{
+  printf("A::i = %d\n", A::i);
+  printf("B::i = %d\n", B::i);
+  printf("B::j = %d\n", B::j);
+  printf("B::C::D::j = %d\n", B::C::D::j);
+  printf("B::C::D::k = %d\n", B::C::D::k);
+  printf("B::C::D::a = %d\n", B::C::D::a);
+  printf("B::C::k = %d\n", B::C::k);
+  printf("B::C::m = %d\n", B::C::m);
+  printf("B::C::n = %d\n", B::C::n);
+  return 0;
+}

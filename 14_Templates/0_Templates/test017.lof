@@ -1,0 +1,2 @@
+X<int>::s = 1234
+X<char*>::s = "C++ compiler"

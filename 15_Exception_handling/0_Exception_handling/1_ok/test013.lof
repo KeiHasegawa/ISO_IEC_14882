@@ -1,0 +1,4 @@
+catch X
+catch Y
+pass_through called
+catch something

@@ -1,0 +1,33 @@
+/*
+ * Check while statement works well.
+ */
+
+#include <stdio.h>
+
+typedef int T;
+
+void f(int x)
+{
+  printf("`f' called\n");
+  while (T t = x) printf("t = %d\n", t), --x;
+}
+
+void g(int x)
+{
+  printf("`g' called\n");
+ label:
+  { //start of condition scope
+    T t = x;
+    if (t) {
+      printf("t = %d\n", t), --x;
+      goto label;
+    }
+  } //end of condition scope
+}
+
+int main()
+{
+  f(5);
+  g(5);
+  return 0;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Iteration_statements/item.xml">
+    <title>6.5 Iteration_statements</title>
+</section>
+
+<section url="1_The_while_statement/item.xml">
+    <title>6.5.1 The while statement</title>
+</section>
+
+<section url="2_The_do_statement/item.xml">
+    <title>6.5.2 The do statement</title>
+</section>
+
+<section url="3_The_for_statement/item.xml">
+    <title>6.5.3 The for stateme</title>
+</section>
+
+</test_item>

@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+namespace NS {
+  class T { };
+  void f(T);
+}
+NS::T parm;
+int main() {
+  f(parm); //OK: calls NS::f
+}
+
+void NS::f(T)
+{
+  printf("NS::f called\n");
+}

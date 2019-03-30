@@ -1,0 +1,4 @@
+`D::f(int)' called with 1
+`B::f(char)' called with 'a'
+`B::g(int)' called with 1
+`D::g(char)' called with 'a'

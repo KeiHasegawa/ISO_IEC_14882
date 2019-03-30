@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+struct C {
+  typedef int I;
+};
+typedef int I1, I2;
+extern int* p;
+extern int* q;
+
+void test000()
+{
+  printf("`test000' called\n");
+  p->C::I::~I(); // I is looked up in the scope of C
+  q->I1::~I2(); // I2 is looked up in the scope of
+                // the postfix-expression
+}
+
+struct A {
+  ~A();
+};
+typedef A AB;
+int main()
+{
+  test000();
+  AB *p;
+  p->AB::~AB(); // explicitly calls the destructor for A
+  return 0;
+}
+
+A::~A()
+{
+  printf("`A::~A' called\n");
+}

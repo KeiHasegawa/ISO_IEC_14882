@@ -1,0 +1,21 @@
+/*
+ * `class_or_namespace_name' restricts lookuped scope.
+ */
+
+int m;
+
+namespace N { int n; }
+
+int f()
+{
+  return N::m;  // error
+}
+
+struct S {
+  static int s;
+};
+
+int g()
+{
+  return S::m;  // error
+}

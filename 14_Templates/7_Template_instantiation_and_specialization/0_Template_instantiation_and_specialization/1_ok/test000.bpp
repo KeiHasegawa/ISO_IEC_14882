@@ -1,0 +1,67 @@
+/*
+ * An explicit specialization may be declared for a function template, a class
+ * template, a member of a class template or a member template. An explicit
+ * specialization declaration is introduced by template<>. In an explicit
+ * specialization declaration for a class template, a member of a class
+ * template or a class member template, the name of the class that is
+ * explicitly specialized shall be a template-id. In the explicit
+ * specialization declaration for a function template or a member function
+ * template, the name of the function or member function explicitly specialized
+ * may be a template-id.
+ */
+#include <stdio.h>
+
+template<class T = int> struct A {
+  static int x;
+};
+
+template<class T> int A<T>::x = -1;
+
+template<class U> void g(U) { printf("g(U) called\n"); }
+template<> struct A<double> { // specialize for T == double
+  int xx;
+};
+
+template<> struct A<> { // specialize for T == int
+  int xxx;
+};
+
+template<> void g(char) // specialize for U == char
+{                       // U is deduced from the parameter type
+  printf("g(char) called\n");
+}
+
+template<> void g<int>(int) // specialize for U == int
+{
+  printf("g<int>(int) called\n");
+}
+
+template<> int A<char>::x = 0; // specialize for T == char
+template<class T = int> struct B {
+  static int x;
+};
+
+template<class T> int B<T>::x = -2;
+
+template<> int B<>::x = 1; // specialize for T == int
+
+struct S {};
+
+int main()
+{
+  A<char> ac;
+  printf("ac.x = %d\n", ac.x);
+  A<S> as;
+  printf("as.x = %d\n", as.x);
+  A<double> ad;
+  printf("ad.xx = %d\n", ad.xx = 1);
+  A<int> ai;
+  printf("ai.xxx = %d\n", ai.xxx = 2);
+  S s;
+  g(s);
+  g(1);
+  g('c');
+  printf("B<S>::x = %d\n", B<S>::x);
+  printf("B<int>::x = %d\n", B<int>::x);
+  return 0;
+}

@@ -1,0 +1,72 @@
+/*
+ * Since a using-declaration is a declaration, the restrictions on declarations
+ * of the same name in the same declarative region also apply to
+ * using-declarations.
+ */
+#include <stdio.h>
+
+namespace A {
+  int x;
+}
+
+namespace B {
+  int i;
+  struct g { g(); };
+  struct x { x(); };
+  void f(int);
+  void f(double);
+  void g(char); // OK: hides struct g
+}
+
+void func()
+{
+  int i;
+  void f(char);
+  using B::f;    // OK: each f is a function
+  f(3.5);        // calls B::f(double)
+  using B::g;
+  g('a');        // calls B::g(char)
+  struct g g1;   // g1 has class type B::g
+  using B::x;
+  printf("A::x = %d\n", A::x);
+  using A::x;    // OK: hides struct B::x
+  x = 99;        // assigns to A::x
+  printf("A::x = %d\n", A::x);
+  struct x x1;   // x1 has class type B::x
+}
+
+int main()
+{
+  func();
+  return 0;
+}
+
+void B::f(int a)
+{
+  printf("`B::f(int)' called with %d\n", a);
+}
+
+void B::f(double a)
+{
+  printf("`B::f(double)' called with %f\n", a);
+}
+
+void B::g(char a)
+{
+  printf("`B::g(char)' called with '%c'\n", a);
+}
+
+void f(char a)
+{
+  printf("`::f(char)' called with '%c'\n", a);
+}
+
+B::x::x()
+{
+  printf("`B::x::x()' called\n");
+}
+
+B::g::g()
+{
+  printf("`B::g::g()' called\n");
+}

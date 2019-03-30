@@ -1,0 +1,10 @@
+class X {
+  int x;
+public:
+  friend void f();
+};
+
+void g(X* p)
+{
+  p->f();
+}

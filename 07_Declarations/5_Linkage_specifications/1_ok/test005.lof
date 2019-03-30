@@ -1,0 +1,5 @@
+A::f() return value : 98
+A::g() return value : 1
+A::h() return value : 97
+B::f() return value : 98
+::h() return value : 97

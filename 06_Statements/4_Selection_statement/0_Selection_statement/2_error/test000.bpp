@@ -1,0 +1,7 @@
+void f(int x)
+{
+  if (x)
+    int i;
+
+  i; // undeclared
+}

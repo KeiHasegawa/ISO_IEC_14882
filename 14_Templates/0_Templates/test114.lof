@@ -1,0 +1,4 @@
+S::S() called
+x.m = 0x12345678
+S::S(const S&) called
+y.m = 0x9abcdef0

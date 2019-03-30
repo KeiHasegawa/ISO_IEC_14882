@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="0_Static_members/item.xml">
+    <title>9.4 Static members</title>
+</section>
+
+<section url="1_Static_member_functions/item.xml">
+    <title>9.4.1 Static member functions</title>
+</section>
+
+<section url="2_Static_data_members/item.xml">
+    <title>9.4.2 Static data members</title>
+</section>
+
+</test_item>

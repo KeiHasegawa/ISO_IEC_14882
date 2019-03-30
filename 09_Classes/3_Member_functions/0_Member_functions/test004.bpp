@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+struct X {
+  X()
+  {
+    printf("X::X called\n");
+  }
+  ~X()
+  {
+    printf("X::~X called\n");
+  }
+};
+
+int main()
+{
+  X x;
+  return 0;
+}

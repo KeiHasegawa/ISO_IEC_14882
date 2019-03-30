@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+extern "C++" void f()
+{
+  printf("hello world\n");
+}
+
+extern "C" void g(int a, double b)
+{
+  printf("`g' called\n");
+  printf("a = %d, b = %f\n", a, b);
+}
+
+int main()
+{
+  f();
+  g(3,4.5);
+  return 0;
+}

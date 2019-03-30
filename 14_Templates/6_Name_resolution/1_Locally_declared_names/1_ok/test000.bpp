@@ -1,0 +1,30 @@
+/*
+ * Within the scope of a class template specialization or partial
+ * specialization, when the injected-class-name is not followed by a <, it is
+ * equivalent to the injected-class-name followed by the template-arguments of
+ * the class template specialization or partial specialization enclosed in <>.
+ */
+#include <stdio.h>
+
+template<class T> class Y;
+template<> class Y<int> {
+public:
+  Y* p; // meaning Y<int>
+  Y<char>* q; // meaning Y<char>
+};
+
+template<class T> class Y {
+public:
+  T a;
+};
+
+int main()
+{
+  Y<int> yi;
+  Y<char> yc;
+  yi.p = &yi;
+  yi.q = &yc;
+  yc.a = 'c';
+  printf("'%c'\n", yi.p->q->a);
+  return 0;
+}

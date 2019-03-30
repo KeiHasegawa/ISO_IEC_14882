@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+namespace M {
+  class B {
+  public:
+    static const int i = 3;
+  };
+}
+
+const int i = 5;
+
+namespace N {
+  const int i = 4;
+  class Y : public M::B {
+  public:
+    static const int i = 2;
+    class X {
+    public:
+      int a[i];
+    };
+  };
+}
+// The following scopes are searched for a declaration of i:
+// 1) scope of class N::Y::X, before the use of i
+// 2) scope of class N::Y, before the definition of N::Y::X
+// 3) scope of N::YÅfs base class M::B
+// 4) scope of namespace N, before the definition of N::Y
+// 5) global scope, before the definition of N
+
+int main()
+{
+  N::Y::X x;
+  printf("sizeof x.a/sizeof x.a[0] = %d\n", sizeof x.a/sizeof x.a[0]);
+  return 0;
+}

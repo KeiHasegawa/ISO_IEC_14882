@@ -1,0 +1,75 @@
+/*
+ * Check declaration statements are recognized.
+ */
+#include <stdio.h>
+#include <memory.h>
+
+struct S {
+  int m;
+};
+
+S& operator<<(S& s, int n)
+{
+  printf("`S& operator<<(S&, int)' called\n");
+  s.m = n;
+  return s;
+}
+
+S*& T(int n)
+{
+  printf("`T(int)' called with %d\n", n);
+  static struct S s;
+  static struct S* a = &s;
+  S** p = &a;
+  S*& r = *p;
+  return r;
+}
+
+S& T(int a, int b)
+{
+  printf("`T(int,int)' called with %d, %d\n", a, b);
+  static struct S s;
+  s.m = a + b;
+  return s;
+}
+
+struct T {
+  int a, b;
+};
+
+struct T x(int n)
+{
+  printf("`x(int)' called with %d\n", n);
+  struct T t = { n , -n }; 
+  return t;
+}
+
+
+void f(int a, int c, int* d, int e, int f, int* g)
+{
+  T(a)->m = 7;      // expression-statement
+  T(a)++;           // expression-statement
+  T(a,5)<<c;        // expression-statement
+  {
+    struct T {
+      int a, b;
+    };
+    T(*d)(int);       // declaration
+    T(e)[5];          // declaration
+    T(f) = { 1, 2 };  // declaration
+
+    int tmp = (int)&x;
+    d = (T (*)(int))tmp;
+    (*d)(5);
+    for ( int i = 0 ; i < sizeof e/sizeof e[0] ; ++i )
+      printf("%d %d\n", e[i].a = i, e[i].b = -i);
+    printf("f.a = %d, f.b = %d\n", f.a, f.b);
+  }
+}
+
+int main()
+{
+  int d, g;
+  f(1,2,&d,3,4,&g);
+  return 0;
+}

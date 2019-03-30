@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+class B {};
+class D : private B {
+public:
+  friend B* f(D*);
+  B* mem();
+};
+
+B* f(D* p)
+{
+  printf("`f' called\n");
+  return p;
+}
+
+B* D::mem()
+{
+  printf("`D::mem' called\n");
+  return this;
+}
+
+int main()
+{
+  D d;
+  f(&d);
+  d.mem();
+  return 0;
+}

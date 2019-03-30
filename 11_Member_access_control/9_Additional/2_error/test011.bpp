@@ -1,0 +1,10 @@
+class X {
+public:
+  void f();
+};
+
+class Y : private X {
+public:
+  void f(int);
+  X::f;
+};

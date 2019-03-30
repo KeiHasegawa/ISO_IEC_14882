@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>テンプレートパラメータがテンプレートクラス</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>テンプレート宣言における名前検索</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>テンプレートパラメータを左辺値として参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>テンプレートパラメータを左辺値として参照</abstract>
+</item>
+
+<item>
+    <source>2_error/test001.cpp</source>
+    <abstract>テンプレートパラメータに浮動小数点宣言</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>テンプレートパラメータに浮動小数点へのポインタ, リフ
+              ァレンスを宣言</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>テンプレートパラメータが配列</abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.cpp</source>
+    <abstract>テンプレートパラメータのデフォルト引数を別々に宣言</abstract>
+</item>
+
+<item>
+    <source>1_ok/test006.cpp</source>
+    <abstract>テンプレートパラメータのデフォルト引数を同時に宣言</abstract>
+</item>
+
+<item>
+    <source>1_ok/test007.cpp</source>
+    <abstract>テンプレートパラメータの有効範囲</abstract>
+</item>
+
+<item>
+    <source>2_error/test002.cpp</source>
+    <abstract>複数のテンプレートパラメータに対して初めのみデフォルト引数を
+              指定</abstract>
+</item>
+
+<item>
+    <source>2_error/test003.cpp</source>
+    <abstract>定義でないテンプレート宣言とテンプレートの定義で
+    同じテンプレートパラメータにデフォルト引数を指定</abstract>
+</item>
+
+<item>
+    <source>2_error/test004.cpp</source>
+    <abstract>テンプレートパラメータのデフォルト引数の指定に
+    > 演算子を指定</abstract>
+</item>
+
+<item>
+    <source>1_ok/test008.cpp</source>
+    <abstract>テンプレートパラメータのデフォルト引数の指定に
+    > 演算子を指定</abstract>
+</item>
+
+</test_item>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>基底クラスを複数持つ派生クラス</abstract>
+</item>
+
+<item>
+    <source>2_error/test000.cpp</source>
+    <abstract>同一の直接な基底クラスを複数持つ派生クラス</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>同一の直接でない基底クラスを複数持つ派生クラス</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>菱形継承</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>仮想基底クラスと通常の基底クラス</abstract>
+</item>
+
+</test_item>

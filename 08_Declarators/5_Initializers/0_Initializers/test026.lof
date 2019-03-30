@@ -1,0 +1,6 @@
+init_a called
+init_b called
+init_c called
+a = 'a'
+b = 'b'
+c = 'c'

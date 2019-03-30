@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int f(double);
+int f(int);
+int (*pfd)(double) = &f;
+int (*pfi)(int) = &f;
+
+int main()
+{
+  printf("pfd() return value : %d\n", pfd(1.5));
+  printf("pfi() return value : %d\n", pfi(2));
+  return 0;
+}
+
+int f(double d)
+{
+  printf("f(double) called with %f\n", d);
+  return 3;
+}
+
+int f(int i)
+{
+  printf("f(int) called with %d\n", i);
+  return 4;
+}
+

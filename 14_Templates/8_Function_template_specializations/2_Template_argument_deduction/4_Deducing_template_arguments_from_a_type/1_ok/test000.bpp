@@ -1,0 +1,18 @@
+/*
+ * Here is an example where a qualification conversion applies between the
+ * argument type on the function call and the deduced template argument type:
+ */
+#include <stdio.h>
+
+template<class T> void f(const T*) { printf("f(const T*) called\n"); }
+int *p;
+void s()
+{
+  f(p); // f(const int *)
+}
+
+int main()
+{
+  s();
+  return 0;
+}

@@ -1,0 +1,49 @@
+/*
+ * A base class is said to be accessible if an invented public member of the
+ * base class is accessible. If a base class is accessible, one can implicitly
+ * convert a pointer to a derived class to a pointer to that base class
+ * (4.10, 4.11). [Note: it follows that members and friends of a class X can
+ * implicitly convert an X* to a pointer to a private or protected immediate
+ * base class of X. ] The access to a member is affected by the class in which
+ * the member is named. This naming class is the class in which the member name
+ * was looked up and found. [Note: this class can be explicit, e.g., when a
+ * qualified-id is used, or implicit, e.g., when a class member access operator
+ * (5.2.5) is used (including cases where an implicit "this->" is added). If
+ * both a class member access operator and a qualified-id are used to name the
+ * member (as in p->T::m), the class naming the member is the class named by
+ * the nested-name-specifier of the qualified-id (that is, T). ]
+ * A member m is accessible when named in class N if
+ * 
+ * - m as a member of N is public, or
+ * - m as a member of N is private, and the reference occurs in a member or
+ *   friend of class N, or
+ * - m as a member of N is protected, and the reference occurs in a member or
+ *   friend of class N, or in a member or friend of a class P derived from N,
+ *   where m as a member of P is private or protected, or
+ * - there exists a base class B of N that is accessible at the point of
+ *   reference, and m is accessible when named in class B.
+ */
+#include <stdio.h>
+
+class B;
+class A {
+private:
+  int i;
+  friend void f(B*);
+};
+
+class B : public A { };
+
+void f(B* p) {
+  printf("`f' called\n");
+  p->i = 1; // OK: B* can be implicitly cast to A*,
+            // and f has access to i in A
+  printf("p->i = %d\n", p->i);
+}
+
+int main()
+{
+  B b;
+  f(&b);
+  return 0;
+}

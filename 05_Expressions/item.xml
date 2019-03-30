@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Primary_expressions/item.xml">
+    <title>5.1 Primary expressions</title>
+</section>
+
+<section url="2_Postfix_expressions/item.xml">
+    <title>5.2 Postfix expressions</title>
+</section>
+
+<section url="3_Unary_expressions/item.xml">
+    <title>5.3 Unary expressions</title>
+</section>
+
+<section url="4_Explicit_type_conversion/item.xml">
+    <title>5.4 Explicit type conversion (cast notation)</title>
+</section>
+
+<section url="5_Pointer_to_member_operators/item.xml">
+    <title>5.5 Pointer-to-member operators</title>
+</section>
+
+<section url="6_Multiplicative_operators/item.xml">
+    <title>5.6 Multiplicative operators</title>
+</section>
+
+<section url="7_Additive_operators/item.xml">
+    <title>5.7 Additive operators</title>
+</section>
+
+<section url="8_Shift_operators/item.xml">
+    <title>5.8 Shift operators</title>
+</section>
+
+<section url="9_Relational_operators/item.xml">
+    <title>5.9 Relational operators</title>
+</section>
+
+<section url="10_Equality_operators/item.xml">
+    <title>5.10 Equality operators</title>
+</section>
+
+<section url="11_Bitwise_AND_operator/item.xml">
+    <title>5.11 Bitwise AND operator</title>
+</section>
+
+<section url="12_Bitwise_exclusive_OR_operator/item.xml">
+    <title>5.12 Bitwise exclusive OR operator</title>
+</section>
+
+<section url="13_Bitwise_inclusive_OR_operator/item.xml">
+    <title>5.13 Bitwise inclusive OR operator</title>
+</section>
+
+<section url="14_Logical_AND_operator/item.xml">
+    <title>5.14 Logical AND operator</title>
+</section>
+
+<section url="15_Logical_OR_operator/item.xml">
+    <title>5.15 Logical OR operator</title>
+</section>
+
+<section url="16_Conditional_operator/item.xml">
+    <title>5.16 Conditional operator</title>
+</section>
+
+<section url="17_Assignment_operators/item.xml">
+    <title>5.17 Assignment operators</title>
+</section>
+
+<section url="18_Comma_operator/item.xml">
+    <title>5.18 Comma operator</title>
+</section>
+
+<section url="19_Constant_expressions/item.xml">
+    <title>5.19 Constant expressions</title>
+</section>
+
+</test_item>

@@ -1,0 +1,6 @@
+`f(char)' called with 'x'
+`f(short int)' called with 1234
+`f(int)' called with 5678
+`f(float)' called with 123.250000
+`f(double)' called with 567.890000
+`f(long long)' called with 10

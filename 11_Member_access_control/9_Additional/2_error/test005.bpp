@@ -1,0 +1,8 @@
+class B {};
+
+class D : private B {};
+
+B* g(D* p)
+{
+  return p;
+}

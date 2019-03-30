@@ -1,0 +1,40 @@
+/*
+ * A specialization of a member function template does not override a virtual
+ * function from a base class.
+ */
+#include <stdio.h>
+
+class B {
+public:
+  virtual void f(int);
+};
+
+class D : public B {
+  template <class T> void f(T); // does not override B::f(int)
+  void f(int i) { f<>(i); } // overriding function that calls
+                            // the template instantiation
+};
+
+template<class T> void D::f(T t)
+{
+  printf("`D::f(T)' called with %d\n", t);
+}
+
+void f(B* p, int i)
+{
+  p->f(i);
+}
+
+int main()
+{
+  B b;
+  f(&b,3);
+  D d;
+  f(&d,4);
+  return 0;
+}
+
+void B::f(int n)
+{
+  printf("`B::f(int)' called with %d\n", n);
+}

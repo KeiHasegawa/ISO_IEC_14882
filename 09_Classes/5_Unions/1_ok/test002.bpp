@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+typedef int (*vptr)();
+
+struct Ptr_to_mem_fun {
+  short delta;
+  short index;
+  union {
+    vptr faddr;
+    short v_off;
+  };
+};
+
+int f()
+{
+  printf("f called\n");
+  return 6;
+}
+
+void g(Ptr_to_mem_fun x)
+{
+  printf("x.delta = %d, x.index = %d\n", x.delta, x.index);
+  printf("(x.faddr)() return value : %d\n", (x.faddr)());
+}
+
+void h(Ptr_to_mem_fun x)
+{
+  printf("x.delta = %d, x.index = %d, x.v_off = %d\n",
+	 x.delta, x.index, x.v_off);
+}
+
+int main()
+{
+  Ptr_to_mem_fun x;
+
+  x.delta = 1;
+  x.index = 2;
+  x.faddr = &f;
+  g(x);
+
+  x.delta = 3;
+  x.index = 4;
+  x.v_off = 5;
+  h(x);
+
+  return 0;
+}

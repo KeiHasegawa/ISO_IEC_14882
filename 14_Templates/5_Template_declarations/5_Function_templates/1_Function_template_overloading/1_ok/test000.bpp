@@ -1,0 +1,33 @@
+/*
+ * The signature of a function template consists of its function signature, 
+ * its return type and its template parameter list. The names of the template
+ * parameters are significant only for establishing the relationship between
+ * the template parameters and the rest of the signature. [Note: two distinct
+ * function templates may have identical function return types and function
+ * parameter lists, even if overload resolution alone cannot distinguish them.
+ */
+#include <stdio.h>
+
+template<class T> void f();
+template<int I> void f(); // OK: overloads the first template
+                    // distinguishable with an explicit template argument list
+
+
+template<class T> void f()
+{
+  printf("f<T>() called\n");
+}
+
+template<int I> void f()
+{
+  printf("f<%d>() called\n", I);
+}
+
+struct S { int m; };
+
+int main()
+{
+  f<S>();
+  f<3>();
+  return 0;
+}

@@ -1,0 +1,4 @@
+B::B(void) called
+before initialize y
+B::B(const B&) called
+after initialize y

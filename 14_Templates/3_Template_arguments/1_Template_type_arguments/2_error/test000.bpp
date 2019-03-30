@@ -1,0 +1,12 @@
+/*
+ * A local type, a type with no linkage, an unnamed type or a type compounded
+ * from any of these types shall not be used as a template-argument for a
+ * template type-parameter.
+ */
+template <class T> class X { /* ... */ };
+void f()
+{
+  struct S { /* ... */ };
+  X<S> x3; // error: local type used as template-argument
+  X<S*> x4; // error: pointer to local type used as template-argument
+}

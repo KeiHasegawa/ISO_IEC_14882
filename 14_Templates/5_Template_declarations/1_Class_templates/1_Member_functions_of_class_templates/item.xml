@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>テンプレートクラスのメンバ函数の定義をテンプレートクラス
+    の外側で定義 
+    </abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>うーむ. 規格書の意図が良く分からない...
+    </abstract>
+</item>
+
+</test_item>

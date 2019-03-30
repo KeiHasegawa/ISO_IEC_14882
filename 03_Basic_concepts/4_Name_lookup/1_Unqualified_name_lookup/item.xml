@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>1_ok/test000.cpp</source>
+    <abstract>正しいプログラム???</abstract>
+</item>
+
+<item>
+    <source>1_ok/test001.cpp</source>
+    <abstract>名前空間で定義された関数での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test002.cpp</source>
+    <abstract>名前空間で定義された関数での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test003.cpp</source>
+    <abstract>名前空間で定義された関数での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test004.cpp</source>
+    <abstract>名前空間で定義された関数での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test005.cpp</source>
+    <abstract>名前空間で宣言されたクラスメンバ宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test006.cpp</source>
+    <abstract>名前空間で宣言されたクラスメンバ宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test007.cpp</source>
+    <abstract>名前空間で宣言されたクラスメンバ宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test008.cpp</source>
+    <abstract>名前空間で宣言されたクラスメンバ宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test009.cpp</source>
+    <abstract>名前空間で宣言されたクラスメンバ宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test010.cpp</source>
+    <abstract>名前空間で宣言されたメンバ関数宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test011.cpp</source>
+    <abstract>名前空間で宣言されたメンバ関数宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test012.cpp</source>
+    <abstract>名前空間で宣言されたメンバ関数宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test013.cpp</source>
+    <abstract>名前空間で宣言されたメンバ関数宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test014.cpp</source>
+    <abstract>名前空間で宣言されたメンバ関数宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test015.cpp</source>
+    <abstract>名前空間で宣言されたメンバ関数宣言での変数参照</abstract>
+</item>
+
+<item>
+    <source>1_ok/test016.cpp</source>
+    <abstract>名前空間で宣言された関数宣言でのパラメータの型宣言</abstract>
+</item>
+
+</test_item>

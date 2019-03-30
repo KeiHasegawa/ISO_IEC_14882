@@ -1,0 +1,17 @@
+/*
+ * [Note: because a base-clause for a nested class is part of the declaration
+ * of the nested class itself (and not part of the declarations of the members
+ * of the nested class), the base-clause may refer to the private members
+ * of the enclosing class.
+ */
+class C {
+  class A { };
+  A *p; // OK
+  class B : A // OK
+  {
+    A *q; // OK because of injection of name A in A
+    C::A *r; // error, C::A is inaccessible
+    B *s; // OK because of injection of name B in B
+    C::B *t; // error, C::B is inaccessible
+  };
+};

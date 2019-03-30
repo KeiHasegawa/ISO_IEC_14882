@@ -1,0 +1,2 @@
+typedef char* Pc;
+static Pc; // error: name missing

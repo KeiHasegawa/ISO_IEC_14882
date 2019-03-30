@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+class X {
+  int a;
+  friend void friend_set(X*, int);
+public:
+  void member_set(int);
+};
+
+void friend_set(X* p, int i)
+{
+  printf("`friend_set' called\n");
+  printf("p->a = %d\n", p->a = i);
+}
+
+void X::member_set(int i)
+{
+  printf("`X::member_set' called\n");
+  printf("a = %d\n", a = i);
+}
+
+int main()
+{
+  X obj;
+  friend_set(&obj,2);
+  obj.member_set(3);
+  return 0;
+}

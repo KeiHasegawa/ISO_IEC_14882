@@ -1,0 +1,10 @@
+int i;
+
+class X {
+private:
+  int i;
+};
+
+class Y : public X {
+  void f(){ i++; }
+};

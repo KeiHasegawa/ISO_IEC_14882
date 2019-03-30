@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int a = 4;
+
+int *p = (int []){ 0, a % 3, a / 2, a - 1 , 4 };
+
+int main()
+{
+  for ( int i = 0 ; i < 5 ; ++i )
+    printf("p[%d] = %d\n", i, p[i]);
+  return 0;
+}

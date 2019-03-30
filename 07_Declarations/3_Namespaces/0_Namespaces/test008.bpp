@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+template<class T> struct X {};
+
+namespace N {
+  template<class A, class B> struct Y;
+}
+
+template<class A, class B> struct X< N::Y<A,B> > {
+  A a;
+  B b;
+};
+
+int main()
+{
+  X< N::Y<int,float> > x;
+  x.a = 1;
+  x.b = 1.5;
+  printf("x.a = %d, x.b = %f\n", x.a, x.b);
+  return 0;
+}

@@ -1,0 +1,58 @@
+/*
+ * Inside a template, some constructs have semantics which may differ from one
+ * instantiation to another. Such a construct depends on the template
+ * parameters. In particular, types and expressions may depend on the type
+ * and/or value of template parameters (as determined by the template
+ * arguments) and this determines the context for name lookup for certain
+ * names. Expressions may be type-dependent (on the type of a template
+ * parameter) or value-dependent (on the value of a non-type template
+ * parameter). In an expression of the form:
+ *
+ *   postfix-expression ( expression-listopt )
+ *
+ * where the postfix-expression is an identifier, the identifier denotes a
+ * dependent name if and only if any of the expressions in the expression-list
+ * is a type-dependent expression (14.6.2.2). If an operand of an operator
+ * is a type-dependent expression, the operator also denotes a dependent
+ * name. Such names are unbound and are looked up at the point of the template
+ * instantiation (14.6.4.1) in both the context of the template definition and
+ * the context of the point of instantiation.
+ */
+
+#include <stdio.h>
+
+template<class T> struct B {
+  static int i;
+  int j;
+};
+
+template<class T> int B<T>::i = 123;
+
+template<class T> struct X : B<T> {
+  typename T::A* pa;
+  void f(B<T>* pb) {
+    static int i = B<T>::i;
+    pb->j++;
+    printf("i = %d\n", i);
+    printf("pb->j = %d\n", pb->j);
+  }
+};
+
+/*
+ * the base class name B<T>, the type name T::A, the names B<T>::i and pb->j
+ * explicitly depend on the template-parameter.
+ */
+
+struct S {
+  struct A {
+  };
+};
+
+int main()
+{
+  X<S> xs;
+  B<S> bs;
+  bs.j = 456;
+  xs.f(&bs);
+  return 0;
+}

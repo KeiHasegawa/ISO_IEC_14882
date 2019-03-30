@@ -1,0 +1,3 @@
+f(const char&) called with 'c'
+f(const char&) called with 'c'
+f(short) called with 3

@@ -1,0 +1,35 @@
+/*
+ * The set of candidate functions for overload resolution is the union of the
+ * member candidates, the nonmember candidates, and the built-in candidates.
+ * The argument list contains all of the operands of the operator. The best
+ * function from the set of candidate functions is selected according to
+ * 13.3.2 and 13.3.3.
+ */
+#include <stdio.h>
+
+struct A {
+  operator int();
+};
+A operator+(const A&, const A&);
+void m() {
+  A a, b;
+  a + b; // operator+(a,b) chosen over int(a) + int(b)
+}
+
+int main()
+{
+  m();
+  return 0;
+}
+
+A::operator int()
+{
+  printf("`A::operator int()' called\n");
+  return 0;
+}
+
+A operator+(const A& x, const A& y)
+{
+  printf("`A operator+(const A&, const A&)' called\n");
+  return x;
+}

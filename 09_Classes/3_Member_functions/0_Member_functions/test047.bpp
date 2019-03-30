@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+struct N {
+  void (*f(void (*g)(int b)))(int a)
+  {
+    return g;
+  }
+  int h(int a)
+  {
+    return a;
+  }
+};
+
+void foo(int arg)
+{
+  printf("arg = %d\n", arg);
+}
+
+int main()
+{
+  N n;
+  void (*pf)(int) = n.f(foo);
+  (*pf)(2);
+  printf("n.h(3) : %d\n", n.h(3));
+  return 0;
+}

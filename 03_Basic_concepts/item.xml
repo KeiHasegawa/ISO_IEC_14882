@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<section url="1_Declarations_and_definitions/item.xml">
+    <title>3.1 Declarations and definitions</title>
+</section>
+
+<section url="2_One_definition_rule/item.xml">
+    <title>3.2 One definition rule</title>
+</section>
+
+<section url="3_Declarative_regions_and_scopes/item.xml">
+    <title>3.3 Declarative regions and scopes</title>
+</section>
+
+<section url="4_Name_lookup/item.xml">
+    <title>3.4 Name lookup</title>
+</section>
+
+<section url="5_Program_and_linkage/item.xml">
+    <title>3.5 Program and linkage</title>
+</section>
+
+<section url="6_Start_and_termination/item.xml">
+    <title>3.6 Start and termination</title>
+</section>
+
+<section url="7_Storage_duration/item.xml">
+    <title>3.7 Storage duration</title>
+</section>
+
+<section url="8_Object_Lifetime/item.xml">
+    <title>3.8 Object Lifetime</title>
+</section>
+
+<section url="9_Types/item.xml">
+    <title>3.9 Types</title>
+</section>
+
+<section url="10_Lvalues_and_rvalues/item.xml">
+    <title>3.10 Lvalues and rvalues</title>
+</section>
+
+</test_item>

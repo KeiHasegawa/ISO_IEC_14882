@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+struct T { int t; };
+
+void f(T* p)
+{
+  printf("f(T*) called\n");
+  printf("p->t = %d\n", p->t);
+}
+
+void f(const T* p)
+{
+  printf("f(const T*) called\n");
+  printf("p->t = %d\n", p->t);
+}
+
+void f(volatile T* p)
+{
+  printf("f(volatile T*) called\n");
+  printf("p->t = %d\n", p->t);
+}
+
+void g(T* a, const T* b, volatile T* c)
+{
+  f(a);
+  f(b);
+  f(c);
+}
+
+int main()
+{
+  T x = { 1 };
+  T y = { 2 };
+  T z = { 3 };
+  g(&x,&y,&z);
+
+  return 0;
+}

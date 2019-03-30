@@ -1,0 +1,25 @@
+/*
+ * Check while statement works well.
+ */
+#include <stdio.h>
+
+void f()
+{
+  struct A {
+    int val;
+    A(int i) : val(i) { printf("`A::A' called\n");  }
+    ~A() { printf("`A::~A' called\n"); }
+    operator bool() { return val != 0; }
+  };
+  int i = 1;
+  while (A a = i) {
+    printf("while body\n");
+    i = 0;
+  }
+}
+
+int main()
+{
+  f();
+  return 0;
+}

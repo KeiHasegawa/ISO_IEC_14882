@@ -1,0 +1,64 @@
+/*
+ * The user-defined function called operator++ implements the prefix and
+ * postfix ++ operator. If this function is a member function with no
+ * parameters, or a non-member function with one parameter of class or
+ * enumeration type, it defines the prefix increment operator ++ for objects of
+ * that type. If the function is a member function with one parameter (which
+ * shall be of type int) or a non-member function with two parameters (the
+ * second of which shall be of type int), it defines the postfix increment
+ * operator ++ for objects of that type. When the postfix increment is called
+ * as a result of using the ++ operator, the int argument will have value zero.
+ */
+#include <stdio.h>
+
+class X {
+public:
+  X& operator++(); // prefix ++a
+  X operator++(int); // postfix a++
+};
+class Y { };
+Y& operator++(Y&); // prefix ++b
+Y operator++(Y&, int); // postfix b++
+void f(X a, Y b) {
+  ++a; // a.operator++();
+  a++; // a.operator++(0);
+  ++b; // operator++(b);
+  b++; // operator++(b, 0);
+  a.operator++(); // explicit call: like ++a;
+  a.operator++(0); // explicit call: like a++;
+  operator++(b); //explicit call: like ++b;
+  operator++(b, 0); // explicit call: like b++;
+}
+
+int main()
+{
+  X x;
+  Y y;
+  f(x,y);
+  return 0;
+}
+
+X& X::operator++()
+{
+  printf("`X::operator++()' called\n");
+  return *this;
+}
+
+X X::operator++(int)
+{
+  printf("`X::operator++(int)' called\n");
+  return *this;
+}
+
+Y& operator++(Y& y)
+{
+  printf("`operator++(Y&)' called\n");
+  return y;
+}
+
+Y operator++(Y& y, int)
+{
+  printf("`operator++(Y&, int)' called\n");
+  return y;
+}
+

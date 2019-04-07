@@ -13,7 +13,7 @@ char a[S::s];
 int main()
 {
   printf("S::s = %d\n",S::s);
-  printf("sizeof(a) = %d\n", sizeof(a));
+  printf("sizeof(a) = %d\n", (int)sizeof(a));
   S s;
   s.f();
   return 0;

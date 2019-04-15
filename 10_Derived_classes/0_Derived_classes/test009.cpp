@@ -17,5 +17,6 @@ int main()
   a.aa = 6;
   printf("a.X::b = %d a.x = %d a.y = %d a.Z::b = %d a.z = %d a.aa = %d\n",
 	 a.X::b, a.x, a.y, a.Z::b, a.z, a.aa);
+  printf("a.Y::b = %d\n", a.Y::b);
   return 0;
 }

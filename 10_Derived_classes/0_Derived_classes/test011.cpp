@@ -32,7 +32,7 @@ class C : public A, public B {};
 void f(C* pc)
 {
   printf("pc->h() return value : %d\n", pc->h());
-  printf("pc->h(1) return value : %d\n", pc->h(3));
+  printf("pc->h(3) return value : %d\n", pc->h(3));
 }
 
 int main()

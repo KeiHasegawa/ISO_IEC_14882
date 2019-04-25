@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 struct A1 {
-  int f()
+  void f()
   {
     printf("A1::f called\n");
   }
 };
 
 struct A2 : virtual A1 {
-  int f()
+  void f()
   {
     printf("A2::f called\n");
   }

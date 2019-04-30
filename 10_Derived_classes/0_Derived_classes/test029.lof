@@ -1,0 +1,14 @@
+D test
+B1::f1() called
+B2::f2() called
+B2::g2() called
+B3::f3() called
+B3::g3() called
+B3::h3() called
+D2 test
+D2::f1() called
+D2::f2() called
+D2::g2() called
+D2::f3() called
+D2::g3() called
+D2::h3() called

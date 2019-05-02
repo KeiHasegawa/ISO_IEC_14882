@@ -35,7 +35,7 @@ RUN =
 	$(TOUCH) $@
 
 clean:
-	$(RM) *.log *.exe *.s *.asm *.i *.stackdump core.* *~
+	$(RM) *.log *.exe *.s *.asm *.i *.stackdump core.* *~ a.out
 
 test000.lof:test000.log
 test000.exe:test000.s

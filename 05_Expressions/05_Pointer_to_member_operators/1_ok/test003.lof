@@ -1,0 +1,27 @@
+test000:
+B::vf() called
+b = 10
+D::vf() called
+b = 2 d = 3.000000
+test001:
+B::f() called
+b = 11
+B::vf() called
+b = 100
+test002:
+B::f() called
+b = 11
+B::vf() called
+b = 110
+D::vf() called
+b = 2 d = 3.000000
+test003:
+B::f() called
+b = 111
+B::f() called
+b = 3
+test004:
+B::vf() called
+b = 1110
+D::vf() called
+b = 3 d = 3.000000

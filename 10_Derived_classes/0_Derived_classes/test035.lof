@@ -1,0 +1,34 @@
+F::g() called
+a = 1
+b1 = 2
+b2 = 3
+c = 4
+d = 5
+e1 = 6
+e2 = 7
+f = 8
+E1::a = 1
+E2::a = 1
+B1::a = 1
+B2::a = 1
+E1::B1::a = 1
+E1::B2::a = 1
+E2::B1::a = 1
+E2::B2::a = 1
+h(F*) called
+pf->a = 1
+pf->b1 = 2
+pf->b2 = 3
+pf->c = 4
+pf->d = 5
+pf->e1 = 6
+pf->e2 = 7
+pf->f = 8
+pf->E1::a = 1
+pf->E2::a = 1
+pf->B1::a = 1
+pf->B2::a = 1
+pf->E1::B1::a = 1
+pf->E1::B2::a = 1
+pf->E2::B1::a = 1
+pf->E2::B2::a = 1

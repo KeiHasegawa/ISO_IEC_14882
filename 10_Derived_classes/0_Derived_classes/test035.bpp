@@ -53,6 +53,28 @@ void h(F* pf)
   printf("pf->E2::B2::a = %d\n", pf->E2::B2::a);
 }
 
+void hh(F f)
+{
+  printf("hh(F) called\n");
+  printf("f.a = %d\n", f.a);
+  printf("f.b1 = %d\n", f.b1);
+  printf("f.b2 = %d\n", f.b2);
+  printf("f.c = %d\n", f.c);
+  printf("f.d = %d\n", f.d);
+  printf("f.e1 = %d\n", f.e1);
+  printf("f.e2 = %d\n", f.e2);
+  printf("f.f = %d\n", f.f);
+
+  printf("f.E1::a = %d\n", f.E1::a);
+  printf("f.E2::a = %d\n", f.E2::a);
+  printf("f.B1::a = %d\n", f.B1::a);
+  printf("f.B2::a = %d\n", f.B2::a);
+  printf("f.E1::B1::a = %d\n", f.E1::B1::a);
+  printf("f.E1::B2::a = %d\n", f.E1::B2::a);
+  printf("f.E2::B1::a = %d\n", f.E2::B1::a);
+  printf("f.E2::B2::a = %d\n", f.E2::B2::a);
+}
+
 int main()
 {
   F x;
@@ -67,6 +89,7 @@ int main()
 
   x.g();
   h(&x);
+  hh(x);
   return 0;
 }
 

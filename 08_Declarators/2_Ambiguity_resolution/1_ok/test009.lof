@@ -1,0 +1,16 @@
+f1 called
+g1 called
+o.x = 123
+f2 called
+g2 called
+i.y = 456
+f3 called
+o3.x = -789
+f4 called
+outer::f called
+x = -789
+f5 called
+i5.y = -1234
+f6 called
+outer::inner::g called
+y = -1234

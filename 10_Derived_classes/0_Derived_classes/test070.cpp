@@ -1,5 +1,5 @@
 /*
- * A class derived from inner a class.
+ * A class derived from a inner class.
  */
 #include <stdio.h>
 

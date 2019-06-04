@@ -27,6 +27,18 @@ outer::inner i5;
 
 void f6(int (outer::inner::*)());
 
+void h1(int (::outer));
+
+void h2(int (::outer::inner));
+
+void h3(int (::outer::*));
+
+void h4(int (::outer::*)());
+
+void h5(int (::outer::inner::*));
+
+void h6(int (::outer::inner::*)());
+
 int main()
 {
   f1(g1);
@@ -43,6 +55,13 @@ int main()
   printf("i5.y = %d\n", i5.y);
 
   f6(&outer::inner::g);
+
+  h1(g1);
+  h2(g2);
+  h3(&outer::x);
+  h4(&outer::f);
+  h5(&outer::inner::y);
+  h6(&outer::inner::g);
   return 0;
 }
 
@@ -111,3 +130,45 @@ int outer::inner::g()
   printf("y = %d\n", y);
   return 0;
 }
+
+void h1(int (*pf)(outer))
+{
+  printf("h1 called\n");
+  outer o;
+  o.x = 456;
+  pf(o);
+}
+
+void h2(int (*pf)(outer::inner))
+{
+  printf("h2 called\n");
+  outer::inner i;
+  i.y = 789;
+  pf(i);
+}
+
+void h3(int (outer::*pm))
+{
+  printf("h3 called\n");
+  o3.*pm *= o3.*pm;
+}
+
+void h4(int (outer::*pf)())
+{
+  printf("h4 called\n");
+  (o3.*pf)();
+}
+
+void h5(int (outer::inner::*pm))
+{
+  printf("h5 called\n");
+  ++(i5.*pm);
+}
+
+void h6(int (outer::inner::*pf)())
+{
+  printf("h6 called\n");
+  (i5.*pf)();
+}
+
+

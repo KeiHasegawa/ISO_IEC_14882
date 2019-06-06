@@ -24,6 +24,6 @@ void D::glorp()
 {
   x++; //OK: B::x hides V::x
   f(); //OK: B::f() hides V::f()
-  y++; //error: B::y and CÅfs W::y
-  g(); //error: B::g() and CÅfs W::g()
+  y++; //error: B::y and C's W::y
+  g(); //error: B::g() and C's W::g()
 }

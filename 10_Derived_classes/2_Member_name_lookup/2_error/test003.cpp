@@ -17,6 +17,6 @@ void g()
 {
   D d;
   B* pb = &d;
-  A* pa = &d; // error, ambiguous: CÅfs A or BÅfs A?
+  A* pa = &d; // error, ambiguous: C's A or B's A?
   V* pv = &d; // OK: only one V sub-object
 }

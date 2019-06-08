@@ -1,0 +1,9 @@
+test001.cpp:19: エラー: 抽象クラス shape の `x' が宣言されています.
+test001.cpp:14: `rotate' は純粋仮想函数です.
+test001.cpp:15: `draw' は純粋仮想函数です.
+test001.cpp:21: エラー: 抽象クラス shape を戻り値の型とする `f' が宣言されています.
+test001.cpp:14: `rotate' は純粋仮想函数です.
+test001.cpp:15: `draw' は純粋仮想函数です.
+test001.cpp:22: エラー: 函数 `g' の 1 番目のパラメータの型が抽象クラス shape になっています.
+test001.cpp:14: `rotate' は純粋仮想函数です.
+test001.cpp:15: `draw' は純粋仮想函数です.

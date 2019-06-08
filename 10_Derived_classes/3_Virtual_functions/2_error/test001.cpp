@@ -19,7 +19,7 @@ struct D : B1, B2 { // D has two separate A sub-objects
 void foo()
 {
   D d;
-  // A* ap = &d; // would be ill-formed: ambiguous
+  A* p = &d; // would be ill-formed: ambiguous
   B1* b1p = &d;
   A* ap = b1p;
   D* dp = &d;

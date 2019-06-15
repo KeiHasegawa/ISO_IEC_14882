@@ -5,7 +5,7 @@ public:
   int mem;
   C(int i) : mem(i) {}
   C() { mem = 1; C(0); }
-  C(char* p){ mem = 3; C(0); }
+  C(char* p){ printf("%s\n", p); mem = 3; C(0); }
 };
 
 int main()

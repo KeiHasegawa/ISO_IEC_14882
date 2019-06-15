@@ -1,0 +1,2 @@
+S::S(int) called with 0
+S::S(char*) called with "hoge"

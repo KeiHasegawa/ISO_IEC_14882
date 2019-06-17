@@ -9,8 +9,6 @@ public:
   }
 };
 
-typedef unsigned int size_t;
-
 void* operator new(size_t sz, void* p)
 {
   printf("operator new called\n");

@@ -1,24 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef unsigned int size_t;
-
 class Y {
 public:
-  void* operator new(size_t s, int flag)
+  void* operator new(size_t sz, int flag)
   {
     printf("Y::operator new called. flag = %d\n", flag);
-    return malloc(s);
-  }
-  Y()
-  {
-    printf("Y::Y called\n");
+    return malloc(sz);
   }
 };
 
 int main()
 {
-  Y* p = new(3) Y;
+  Y* p = new(7) Y;
   free(p);
   return 0;
 }

@@ -5,7 +5,8 @@ struct T {};
 void f(int* pi, T* pt)
 {
   printf("entern f\n");
-  pi->int::~int();
+  typedef int I;
+  pi->I::~I();
   pt->T::~T();
   printf("leave f\n");
 }

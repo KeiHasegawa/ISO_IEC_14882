@@ -10,8 +10,6 @@ public:
   }
 };
 
-typedef unsigned int size_t;
-
 class Y {
   int y;
 public:

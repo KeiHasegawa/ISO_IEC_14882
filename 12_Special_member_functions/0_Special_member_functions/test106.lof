@@ -1,0 +1,114 @@
+V1::V1(int) called with 7
+V2::V2(int) called with 8
+V3::V3(int) called with 9
+A1::A1(int) called with 10
+
+V1::V1(int) called with 17
+V2::V2(int) called with 18
+V3::V3(int) called with 19
+B1::B1(int) called with 20
+
+V1::V1() called
+V2::V2(int) called with 20
+V3::V3(int) called with 21
+A1::A1(int) called with 22
+V2::V2(int) called with 24
+V3::V3(int) called with 25
+B1::B1(int) called with 26
+C1::C1(int) called with 30
+
+V2::V2(int) called with 38
+V1::V1(int) called with 37
+V3::V3(int) called with 39
+A2::A2(int) called with 40
+
+V2::V2(int) called with 48
+V1::V1(int) called with 47
+V3::V3(int) called with 49
+B2::B2(int) called with 50
+
+V2::V2() called
+V1::V1(int) called with 49
+V3::V3(int) called with 51
+A2::A2(int) called with 52
+V1::V1(int) called with 53
+V3::V3(int) called with 55
+B2::B2(int) called with 56
+C2::C2(int) called with 60
+
+V3::V3(int) called with 69
+V1::V1(int) called with 67
+V2::V2(int) called with 68
+A3::A3(int) called with 70
+
+V3::V3(int) called with 79
+V1::V1(int) called with 77
+V2::V2(int) called with 78
+B3::B3(int) called with 80
+
+V3::V3() called
+V1::V1(int) called with 79
+V2::V2(int) called with 80
+A3::A3(int) called with 82
+V1::V1(int) called with 83
+V2::V2(int) called with 84
+B3::B3(int) called with 86
+C3::C3(int) called with 90
+
+C3::~C3() called
+B3::~B3() called
+V2::~V2() called
+V1::~V1() called
+A3::~A3() called
+V2::~V2() called
+V1::~V1() called
+V3::~V3() called
+
+B3::~B3() called
+V2::~V2() called
+V1::~V1() called
+V3::~V3() called
+
+A3::~A3() called
+V2::~V2() called
+V1::~V1() called
+V3::~V3() called
+
+C2::~C2() called
+B2::~B2() called
+V3::~V3() called
+V1::~V1() called
+A2::~A2() called
+V3::~V3() called
+V1::~V1() called
+V2::~V2() called
+
+B2::~B2() called
+V3::~V3() called
+V1::~V1() called
+V2::~V2() called
+
+A2::~A2() called
+V3::~V3() called
+V1::~V1() called
+V2::~V2() called
+
+C1::~C1() called
+B1::~B1() called
+V3::~V3() called
+V2::~V2() called
+A1::~A1() called
+V3::~V3() called
+V2::~V2() called
+V1::~V1() called
+
+B1::~B1() called
+V3::~V3() called
+V2::~V2() called
+V1::~V1() called
+
+A1::~A1() called
+V3::~V3() called
+V2::~V2() called
+V1::~V1() called
+

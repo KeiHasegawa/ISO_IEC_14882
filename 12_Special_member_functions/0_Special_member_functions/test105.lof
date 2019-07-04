@@ -1,0 +1,26 @@
+V::V(int) called with 0
+
+V::V(int) called with 1
+A::A(int) called with 2
+
+V::V(int) called with 3
+B::B(int) called with 4
+
+V::V() called
+A::A(int) called with 5
+B::B(int) called with 6
+C::C(int) called with 7
+
+C::~C() called
+B::~B() called
+A::~A() called
+V::~V() called
+
+B::~B() called
+V::~V() called
+
+A::~A() called
+V::~V() called
+
+V::~V() called
+

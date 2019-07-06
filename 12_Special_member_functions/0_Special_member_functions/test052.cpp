@@ -44,7 +44,7 @@ class E : public C, public D {
 public:
   E(int e) : C(e), D(e)
   {
-    printf("E::E called with %d\n", e);
+    printf("E::E(int) called with %d\n", e);
   }
 };
 

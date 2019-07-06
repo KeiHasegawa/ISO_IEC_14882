@@ -2,4 +2,4 @@ A::A() called
 B::B() called
 C::C(int) called with 3
 D::D(int) called with 3
-E::E called with 3
+E::E(int) called with 3

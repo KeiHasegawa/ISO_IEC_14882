@@ -32,9 +32,9 @@ public:
   }
 };
 
-class D : public virtual A, public virtual B {
+class D : public virtual B, public virtual A {
 public:
-  D(int d) : A(d), B(d)
+  D(int d) : B(d), A(d)
   {
     printf("D::D(int) called with %d\n", d);
   }

@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef unsigned int size_t;
-
 struct B {
   virtual ~B()
   {

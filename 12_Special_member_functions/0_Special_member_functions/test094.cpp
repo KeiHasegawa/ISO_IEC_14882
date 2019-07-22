@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef unsigned int size_t;
-
 void* operator new(size_t sz)
 {
   printf("operator new(size_t) called\n");

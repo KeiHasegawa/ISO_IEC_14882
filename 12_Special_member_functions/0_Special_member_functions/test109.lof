@@ -1,0 +1,34 @@
+test_V called
+V::V() called
+
+V::V(const V&) called
+vx.v = 1 vy.v = 3
+
+test_A called
+V::V() called
+A::A() called
+
+V::V() called
+A::A(const A&) called
+ax.v = 1 ax.a = 3 ay.v = 1 ay.a = 7
+
+test_B called
+V::V() called
+B::B() called
+
+V::V() called
+B::B(const B&) called
+bx.v = 1 bx.b = 5 by.v = 1 by.b = 11
+
+test_C called
+V::V() called
+A::A() called
+B::B() called
+C::C() called
+
+V::V() called
+A::A() called
+B::B() called
+C::C(const C&) called
+cx.v = 1 cx.a = 3 cx.b = 5 cx.c = 7
+cy.v = 1 cy.a = 3 cy.b = 5 cy.c = 15

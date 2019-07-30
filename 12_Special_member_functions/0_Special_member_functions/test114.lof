@@ -1,0 +1,10 @@
+T::T() called. m = 10
+T::T(const T&) called. m = 30
+f(T) called. x.m = 30
+T::~T() called. m = 30
+T::T(int) called. m = 20
+T::T(const T&) called. m = 40
+g(T) called. x.m = 40
+T::~T() called. m = 40
+T::~T() called. m = 20
+T::~T() called. m = 10

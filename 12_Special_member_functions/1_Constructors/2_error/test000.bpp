@@ -1,0 +1,21 @@
+struct T {
+  int m;
+  T(int);
+  ~T();
+};
+
+void f()
+{
+  T x(1);
+  {
+    goto label;
+    T x(2);
+    {
+      T x(3);
+      {
+      label:
+	T x(4);
+      }
+    }
+  }
+}

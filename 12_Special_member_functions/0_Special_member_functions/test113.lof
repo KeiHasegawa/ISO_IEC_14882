@@ -1,6 +1,8 @@
 T::T() called. m = 1
 T::T() called. m = 2
 T::T(const T&) called. m = 11
+T::T(const T&) called. m = 21
 T::~T() called. m = 11
+T::~T() called. m = 21
 T::~T() called. m = 2
 T::~T() called. m = 1

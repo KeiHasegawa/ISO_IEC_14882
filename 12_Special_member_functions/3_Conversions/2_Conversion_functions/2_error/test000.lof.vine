@@ -1,0 +1,2 @@
+test000.cpp: ”Ÿ” `f' :
+test000.cpp:15: error: syntax error before `;' token.

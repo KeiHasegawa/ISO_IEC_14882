@@ -7,7 +7,6 @@
  */
 #include <stdio.h>
 
-typedef unsigned int size_t;
 void* operator new(size_t, void* p) { return p; }
 struct X {
   int m;

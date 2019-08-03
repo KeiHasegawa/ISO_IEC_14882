@@ -1,6 +1,12 @@
 `B::~B' called
+
+`D::~D' called
 `B::~B' called
+
+`D::~D' called
 `B::~B' called
+
 `B::~B' called
+
 `D::~D' called
 `B::~B' called

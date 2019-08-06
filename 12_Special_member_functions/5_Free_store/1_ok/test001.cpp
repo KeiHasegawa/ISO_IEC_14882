@@ -4,8 +4,6 @@
  */
 #include <stdio.h>
 
-typedef unsigned int size_t;
-
 class X {
 public:
   void operator delete(void*);

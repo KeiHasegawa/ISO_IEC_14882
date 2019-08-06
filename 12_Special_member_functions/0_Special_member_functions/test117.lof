@@ -1,0 +1,15 @@
+S::S() called. m = 1
+S::S() called. m = 2
+S::S() called. m = 3
+S::S() called. m = 4
+S::S() called. m = 5
+p[0].m = 1
+p[1].m = 2
+p[2].m = 3
+p[3].m = 4
+p[4].m = 5
+S::~S() called. m = 5
+S::~S() called. m = 4
+S::~S() called. m = 3
+S::~S() called. m = 2
+S::~S() called. m = 1

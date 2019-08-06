@@ -4,7 +4,6 @@
  */
 #include <stdio.h>
 
-typedef unsigned int size_t;
 class Arena;
 struct B {
   void* operator new(size_t, Arena*);

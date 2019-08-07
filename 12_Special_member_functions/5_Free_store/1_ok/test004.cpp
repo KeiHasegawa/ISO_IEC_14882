@@ -5,7 +5,6 @@
  */
 #include <stdio.h>
 
-typedef unsigned int size_t;
 struct B {
   virtual ~B();
   void operator delete[](void*, size_t);

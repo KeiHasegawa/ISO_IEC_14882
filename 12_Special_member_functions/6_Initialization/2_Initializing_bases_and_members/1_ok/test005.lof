@@ -1,0 +1,9 @@
+`V::V(int)' called with 1
+`V::V(int)' called with 2
+`A::A(int)' called with 2
+`V::V()' called
+`B::B(int)' called with 3
+`V::V()' called
+`A::A()' called
+`B::B()' called
+`C::C(int)' called with 4

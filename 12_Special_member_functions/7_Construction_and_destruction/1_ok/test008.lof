@@ -1,0 +1,17 @@
+`V::f' called
+`V::g' called
+
+`A::f' called
+`V::g' called
+`A::f' called
+
+`V::f' called
+`B::g' called
+`B::g' called
+
+`D::f' called
+`D::g' called
+`D::f' called
+`D::g' called
+`D::f' called
+`D::g' called

@@ -7,7 +7,7 @@ class X {
   // ...
 public:
   X(const X&);
-  X(X&); //OK
+  X(X&); // OK
 };
 
 int main()

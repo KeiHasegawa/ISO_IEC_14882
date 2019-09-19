@@ -6,7 +6,7 @@ class Y {
 public:
   void operator delete(void* p, size_t sz)
   {
-    printf("Y::operator delete called. sz = %d\n", sz);
+    printf("Y::operator delete called. sz = %d\n", (int)sz);
     free(p);
   }
 };

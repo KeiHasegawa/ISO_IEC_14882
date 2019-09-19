@@ -26,7 +26,7 @@ int main()
 void* B::operator new(size_t sz, Arena* p)
 {
   printf("`B::operator new' called\n");
-  printf("sz = %d\n", sz);
+  printf("sz = %d\n", (int)sz);
   printf("p = %x\n", p);
   return p;
 }

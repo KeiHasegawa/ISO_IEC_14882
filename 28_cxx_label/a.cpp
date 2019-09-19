@@ -58,6 +58,11 @@ extern "C" {
   void c_func(void);
 }
 
+template<class T> struct SS {
+  T m;
+  SS();
+};
+
 int main()
 {
   f00();
@@ -89,5 +94,6 @@ int main()
   D d;
   vfcall(&d);
   c_func();
+  SS<int> ssi;
   return abc::def::ghi + c_var;
 }

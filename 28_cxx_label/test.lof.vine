@@ -28,6 +28,7 @@ a.o: In function `main':
 /home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `C::C()'
 /home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `C::mf()'
 /home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `c_func'
+/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `SS<int>::SS()'
 /home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `abc::def::ghi'
 /home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `c_var'
 /home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `C::~C()'

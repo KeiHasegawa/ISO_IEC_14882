@@ -36,6 +36,7 @@ a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:184: undef
 a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:192: undefined reference to `C::C()'
 a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:200: undefined reference to `C::mf()'
 a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:247: undefined reference to `c_func'
+a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:247: undefined reference to `SS<int>::SS()'
 a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:251: undefined reference to `c_var'
 a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:260: undefined reference to `C::~C()'
 a.o:fake:(.rdata$.refptr._ZN3abc3def3ghiE[.refptr._ZN3abc3def3ghiE]+0x0): undefined reference to `abc::def::ghi'

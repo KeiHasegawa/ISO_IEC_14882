@@ -10,7 +10,7 @@ public:
   }
   T& elem(int i){ return v[i]; }
   T& operator[](int i){ return v[i]; }
-  ~vector(){ delete v; }
+  ~vector(){ delete [] v; }
 };
 
 template<class T>

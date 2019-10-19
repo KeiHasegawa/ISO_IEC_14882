@@ -17,7 +17,7 @@ void error_handler2()
 
 int main()
 {
-  printf("f called\n");
+  printf("main called\n");
 
   list<int,&error_handler1> x1;
   list<int,&error_handler2> x2;

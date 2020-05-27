@@ -1,5 +1,5 @@
 test002.cpp: 函数 `g' :
 test002.cpp:7: エラー: 函数 `X' のオーバーロード呼び出しがいずれもマッチしません.
 候補:
-test002.cpp:18: error: `X'
-test002.cpp:7: error: `X'
+test002.cpp:18: エラー: `X'
+test002.cpp:7: エラー: `X'

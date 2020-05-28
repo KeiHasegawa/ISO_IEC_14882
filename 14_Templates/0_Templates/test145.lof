@@ -1,0 +1,2 @@
+S::S(const S&, C*) called
+a = 1234

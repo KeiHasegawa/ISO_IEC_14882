@@ -8,7 +8,7 @@ template<class A, class B> struct S {
     a = 1;
     b = 'a';
   }
-  template<class AA> inline S(const S<AA,B>& s)
+  template<class AA> S(const S<AA,B>& s)
   {
     a = s.a + 1;
     b = s.b + 2;

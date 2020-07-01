@@ -14,8 +14,8 @@ template<class A, class B> struct S {
   }
 };
 
-template<class A, class B> S<A,B> operator-(const S<A,B>& x,
-					       const S<A,B>& y)
+template<class A, class B> S<A,B>
+operator-(const S<A,B>& x, const S<A,B>& y)
 {
   printf("error : operator-(const S&, const S&) called\n");
   return x;

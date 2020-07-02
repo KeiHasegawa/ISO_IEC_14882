@@ -1,0 +1,8 @@
+struct B {
+  int C;
+};
+
+struct D : B {
+  int a;
+  D() : C(3) {}
+};

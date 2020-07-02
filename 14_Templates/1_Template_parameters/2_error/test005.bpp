@@ -1,0 +1,24 @@
+struct V {
+  int v;
+};
+
+struct C {
+  int c;
+};
+
+struct A : virtual V, C {
+  int a;
+};
+
+struct B : virtual V {
+  int b;
+};
+
+template<class C> struct D : A, B {
+  D() : A(), B(), C() {}
+};
+
+void f()
+{
+  D<V> di;
+}

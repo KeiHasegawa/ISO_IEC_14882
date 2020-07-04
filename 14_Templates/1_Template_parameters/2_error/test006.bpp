@@ -1,0 +1,21 @@
+template<class C> struct S {
+  typedef typename C::X Y;
+  template<class C2> void f(C2);
+};
+
+struct T {
+  typedef int X;
+};
+
+void g()
+{
+  S<T> x;
+  x.f(3);
+}
+
+// template<class C> template<class C2> void S<C>::f(C2 c2){ /* ...*/ } 
+// is OK. But bellow is error:
+template<class C, class C2> void S<C>::f(C2 c2)
+{
+  Y y = c2;
+}

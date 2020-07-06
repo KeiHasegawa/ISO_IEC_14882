@@ -3,7 +3,7 @@
 template<class T> void f()
 {
   T a = -3;
-  printf("sizeof(a) = %d\n", sizeof(a));
+  printf("sizeof(a) = %d\n", (int)sizeof(a));
   printf("a = %d\n", a);
 }
 

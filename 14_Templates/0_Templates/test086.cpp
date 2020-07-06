@@ -5,7 +5,7 @@ template<class C> void f();
 template<class C> void f()
 {
   printf("f<C> called\n");
-  printf("sizeof(C) = %d\n", sizeof(C));
+  printf("sizeof(C) = %d\n", (int)sizeof(C));
 }
 
 struct S {

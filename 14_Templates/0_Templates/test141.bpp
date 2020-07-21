@@ -17,7 +17,8 @@ int main()
   S<float> s;
   s.m = 1;
   s.c = 2.5;
-  // s.f();
+  // s.f();  // Intentionally comment out. If this line is compiled,
+             // calling `g' at S<float>::f is error.
   s.g(-1.25);
   printf("just compile test\n");
   return 0;

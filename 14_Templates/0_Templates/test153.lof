@@ -1,0 +1,4 @@
+`f()' is called
+`f(int)' is called with 1
+`f(double)' is called with 2.500000
+`f(S)' is called with a.m = 5

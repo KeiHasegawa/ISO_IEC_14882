@@ -1,2 +1,2 @@
 test000.cpp: 函数 `f' :
-test000.cpp:15: error: syntax error before `;' token.
+test000.cpp:15: エラー: `;' で構文エラーです.

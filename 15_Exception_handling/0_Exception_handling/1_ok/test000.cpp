@@ -13,4 +13,5 @@ int main()
   catch(const char* p) {
     printf("%s\n", p);
   }
+  return 0;
 }

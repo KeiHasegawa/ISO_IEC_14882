@@ -1,0 +1,33 @@
+
+before calling `g0'
+catch S<0>
+
+before calling `g1'
+catch S<0>
+catch S<1>
+
+before calling `g2'
+catch S<0>
+catch S<1>
+catch S<2>
+
+before calling `g3'
+catch S<0>
+catch S<1>
+catch S<2>
+catch S<3>
+
+before calling `g4'
+catch S<0>
+catch S<1>
+catch S<2>
+catch S<3>
+catch S<4>
+
+before calling `g5'
+catch S<0>
+catch S<1>
+catch S<2>
+catch S<3>
+catch S<4>
+catch S<5>

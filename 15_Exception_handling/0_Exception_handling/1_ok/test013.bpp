@@ -20,8 +20,7 @@ void pass_through()
 
 void g(int n)
 {
-  using namespace std;
-  PFV old = set_unexpected(&pass_through);
+  PFV old = std::set_unexpected(&pass_through);
   try {
     f(n);
   }
@@ -34,7 +33,7 @@ void g(int n)
   catch (...) {
     printf("catch something\n");
   }
-  set_unexpected(old);
+  std::set_unexpected(old);
 }
 
 int main()

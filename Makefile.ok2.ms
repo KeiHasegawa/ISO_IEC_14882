@@ -19,7 +19,7 @@ CPP_FLAG = -D_MSC_VER \
 -D__inline=inline \
 -D__fastcall= \
 -Dmain=_test_main \
--W 0
+-W 0 $(EXTRA_CPP_FLAG)
 else
 CPP_FLAG = -D_MSC_VER \
 -U_M_IX86 \
@@ -32,7 +32,7 @@ CPP_FLAG = -D_MSC_VER \
 -D__declspec\(a\)= \
 -D__inline=inline \
 -Dmain=_test_main \
--W 0
+-W 0 $(EXTRA_CPP_FLAG)
 endif
 
 CC1 = hcc1.exe

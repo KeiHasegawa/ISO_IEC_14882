@@ -63,6 +63,11 @@ template<class T> struct SS {
   SS();
 };
 
+template<int N> struct SSS {
+  char array[N];
+  SSS();
+};
+
 int main()
 {
   f00();
@@ -95,5 +100,6 @@ int main()
   vfcall(&d);
   c_func();
   SS<int> ssi;
+  SSS<3> sss3;
   return abc::def::ghi + c_var;
 }

@@ -1,0 +1,4 @@
+S::S() called
+S::f() called x.m = 0
+S::S(int) called with 10
+S::f() called x.m = 10

@@ -17,6 +17,10 @@ int main()
   asm("call f");
 #endif // defined(INTEL) & defined(__CYGWIN__)
 
+#if defined(_MSC_VER)
+  asm("call f");
+#endif // defined(_MSC_VER)
+
 #if defined(sparc)
   asm("call f");
 #endif // defined(sparc)

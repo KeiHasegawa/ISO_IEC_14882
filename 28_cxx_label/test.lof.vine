@@ -1,6 +1,6 @@
-a.o: In function `B::.vftbl':
+a.o: In function `B::vftbl':
 (.text+0xXX): undefined reference to `B::vf()'
-a.o: In function `D::.vftbl':
+a.o: In function `D::vftbl':
 (.text+0xXX): undefined reference to `D::vf()'
 a.o: In function `main':
 /home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `f00()'

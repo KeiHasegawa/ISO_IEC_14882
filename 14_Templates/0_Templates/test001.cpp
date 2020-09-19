@@ -32,6 +32,7 @@ int main()
   cvec v3(3);
 
   v1[0] = 7;
+  v1[1] = v1[2] = 0;
   for ( int i = 0 ; i < 3 ; ++i )
     printf("v1[%d] = %d\n", i, v1[i]);
 

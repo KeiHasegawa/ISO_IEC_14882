@@ -38,7 +38,7 @@ CPP_FLAG = -D_MSC_VER \
 endif
 
 CXX1 = hcxx1.exe
-CXX1_FLAG = --generator-option \( --debug --ms \)
+CXX1_FLAG = --generator-option \( --debug --ms $$INTEL_DLL_EXTRA_OPTION \)
 LINK_CMD = vs_wrapperxx
 RUN =
 DOGV = wdog.exe -v

@@ -18,7 +18,11 @@ int main()
 #endif // defined(INTEL) & defined(__CYGWIN__)
 
 #if defined(_MSC_VER)
+#ifdef WIN32
+  asm("call _f");
+#else // WIN32
   asm("call f");
+#endif // WIN32
 #endif // defined(_MSC_VER)
 
 #if defined(sparc)

@@ -37,6 +37,7 @@ a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX:(.text+
 /usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `C::mf()'
 /usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `c_func'
 /usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `SS<int>::SS()'
+/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `SSS<3>::SSS()'
 /usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `c_var'
 /usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: a.o:/cygdrive/d/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `C::~C()'
 /usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: a.o:fake:(.rdata$.refptr._ZN3abc3def3ghiE[.refptr._ZN3abc3def3ghiE]+0x0): undefined reference to `abc::def::ghi'

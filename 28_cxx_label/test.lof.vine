@@ -33,4 +33,5 @@ a.o: In function `main':
 /home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `abc::def::ghi'
 /home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `c_var'
 /home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `C::~C()'
+/home/khasegawa/lang/43_ISO_IEC_14882/28_cxx_label/a.s:XX: undefined reference to `C::~C()'
 collect2: error: ld returned 1 exit status

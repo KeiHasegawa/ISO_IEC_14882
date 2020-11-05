@@ -14,6 +14,13 @@ template<class C> typename S<C>::T f(C a, C b, A)
   return n;
 }
 
+struct B {};
+
+template<class C> typename S<C>::T f(C a, C b, B)
+{
+  return b - a;
+}
+
 template<class C> struct S {
   typedef C T;
 };
@@ -21,5 +28,6 @@ template<class C> struct S {
 int main()
 {
   printf("f(3, 10, A()) return %d\n", f(3, 10, A()));
+  printf("f(4.0, 10.0, B()) return %f\n", f(4.0, 10.0, B()));
   return 0;
 }

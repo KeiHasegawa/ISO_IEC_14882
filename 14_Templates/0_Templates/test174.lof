@@ -1,0 +1,2 @@
+f(p, q, A()) return 4
+f(s, t, B()) return 6

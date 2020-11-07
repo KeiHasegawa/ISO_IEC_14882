@@ -1,0 +1,4 @@
+s3x.m2.a = 1
+s3x.m3.a = 2
+X::f() called
+x.a = 3

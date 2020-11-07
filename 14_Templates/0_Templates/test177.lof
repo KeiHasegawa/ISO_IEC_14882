@@ -1,0 +1,4 @@
+X::f() called a = 123
+X::f() called a = 456
+x.m.a = 123
+y.m.a = 456

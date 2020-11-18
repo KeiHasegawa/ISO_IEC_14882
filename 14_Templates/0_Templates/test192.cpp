@@ -12,7 +12,10 @@ template<class A, class B> struct S3 {
   S3() : m(A()) {}
   template<class C>
   S3(const S3<C, typename S2<(S1<C, typename B::T2>::V),B>::T1>& i)
-    : m(i.m) {}
+    : m(i.m)
+  {
+    printf("S3(const S3<C, typename ...>&) called\n");
+  }
 };
 
 template<class A2, class B2, class C2>

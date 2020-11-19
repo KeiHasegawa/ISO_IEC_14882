@@ -16,11 +16,6 @@ template<class C2> struct S2 {
   typedef typename NSA::T T;
 };
 
-template<class A> void f(const S2<A>& x)
-{
-  printf("x.m.m = %d\n", x.m.m);
-}
-
 struct X {
   typedef int T;
   T m;
@@ -30,6 +25,6 @@ int main()
 {
   S2<X> x;
   x.m.m = 1;
-  f(x);
+  printf("x.m.m = %d\n", x.m.m);
   return 0;
 }

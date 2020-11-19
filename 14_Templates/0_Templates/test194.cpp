@@ -10,16 +10,15 @@ namespace N {
   };
 }
 
-template<class A2, class B2> struct S2 {
-  A2 m;
-  typedef N::S1<A2> NSA;
+template<class C2> struct S2 {
+  C2 m;
+  typedef N::S1<C2> NSA;
   typedef typename NSA::T T;
 };
 
-template<class A, class B, class C>
-void f(const S2<A, C>& x, const S2<B, C>& y)
+template<class A> void f(const S2<A>& x)
 {
-  printf("x.m.m = %d y.m.m = %f\n", x.m.m, y.m.m);
+  printf("x.m.m = %d\n", x.m.m);
 }
 
 struct X {
@@ -27,17 +26,10 @@ struct X {
   T m;
 };
 
-struct Y {
-  typedef double T;
-  T m;
-};
-
 int main()
 {
-  S2<X, char> x;
+  S2<X> x;
   x.m.m = 1;
-  S2<Y, char> y;
-  y.m.m = 2.0;
-  f(x, y);
+  f(x);
   return 0;
 }

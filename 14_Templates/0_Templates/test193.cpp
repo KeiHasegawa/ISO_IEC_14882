@@ -1,10 +1,6 @@
 #include <stdio.h>
 
 namespace N {
-  template<class C1> struct S1;
-}
-
-namespace N {
   template<class C1> struct S1 {
     typedef typename C1::T T;
   };

@@ -1,20 +1,14 @@
 #include <stdio.h>
 
-template<bool B, class C1> void f(C1 x)
+template<class C> void f(C a)
 {
-  printf("x = %d\n", x);
+  printf("a = %d\n", a);
 }
 
-template<bool B, class C2> void g(C2 x)
-{
-  f<B>(x);
-}
-
-template<bool B, class C3> void g(C3);
-
+template<class C> void f(C);
 
 int main()
 {
-  g<true>(3);
+  f(5);
   return 0;
 }

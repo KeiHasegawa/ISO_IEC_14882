@@ -8,19 +8,17 @@ template<class C2> struct scalar {
   enum { V };
 };
 
-template<class C3> typename enable<!scalar<C3>::V, void>::T f(const C3& a)
-{
-  printf("a.m = %d\n", a.m);
-}
-
-struct X {
-  int m;
+template<> struct scalar<int> {
+  enum { V = 1 };
 };
+
+template<class C4> typename enable<scalar<C4>::V, void>::T f(const C4& a)
+{
+  printf("a = %d\n", a);
+}
 
 int main()
 {
-  X x;
-  x.m = 2;
-  f(x);
+  f(1);
   return 0;
 }

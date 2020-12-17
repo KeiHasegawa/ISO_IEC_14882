@@ -1,4 +1,4 @@
-extern "C" int printf(const char*, ...);
+#include <stdio.h>
 
 struct S1 {};
 

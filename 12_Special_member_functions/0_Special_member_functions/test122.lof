@@ -1,0 +1,4 @@
+S::S() called
+s2.m = 123
+S::S() called
+s3.m = 123

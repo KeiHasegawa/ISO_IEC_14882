@@ -1,0 +1,2 @@
+S::~S() called. m = 123
+S::~S() called. m = 124

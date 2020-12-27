@@ -1,0 +1,2 @@
+operator new(size_t, void*) called
+r->m = 123

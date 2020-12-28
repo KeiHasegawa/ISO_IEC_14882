@@ -29,7 +29,7 @@ struct X {
 
 int operator-(const X& a, const X& b)
 {
-  printf("a.m = %d b.m = %d\n", a, b);
+  printf("a.m = %d b.m = %d\n", a.m, b.m);
   return 1;
 }
 

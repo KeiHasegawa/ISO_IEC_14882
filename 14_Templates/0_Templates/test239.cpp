@@ -5,7 +5,9 @@ template<class C1, C1 V1> struct S1 {
   typedef S1<C1, V1> T;
 };
 
-template<class C2> struct S2 : S1<bool, !bool(C2::V)> {};
+template<bool V2> using X = S1<bool, V2>;
+
+template<class C2> struct S2 : X<!bool(C2::V)> {};
 
 template<class C3> struct S3 : S2<C3>::T {};
 

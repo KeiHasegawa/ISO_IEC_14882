@@ -8,9 +8,7 @@ struct S1 {
 
 template<class C2> struct S2 : S1<bool, !bool(C2::V)> {};
 
-template<class C3> struct S3 {
-  static const int V = C3::V;
-};
+template<class> struct S3;
 
 template<class> struct S4 {};
 
@@ -35,6 +33,10 @@ struct X2 {
 
 struct Y2 {
   X2 x2;
+};
+
+template<class C3> struct S3 {
+  static const int V = C3::V;
 };
 
 int main()

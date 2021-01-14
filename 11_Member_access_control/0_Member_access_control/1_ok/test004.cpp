@@ -11,7 +11,6 @@ class C {
 
 int main()
 {
-  C c;
   N::f();
   return 0;
 }

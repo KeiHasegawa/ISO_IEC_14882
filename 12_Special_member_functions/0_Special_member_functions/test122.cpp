@@ -8,6 +8,7 @@ struct S {
   }
   S(const S&) = default;
   S& operator=(const S&) = default;
+  ~S() = default;
 };
 
 int main()

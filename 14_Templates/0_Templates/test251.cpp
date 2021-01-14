@@ -1,28 +1,13 @@
-extern "C" int printf(const char*, ...);
+#include <stdio.h>
 
-template<class, class> struct BASE {};
-
-template<class...> struct CAT;
-
-template<class C1> struct CAT<C1> {
-  C1 c1;
+template<class C> struct S {
+  using T = C;
+  T m;
 };
-
-template<class C2, class C3> struct S1 {
-  C2 c2;
-  C3 c3;
-};
-
-template<class C4, class... Cn>
-using X = CAT<S1<C4, Cn>...>;
-
-template<class C5> struct S2 { using T2 = C5; };
 
 int main()
 {
-  X<S2<double>::T2, char> x;
-  x.c1.c2 = 1.0;
-  x.c1.c3 = 'b';
-  printf("x.c1.c2 = %f, x.c1.c3 = '%c'\n", x.c1.c2, x.c1.c3);
+  S<int> x;
+  printf("x.m = %d\n", x.m = 123);
   return 0;
 }

@@ -1,4 +1,4 @@
-extern "C" int printf(const char*, ...);
+#include <stdio.h>
 
 template<class, class> struct BASE {};
 

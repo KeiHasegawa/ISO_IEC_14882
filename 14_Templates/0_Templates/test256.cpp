@@ -21,6 +21,6 @@ int main()
   x.c2 = &a[0];
   S<int, X<int&>> y;
   y.c4 = 456;
-  printf("*x.c1 = %d,  x.c2 = '\"%s\", y.c4 = %d\n", *x.c1, x.c2, y.c4);
+  printf("*x.c1 = %d,  x.c2 = \"%s\", y.c4 = %d\n", *x.c1, x.c2, y.c4);
   return 0;
 }

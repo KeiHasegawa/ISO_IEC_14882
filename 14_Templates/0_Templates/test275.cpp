@@ -12,8 +12,6 @@ template<class C1> struct S3 {
   S2<C1::V1> m1;
 };
 
-struct S5 : S3<S1<true>> {};
-
 template<class C7, bool> struct S6;
 
 template<class C8> struct S6<C8, true> {

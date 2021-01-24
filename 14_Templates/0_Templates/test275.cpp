@@ -5,23 +5,23 @@ template<bool V> struct S1 {
 };
 
 template<bool VV> struct S2 {
-  static const bool V2 = !VV;
+  static const bool V2 = VV;
 };
 
 template<class C1> struct S3 {
   S2<C1::V1> m1;
 };
 
-struct S5 {
+struct S4 {
   S3<S1<true>> x;
 };
 
 int main()
 {
-  S5 s5;
-  if (s5.x.m1.V2)
-    printf("error\n");
-  else
+  S4 s;
+  if (s.x.m1.V2)
     printf("ok\n");
+  else
+    printf("error\n");
   return 0;
 }

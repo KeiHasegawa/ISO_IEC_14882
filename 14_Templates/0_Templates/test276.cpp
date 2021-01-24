@@ -12,14 +12,16 @@ template<class C1> struct S3 {
   S2<C1::V1> m1;
 };
 
-struct S4 {
-  S3<S1<true>> x;
+template<class C7, bool> struct S6;
+
+template<class C8> struct S6<C8, true> {
+  S3<S1<true>> m2;
 };
 
 int main()
 {
-  S4 s;
-  if (s.x.m1.V2)
+  S6<int,true> s;
+  if (s.m2.m1.V2)
     printf("ok\n");
   else
     printf("error\n");

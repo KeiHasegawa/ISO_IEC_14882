@@ -3,7 +3,7 @@
 void f(int b)
 {
   int a;
-  a = { b; };
+  a = { b };
   printf("a = %d\n", a);
 }
 

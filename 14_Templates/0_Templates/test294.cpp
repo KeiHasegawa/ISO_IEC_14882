@@ -1,22 +1,27 @@
 #include <stdio.h>
 
-template<class C1> struct S {
-  C1 a;
+template<class> struct S1 {
+  static const bool V1 = false;
 };
 
-template<class C2> struct S<C2 const> {
-  C2* b;
+template<class C1> struct S1<C1 const> {
+  static const bool V1 = true;
+};
+
+template<class C2, bool VV = S1<C2>::V1>
+struct S2 {
+  static const bool V2 = VV;
 };
 
 int main()
 {
-  S<int> x;
-  printf("x.a = %d\n", x.a = 1);
-  S<const double> y;
-  double d = 2.0;
-  y.b = &d;
-  printf("*y.b = %f\n", *y.b);
+  if (S2<int>::V2)
+    printf("error\n");
+  else
+    printf("ok\n");
+  if (S2<const int>::V2)
+    printf("ok\n");
+  else
+    printf("error\n");
   return 0;
 }
-
-

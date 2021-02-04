@@ -1,30 +1,24 @@
 #include <stdio.h>
 
-template<bool V> struct S1 {
-  static const bool V1 = V;
+template<class C1> struct S1 {};
+
+template<class C2> struct S1<C2 const> {
+  C2* p;
 };
 
-template<class C1> struct S2 {
-  static const bool V2 = false;
-};
+template<class C3> struct S2 : S1<const C3> {};
 
-template<class C2> struct S3 {};
-
-template<class C3> struct S3<C3 const> {};
-
-template<class C4> struct S4 : S1<S3<const C4>::V1> {};
-
-template<class C5, bool = S2<S4<C5>>::V2> struct S5 {
-  struct T5 {
-    C5 m;
-  };
-};
-
-template<class C6> struct S6 : S5<C6>::T5 {};
+template<class C4> struct S3 : S1<const C4> {};
 
 int main()
 {
-  S6<int> x;
-  printf("x.m = %d\n", x.m = 456);
+  S2<int> s2;
+  int a = 123;
+  s2.p = &a;
+  printf("*s2.p = %d\n", *s2.p);
+  S3<char> s3;
+  char c[] = "abcdef";
+  s3.p = &c[0];
+  printf("s3.p = \"%s\"\n", s3.p);
   return 0;
 }

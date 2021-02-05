@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-template<int...> struct fact;
+template<class...> struct S1 {};
 
-template<> struct fact<0> {
-  static const int V = 1;
-  int operator()(){ return V; }
+template<class C1, class... Cn>
+struct S1<C1, Cn...> : S1<Cn...> {
+  static const int V1 = sizeof(C1);
 };
 
-template<int N> struct fact<N> : fact<N-1> {
-  static const int V = N * fact<N-1>::V;
-  int operator()(){ return V; }
+template<int N1, class C2, bool = (N1 <= C2::V1)> struct S2;
+
+template<int N2, class C3, class... Cm>
+struct S2<N2, S1<C3, Cm...>, true> {
+  C3 m;
 };
 
 int main()
 {
-  printf("fact<5>::V = %d\n", fact<5>::V);
-  fact<6> x;
-  printf("x() = %d\n", x());
-  printf("fact<7>()() = %d\n", fact<7>()());
+  S2<1,S1<char,short,int>,true> x;
+  printf("x.m = '%c'\n", x.m = 'a');
   return 0;
 }

@@ -9,8 +9,6 @@ struct S1<C1, Cn...> : S1<Cn...> {
 
 int main()
 {
-  printf("S1<char,int>::V1 = %d\n", S1<char,int>::V1);
-  S1<char,int> x;
-  printf("x.S1<int>::V1 = %d\n", x.S1<int>::V1);
+  printf("S1<char, short>::V1 = %d\n", S1<char, short>::V1);
   return 0;
 }

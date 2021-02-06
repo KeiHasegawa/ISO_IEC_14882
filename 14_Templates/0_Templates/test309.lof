@@ -1,2 +1,1 @@
-S1<char,int>::V1 = 1
-x.S1<int>::V1 = 4
+S1<char, short>::V1 = 1

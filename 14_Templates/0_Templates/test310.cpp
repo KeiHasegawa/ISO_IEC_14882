@@ -7,16 +7,10 @@ struct S1<C1, Cn...> : S1<Cn...> {
   static const int V1 = sizeof(C1);
 };
 
-template<int N1, class C2, bool = (N1 <= C2::V1)> struct S2;
-
-template<int N2, class C3, class... Cm>
-struct S2<N2, S1<C3, Cm...>, true> {
-  C3 a[N2];
-};
-
 int main()
 {
-  S2<1,S1<char,int>,true> x;
-  printf("x.a[0] = '%c'\n", x.a[0] = 'a');
+  printf("S1<char,int>::V1 = %d\n", S1<char,int>::V1);
+  S1<char,int> x;
+  printf("x.S1<int>::V1 = %d\n", x.S1<int>::V1);
   return 0;
 }

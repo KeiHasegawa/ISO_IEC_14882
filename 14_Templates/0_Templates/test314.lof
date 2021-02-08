@@ -2,3 +2,6 @@ x.V1 = 1
 x.S1<short, int>::V1 = 2
 x.S1<int>::V1 = 4
 x.a = 0.500000
+y.V1 = 1
+y.S1<short>::V1 = 2
+y.a = 0.250000

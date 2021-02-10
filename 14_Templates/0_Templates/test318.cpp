@@ -1,14 +1,16 @@
 #include <stdio.h>
 
-using U1 = int;
+template<class C1> struct S1 {
+  using U1 = C1;
+};
 
-template<class C> struct S {
-  using U2 = U1;
+template<class C2> struct S2 {
+  using U2 = typename S1<C2>::U1;
 };
 
 int main()
 {
-  S<double>::U2 x;
-  printf("x = %d\n", x = 1234);
+  S2<int>::U2 x;
+  printf("x = %d\n", x = 789);
   return 0;
 }

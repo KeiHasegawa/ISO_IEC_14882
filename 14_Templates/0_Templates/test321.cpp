@@ -27,7 +27,7 @@ template<int N3, class C6, class... Ck>
 struct S4<N3, S3<C6, Ck...>, false> : S4<N3, S3<Ck...>> {};
 
 template<class C7> struct S5 {
-  using U1 = S3<unsigned char, unsigned short, unsigned int>;
+  using U1 = S3<unsigned char, unsigned short, unsigned int, unsigned long>;
   using U2 = typename S4<sizeof(C7), U1>::U7;
   using U3 = typename S2<C7>::T2;
 };

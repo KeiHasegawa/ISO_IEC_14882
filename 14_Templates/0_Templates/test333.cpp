@@ -59,9 +59,9 @@ template<class C15> struct S8<C15, true, false> {
   using T8 = typename S5<C15, U7>::T5;
 };
 
-template<class C13> struct S8<C13, false, true>
+template<class C16> struct S8<C16, false, true>
 {
-  typedef typename S7<C13, S4<true>::V4>::U2 S7T;
+  typedef typename S7<C16, S4<true>::V4>::U2 S7T;
   typedef typename S8<S7T, S4<true>::V4>::T8 T8;
 };
 

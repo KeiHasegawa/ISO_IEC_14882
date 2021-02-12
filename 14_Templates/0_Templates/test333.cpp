@@ -30,9 +30,9 @@ template<class...> struct S9 {};
 
 template<class C8, class... Cn>
 struct S9<C8, Cn...> : S9<Cn...>
-{ static const int __size = sizeof(C8); };
+{ static const int V9 = sizeof(C8); };
 
-template<int N1, class C9, bool = (N1 <= C9::__size)>
+template<int N1, class C9, bool = (N1 <= C9::V9)>
 struct S10;
 
 template<int N2, class C10, class... Cm>

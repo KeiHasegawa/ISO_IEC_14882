@@ -1,0 +1,4 @@
+S<char>::V1 = 1
+S<short>::V2 = 2
+S<int>::V1 = 4
+S<char,short,int>::V2 = 4

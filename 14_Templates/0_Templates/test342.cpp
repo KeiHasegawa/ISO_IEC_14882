@@ -18,10 +18,10 @@ template <int N1, class... Cm> struct S2 {
 
 int main()
 {
-  printf("S2<1, char, short, int>::V2 = %d\n", S2<1, char, short, int>::V2); ;
-  printf("S2<2, char, short, int>::V2 = %d\n", S2<2, char, short, int>::V2); ;
-  printf("S2<4, char, short, int>::V2 = %d\n", S2<4, char, short, int>::V2); ;
+  printf("S2<1, char, short, int>::V2 = %d\n", S2<1, char, short, int>::V2);
+  printf("S2<2, char, short, int>::V2 = %d\n", S2<2, char, short, int>::V2);
+  printf("S2<4, char, short, int>::V2 = %d\n", S2<4, char, short, int>::V2);
   printf("S2<16, char, short, int>::V2 = %d\n",
-	 S2<16, char, short, int>::V2); ;
+	 S2<16, char, short, int>::V2);
   return 0;
 }

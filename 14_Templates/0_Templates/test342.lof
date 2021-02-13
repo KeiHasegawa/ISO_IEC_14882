@@ -1,0 +1,4 @@
+S2<1, char, short, int>::V2 = 4
+S2<2, char, short, int>::V2 = 4
+S2<4, char, short, int>::V2 = 4
+S2<16, char, short, int>::V2 = 16

@@ -1,0 +1,4 @@
+S<char>::V = 1
+S<char, short>::V = 2
+S<short, char>::V = 2
+S<char, short, int>::V = 3

@@ -21,7 +21,7 @@ template <int N1, class... Cm> struct S2 {
   typedef typename S3<N1, V2>::T3 T2;
 };
 
-template<int N2, typename... Ck> const int S2<N2, Ck...>::V2;
+template<int N2, class... Ck> const int S2<N2, Ck...>::V2;
 
 int main()
 {

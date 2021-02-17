@@ -18,6 +18,6 @@ struct X {};
 int main()
 {
   typedef int (X::*Y)();
-  h<Y,X>();
+  S1<int> a = h<Y,X>();
   return 0;
 }

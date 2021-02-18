@@ -1,23 +1,25 @@
-extern "C" int printf(const char*, ...);
+#include <stdio.h>
 
-template<class C1> C1 f(int);
-
-template<class C2> auto g() noexcept -> decltype(f<C2>(0));
-
-template<class C3> struct S1 {};
-
-template<class C4, class C5, class... Cn>
-S1<decltype((g<C5>().*g<C4>())(g<Cn>()...))> h()
+template<class C1> C1 f()
 {
-  printf("`h' called\n");
-  return S1<decltype((g<C5>().*g<C4>())(g<Cn>()...))>();
+  printf("`f' called\n");
+  return C1();
 }
 
-struct X {};
+void g(...)
+{
+  printf("`g' called\n\n");
+}
+
+template<class C2, class... Cn> void h()
+{
+  g(f<C2>(), f<Cn>()...);
+}
 
 int main()
 {
-  typedef int (X::*Y)();
-  S1<int> a = h<Y,X>();
+  h<char>();
+  h<char, int>();
+  h<char, int, double>();
   return 0;
 }

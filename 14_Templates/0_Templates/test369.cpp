@@ -1,17 +1,16 @@
 #include <stdio.h>
 
-template<class> struct S;
+template<class...> struct S;
 
-template<class C, int N> struct S<C[N]> {
-  C m;
-  static int V;
+template<class C> struct S<C> {
+  static C V;
 };
 
-template<class C, int N> int S<C[N]>::V;
+template<class C> C S<C>::V;
 
 int main()
 {
-  S<double[5]> x;
-  printf("x.m = %f, x.V = %d\n", x.m = 1.5, x.V = 10);
+  printf("S<double>::V = %f\n", S<double>::V = 1234);
   return 0;
 }
+

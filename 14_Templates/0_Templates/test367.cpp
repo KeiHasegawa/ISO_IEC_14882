@@ -2,14 +2,13 @@
 
 template<class> struct S;
 
-template<class C, int N> struct S<C[N]> {
+template<class C> struct S<C[5]> {
   C m;
-  static const int V = N;
 };
 
 int main()
 {
   S<double[5]> x;
-  printf("x.m = %f, x.V = %d\n", x.m = 1.5, x.V);
+  printf("x.m = %f\n", x.m = 1.5);
   return 0;
 }

@@ -2,14 +2,13 @@
 
 template<class> struct S;
 
-template<class C1, class C2> struct S<C1(C2)> {
-  C1 a;
-  C2 b;
+template<class C1> struct S<C1(int)> {
+  C1 m;
 };
 
 int main()
 {
-  S<int(double)> x;
-  printf("x.a = %d, x.b = %f\n", x.a = 1, x.b = 2);
+  S<double(int)> x;
+  printf("x.m = %f\n", x.m = 0.5);
   return 0;
 }

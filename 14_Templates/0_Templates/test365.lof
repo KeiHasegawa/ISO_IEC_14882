@@ -1,0 +1,2 @@
+obj.*s2x.a.m = 1234 obj.*s3x.b.m = 5678
+obj.c = 1234, obj.d = 5678

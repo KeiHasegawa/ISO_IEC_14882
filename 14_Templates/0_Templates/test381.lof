@@ -1,1 +1,2 @@
-`g<T>()' called
+f<double>() returns 4.000000
+f<int>() returns 5

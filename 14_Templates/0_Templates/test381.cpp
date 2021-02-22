@@ -1,28 +1,18 @@
 #include <stdio.h>
 
-template<class C1> C1 f(int);
-
-template<class C2> auto g() -> decltype(f<C2>(0));
-
-template<class C3, class C4> void h()
+template<class C> C f()
 {
-  g<C3 C4::*>();
+  return C(4);
 }
 
-struct X {
-  int m;
-};
-
-typedef int X::* T;
-
-template<> auto g<T>() -> decltype(f<T>(0))
+template<> int f<int>()
 {
-  printf("`g<T>()' called\n");
-  return  &X::m;
+  return 5;
 }
 
 int main()
 {
-  h<int, X>();
+  printf("f<double>() returns %f\n", f<double>());
+  printf("f<int>() returns %d\n", f<int>());
   return 0;
 }

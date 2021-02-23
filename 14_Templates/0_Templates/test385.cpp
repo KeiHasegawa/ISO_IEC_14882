@@ -10,14 +10,13 @@ template<class C2> int* f(C2 (&a)[5], C2 (&b)[5])
   return 0;
 }
 
-template<class C5, class C6 = C5&> C6 g(int);
+template<class C3, class C4 = C3&> C4 g(int);
 
-template<class C7>
-auto h() noexcept -> decltype(g<C7>(0));
+template<class C5>
+auto h() noexcept -> decltype(g<C5>(0));
 
-
-template<class C3, class C4> struct S {
-  decltype(f(h<C3>(), h<C4>())) m;
+template<class C6, class C7> struct S {
+  decltype(f(h<C6>(), h<C7>())) m;
 };
 
 int main()

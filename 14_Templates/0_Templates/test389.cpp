@@ -1,17 +1,13 @@
 #include <stdio.h>
 
 template<class C1> struct S {
-  template<class C2> static void f(int);
+  static int x;
 };
 
-template<class C1>
-template<class C2> void S<C1>::f(int a)
-{
-  printf("S<C1>::f(int) called with %d\n", a);
-}
+template<class C2> int S<C2>::x;
 
 int main()
 {
-  S<char>::f<int>(5);
+  printf("S<char>::x = %d\n", S<char>::x = 1234);
   return 0;
 }

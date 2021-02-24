@@ -1,1 +1,1 @@
-S<char>::x<int> = 1234
+S<C1>::f(int) called with 5

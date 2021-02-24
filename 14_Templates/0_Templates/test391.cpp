@@ -1,14 +1,23 @@
 #include <stdio.h>
 
 template<class C1> struct S {
-  template<class C2> static C2 x;
+  static typename C1::T1 f();
+  template<class C2> static void g(C2);
+  template<class C3, class = decltype(g<C3>(f()))> static void h(int);
 };
 
-template<class C1>
-template<class C2> C2 S<C1>::x;
+struct X {
+  typedef int T1;
+};
+
+template<class C4>
+template<class C5, class C6> void S<C4>::h(int a)
+{
+  printf("S<C4>::h(int) called with %d\n", a);
+}
 
 int main()
 {
-  printf("S<char>::x<int> = %d\n", S<char>::x<int> = 1234);
+  S<X>::h<int>(5);
   return 0;
 }

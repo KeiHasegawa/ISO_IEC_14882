@@ -1,1 +1,2 @@
-S<C4>::h(int) called with 5
+S<double>::ci = 123
+ci = 456.000000

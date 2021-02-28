@@ -1,0 +1,6 @@
+S::S() called
+S::S() called
+S::operator=(const S&) called
+S::S(const S&) called
+S::S(const S&) called
+S::opertor=(S&&) called

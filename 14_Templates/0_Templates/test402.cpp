@@ -54,6 +54,6 @@ struct X {};
 int main()
 {
   X x;
-  f3(x);
+  X& r = f3(x);
   return 0;
 }

@@ -1,3 +1,2 @@
-fact<5>::V = 120
-x() = 720
-fact<7>()() = 5040
+`f3' called
+`f2' called

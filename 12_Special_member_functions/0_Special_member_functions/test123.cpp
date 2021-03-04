@@ -8,6 +8,6 @@ struct S {
 int main()
 {
   S s;
-  printf("s.p = %x\n", (int)s.p);
+  printf("s.p = %x\n", s.p);
   return 0;
 }

@@ -1,0 +1,16 @@
+template<class C1>
+void f(C1 a)
+{
+}
+
+template<class C2>
+void f(C2& r)
+{
+}
+
+void g()
+{
+  f(1);
+  int a = 2;
+  f(a);
+}

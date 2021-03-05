@@ -7,15 +7,17 @@ void f(C1 a)
 }
 
 template<class C2>
-void f(C2* p)
+void f(C2 (*pa)[5])
 {
-  printf("*p = %d\n", *p);
+  for (int i = 0 ; i != 5 ; ++i)
+    printf("%d ", (*pa)[i]);
+  printf("\n");
 }
 
 int main()
 {
   f(1);
-  int a = 2;
+  int a[] = { 2, 3, 4, 5, 6 };
   f(&a);
   return 0;
 }

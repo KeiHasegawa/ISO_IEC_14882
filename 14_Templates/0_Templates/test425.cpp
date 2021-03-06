@@ -14,14 +14,21 @@ struct X {
 X x = { 2, 3.5 };
 
 template<class C2>
-void f(int C2::* pm)
+void f(C2 X::* pm)
 {
   printf("x.*pm = %d\n", x.*pm);
+}
+
+template<>
+void f(double X::*pm)
+{
+  printf("x.*pm = %f\n", x.*pm);
 }
 
 int main()
 {
   f(1);
   f(&X::a);
+  f(&X::b);
   return 0;
 }

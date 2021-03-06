@@ -13,29 +13,28 @@ struct X {
 
 X x = { 2, 3.5 };
 
-template<class C2, class C3>
-void f(C2 C3::* pm)
+template<class C2>
+void f(int C2::* pm)
 {
-  printf("x.*pm = %f\n", x.*pm);
+  printf("x.*pm = %d\n", x.*pm);
 }
 
 struct Y {
   int c;
-  double d;
 };
 
-Y y = { 4, 5.5 };
+Y y = { 4 };
 
-template<class C4>
-void f(C4 Y::* pm)
+template<>
+void f<Y>(int Y::* pm)
 {
-  printf("y.*pm = %f\n", y.*pm);
+  printf("y.*pm = %d\n", y.*pm);
 }
 
 int main()
 {
   f(1);
-  f(&X::b);
-  f(&Y::d);
+  f(&X::a);
+  f(&Y::c);
   return 0;
 }

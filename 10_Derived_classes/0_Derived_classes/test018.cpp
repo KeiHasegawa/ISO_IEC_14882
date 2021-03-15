@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 class A { public: int i; };
-class B { public: char* i; };
+class B { public: const char* i; };
 class C : public A, public B {};
 
 void f(C* cptr)

@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 template<class C> struct S {
-  static char* x;
-  static char* y;
+  static const char* x;
+  static const char* y;
 };
 
 template<class C> char* S<C>::x = 0;

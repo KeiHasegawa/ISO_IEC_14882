@@ -30,8 +30,10 @@ int main()
 {
   S3<char*> x;
   S3<char*>::P p;
-  p = "C++ is very difficult";
-  x.m = "C is not so difficult";
+  char a[] = "C++ is very difficult";
+  p = a;
+  char b[] = "C is not so difficult";
+  x.m = b;
   printf("%s, %s.\n", p, x.m);
   return 0;
 }

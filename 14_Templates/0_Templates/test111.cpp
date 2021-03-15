@@ -27,11 +27,14 @@ template<class C9> struct S6 {
 
 int main()
 {
-  S5<char,S6<char> >::T2 t2 = "C++";
+  char a[] = "C++";
+  S5<char,S6<char> >::T2 t2 = a;
   printf("t2 = %s\n", t2);
-  S5<char,S6<char> >::X::T xt = "compiler";
+  char b[] = "compiler";
+  S5<char,S6<char> >::X::T xt = b;
   printf("xt = %s\n", xt);
-  S5<char,S6<char> >::Y::T yt = "developer";
+  char c[] = "developer";
+  S5<char,S6<char> >::Y::T yt = c;
   printf("yt = %s\n", yt);
   return 0;
 }

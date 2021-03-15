@@ -2,7 +2,7 @@
 
 struct S {
   S(int);
-  S(char*);
+  S(const char*);
 };
 
 void f()
@@ -23,7 +23,7 @@ S::S(int n)
   printf("S::S(int) called with %d\n", n);
 }
 
-S::S(char* p)
+S::S(const char* p)
 {
   printf("S::S(char*) called with \"%s\"\n", p);
 }

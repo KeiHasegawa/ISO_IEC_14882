@@ -45,7 +45,8 @@ template<class C9> struct S6 {
 int main()
 {
   S3<S4<char*,S5<char,S6<char> > > >::P p;
-  p = "too compilcated sample";
+  char a[] = "too compilcated sample";
+  p = a;
   printf("p = \"%s\"\n", p);
   return 0;
 }

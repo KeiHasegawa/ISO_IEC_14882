@@ -20,8 +20,8 @@ int g(char(*)[20]); // different from g(char(*)[10]);
 
 int main()
 {
-  char* p = "Program";
-  f(p);
+  char x[] = "Program";
+  f(x);
   char a[10] = "language";
   g(&a);
   char b[20] = "C++";

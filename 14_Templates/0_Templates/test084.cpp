@@ -20,7 +20,7 @@ int main()
 {
   D<char> dc;
   printf("dc.x = '%c'\n", dc.x = 'a');
-  printf("dc.y = %s\n", dc.y = "C++");
+  printf("dc.y = %s\n", dc.y = (char*)"C++");
   D<int> di;
   printf("di.x = %d\n", di.x = 12345);
   for ( int i = 0 ; i < 5 ; ++i )

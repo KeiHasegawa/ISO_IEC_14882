@@ -3,7 +3,7 @@
  */
 #include <stdio.h>
 
-struct S { int a; char* b; int c; };
+struct S { int a; const char* b; int c; };
 S ss = { 1, "asdf" };
 
 int main()

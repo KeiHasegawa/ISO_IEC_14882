@@ -6,7 +6,7 @@
 static char* f(); // f() has internal linkage
 char* f() // f() still has internal linkage
 {
-  char* p = "`f' called\n";
+  char* p = (char*)"`f' called\n";
   printf(p);
   return p;
 }
@@ -42,7 +42,7 @@ int main()
 
 char* g()
 {
-  char* p = "`g' called\n";
+  char* p = (char*)"`g' called\n";
   printf(p);
   return p;
 }

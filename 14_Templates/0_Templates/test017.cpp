@@ -9,7 +9,8 @@ int main()
   X<int> aa;
   X<int>::s = 1234;
   printf("X<int>::s = %d\n", X<int>::s);
-  X<char*>::s = "C++ compiler";
+  char a[] = "C++ compiler";
+  X<char*>::s = a;
   printf("X<char*>::s = \"%s\"\n", X<char*>::s);
   return 0;
 }

@@ -51,7 +51,7 @@ int main()
   for ( int i = 0 ; i < 4 ; ++i )
     delete icmpvec[i];
 
-  pvector<char*> pcvec(5);
+  pvector<const char*> pcvec(5);
   for ( int i = 0 ; i < 5 ; ++i )
     pcvec[i] = new char*;
   *pcvec[0] = "Kei";

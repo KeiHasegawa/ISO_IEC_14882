@@ -9,12 +9,12 @@
 
 char msg[] = "Syntax error on line %s\n";
 
-void test000(char* s)
+void test000(const char* s)
 {
   printf(msg,s);
 }
 
-void test001(char* s)
+void test001(const char* s)
 {
   char msg[] = "Syntax error on line %s\n";
   printf(msg,s);

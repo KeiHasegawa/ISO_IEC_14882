@@ -9,7 +9,8 @@ void g(const int Pc); // void g(const int)
 
 int main()
 {
-  f("Programming");
+  char a[] = "Programming";
+  f(a);
   g(5);
   return 0;
 }

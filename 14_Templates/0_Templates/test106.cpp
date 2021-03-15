@@ -10,7 +10,7 @@ template<class C2> struct B<C2*> {
 
 template<class C3> struct D : public B<C3> {
   typedef typename B<C3>::T T;
-  T f(){ return "D::f() called"; }
+  T f(){ return (char*)"D::f() called"; }
 };
 
 int main()

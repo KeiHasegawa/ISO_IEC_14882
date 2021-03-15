@@ -6,7 +6,7 @@ public:
   int mem;
   C(int i) : mem(i) { init(i); }
   C() : mem(1) { init(0); }
-  C(char* p) : mem(2) { init(0); }
+  C(const char* p) : mem(2) { init(0); }
 };
 
 int main()

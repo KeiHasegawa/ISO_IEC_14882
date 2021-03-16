@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+struct X {};
+
+constexpr bool f(X)
+{
+  return false;
+}
+
+struct Y {};
+
+constexpr bool f(Y)
+{
+}
+
+template<bool V> struct S1 {
+};
+
+template<class C3>
+struct S2 : S1<f(typename C3::T3{})> {};
+
+int main()
+{
+  printf("ok\n");
+  return 0;
+}

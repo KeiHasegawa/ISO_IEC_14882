@@ -26,6 +26,6 @@ template<int N2, class... Ck> const int S2<N2, Ck...>::V2;
 int main()
 {
   S2<3, char, short, int>::T2 x;
-  printf("sizeof x/sizeof x[0] = %d\n", sizeof x/sizeof x[0]);
+  printf("sizeof x/sizeof x[0] = %d\n", (int)(sizeof x/sizeof x[0]));
   return 0;
 }

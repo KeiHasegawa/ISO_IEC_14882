@@ -24,6 +24,6 @@ template<class C5> struct S3 {
 int main()
 {
   S3<int>::U2 x;
-  printf("sizeof x = %d\n", sizeof x);
+  printf("sizeof x = %d\n", (int)(sizeof x));
   return 0;
 }

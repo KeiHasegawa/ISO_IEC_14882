@@ -1,0 +1,7 @@
+`f' called
+~B::B() called
+B::delete(void*) called
+`f' called
+~D::D() called
+~B::B() called
+B::delete(void*) called

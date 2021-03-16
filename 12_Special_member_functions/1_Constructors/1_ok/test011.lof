@@ -1,0 +1,4 @@
+`f' called
+S1(S1&&) called
+S1(S1&&) called
+S2::S2() called

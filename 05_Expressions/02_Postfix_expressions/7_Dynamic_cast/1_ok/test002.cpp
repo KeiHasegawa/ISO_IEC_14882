@@ -8,7 +8,10 @@ struct X {
 };
 
 struct Y {
-  virtual ~Y(){}
+  virtual ~Y()
+  {
+    printf("Y::~Y() called\n");
+  }
 };
 
 void f(Y* py)

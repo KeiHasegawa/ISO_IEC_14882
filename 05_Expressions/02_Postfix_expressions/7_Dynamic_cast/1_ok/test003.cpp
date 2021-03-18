@@ -14,7 +14,10 @@ struct D : B {
 void f(B* pb)
 {
   D* pd = dynamic_cast<D*>(pb);
-  printf("pd->m = %d\n", pd->m);
+  if (pd)
+    printf("pd->m = %d\n", pd->m);
+  else
+    pb->vf();
 }
 
 int main()
@@ -22,5 +25,7 @@ int main()
   D d;
   d.m = 1234;
   f(&d);
+  B b;
+  f(&b);
   return 0;
 }

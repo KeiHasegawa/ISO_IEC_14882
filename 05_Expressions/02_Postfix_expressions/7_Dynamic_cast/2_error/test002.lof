@@ -1,0 +1,2 @@
+test002.cpp: 函数 `f' :
+test002.cpp:9: エラー: dynamic_cast のソースの型 `struct B' が polymorphic ではありません.

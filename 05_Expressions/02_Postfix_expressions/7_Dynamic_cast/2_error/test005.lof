@@ -1,0 +1,3 @@
+test005.cpp: 函数 `f' :
+test005.cpp:6: エラー: dynamic_cast のターゲットの型が構造体へのポインタ型ではありません.
+test005.cpp:6: エラー: dynamic_cast のソースの型が構造体へのポインタ型ではありません.

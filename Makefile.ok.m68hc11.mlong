@@ -1,0 +1,85 @@
+TESTS = $(wildcard *.c)
+LOFS = $(TESTS:.c=.lof)
+DIFF = diff
+TOUCH = touch
+DOS2UNIX = dos2unix.csh
+
+all:$(LOFS)
+
+AS = m68hc11-elf-as
+CC = m68hc11-elf-gcc -std=c99
+LD = m68hc11-elf-ld
+RUN = m68hc11-elf-run
+DOGV = wdog.exe -v
+
+%.o:%.S
+	$(DOGV) $(AS) -o $@ -g $<
+
+%.o:%.s
+	$(DOGV) $(AS) -o $@ -g $<
+
+%.s : %.c
+	$(DOGV) $(CC) -o $@ $< -S
+
+
+START_O = /media/ca850f52-0605-42a7-9fd4-899de9edf461/work/test_m68hc11.015/start.o
+
+LIBGCC = /media/ca850f52-0605-42a7-9fd4-899de9edf461/work/GNU_LANG/lib/gcc/m68hc11-elf/3.4.4/libgcc.a
+
+LDSCRIPT = /media/ca850f52-0605-42a7-9fd4-899de9edf461/work/test_m68hc11.015/test015.x
+
+%.elf : %.o
+	$(DOGV) $(LD) -o $@ $(START_O) $< $(LIBGCC) -T $(LDSCRIPT)
+
+%.log : %.elf
+	$(DOGV) $(RUN) ./$< > $@
+	$(DOS2UNIX) $@
+
+%.lof : %.log
+	$(DOGV) $(DIFF) $< $@
+	$(TOUCH) $@
+
+clean:
+	$(RM) *.log *.elf *.s *.asm *.i *.stackdump core.* a.out core *~
+
+test000.lof:test000.log
+test000.elf:test000.o
+test000.o:test000.s
+test000.s:test000.c
+test001.lof:test001.log
+test001.elf:test001.o
+test001.o:test001.c
+test001.s:test001.c
+test002.lof:test002.log
+test002.elf:test002.o
+test002.o:test002.s
+test002.s:test002.c
+test003.lof:test003.log
+test003.elf:test003.o
+test003.o:test003.s
+test003.s:test003.c
+test004.lof:test004.log
+test004.elf:test004.o
+test004.o:test004.s
+test004.s:test004.c
+test005.lof:test005.log
+test005.elf:test005.o
+test005.o:test005.s
+test005.s:test005.c
+test006.lof:test006.log
+test006.elf:test006.o
+test006.o:test006.s
+test006.s:test006.c
+test007.lof:test007.log
+test007.elf:test007.o
+test007.o:test007.s
+test007.s:test007.c
+test008.lof:test008.log
+test008.elf:test008.o
+test008.o:test008.s
+test008.s:test008.c
+test009.lof:test009.log
+test009.elf:test009.o
+test009.o:test009.s
+test009.s:test009.c
+

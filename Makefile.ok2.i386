@@ -1,0 +1,38 @@
+SRCS = $(wildcard *.cpp)
+OBJS = $(SRCS:.cpp=.o)
+
+all:test.lof
+
+CXX = g++
+RUN =
+DIFF = diff
+TOUCH = touch
+DOS2UNIX = dos2unix.csh
+DOGV = wdog.exe -v
+
+%.i : %.c
+	$(DOGV) $(CPP) -o $@ $< $(CPP_FLAG)
+
+%.s : %.i
+	$(DOGV) $(CC1) -o $@ $< $(CC1_FLAG)
+
+%.log : %.exe
+	$(DOGV) $(RUN) ./$< > $@
+	$(DOS2UNIX) $@
+
+%.lof : %.log
+	$(DOGV) $(DIFF) $< $@
+	$(TOUCH) $@
+
+test.exe:$(ASMS)
+	$(DOGV) $(LINK) -o $@ $(ASMS)
+
+clean:
+	$(RM) *.log *.exe *.s *.i *.stackdump core.* *~
+
+test.lof:test.log
+a.o:a.cpp
+b.o:b.cpp
+c.o:c.cpp
+
+

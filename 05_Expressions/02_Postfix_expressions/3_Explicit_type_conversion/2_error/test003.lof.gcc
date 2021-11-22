@@ -1,0 +1,7 @@
+test003.cpp: In function 'void f(int)':
+test003.cpp:3:8: error: 'b' was not declared in this scope
+    3 |   int (b(int)) + a;  // neither declaration or expression statement.
+      |        ^
+test003.cpp:3:3: error: expected primary-expression before 'int'
+    3 |   int (b(int)) + a;  // neither declaration or expression statement.
+      |   ^~~

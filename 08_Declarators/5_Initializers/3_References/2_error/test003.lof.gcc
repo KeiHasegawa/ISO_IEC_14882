@@ -1,0 +1,7 @@
+test003.cpp: In function 'void f()':
+test003.cpp:6:22: error: cannot bind non-const lvalue reference of type 'signed char&' to an rvalue of type 'signed char'
+    6 |   signed char& rsc = c;           // error
+      |                      ^
+test003.cpp:8:24: error: cannot bind non-const lvalue reference of type 'unsigned char&' to an rvalue of type 'unsigned char'
+    8 |   unsigned char& ruc = c;         // error
+      |                        ^

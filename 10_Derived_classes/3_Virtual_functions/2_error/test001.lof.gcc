@@ -1,0 +1,16 @@
+test001.cpp: In function 'void foo()':
+test001.cpp:22:11: error: 'A' is an ambiguous base of 'D'
+   22 |   A* p = &d; // would be ill-formed: ambiguous
+      |           ^
+test001.cpp:27:7: error: request for member 'f' is ambiguous
+   27 |   dp->f(); // ill-formed: ambiguous
+      |       ^
+test001.cpp:5:16: note: candidates are: 'virtual void A::f()'
+    5 |   virtual void f();
+      |                ^
+test001.cpp:13:8: note:                 'virtual void B2::f()'
+   13 |   void f();
+      |        ^
+test001.cpp:9:8: note:                 'virtual void B1::f()'
+    9 |   void f();
+      |        ^

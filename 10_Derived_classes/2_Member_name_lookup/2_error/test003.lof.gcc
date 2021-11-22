@@ -1,0 +1,4 @@
+test003.cpp: In function 'void g()':
+test003.cpp:20:12: error: 'A' is an ambiguous base of 'D'
+   20 |   A* pa = &d; // error, ambiguous: C's A or B's A?
+      |            ^

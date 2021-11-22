@@ -1,0 +1,61 @@
+test000.cpp: In function 'void g(C*)':
+test000.cpp:39:7: error: request for member 'a' is ambiguous
+   39 |   pc->a = 1; // error: ambiguous: A::a or B::a
+      |       ^
+test000.cpp:26:7: note: candidates are: 'int B::a'
+   26 |   int a;
+      |       ^
+test000.cpp:18:7: note:                 'int A::a'
+   18 |   int a;
+      |       ^
+test000.cpp:40:7: error: request for member 'b' is ambiguous
+   40 |   pc->b(); // error: ambiguous: A::b or B::b
+      |       ^
+test000.cpp:27:7: note: candidates are: 'int B::b()'
+   27 |   int b();
+      |       ^
+test000.cpp:19:9: note:                 'int (* A::b)()'
+   19 |   int (*b)();
+      |         ^
+test000.cpp:41:7: error: request for member 'f' is ambiguous
+   41 |   pc->f(); // error: ambiguous: A::f or B::f
+      |       ^
+test000.cpp:29:7: note: candidates are: 'int B::f()'
+   29 |   int f();
+      |       ^
+test000.cpp:21:7: note:                 'int A::f(int)'
+   21 |   int f(int);
+      |       ^
+test000.cpp:20:7: note:                 'int A::f()'
+   20 |   int f();
+      |       ^
+test000.cpp:42:7: error: request for member 'f' is ambiguous
+   42 |   pc->f(1); // error: ambiguous: A::f or B::f
+      |       ^
+test000.cpp:29:7: note: candidates are: 'int B::f()'
+   29 |   int f();
+      |       ^
+test000.cpp:21:7: note:                 'int A::f(int)'
+   21 |   int f(int);
+      |       ^
+test000.cpp:20:7: note:                 'int A::f()'
+   20 |   int f();
+      |       ^
+test000.cpp:43:7: error: request for member 'g' is ambiguous
+   43 |   pc->g(); // error: ambiguous: A::g or B::g
+      |       ^
+test000.cpp:30:7: note: candidates are: 'int B::g'
+   30 |   int g;
+      |       ^
+test000.cpp:22:7: note:                 'int A::g()'
+   22 |   int g();
+      |       ^
+test000.cpp:44:7: error: request for member 'g' is ambiguous
+   44 |   pc->g = 1; // error: ambiguous: A::g or B::g
+      |       ^
+test000.cpp:30:7: note: candidates are: 'int B::g'
+   30 |   int g;
+      |       ^
+test000.cpp:22:7: note:                 'int A::g()'
+   22 |   int g();
+      |       ^

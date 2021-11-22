@@ -1,0 +1,8 @@
+test001.cpp: In function 'void f(D*)':
+test001.cpp:27:7: error: request for member 'a' is ambiguous
+   27 |   pd->a++; //error, ambiguous: two as in D
+      |       ^
+test001.cpp:11:7: note: candidates are: 'int A::a'
+   11 |   int a;
+      |       ^
+test001.cpp:11:7: note:                 'int A::a'

@@ -1,0 +1,6 @@
+test001.cpp:20:15: error: cannot bind non-const lvalue reference of type 'double&' to an rvalue of type 'double'
+   20 | double& rd2 = 2.0; // error: not an lvalue and reference not const
+      |               ^~~
+test001.cpp:22:15: error: cannot bind non-const lvalue reference of type 'double&' to an rvalue of type 'double'
+   22 | double& rd3 = i; // error: type mismatch and reference not const
+      |               ^

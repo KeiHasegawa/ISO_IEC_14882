@@ -1,0 +1,4 @@
+test004.cpp: In function 'void f(D)':
+test004.cpp:7:9: error: cannot 'dynamic_cast' 'd' (of type 'struct D') to type 'struct B' (target is not pointer or reference)
+    7 |   B b = dynamic_cast<B>(d);
+      |         ^~~~~~~~~~~~~~~~~~

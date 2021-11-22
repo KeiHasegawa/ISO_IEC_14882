@@ -1,0 +1,3 @@
+test002.cpp:20:16: error: binding reference of type 'const int&' to 'const volatile int' discards qualifiers
+   20 | const int& r = cvi; // error: type qualifiers dropped
+      |                ^~~

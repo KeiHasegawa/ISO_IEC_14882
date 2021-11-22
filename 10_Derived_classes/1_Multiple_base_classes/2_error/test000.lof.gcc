@@ -1,0 +1,6 @@
+test000.cpp:11:28: error: duplicate base type 'X' invalid
+   11 | class Y : public X, public X { /* ... */ }; // ill-formed
+      |                            ^
+test000.cpp:16:7: warning: direct base 'L' inaccessible in 'D' due to ambiguity [-Winaccessible-base]
+   16 | class D : public A, public L { void f(); /* ... */ }; // well-formed
+      |       ^

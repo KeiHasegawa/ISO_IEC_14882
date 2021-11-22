@@ -1,0 +1,19 @@
+test002.cpp: In member function 'void D::glorp()':
+test002.cpp:27:3: error: reference to 'y' is ambiguous
+   27 |   y++; //error: B::y and C's W::y
+      |   ^
+test002.cpp:10:32: note: candidates are: 'int W::y'
+   10 | class W { public: int g(); int y; };
+      |                                ^
+test002.cpp:16:16: note:                 'int B::y'
+   16 |   int g(); int y;
+      |                ^
+test002.cpp:28:3: error: reference to 'g' is ambiguous
+   28 |   g(); //error: B::g() and C's W::g()
+      |   ^
+test002.cpp:10:23: note: candidates are: 'int W::g()'
+   10 | class W { public: int g(); int y; };
+      |                       ^
+test002.cpp:16:7: note:                 'int B::g()'
+   16 |   int g(); int y;
+      |       ^

@@ -1,0 +1,18 @@
+test001.cpp:19:7: error: cannot declare variable 'x' to be of abstract type 'shape'
+   19 | shape x; // error: object of abstract class
+      |       ^
+test001.cpp:8:7: note:   because the following virtual functions are pure within 'shape':
+    8 | class shape { // abstract class
+      |       ^~~~~
+test001.cpp:14:16: note:     'virtual void shape::rotate(int)'
+   14 |   virtual void rotate(int) = 0; // pure virtual
+      |                ^~~~~~
+test001.cpp:15:16: note:     'virtual void shape::draw()'
+   15 |   virtual void draw() = 0; // pure virtual
+      |                ^~~~
+test001.cpp:21:1: error: invalid abstract return type 'shape'
+   21 | shape f(); // error
+      | ^~~~~
+test001.cpp:22:13: error: cannot declare parameter to be of abstract type 'shape'
+   22 | void g(shape); // error
+      |             ^

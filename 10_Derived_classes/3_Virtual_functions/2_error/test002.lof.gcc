@@ -1,0 +1,3 @@
+test002.cpp:17:8: error: no unique final overrider for 'virtual void A::f()' in 'Error'
+   17 | struct Error : VB1, VB2 { // ill-formed
+      |        ^~~~~

@@ -1,0 +1,6 @@
+test000.cpp: In function 'void f()':
+test000.cpp:21:11: error: cannot convert 'Y' to 'int' in initialization
+   21 |   int b = a; // error:
+      |           ^
+      |           |
+      |           Y

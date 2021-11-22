@@ -1,0 +1,4 @@
+test002.cpp: In function 'void f(B*)':
+test002.cpp:9:11: error: cannot 'dynamic_cast' 'pb' (of type 'struct B*') to type 'struct D*' (source type is not polymorphic)
+    9 |   D* pd = dynamic_cast<D*>(pb);
+      |           ^~~~~~~~~~~~~~~~~~~~

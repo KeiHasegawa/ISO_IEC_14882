@@ -1,0 +1,4 @@
+test000.cpp: In function 'void f()':
+test000.cpp:7:8: error: 'n' was not declared in this scope
+    7 |   int (n+1);  // error. undeclared.
+      |        ^

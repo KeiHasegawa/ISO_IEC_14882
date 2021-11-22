@@ -1,0 +1,4 @@
+test001.cpp: In function 'float f(int)':
+test001.cpp:6:17: error: 'b' was not declared in this scope
+    6 |   return double(b) + a;  // error: `b' is undeclared.
+      |                 ^

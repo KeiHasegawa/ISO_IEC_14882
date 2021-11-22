@@ -1,0 +1,6 @@
+test000.cpp: In function 'int main()':
+test000.cpp:4:22: error: invalid conversion from 'char**' to 'const char**' [-fpermissive]
+    4 |   const char** pcc = &pc; //1: not allowed
+      |                      ^~~
+      |                      |
+      |                      char**

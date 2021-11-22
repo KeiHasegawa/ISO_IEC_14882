@@ -1,0 +1,36 @@
+SRCS = $(wildcard *.cpp)
+OBJS = $(SRCS:.cpp=.o)
+
+all:test.lof
+
+CXX = g++
+RUN =
+DIFF = diff
+TOUCH = touch
+DOS2UNIX = dos2unix.csh
+DOG = wdog.exe
+DOGV = wdog.exe -v
+
+%.o : %.cpp
+	$(DOGV) $(CXX) -o $@ $< -c
+
+%.lof : %.log
+	$(DOGV) $(DIFF) $< $@
+	$(TOUCH) $@
+
+test.log:$(OBJS)
+	-if export LANG=C ; $(DOG) $(CXX) $(OBJS) 2> $@ ; then \
+		$(RM) $@ ; \
+	else \
+		$(DOS2UNIX) $@; \
+	fi
+
+clean:
+	$(RM) *.o *.log *.exe *.s *.i *.stackdump core.* *~
+
+test.lof:test.log
+a.o:a.cpp
+b.o:b.cpp
+c.o:c.cpp
+
+

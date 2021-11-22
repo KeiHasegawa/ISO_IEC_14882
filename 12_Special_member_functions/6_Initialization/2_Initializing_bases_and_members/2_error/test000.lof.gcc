@@ -1,0 +1,7 @@
+test000.cpp:8:8: warning: direct base 'A' inaccessible in 'C' due to ambiguity [-Winaccessible-base]
+    8 | struct C: public A, public B { C(); };
+      |        ^
+test000.cpp: In constructor 'C::C()':
+test000.cpp:9:9: error: 'struct A' is both a direct base and an indirect virtual base
+    9 | C::C(): A() { } // ill-formed: which A?
+      |         ^

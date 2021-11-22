@@ -1,0 +1,10 @@
+test002.cpp: In function 'void g(const X&)':
+test002.cpp:29:9: error: call of overloaded 'X(const X&)' is ambiguous
+   29 |   X x = y;
+      |         ^
+test002.cpp:18:1: note: candidate: 'X::X(const X&, int)'
+   18 | X::X(const X& x, int i = 0)
+      | ^
+test002.cpp:5:8: note: candidate: 'constexpr X::X(const X&)'
+    5 | struct X {
+      |        ^

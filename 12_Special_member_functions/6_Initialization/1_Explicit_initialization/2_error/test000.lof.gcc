@@ -1,0 +1,17 @@
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: /usr/lib/crt1.o: in function `_start':
+(.text+0x18): undefined reference to `main'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: /tmp/ccUWtdzw.o: in function `f()':
+test000.cpp:(.text+0x19): undefined reference to `complex::complex(double)'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: test000.cpp:(.text+0x3e): undefined reference to `complex::complex(double, double)'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: test000.cpp:(.text+0x4f): undefined reference to `sqrt(complex, complex)'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: test000.cpp:(.text+0x5e): undefined reference to `complex::complex()'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: test000.cpp:(.text+0x7a): undefined reference to `complex::complex(double)'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: test000.cpp:(.text+0x9f): undefined reference to `complex::complex(double, double)'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: /tmp/ccUWtdzw.o: in function `__static_initialization_and_destruction_0(int, int)':
+test000.cpp:(.text+0xe6): undefined reference to `complex::complex(double)'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: test000.cpp:(.text+0x10e): undefined reference to `complex::complex(double, double)'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: test000.cpp:(.text+0x120): undefined reference to `complex::complex()'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: test000.cpp:(.text+0x13f): undefined reference to `complex::complex(double)'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: test000.cpp:(.text+0x155): undefined reference to `complex::complex()'
+/usr/local/lib/gcc/i686-pc-linux-gnu/10.2.0/../../../../i686-pc-linux-gnu/bin/ld: test000.cpp:(.text+0x17a): undefined reference to `complex::complex(double)'
+collect2: error: ld returned 1 exit status

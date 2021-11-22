@@ -1,0 +1,8 @@
+test000.cpp: In function 'void foo(int)':
+test000.cpp:17:7: error: no matching function for call to 'D1::operator new(sizetype)'
+   17 |   new D1; // ill-formed: ::operator new(size_t) hidden
+      |       ^~
+test000.cpp:8:9: note: candidate: 'static void* B::operator new(size_t, Arena*)'
+    8 |   void* operator new(size_t, Arena*);
+      |         ^~~~~~~~
+test000.cpp:8:9: note:   candidate expects 2 arguments, 1 provided

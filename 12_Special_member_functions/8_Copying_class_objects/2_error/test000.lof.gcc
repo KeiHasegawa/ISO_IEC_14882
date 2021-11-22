@@ -1,0 +1,6 @@
+test000.cpp:12:7: error: binding reference of type 'X&' to 'const X' discards qualifiers
+   12 | X x = cx; // error - X::X(X&) cannot copy cx into x
+      |       ^~
+test000.cpp:9:5: note:   initializing argument 1 of 'X::X(X&)'
+    9 |   X(X&); //copy constructor with a nonconst parameter
+      |     ^~

@@ -1,0 +1,7 @@
+test001.cpp: In function 'void f()':
+test001.cpp:18:7: error: binding reference of type 'X&' to 'const X' discards qualifiers
+   18 |   x = cx; // error:
+      |       ^~
+test001.cpp:13:16: note:   initializing argument 1 of 'X& X::operator=(X&)'
+   13 |   X& operator=(X&);
+      |                ^~

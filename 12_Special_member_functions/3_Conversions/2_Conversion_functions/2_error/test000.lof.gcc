@@ -1,0 +1,4 @@
+test000.cpp: In function 'void f()':
+test000.cpp:15:19: error: 'class f()::X' has no member named 'operator int*'
+   15 |   &ac.operator int*i; // syntax error:
+      |                   ^

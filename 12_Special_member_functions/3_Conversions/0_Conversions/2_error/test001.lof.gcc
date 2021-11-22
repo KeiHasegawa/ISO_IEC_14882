@@ -1,0 +1,10 @@
+test001.cpp: In function 'void f(Y&)':
+test001.cpp:23:7: error: conversion from 'Y' to 'bool' is ambiguous
+   23 |   if (a) { // ill-formed:
+      |       ^
+test001.cpp:18:3: note: candidate: 'Y::operator char()'
+   18 |   operator char();
+      |   ^~~~~~~~
+test001.cpp:12:3: note: candidate: 'X::operator int()'
+   12 |   operator int();
+      |   ^~~~~~~~

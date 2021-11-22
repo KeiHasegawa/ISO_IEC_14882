@@ -1,0 +1,3 @@
+test000.cpp:17:8: error: conversion from 'int' to non-scalar type 'Z' requested
+   17 | Z a1 = 1; // error: no implicit conversion
+      |        ^

@@ -1,0 +1,5 @@
+X::X(const X&) called
+before f call
+X::X(const X&) called
+f called
+after f call

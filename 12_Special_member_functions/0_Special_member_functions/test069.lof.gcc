@@ -1,0 +1,4 @@
+before assignment x = y
+V::operator= called
+V::operator= called
+after assignment x = y
